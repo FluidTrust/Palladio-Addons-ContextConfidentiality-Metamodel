@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ConfidentialityProfile
+Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.ConfidentialityProfile ;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.palladiosimulator.pcm.confidentiality.profile
+Require-Bundle: org.palladiosimulator.pcm,
+ org.palladiosimulator.pcm.confidentiality.context;bundle-version="0.1.0"
+Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.ConfidentialityProfile 

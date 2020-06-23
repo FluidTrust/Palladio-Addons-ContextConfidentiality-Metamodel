@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizardID"
+            name="%_UI_ContextModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ContextModelFile.gif">
+         <description>%_UI_ContextModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditorID"
+            name="%_UI_ContextEditor_label"
+            icon="icons/full/obj16/ContextModelFile.gif"
+            extensions="context"
+            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelModelWizardID"
+            name="%_UI_ModelModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelModelFile.gif">
+         <description>%_UI_ModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelEditorID"
+            name="%_UI_ModelEditor_label"
+            icon="icons/full/obj16/ModelModelFile.gif"
+            extensions="model"
+            class="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetModelWizardID"
+            name="%_UI_SetModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SetModelFile.gif">
+         <description>%_UI_SetModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetEditorID"
+            name="%_UI_SetEditor_label"
+            icon="icons/full/obj16/SetModelFile.gif"
+            extensions="set"
+            class="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.palladiosimulator.pcm.confidentiality.context/src-gen"
+    creationIcons="false" editDirectory="/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
+    editorDirectory="/org.palladiosimulator.pcm.confidentiality.context.editor/src-gen"
+    modelPluginID="org.palladiosimulator.pcm.confidentiality.context" modelName="Context"
+    rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    importOrganizing="true">
+  <foreignModel>context.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Context" basePackage="org.palladiosimulator.pcm.confidentiality"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="context.ecore#/">
+    <genClasses ecoreClass="context.ecore#//ConfidentialAccessSpecification">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/setContainer"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/contextContainer"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/typeContainer"/>
+    </genClasses>
+    <nestedGenPackages prefix="Model" basePackage="org.palladiosimulator.pcm.confidentiality.context"
+        disposableProviderFactory="true" ecorePackage="context.ecore#//model">
+      <genClasses ecoreClass="context.ecore#//model/HierarchicalContext">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//model/HierarchicalContext/including"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//model/SingleAttributeContext" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
+      <genClasses ecoreClass="context.ecore#//model/RelatedContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//model/RelatedContextSet/contextset"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//model/ContextAttribute" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//model/ContextAttribute/contexttype"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//model/ContextContainer">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//model/ContextContainer/context"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//model/ContextType" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//model/ContextType/unique"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//model/TypeContainer">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//model/TypeContainer/types"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Set" disposableProviderFactory="true" ecorePackage="context.ecore#//set">
+      <genClasses ecoreClass="context.ecore#//set/ContextSetContainer">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//set/ContextSetContainer/policies"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//set/ContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//set/ContextSet/contexts"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
