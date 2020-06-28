@@ -30,4 +30,12 @@
             genModel="model/context.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated context -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage"
+            genModel="model/context.genmodel"/>
+   </extension>
+
 </plugin>

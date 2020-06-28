@@ -92,13 +92,22 @@ public interface ContextPackage extends EPackage {
     int CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER = 2;
 
     /**
+     * The feature id for the '<em><b>Pcmspecificationcontainer</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER = 3;
+
+    /**
      * The number of structural features of the '<em>Confidential Access Specification</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONFIDENTIAL_ACCESS_SPECIFICATION_FEATURE_COUNT = 3;
+    int CONFIDENTIAL_ACCESS_SPECIFICATION_FEATURE_COUNT = 4;
 
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification <em>Confidential Access Specification</em>}'.
@@ -142,6 +151,17 @@ public interface ContextPackage extends EPackage {
      * @generated
      */
     EReference getConfidentialAccessSpecification_TypeContainer();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getPcmspecificationcontainer <em>Pcmspecificationcontainer</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Pcmspecificationcontainer</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getPcmspecificationcontainer()
+     * @see #getConfidentialAccessSpecification()
+     * @generated
+     */
+    EReference getConfidentialAccessSpecification_Pcmspecificationcontainer();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -201,6 +221,15 @@ public interface ContextPackage extends EPackage {
          */
         EReference CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER = eINSTANCE
                 .getConfidentialAccessSpecification_TypeContainer();
+
+        /**
+         * The meta object literal for the '<em><b>Pcmspecificationcontainer</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER = eINSTANCE
+                .getConfidentialAccessSpecification_Pcmspecificationcontainer();
 
     }
 

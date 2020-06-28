@@ -1,6 +1,6 @@
 /**
  */
-package org.palladiosimulator.pcm.confidentiality.context.set.presentation;
+package org.palladiosimulator.pcm.confidentiality.context.specification.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -153,7 +153,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import org.palladiosimulator.pcm.confidentiality.context.set.provider.SetItemProviderAdapterFactory;
+import org.palladiosimulator.pcm.confidentiality.context.specification.provider.SpecificationItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 
@@ -175,7 +175,8 @@ import org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEdi
 
 import org.palladiosimulator.pcm.confidentiality.context.provider.ContextItemProviderAdapterFactory;
 
-import org.palladiosimulator.pcm.confidentiality.context.specification.provider.SpecificationItemProviderAdapterFactory;
+import org.palladiosimulator.pcm.confidentiality.context.set.provider.SetItemProviderAdapterFactory;
+
 import org.palladiosimulator.pcm.core.composition.provider.CompositionItemProviderAdapterFactory;
 
 import org.palladiosimulator.pcm.core.entity.provider.EntityItemProviderAdapterFactory;
@@ -215,12 +216,12 @@ import org.palladiosimulator.pcm.system.provider.SystemItemProviderAdapterFactor
 import org.palladiosimulator.pcm.usagemodel.provider.UsagemodelItemProviderAdapterFactory;
 
 /**
- * This is an example of a Set model editor.
+ * This is an example of a Specification model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SetEditor extends MultiPageEditorPart
+public class SpecificationEditor extends MultiPageEditorPart
         implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
     /**
      * This keeps track of the editing domain that is used to track all changes to the model.
@@ -380,16 +381,16 @@ public class SetEditor extends MultiPageEditorPart
         public void partActivated(IWorkbenchPart p) {
             if (p instanceof ContentOutline) {
                 if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
-                    getActionBarContributor().setActiveEditor(SetEditor.this);
+                    getActionBarContributor().setActiveEditor(SpecificationEditor.this);
 
                     setCurrentViewer(contentOutlineViewer);
                 }
             } else if (p instanceof PropertySheet) {
                 if (propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
-                    getActionBarContributor().setActiveEditor(SetEditor.this);
+                    getActionBarContributor().setActiveEditor(SpecificationEditor.this);
                     handleActivate();
                 }
-            } else if (p == SetEditor.this) {
+            } else if (p == SpecificationEditor.this) {
                 handleActivate();
             }
         }
@@ -560,7 +561,7 @@ public class SetEditor extends MultiPageEditorPart
                         public void run() {
                             removedResources.addAll(visitor.getRemovedResources());
                             if (!isDirty()) {
-                                getSite().getPage().closeEditor(SetEditor.this, false);
+                                getSite().getPage().closeEditor(SpecificationEditor.this, false);
                             }
                         }
                     });
@@ -570,7 +571,7 @@ public class SetEditor extends MultiPageEditorPart
                     getSite().getShell().getDisplay().asyncExec(new Runnable() {
                         public void run() {
                             changedResources.addAll(visitor.getChangedResources());
-                            if (getSite().getPage().getActiveEditor() == SetEditor.this) {
+                            if (getSite().getPage().getActiveEditor() == SpecificationEditor.this) {
                                 handleActivate();
                             }
                         }
@@ -601,7 +602,7 @@ public class SetEditor extends MultiPageEditorPart
 
         if (!removedResources.isEmpty()) {
             if (handleDirtyConflict()) {
-                getSite().getPage().closeEditor(SetEditor.this, false);
+                getSite().getPage().closeEditor(SpecificationEditor.this, false);
             } else {
                 removedResources.clear();
                 changedResources.clear();
@@ -716,7 +717,7 @@ public class SetEditor extends MultiPageEditorPart
      * <!-- end-user-doc -->
      * @generated
      */
-    public SetEditor() {
+    public SpecificationEditor() {
         super();
         initializeEditingDomain();
     }
@@ -1066,7 +1067,7 @@ public class SetEditor extends MultiPageEditorPart
             // Create a page for the selection tree view.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         Tree tree = new Tree(composite, SWT.MULTI);
@@ -1102,7 +1103,7 @@ public class SetEditor extends MultiPageEditorPart
             // Create a page for the parent tree view.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         Tree tree = new Tree(composite, SWT.MULTI);
@@ -1131,7 +1132,7 @@ public class SetEditor extends MultiPageEditorPart
             // This is the page for the list viewer
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         return new ListViewer(composite);
@@ -1156,7 +1157,7 @@ public class SetEditor extends MultiPageEditorPart
             // This is the page for the tree viewer
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         return new TreeViewer(composite);
@@ -1183,7 +1184,7 @@ public class SetEditor extends MultiPageEditorPart
             // This is the page for the table viewer.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         return new TableViewer(composite);
@@ -1226,7 +1227,7 @@ public class SetEditor extends MultiPageEditorPart
             // This is the page for the table tree viewer.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SetEditor.this) {
+                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), SpecificationEditor.this) {
                     @Override
                     public Viewer createViewer(Composite composite) {
                         return new TreeViewer(composite);
@@ -1445,8 +1446,8 @@ public class SetEditor extends MultiPageEditorPart
                 ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
             @Override
             public void setSelectionToViewer(List<?> selection) {
-                SetEditor.this.setSelectionToViewer(selection);
-                SetEditor.this.setFocus();
+                SpecificationEditor.this.setSelectionToViewer(selection);
+                SpecificationEditor.this.setFocus();
             }
 
             @Override

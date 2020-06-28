@@ -13,6 +13,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer;
 import org.palladiosimulator.pcm.confidentiality.context.model.TypeContainer;
 
 import org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer;
+import org.palladiosimulator.pcm.confidentiality.context.specification.PCMSpecificationContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.impl.ConfidentialAccessSpecificationImpl#getSetContainer <em>Set Container</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.impl.ConfidentialAccessSpecificationImpl#getContextContainer <em>Context Container</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.impl.ConfidentialAccessSpecificationImpl#getTypeContainer <em>Type Container</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.impl.ConfidentialAccessSpecificationImpl#getPcmspecificationcontainer <em>Pcmspecificationcontainer</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,6 +115,26 @@ public class ConfidentialAccessSpecificationImpl extends CDOObjectImpl implement
      */
     public void setTypeContainer(TypeContainer newTypeContainer) {
         eSet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER, newTypeContainer);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PCMSpecificationContainer getPcmspecificationcontainer() {
+        return (PCMSpecificationContainer) eGet(
+                ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setPcmspecificationcontainer(PCMSpecificationContainer newPcmspecificationcontainer) {
+        eSet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER,
+                newPcmspecificationcontainer);
     }
 
 } //ConfidentialAccessSpecificationImpl

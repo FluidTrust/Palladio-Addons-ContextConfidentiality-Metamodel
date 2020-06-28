@@ -29,6 +29,7 @@ import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelFactory;
 
 import org.palladiosimulator.pcm.confidentiality.context.set.SetFactory;
+import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationFactory;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification} object.
@@ -63,6 +64,7 @@ public class ConfidentialAccessSpecificationItemProvider extends ItemProviderAda
             addSetContainerPropertyDescriptor(object);
             addContextContainerPropertyDescriptor(object);
             addTypeContainerPropertyDescriptor(object);
+            addPcmspecificationcontainerPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -119,6 +121,23 @@ public class ConfidentialAccessSpecificationItemProvider extends ItemProviderAda
     }
 
     /**
+     * This adds a property descriptor for the Pcmspecificationcontainer feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPcmspecificationcontainerPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+                getString("_UI_ConfidentialAccessSpecification_pcmspecificationcontainer_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_ConfidentialAccessSpecification_pcmspecificationcontainer_feature",
+                        "_UI_ConfidentialAccessSpecification_type"),
+                ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER, true, false, true,
+                null, null, null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -133,6 +152,7 @@ public class ConfidentialAccessSpecificationItemProvider extends ItemProviderAda
             childrenFeatures.add(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER);
             childrenFeatures.add(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER);
             childrenFeatures.add(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER);
+            childrenFeatures.add(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER);
         }
         return childrenFeatures;
     }
@@ -197,6 +217,7 @@ public class ConfidentialAccessSpecificationItemProvider extends ItemProviderAda
         case ContextPackage.CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER:
         case ContextPackage.CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER:
         case ContextPackage.CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER:
+        case ContextPackage.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
@@ -225,6 +246,10 @@ public class ConfidentialAccessSpecificationItemProvider extends ItemProviderAda
         newChildDescriptors
                 .add(createChildParameter(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER,
                         ModelFactory.eINSTANCE.createTypeContainer()));
+
+        newChildDescriptors.add(createChildParameter(
+                ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER,
+                SpecificationFactory.eINSTANCE.createPCMSpecificationContainer()));
     }
 
     /**

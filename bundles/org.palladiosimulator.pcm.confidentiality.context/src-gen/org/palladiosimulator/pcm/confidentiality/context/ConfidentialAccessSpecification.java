@@ -8,6 +8,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer;
 import org.palladiosimulator.pcm.confidentiality.context.model.TypeContainer;
 
 import org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer;
+import org.palladiosimulator.pcm.confidentiality.context.specification.PCMSpecificationContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ import org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getSetContainer <em>Set Container</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getContextContainer <em>Context Container</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getTypeContainer <em>Type Container</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getPcmspecificationcontainer <em>Pcmspecificationcontainer</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.pcm.confidentiality.context.ContextPackage#getConfidentialAccessSpecification()
@@ -94,5 +96,27 @@ public interface ConfidentialAccessSpecification extends CDOObject {
      * @generated
      */
     void setTypeContainer(TypeContainer value);
+
+    /**
+     * Returns the value of the '<em><b>Pcmspecificationcontainer</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Pcmspecificationcontainer</em>' containment reference.
+     * @see #setPcmspecificationcontainer(PCMSpecificationContainer)
+     * @see org.palladiosimulator.pcm.confidentiality.context.ContextPackage#getConfidentialAccessSpecification_Pcmspecificationcontainer()
+     * @model containment="true" required="true"
+     * @generated
+     */
+    PCMSpecificationContainer getPcmspecificationcontainer();
+
+    /**
+     * Sets the value of the '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getPcmspecificationcontainer <em>Pcmspecificationcontainer</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Pcmspecificationcontainer</em>' containment reference.
+     * @see #getPcmspecificationcontainer()
+     * @generated
+     */
+    void setPcmspecificationcontainer(PCMSpecificationContainer value);
 
 } // ConfidentialAccessSpecification

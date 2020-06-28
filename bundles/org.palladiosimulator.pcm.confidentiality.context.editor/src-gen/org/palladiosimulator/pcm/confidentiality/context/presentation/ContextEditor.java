@@ -173,6 +173,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.provider.ModelIte
 
 import org.palladiosimulator.pcm.confidentiality.context.set.provider.SetItemProviderAdapterFactory;
 
+import org.palladiosimulator.pcm.confidentiality.context.specification.provider.SpecificationItemProviderAdapterFactory;
 import org.palladiosimulator.pcm.core.composition.provider.CompositionItemProviderAdapterFactory;
 
 import org.palladiosimulator.pcm.core.entity.provider.EntityItemProviderAdapterFactory;
@@ -733,6 +734,7 @@ public class ContextEditor extends MultiPageEditorPart
         adapterFactory.addAdapterFactory(new ContextItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ModelItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new SetItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new SpecificationItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());

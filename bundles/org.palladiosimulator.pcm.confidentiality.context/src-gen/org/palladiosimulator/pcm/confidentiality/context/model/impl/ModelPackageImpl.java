@@ -38,6 +38,8 @@ import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
 
 import org.palladiosimulator.pcm.confidentiality.context.set.impl.SetPackageImpl;
 
+import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage;
+import org.palladiosimulator.pcm.confidentiality.context.specification.impl.SpecificationPackageImpl;
 import org.palladiosimulator.pcm.core.entity.EntityPackage;
 
 /**
@@ -162,16 +164,22 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
         registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SetPackage.eNS_URI);
         SetPackageImpl theSetPackage = (SetPackageImpl) (registeredPackage instanceof SetPackageImpl ? registeredPackage
                 : SetPackage.eINSTANCE);
+        registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI);
+        SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (registeredPackage instanceof SpecificationPackageImpl
+                ? registeredPackage
+                : SpecificationPackage.eINSTANCE);
 
         // Create package meta-data objects
         theModelPackage.createPackageContents();
         theContextPackage.createPackageContents();
         theSetPackage.createPackageContents();
+        theSpecificationPackage.createPackageContents();
 
         // Initialize created meta-data
         theModelPackage.initializePackageContents();
         theContextPackage.initializePackageContents();
         theSetPackage.initializePackageContents();
+        theSpecificationPackage.initializePackageContents();
 
         // Mark meta-data to indicate it can't be changed
         theModelPackage.freeze();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context:ConfidentialAccessSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.palladiosimulator.org/pcm/confidentiality/0.1/" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/">
+  <setContainer id="_SoSyALkaEeq3Uqhaj7n9xA">
+    <policies id="_S2g0MLkaEeq3Uqhaj7n9xA" contexts="_T1jPUbkaEeq3Uqhaj7n9xA _UOUUorkaEeq3Uqhaj7n9xA _TchEQLkaEeq3Uqhaj7n9xA"/>
+  </setContainer>
+  <contextContainer id="_SJk1sbkaEeq3Uqhaj7n9xA">
+    <context xsi:type="model:HierarchicalContext" id="_TchEQLkaEeq3Uqhaj7n9xA"/>
+    <context xsi:type="model:SingleAttributeContext" id="_T1jPUbkaEeq3Uqhaj7n9xA"/>
+    <context xsi:type="model:RelatedContextSet" id="_UOUUorkaEeq3Uqhaj7n9xA"/>
+  </contextContainer>
+  <pcmspecificationcontainer id="_RtPfALkaEeq3Uqhaj7n9xA">
+    <policyspecification id="_WdNOELkaEeq3Uqhaj7n9xA" policy="_S2g0MLkaEeq3Uqhaj7n9xA">
+      <resourcedemandingbehaviour href="newRepository.repository#_N0N_ALkaEeq3Uqhaj7n9xA"/>
+    </policyspecification>
+    <contextspecification id="_t_WpwbkaEeq3Uqhaj7n9xA" contextset="_S2g0MLkaEeq3Uqhaj7n9xA">
+      <usagescenario href="newUsageModel.usagemodel#_kfAU4LkaEeq3Uqhaj7n9xA"/>
+    </contextspecification>
+    <contextspecification id="_xTPcYbkaEeq3Uqhaj7n9xA" contextset="_S2g0MLkaEeq3Uqhaj7n9xA">
+      <entrylevelsystemcall href="newUsageModel.usagemodel#_n535QLkaEeq3Uqhaj7n9xA"/>
+    </contextspecification>
+  </pcmspecificationcontainer>
+</context:ConfidentialAccessSpecification>

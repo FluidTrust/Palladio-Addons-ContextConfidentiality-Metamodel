@@ -11,7 +11,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.palladiosimulator.pcm.confidentiality.context.model.provider,
  org.palladiosimulator.pcm.confidentiality.context.provider,
- org.palladiosimulator.pcm.confidentiality.context.set.provider
+ org.palladiosimulator.pcm.confidentiality.context.set.provider,
+ org.palladiosimulator.pcm.confidentiality.context.specification.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.pcm.confidentiality.context;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
@@ -26,5 +27,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.units;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.palladiosimulator.mdsdprofiles;bundle-version="4.2.0",
+ org.palladiosimulator.mdsdprofiles.api;bundle-version="4.2.0"
 Bundle-ActivationPolicy: lazy

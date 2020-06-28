@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_J-DlwLkaEeq3Uqhaj7n9xA" entityName="New Repository">
+  <components__Repository xsi:type="repository:BasicComponent" id="_K5ALELkaEeq3Uqhaj7n9xA" entityName="BasicComponent1">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_NxKD8LkaEeq3Uqhaj7n9xA" entityName="BasicComponent1.Interface1.OperationProvidedRole1" providedInterface__OperationProvidedRole="_LOWI8LkaEeq3Uqhaj7n9xA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_NxrBULkaEeq3Uqhaj7n9xA" describedService__SEFF="_LpksYLkaEeq3Uqhaj7n9xA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_NxroYLkaEeq3Uqhaj7n9xA" successor_AbstractAction="_NxroYbkaEeq3Uqhaj7n9xA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_NxroYbkaEeq3Uqhaj7n9xA" predecessor_AbstractAction="_NxroYLkaEeq3Uqhaj7n9xA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_N0N_ALkaEeq3Uqhaj7n9xA" describedService__SEFF="_LrszULkaEeq3Uqhaj7n9xA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_N0OmELkaEeq3Uqhaj7n9xA" successor_AbstractAction="_N0OmEbkaEeq3Uqhaj7n9xA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_N0OmEbkaEeq3Uqhaj7n9xA" predecessor_AbstractAction="_N0OmELkaEeq3Uqhaj7n9xA"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_LOWI8LkaEeq3Uqhaj7n9xA" entityName="Interface1">
+    <signatures__OperationInterface id="_LpksYLkaEeq3Uqhaj7n9xA" entityName="method1"/>
+    <signatures__OperationInterface id="_LrszULkaEeq3Uqhaj7n9xA" entityName="method2"/>
+  </interfaces__Repository>
+</repository:Repository>

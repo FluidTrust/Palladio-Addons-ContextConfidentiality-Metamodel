@@ -30,6 +30,8 @@ import org.palladiosimulator.pcm.confidentiality.context.model.impl.ModelPackage
 import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
 
 import org.palladiosimulator.pcm.confidentiality.context.set.impl.SetPackageImpl;
+import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage;
+import org.palladiosimulator.pcm.confidentiality.context.specification.impl.SpecificationPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,16 +113,22 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
         registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SetPackage.eNS_URI);
         SetPackageImpl theSetPackage = (SetPackageImpl) (registeredPackage instanceof SetPackageImpl ? registeredPackage
                 : SetPackage.eINSTANCE);
+        registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI);
+        SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (registeredPackage instanceof SpecificationPackageImpl
+                ? registeredPackage
+                : SpecificationPackage.eINSTANCE);
 
         // Create package meta-data objects
         theContextPackage.createPackageContents();
         theModelPackage.createPackageContents();
         theSetPackage.createPackageContents();
+        theSpecificationPackage.createPackageContents();
 
         // Initialize created meta-data
         theContextPackage.initializePackageContents();
         theModelPackage.initializePackageContents();
         theSetPackage.initializePackageContents();
+        theSpecificationPackage.initializePackageContents();
 
         // Mark meta-data to indicate it can't be changed
         theContextPackage.freeze();
@@ -171,6 +179,15 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getConfidentialAccessSpecification_Pcmspecificationcontainer() {
+        return (EReference) confidentialAccessSpecificationEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public ContextFactory getContextFactory() {
         return (ContextFactory) getEFactoryInstance();
     }
@@ -199,6 +216,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
         createEReference(confidentialAccessSpecificationEClass, CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER);
         createEReference(confidentialAccessSpecificationEClass, CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER);
         createEReference(confidentialAccessSpecificationEClass, CONFIDENTIAL_ACCESS_SPECIFICATION__TYPE_CONTAINER);
+        createEReference(confidentialAccessSpecificationEClass,
+                CONFIDENTIAL_ACCESS_SPECIFICATION__PCMSPECIFICATIONCONTAINER);
     }
 
     /**
@@ -228,10 +247,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
         // Obtain other dependent packages
         ModelPackage theModelPackage = (ModelPackage) EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
         SetPackage theSetPackage = (SetPackage) EPackage.Registry.INSTANCE.getEPackage(SetPackage.eNS_URI);
+        SpecificationPackage theSpecificationPackage = (SpecificationPackage) EPackage.Registry.INSTANCE
+                .getEPackage(SpecificationPackage.eNS_URI);
 
         // Add subpackages
         getESubpackages().add(theModelPackage);
         getESubpackages().add(theSetPackage);
+        getESubpackages().add(theSpecificationPackage);
 
         // Create type parameters
 
@@ -252,6 +274,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
         initEReference(getConfidentialAccessSpecification_TypeContainer(), theModelPackage.getTypeContainer(), null,
                 "typeContainer", null, 1, 1, ConfidentialAccessSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getConfidentialAccessSpecification_Pcmspecificationcontainer(),
+                theSpecificationPackage.getPCMSpecificationContainer(), null, "pcmspecificationcontainer", null, 1, 1,
+                ConfidentialAccessSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

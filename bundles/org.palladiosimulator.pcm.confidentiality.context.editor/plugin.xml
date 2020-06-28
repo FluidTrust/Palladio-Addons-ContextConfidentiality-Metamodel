@@ -90,4 +90,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationModelWizardID"
+            name="%_UI_SpecificationModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpecificationModelFile.gif">
+         <description>%_UI_SpecificationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationEditorID"
+            name="%_UI_SpecificationEditor_label"
+            icon="icons/full/obj16/SpecificationModelFile.gif"
+            extensions="specification"
+            class="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>
