@@ -1,4 +1,4 @@
-package service;
+package contextconfidentiality.service;
 
 import java.util.logging.Logger;
 

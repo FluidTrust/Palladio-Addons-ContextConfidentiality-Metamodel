@@ -17,8 +17,8 @@ import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
-import service.OpenResourceDialog;
-import service.PolicyVisibility;
+import contextconfidentiality.service.OpenResourceDialog;
+import contextconfidentiality.service.PolicyVisibility;
 
 
 public class AddPolicyToSeff implements IExternalJavaAction {

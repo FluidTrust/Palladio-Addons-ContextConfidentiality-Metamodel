@@ -6,7 +6,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.factory.SessionFactory;
@@ -21,9 +20,9 @@ import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
 import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
-import service.OpenPolicyDialog;
-import service.OpenResourceDialog;
-import service.PolicyVisibility;
+import contextconfidentiality.service.OpenPolicyDialog;
+import contextconfidentiality.service.OpenResourceDialog;
+import contextconfidentiality.service.PolicyVisibility;
 
 import java.util.logging.Logger;
 
