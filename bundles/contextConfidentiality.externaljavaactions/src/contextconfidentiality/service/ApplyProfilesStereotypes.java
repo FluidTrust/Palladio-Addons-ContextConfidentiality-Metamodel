@@ -11,14 +11,10 @@ import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
 public class ApplyProfilesStereotypes {
-
 	
-	public static void applyProfilesStereotypes(Collection<? extends EObject> arg0, ResourceDemandingSEFF seff, Policy policy) {
+	public static void applyProfilesStereotypes(Collection<? extends EObject> eObjects, ResourceDemandingSEFF seff, Policy policy) {
 		
-		//(ProfileAPI.hasProfileApplication(resource)) ? ProfileAPI.applyProfile(resource, ProfileConstants.PROFILE_NAME) :;
-		
-		for (EObject eObject : arg0) {
-			
+		for (EObject eObject : eObjects) {
 			Resource resource = eObject.eResource();
 			
 			if (!ProfileAPI.hasProfileApplication(resource)) {
