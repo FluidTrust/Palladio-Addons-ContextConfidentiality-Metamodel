@@ -17,6 +17,7 @@ import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
+import contextconfidentiality.service.ApplyProfilesStereotypes;
 import contextconfidentiality.service.OpenResourceDialog;
 import contextconfidentiality.service.PolicyVisibility;
 
@@ -50,17 +51,13 @@ public class AddPolicyToSeff implements IExternalJavaAction {
 			root.getPolicyContainer().getPolicies().add(policy);
 			policy.setEntityName("Seff_Policy");
 			
-			for (EObject eObject : arg0) {
-				if(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY)) {
-					StereotypeAPI.applyStereotype(seff, ProfileConstants.STEREOTYPE_POLICY);			
-				}
-			}
-			
-			StereotypeAPI.setTaggedValue(seff, policy, ProfileConstants.STEREOTYPE_POLICY, ProfileConstants.POLICY_STRING);
+			ApplyProfilesStereotypes.applyProfilesStereotypes(arg0, seff, policy);
 			
 			Session session = SessionManager.INSTANCE.getExistingSession(seffDiagram.eResource().getURI());				
 			session.save(new NullProgressMonitor());
 			
+			/* Only show selected Policy --> hide unselected Policies 
+			 * --> works only after initially adding Policy to SEFF */
 			PolicyVisibility.show_hide_containers(policy, seffDiagram);
 			
 			session.save(new NullProgressMonitor());

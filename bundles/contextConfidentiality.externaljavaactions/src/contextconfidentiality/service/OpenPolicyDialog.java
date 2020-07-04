@@ -23,7 +23,7 @@ public class OpenPolicyDialog {
 	
 		String[] dialog_policylist = new String[policy_list.size()];
 		int index = 0;
-    	for (Policy policy_: policy_list) {
+		for (Policy policy_: policy_list) {
     		dialog_policylist[index] = policy_.getEntityName() + "," + policy_.getId();
     		++index;
 		}
@@ -32,8 +32,6 @@ public class OpenPolicyDialog {
 		dialog.setTitle("Policy Selection");
 		dialog.setMessage("Select a Policy (* = any string, ? = any char):");
 		dialog.setElements(dialog_policylist);
-		//dialog.open();
-		
 		
 		if (dialog.open() == Dialog.OK) {
 			Object[] chosenPolicy = dialog.getResult();

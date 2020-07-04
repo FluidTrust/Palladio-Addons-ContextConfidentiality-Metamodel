@@ -14,16 +14,13 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
-import org.palladiosimulator.mdsdprofiles.api.StereotypeAPI;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
 import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
-import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
-
+import contextconfidentiality.service.ApplyProfilesStereotypes;
 import contextconfidentiality.service.OpenPolicyDialog;
 import contextconfidentiality.service.OpenResourceDialog;
 import contextconfidentiality.service.PolicyVisibility;
-
 import java.util.logging.Logger;
 
 
@@ -43,8 +40,6 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 		try {	
 			ResourceDemandingSEFF seff = (ResourceDemandingSEFF) arg1.get("container");
 			DSemanticDiagram seffDiagram = (DSemanticDiagram) arg1.get("containerView");
-			
-	
 
 			ConfidentialAccessSpecification root = (ConfidentialAccessSpecification) OpenResourceDialog.loadResourceFromXMI(seff, logger);
 			EList <Policy> ls_policy = (root != null)? root.getPolicyContainer().getPolicies() : null;
@@ -52,16 +47,8 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 			
 			if (selectedPolicy != null) {
 				logger.info("Adding " + selectedPolicy.getEntityName() + " Policy to SEFF");
-				
-				for (EObject eObject : arg0) {
-					if(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY)) { 
-						StereotypeAPI.applyStereotype(seff, ProfileConstants.STEREOTYPE_POLICY); 
-					} 
-				}
-					
-				/* Info: This somehow adds the Policy Container with all Policies 
-				 * and not only the selected Policy */
-				StereotypeAPI.setTaggedValue(seff, selectedPolicy, ProfileConstants.STEREOTYPE_POLICY, ProfileConstants.POLICY_STRING);
+			
+				ApplyProfilesStereotypes.applyProfilesStereotypes(arg0, seff, selectedPolicy);
 
 				Session session = SessionManager.INSTANCE.getExistingSession(seffDiagram.eResource().getURI());				
 				session.save(new NullProgressMonitor());
@@ -79,7 +66,6 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 				
 				/* Only show selected Policy --> hide unselected Policies 
 				 * --> works only after initially adding Policy to SEFF */
-
 				PolicyVisibility.show_hide_containers(selectedPolicy, seffDiagram);
 				new_session.save(new NullProgressMonitor());
 				logger.info("Finished adding Policy to SEFF");

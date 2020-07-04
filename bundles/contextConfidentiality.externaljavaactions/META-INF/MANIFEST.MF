@@ -10,12 +10,12 @@ Require-Bundle: org.eclipse.sirius,
  org.eclipse.ui;bundle-version="3.116.0",
  org.palladiosimulator.pcm.confidentiality.context;bundle-version="0.1.0",
  org.palladiosimulator.editors.commons.dialogs;bundle-version="4.2.0",
- org.palladiosimulator.pcm.confidentiality.ConfidentialityProfile;bundle-version="1.0.0",
  org.palladiosimulator.mdsdprofiles.api;bundle-version="4.2.0",
  org.eclipse.sirius.diagram.ui,
  org.palladiosimulator.editors.sirius.custom;bundle-version="4.2.0",
  org.modelversioning.emfprofile.application.registry.ui;bundle-version="1.0.0",
  org.eclipse.sirius.ui,
- org.eclipse.emf.transaction
+ org.eclipse.emf.transaction,
+ org.palladiosimulator.pcm.confidentiality.ConfidentialityProfile;bundle-version="1.0.0"
 Import-Package: org.eclipse.emf.common.ui.dialogs,
  org.eclipse.sirius.diagram;version="4.0.0"
