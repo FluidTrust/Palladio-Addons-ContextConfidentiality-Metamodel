@@ -13,32 +13,32 @@ import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
 
 
 /* 
- * Select Policy from Selected Resource 
+ * Select Policy from Chosen Resource 
  */
 public class OpenPolicyDialog {
-	public static EObject loadPolicyFromXMI(EList<Policy> policy_list) {	
+	public static EObject loadPolicy(EList<Policy> policyList) {	
 		Shell shell = Display.getCurrent().getActiveShell(); 
 		shell = getShell();
 		shell.open();
 	
-		String[] dialog_policylist = new String[policy_list.size()];
+		String[] dialogElementList = new String[policyList.size()];
 		int index = 0;
-		for (Policy policy_: policy_list) {
-    		dialog_policylist[index] = policy_.getEntityName() + "," + policy_.getId();
+		for (Policy policy : policyList) {
+    		dialogElementList[index] = policy.getEntityName() + "," + policy.getId();
     		++index;
 		}
 		 				
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new LabelProvider());
 		dialog.setTitle("Policy Selection");
 		dialog.setMessage("Select a Policy (* = any string, ? = any char):");
-		dialog.setElements(dialog_policylist);
+		dialog.setElements(dialogElementList);
 		
 		if (dialog.open() == Dialog.OK) {
-			Object[] chosenPolicy = dialog.getResult();
-			String[] strChosenPolicy = (chosenPolicy[0].toString().split(","));
+			Object[] selectedElement = dialog.getResult();
+			String[] selectedElementList = (selectedElement[0].toString().split(","));
 			
-			for (Policy policy : policy_list) {
-				if (policy.getId().contains(strChosenPolicy[1])) {
+			for (Policy policy : policyList) {
+				if (policy.getId().contains(selectedElementList[1])) {
 					return policy;
 				}
 			}
@@ -46,7 +46,6 @@ public class OpenPolicyDialog {
 		return null;
 	}
 			
-					
 	private static Shell getShell() {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		  if (window == null) {
@@ -54,8 +53,7 @@ public class OpenPolicyDialog {
 		    if (windows.length > 0) {
 		       return windows[0].getShell();
 		    }
-		  }
-		  else {
+		  } else {
 		    return window.getShell();
 		  }
 		  return null;

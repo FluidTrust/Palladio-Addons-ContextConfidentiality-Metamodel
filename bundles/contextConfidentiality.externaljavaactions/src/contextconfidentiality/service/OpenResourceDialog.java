@@ -16,10 +16,10 @@ import org.eclipse.ui.PlatformUI;
 
 
 /* 
- * Select Policy from chosen Resource 
+ * Select Resource from which to add policy 
  */
 public class OpenResourceDialog {
-	public static EObject loadResourceFromXMI(EObject self, Logger logger) {
+	public static ResourceObject loadResource(EObject self, Logger logger) {
 		Shell shell = Display.getCurrent().getActiveShell();		
 		shell = getShell();
 		shell.open();
@@ -31,10 +31,11 @@ public class OpenResourceDialog {
 			logger.info("Selected Resource: " + uri);
 	        ResourceSet resSet = self.eResource().getResourceSet();
 	        Resource resource = resSet.getResource(URI.createURI(uri), true);
-			EObject object = resource.getContents().get(0);
+			EObject root = resource.getContents().get(0);
 			
-			logger.info("Loaded root" + object.toString() + " from Resource");
-			return object;
+			logger.info("Loaded root " + root.toString() + " from Resource");
+			ResourceObject resourceObject =  new ResourceObject(root, resource);
+			return resourceObject;
 		}
 		return null;
 	}
@@ -46,10 +47,35 @@ public class OpenResourceDialog {
 		    if (windows.length > 0) {
 		       return windows[0].getShell();
 		    }
-		  }
-		  else {
+		  } else {
 		    return window.getShell();
 		  }
 		  return null;
+	}
+	
+	public static class ResourceObject {
+		private EObject root;
+		private Resource resource;
+		
+		public ResourceObject(EObject object, Resource resource) {
+			this.setRoot(object);
+			this.setResource(resource);		
+		}
+
+		public EObject getRoot() {
+			return root;
+		}
+
+		public void setRoot(EObject object) {
+			this.root = object;
+		}
+
+		public Resource getResource() {
+			return resource;
+		}
+
+		public void setResource(Resource resource) {
+			this.resource = resource;
+		}
 	}
 }

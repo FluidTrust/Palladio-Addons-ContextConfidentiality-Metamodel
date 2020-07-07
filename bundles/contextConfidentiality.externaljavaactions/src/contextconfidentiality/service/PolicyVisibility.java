@@ -8,8 +8,9 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
 import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
 
+/* Only show selected Policy --> hide unselected Policies */
 public class PolicyVisibility {
-	public static void show_hide_containers(Policy chosenPolicy, DSemanticDiagram diagram) {
+	public static void showHideContainers(Policy chosenPolicy, DSemanticDiagram diagram) {
 		
 		EList<DDiagramElementContainer> containers = diagram.getContainers();
 		
@@ -24,10 +25,12 @@ public class PolicyVisibility {
 					Policy policyCrossReference = (crossReference.getClass().getSimpleName().
 							contentEquals("PolicyImpl")) ? ((Policy) crossReference) : null;
 					
-					if (policyCrossReference != null && !policyCrossReference.getId().contains(chosenPolicy.getId())){
+					if (policyCrossReference != null 
+							&& !policyCrossReference.getId().contains(chosenPolicy.getId())) {
 						HideFilterHelper.INSTANCE.hide(element);
 						
-					} else if (policyCrossReference != null && policyCrossReference.getId().contains(chosenPolicy.getId())){
+					} else if (policyCrossReference != null 
+							&& policyCrossReference.getId().contains(chosenPolicy.getId())) {
 						HideFilterHelper.INSTANCE.reveal(element);
 					}
 				}

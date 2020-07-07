@@ -16,7 +16,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.HierachicalContex
 
 public class SetDirection implements IExternalJavaAction {
 
-	public SetDirection() {}
+	public SetDirection() { }
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> arg0) {
@@ -30,14 +30,15 @@ public class SetDirection implements IExternalJavaAction {
 		/* Direction can only be set for Hierarchical Contexts */
 		if (object.getClass().getSimpleName().contentEquals("HierachicalContextImpl")) {
 
-			HierachicalContext semantic = (HierachicalContext) parameters.get("element");								
-			Direction direction = loadDirectionFromXMI();
+			HierachicalContext semantic = (HierachicalContext)
+					parameters.get("element");								
+			Direction direction = loadDirection();
 			semantic.setIncludeDirection(direction);
 		}
 		
 	}
 	
-	private static Direction loadDirectionFromXMI() {
+	private static Direction loadDirection() {
 		
 		Shell shell = Display.getCurrent().getActiveShell(); 
 		shell = getShell();
@@ -51,12 +52,12 @@ public class SetDirection implements IExternalJavaAction {
 		dialog.open();
 		
 		Object[] selection = dialog.getResult();
-		String strSelection = selection[0].toString();
+		String selectionName = selection[0].toString();
 		
-		if (strSelection.contentEquals("BOTTOMUP")) {
+		if (selectionName.contentEquals("BOTTOMUP")) {
 			Direction direction = Direction.BOTTOMUP;
 			return direction;
-		} else if (strSelection.contentEquals("TOPDOWN")) {
+		} else if (selectionName.contentEquals("TOPDOWN")) {
 			Direction direction = Direction.TOPDOWN;
 			return direction;
 		}		
@@ -70,8 +71,7 @@ public class SetDirection implements IExternalJavaAction {
 		    if (windows.length > 0) {
 		       return windows[0].getShell();
 		    }
-		  }
-		  else {
+		  } else {
 		    return window.getShell();
 		  }
 		  return null;

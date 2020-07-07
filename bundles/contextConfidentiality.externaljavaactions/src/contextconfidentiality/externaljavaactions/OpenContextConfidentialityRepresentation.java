@@ -21,7 +21,7 @@ import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
 
 public class OpenContextConfidentialityRepresentation implements IExternalJavaAction {
 
-	public OpenContextConfidentialityRepresentation() {}
+	public OpenContextConfidentialityRepresentation() { }
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> arg0) {
@@ -48,7 +48,8 @@ public class OpenContextConfidentialityRepresentation implements IExternalJavaAc
 		
 		// Getting selected viewpoint and representation
 		Viewpoint viewpoint = SiriusCustomUtil.getSelectedViewpointByName(session, viewpointName);
-		RepresentationDescription description = SiriusCustomUtil.findDescription(viewpoint, representationDescriptionName);
+		RepresentationDescription description = SiriusCustomUtil.findDescription(
+				viewpoint, representationDescriptionName);
 		
 		// Find representations
 		Collection<DRepresentation> representations = DialectManager.INSTANCE.getRepresentations(root, session);
@@ -57,9 +58,9 @@ public class OpenContextConfidentialityRepresentation implements IExternalJavaAc
 			String representationName = null;
 			if (diagramName != null && !diagramName.isEmpty()) {
 				representationName = diagramName;
-			}
-			else {
-				representationName = ((description.getLabel() == null) ? description.getName() : description.getLabel());
+			} else {
+				representationName = ((description.getLabel() == null) ? description.getName() 
+						: description.getLabel());
 			}
 			DRepresentation representation = SiriusCustomUtil.createRepresentation(session, representationName,
 					description, root, new NullProgressMonitor());

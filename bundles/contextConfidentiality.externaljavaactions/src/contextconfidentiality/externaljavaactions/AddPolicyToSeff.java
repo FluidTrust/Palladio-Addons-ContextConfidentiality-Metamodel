@@ -12,7 +12,7 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.palladiosimulator.mdsdprofiles.api.StereotypeAPI;
 import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
-import org.palladiosimulator.pcm.confidentiality.context.policy.impl.*;
+import org.palladiosimulator.pcm.confidentiality.context.policy.impl.PolicyFactoryImpl;
 import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
@@ -20,19 +20,20 @@ import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 import contextconfidentiality.service.ApplyProfilesStereotypes;
 import contextconfidentiality.service.OpenResourceDialog;
 import contextconfidentiality.service.PolicyVisibility;
+import contextconfidentiality.service.OpenResourceDialog.ResourceObject;
 
 
 public class AddPolicyToSeff implements IExternalJavaAction {
 	
-	private static final Logger logger = Logger.getLogger( AddExistingPolicyToSeff.class.getName());
+	private static Logger logger = Logger.getLogger(AddExistingPolicyToSeff.class.getName());
 
-	public AddPolicyToSeff() {}
+	public AddPolicyToSeff() { }
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> arg0) {
-		for(EObject eObject : arg0){
-			return 	(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY) || 
-					StereotypeAPI.isStereotypeApplied(eObject, ProfileConstants.STEREOTYPE_POLICY));
+		for (EObject eObject : arg0) {
+			return 	(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY) 
+					|| StereotypeAPI.isStereotypeApplied(eObject, ProfileConstants.STEREOTYPE_POLICY));
 		}
 		System.out.println("Applicable false");
 		return false;
@@ -41,24 +42,27 @@ public class AddPolicyToSeff implements IExternalJavaAction {
 	@Override
 	public void execute(Collection<? extends EObject> arg0, Map<String, Object> arg1) {
 		ResourceDemandingSEFF seff = (ResourceDemandingSEFF) arg1.get("container");
-		//EObject object = (EObject)arg1.get("policy");
 		DSemanticDiagram seffDiagram = (DSemanticDiagram) arg1.get("containerView");
 		
 		Policy policy = PolicyFactoryImpl.init().createPolicy();
 		
-		ConfidentialAccessSpecification root = (ConfidentialAccessSpecification) OpenResourceDialog.loadResourceFromXMI(seff, logger);		
-		if (root != null) {
-			root.getPolicyContainer().getPolicies().add(policy);
+		ResourceObject confResourceObject = OpenResourceDialog.loadResource(seff, logger);
+		ConfidentialAccessSpecification confRoot = (confResourceObject != null 
+				&& confResourceObject.getRoot().getClass().getSimpleName()
+				.contentEquals("ConfidentialAccessSpecificationImpl")) 
+				? (ConfidentialAccessSpecification) confResourceObject.getRoot() : null;		
+		
+		if (confRoot != null) {
+			confRoot.getPolicyContainer().getPolicies().add(policy);
 			policy.setEntityName("Seff_Policy");
 			
 			ApplyProfilesStereotypes.applyProfilesStereotypes(arg0, seff, policy);
 			
-			Session session = SessionManager.INSTANCE.getExistingSession(seffDiagram.eResource().getURI());				
+			Session session = SessionManager.INSTANCE.getExistingSession(
+					seffDiagram.eResource().getURI());				
 			session.save(new NullProgressMonitor());
 			
-			/* Only show selected Policy --> hide unselected Policies 
-			 * --> works only after initially adding Policy to SEFF */
-			PolicyVisibility.show_hide_containers(policy, seffDiagram);
+			PolicyVisibility.showHideContainers(policy, seffDiagram);
 			
 			session.save(new NullProgressMonitor());
 			logger.info("Created Policy Container");

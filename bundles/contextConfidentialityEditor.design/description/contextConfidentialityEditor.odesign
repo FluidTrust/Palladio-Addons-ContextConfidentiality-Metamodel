@@ -363,7 +363,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </containerMappings>
-          <containerMappings name="PolicyContainer" domainClass="policy::PolicyContainer">
+          <containerMappings name="PolicyContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" domainClass="policy::PolicyContainer">
             <subContainerMappings name="Policy" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='ContextConfidentiality%20Representation']" domainClass="policy::Policy">
               <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:entityName">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

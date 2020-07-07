@@ -12,7 +12,8 @@ import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
 public class ApplyProfilesStereotypes {
 	
-	public static void applyProfilesStereotypes(Collection<? extends EObject> eObjects, ResourceDemandingSEFF seff, Policy policy) {
+	public static void applyProfilesStereotypes(Collection<? extends EObject> eObjects, 
+			ResourceDemandingSEFF seff, Policy policy) {
 		
 		for (EObject eObject : eObjects) {
 			Resource resource = eObject.eResource();
@@ -21,13 +22,10 @@ public class ApplyProfilesStereotypes {
 				ProfileAPI.applyProfile(resource, ProfileConstants.PROFILE_NAME);
 			}
 			
-			if(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY)) { 
+			if (StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY)) { 
 				StereotypeAPI.applyStereotype(seff, ProfileConstants.STEREOTYPE_POLICY); 
 			} 
 		}
-		
-		/* Info: This somehow adds the Policy Container with all Policies 
-		 * and not only the selected Policy */
 		StereotypeAPI.setTaggedValue(seff, policy, ProfileConstants.STEREOTYPE_POLICY, ProfileConstants.POLICY_STRING);
 	}
 }

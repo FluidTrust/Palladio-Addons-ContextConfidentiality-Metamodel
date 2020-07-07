@@ -19,6 +19,10 @@
             actionClass="contextconfidentiality.externaljavaactions.SetDirection"
             id="SetDirection">
       </javaActions>
+      <javaActions
+            actionClass="contextconfidentiality.externaljavaactions.RefreshEditor"
+            id="RefreshEditor">
+      </javaActions>
    </extension>
 
 </plugin>
