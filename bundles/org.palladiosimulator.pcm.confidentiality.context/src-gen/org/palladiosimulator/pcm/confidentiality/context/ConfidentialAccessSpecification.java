@@ -4,6 +4,7 @@ package org.palladiosimulator.pcm.confidentiality.context;
 
 import org.eclipse.emf.cdo.CDOObject;
 
+import org.eclipse.emf.common.util.EList;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer;
 import org.palladiosimulator.pcm.confidentiality.context.model.TypeContainer;
 
@@ -32,48 +33,28 @@ import org.palladiosimulator.pcm.confidentiality.context.specification.PCMSpecif
  */
 public interface ConfidentialAccessSpecification extends CDOObject {
     /**
-     * Returns the value of the '<em><b>Set Container</b></em>' containment reference.
+     * Returns the value of the '<em><b>Set Container</b></em>' containment reference list.
+     * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Set Container</em>' containment reference.
-     * @see #setSetContainer(ContextSetContainer)
+     * @return the value of the '<em>Set Container</em>' containment reference list.
      * @see org.palladiosimulator.pcm.confidentiality.context.ContextPackage#getConfidentialAccessSpecification_SetContainer()
      * @model containment="true" required="true"
      * @generated
      */
-    ContextSetContainer getSetContainer();
+    EList<ContextSetContainer> getSetContainer();
 
     /**
-     * Sets the value of the '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getSetContainer <em>Set Container</em>}' containment reference.
+     * Returns the value of the '<em><b>Context Container</b></em>' containment reference list.
+     * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Set Container</em>' containment reference.
-     * @see #getSetContainer()
-     * @generated
-     */
-    void setSetContainer(ContextSetContainer value);
-
-    /**
-     * Returns the value of the '<em><b>Context Container</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Context Container</em>' containment reference.
-     * @see #setContextContainer(ContextContainer)
+     * @return the value of the '<em>Context Container</em>' containment reference list.
      * @see org.palladiosimulator.pcm.confidentiality.context.ContextPackage#getConfidentialAccessSpecification_ContextContainer()
      * @model containment="true" required="true"
      * @generated
      */
-    ContextContainer getContextContainer();
-
-    /**
-     * Sets the value of the '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getContextContainer <em>Context Container</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Context Container</em>' containment reference.
-     * @see #getContextContainer()
-     * @generated
-     */
-    void setContextContainer(ContextContainer value);
+    EList<ContextContainer> getContextContainer();
 
     /**
      * Returns the value of the '<em><b>Type Container</b></em>' containment reference.

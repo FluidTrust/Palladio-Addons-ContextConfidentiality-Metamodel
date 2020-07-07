@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 
@@ -43,6 +45,7 @@ public class HierarchicalContextItemProvider extends ContextAttributeItemProvide
             super.getPropertyDescriptors(object);
 
             addIncludingPropertyDescriptor(object);
+            addDirectionPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -60,6 +63,22 @@ public class HierarchicalContextItemProvider extends ContextAttributeItemProvide
                         getString("_UI_PropertyDescriptor_description", "_UI_HierarchicalContext_including_feature",
                                 "_UI_HierarchicalContext_type"),
                         ModelPackage.Literals.HIERARCHICAL_CONTEXT__INCLUDING, true, false, true, null, null, null));
+    }
+
+    /**
+     * This adds a property descriptor for the Direction feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addDirectionPropertyDescriptor(Object object) {
+        itemPropertyDescriptors
+                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                        getResourceLocator(), getString("_UI_HierarchicalContext_direction_feature"),
+                        getString("_UI_PropertyDescriptor_description", "_UI_HierarchicalContext_direction_feature",
+                                "_UI_HierarchicalContext_type"),
+                        ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, true, false, false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -91,7 +110,7 @@ public class HierarchicalContextItemProvider extends ContextAttributeItemProvide
      */
     @Override
     public String getText(Object object) {
-        String label = ((HierarchicalContext) object).getId();
+        String label = ((HierarchicalContext) object).getEntityName();
         return label == null || label.length() == 0 ? getString("_UI_HierarchicalContext_type")
                 : getString("_UI_HierarchicalContext_type") + " " + label;
     }
@@ -106,6 +125,12 @@ public class HierarchicalContextItemProvider extends ContextAttributeItemProvide
     @Override
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
+
+        switch (notification.getFeatureID(HierarchicalContext.class)) {
+        case ModelPackage.HIERARCHICAL_CONTEXT__DIRECTION:
+            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            return;
+        }
         super.notifyChanged(notification);
     }
 

@@ -4,6 +4,7 @@ package org.palladiosimulator.pcm.confidentiality.context.model;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -150,13 +151,22 @@ public interface ModelPackage extends EPackage {
     int HIERARCHICAL_CONTEXT__INCLUDING = CONTEXT_ATTRIBUTE_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Direction</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HIERARCHICAL_CONTEXT__DIRECTION = CONTEXT_ATTRIBUTE_FEATURE_COUNT + 1;
+
+    /**
      * The number of structural features of the '<em>Hierarchical Context</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int HIERARCHICAL_CONTEXT_FEATURE_COUNT = CONTEXT_ATTRIBUTE_FEATURE_COUNT + 1;
+    int HIERARCHICAL_CONTEXT_FEATURE_COUNT = CONTEXT_ATTRIBUTE_FEATURE_COUNT + 2;
 
     /**
      * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.context.model.impl.SingleAttributeContextImpl <em>Single Attribute Context</em>}' class.
@@ -380,6 +390,16 @@ public interface ModelPackage extends EPackage {
     int TYPE_CONTAINER_FEATURE_COUNT = 1;
 
     /**
+     * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection <em>Include Direction</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection
+     * @see org.palladiosimulator.pcm.confidentiality.context.model.impl.ModelPackageImpl#getIncludeDirection()
+     * @generated
+     */
+    int INCLUDE_DIRECTION = 7;
+
+    /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext <em>Hierarchical Context</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -399,6 +419,17 @@ public interface ModelPackage extends EPackage {
      * @generated
      */
     EReference getHierarchicalContext_Including();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext#getDirection <em>Direction</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Direction</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext#getDirection()
+     * @see #getHierarchicalContext()
+     * @generated
+     */
+    EAttribute getHierarchicalContext_Direction();
 
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.context.model.SingleAttributeContext <em>Single Attribute Context</em>}'.
@@ -516,6 +547,16 @@ public interface ModelPackage extends EPackage {
     EReference getTypeContainer_Types();
 
     /**
+     * Returns the meta object for enum '{@link org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection <em>Include Direction</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Include Direction</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection
+     * @generated
+     */
+    EEnum getIncludeDirection();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -554,6 +595,14 @@ public interface ModelPackage extends EPackage {
          * @generated
          */
         EReference HIERARCHICAL_CONTEXT__INCLUDING = eINSTANCE.getHierarchicalContext_Including();
+
+        /**
+         * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute HIERARCHICAL_CONTEXT__DIRECTION = eINSTANCE.getHierarchicalContext_Direction();
 
         /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.context.model.impl.SingleAttributeContextImpl <em>Single Attribute Context</em>}' class.
@@ -654,6 +703,16 @@ public interface ModelPackage extends EPackage {
          * @generated
          */
         EReference TYPE_CONTAINER__TYPES = eINSTANCE.getTypeContainer_Types();
+
+        /**
+         * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection <em>Include Direction</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection
+         * @see org.palladiosimulator.pcm.confidentiality.context.model.impl.ModelPackageImpl#getIncludeDirection()
+         * @generated
+         */
+        EEnum INCLUDE_DIRECTION = eINSTANCE.getIncludeDirection();
 
     }
 

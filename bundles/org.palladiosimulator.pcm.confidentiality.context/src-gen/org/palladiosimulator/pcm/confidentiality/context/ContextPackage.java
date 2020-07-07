@@ -65,7 +65,7 @@ public interface ContextPackage extends EPackage {
     int CONFIDENTIAL_ACCESS_SPECIFICATION = 0;
 
     /**
-     * The feature id for the '<em><b>Set Container</b></em>' containment reference.
+     * The feature id for the '<em><b>Set Container</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -74,7 +74,7 @@ public interface ContextPackage extends EPackage {
     int CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER = 0;
 
     /**
-     * The feature id for the '<em><b>Context Container</b></em>' containment reference.
+     * The feature id for the '<em><b>Context Container</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -120,10 +120,10 @@ public interface ContextPackage extends EPackage {
     EClass getConfidentialAccessSpecification();
 
     /**
-     * Returns the meta object for the containment reference '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getSetContainer <em>Set Container</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getSetContainer <em>Set Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Set Container</em>'.
+     * @return the meta object for the containment reference list '<em>Set Container</em>'.
      * @see org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getSetContainer()
      * @see #getConfidentialAccessSpecification()
      * @generated
@@ -131,10 +131,10 @@ public interface ContextPackage extends EPackage {
     EReference getConfidentialAccessSpecification_SetContainer();
 
     /**
-     * Returns the meta object for the containment reference '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getContextContainer <em>Context Container</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getContextContainer <em>Context Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Context Container</em>'.
+     * @return the meta object for the containment reference list '<em>Context Container</em>'.
      * @see org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification#getContextContainer()
      * @see #getConfidentialAccessSpecification()
      * @generated
@@ -196,7 +196,7 @@ public interface ContextPackage extends EPackage {
         EClass CONFIDENTIAL_ACCESS_SPECIFICATION = eINSTANCE.getConfidentialAccessSpecification();
 
         /**
-         * The meta object literal for the '<em><b>Set Container</b></em>' containment reference feature.
+         * The meta object literal for the '<em><b>Set Container</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -205,7 +205,7 @@ public interface ContextPackage extends EPackage {
                 .getConfidentialAccessSpecification_SetContainer();
 
         /**
-         * The meta object literal for the '<em><b>Context Container</b></em>' containment reference feature.
+         * The meta object literal for the '<em><b>Context Container</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated

@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
@@ -66,9 +67,10 @@ public class ConfidentialAccessSpecificationImpl extends CDOObjectImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public ContextSetContainer getSetContainer() {
-        return (ContextSetContainer) eGet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER,
-                true);
+    @SuppressWarnings("unchecked")
+    public EList<ContextSetContainer> getSetContainer() {
+        return (EList<ContextSetContainer>) eGet(
+                ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER, true);
     }
 
     /**
@@ -76,27 +78,10 @@ public class ConfidentialAccessSpecificationImpl extends CDOObjectImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setSetContainer(ContextSetContainer newSetContainer) {
-        eSet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__SET_CONTAINER, newSetContainer);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public ContextContainer getContextContainer() {
-        return (ContextContainer) eGet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER,
-                true);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setContextContainer(ContextContainer newContextContainer) {
-        eSet(ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER, newContextContainer);
+    @SuppressWarnings("unchecked")
+    public EList<ContextContainer> getContextContainer() {
+        return (EList<ContextContainer>) eGet(
+                ContextPackage.Literals.CONFIDENTIAL_ACCESS_SPECIFICATION__CONTEXT_CONTAINER, true);
     }
 
     /**

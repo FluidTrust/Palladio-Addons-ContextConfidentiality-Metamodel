@@ -12,6 +12,7 @@ import de.uka.ipd.sdq.units.UnitsPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -28,6 +29,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextType;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
+import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelFactory;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.RelatedContextSet;
@@ -97,6 +99,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
      * @generated
      */
     private EClass typeContainerEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum includeDirectionEEnum = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -212,6 +221,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getHierarchicalContext_Direction() {
+        return (EAttribute) hierarchicalContextEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getSingleAttributeContext() {
         return singleAttributeContextEClass;
     }
@@ -311,6 +329,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EEnum getIncludeDirection() {
+        return includeDirectionEEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public ModelFactory getModelFactory() {
         return (ModelFactory) getEFactoryInstance();
     }
@@ -337,6 +364,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
         // Create classes and their features
         hierarchicalContextEClass = createEClass(HIERARCHICAL_CONTEXT);
         createEReference(hierarchicalContextEClass, HIERARCHICAL_CONTEXT__INCLUDING);
+        createEAttribute(hierarchicalContextEClass, HIERARCHICAL_CONTEXT__DIRECTION);
 
         singleAttributeContextEClass = createEClass(SINGLE_ATTRIBUTE_CONTEXT);
 
@@ -354,6 +382,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
         typeContainerEClass = createEClass(TYPE_CONTAINER);
         createEReference(typeContainerEClass, TYPE_CONTAINER__TYPES);
+
+        // Create enums
+        includeDirectionEEnum = createEEnum(INCLUDE_DIRECTION);
     }
 
     /**
@@ -403,6 +434,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
         initEReference(getHierarchicalContext_Including(), this.getContextAttribute(), null, "including", null, 0, -1,
                 HierarchicalContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getHierarchicalContext_Direction(), this.getIncludeDirection(), "direction", null, 0, 1,
+                HierarchicalContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(singleAttributeContextEClass, SingleAttributeContext.class, "SingleAttributeContext", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -436,6 +470,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
         initEReference(getTypeContainer_Types(), this.getContextType(), null, "types", null, 0, -1, TypeContainer.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        // Initialize enums and add enum literals
+        initEEnum(includeDirectionEEnum, IncludeDirection.class, "IncludeDirection");
+        addEEnumLiteral(includeDirectionEEnum, IncludeDirection.TOP_DOWN);
+        addEEnumLiteral(includeDirectionEEnum, IncludeDirection.BOTTOM_UP);
     }
 
 } //ModelPackageImpl

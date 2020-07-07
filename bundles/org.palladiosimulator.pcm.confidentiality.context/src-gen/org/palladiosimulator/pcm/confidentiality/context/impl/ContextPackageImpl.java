@@ -265,10 +265,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
         initEClass(confidentialAccessSpecificationEClass, ConfidentialAccessSpecification.class,
                 "ConfidentialAccessSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getConfidentialAccessSpecification_SetContainer(), theSetPackage.getContextSetContainer(), null,
-                "setContainer", null, 1, 1, ConfidentialAccessSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
+                "setContainer", null, 1, -1, ConfidentialAccessSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getConfidentialAccessSpecification_ContextContainer(), theModelPackage.getContextContainer(),
-                null, "contextContainer", null, 1, 1, ConfidentialAccessSpecification.class, !IS_TRANSIENT,
+                null, "contextContainer", null, 1, -1, ConfidentialAccessSpecification.class, !IS_TRANSIENT,
                 !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
                 IS_ORDERED);
         initEReference(getConfidentialAccessSpecification_TypeContainer(), theModelPackage.getTypeContainer(), null,

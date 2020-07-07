@@ -4,9 +4,9 @@
     nsPrefix="context">
   <eClassifiers xsi:type="ecore:EClass" name="ConfidentialAccessSpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="setContainer" lowerBound="1"
-        eType="#//set/ContextSetContainer" containment="true"/>
+        upperBound="-1" eType="#//set/ContextSetContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextContainer" lowerBound="1"
-        eType="#//model/ContextContainer" containment="true"/>
+        upperBound="-1" eType="#//model/ContextContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeContainer" lowerBound="1"
         eType="#//model/TypeContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pcmspecificationcontainer"
@@ -17,6 +17,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="HierarchicalContext" eSuperTypes="#//model/ContextAttribute">
       <eStructuralFeatures xsi:type="ecore:EReference" name="including" upperBound="-1"
           eType="#//model/ContextAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//model/IncludeDirection"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SingleAttributeContext" eSuperTypes="#//model/ContextAttribute"/>
     <eClassifiers xsi:type="ecore:EClass" name="RelatedContextSet" eSuperTypes="#//model/ContextAttribute">
@@ -38,6 +39,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="TypeContainer">
       <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
           eType="#//model/ContextType" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="IncludeDirection">
+      <eLiterals name="TOP_DOWN"/>
+      <eLiterals name="BOTTOM_UP" value="1"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="set" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/set/0.1/"
