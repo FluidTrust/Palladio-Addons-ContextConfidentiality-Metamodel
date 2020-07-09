@@ -4,8 +4,8 @@
    <extension
          point="org.eclipse.sirius.externalJavaAction">
       <javaActions
-            actionClass="contextconfidentiality.externaljavaactions.AddPolicyToSeff"
-            id="AddPolicyToSeff">
+            actionClass="contextconfidentiality.externaljavaactions.AddNewPolicyToSeff"
+            id="AddNewPolicyToSeff">
       </javaActions>
       <javaActions
             actionClass="contextconfidentiality.externaljavaactions.AddExistingPolicyToSeff"
@@ -18,10 +18,6 @@
       <javaActions
             actionClass="contextconfidentiality.externaljavaactions.SetDirection"
             id="SetDirection">
-      </javaActions>
-      <javaActions
-            actionClass="contextconfidentiality.externaljavaactions.RefreshEditor"
-            id="RefreshEditor">
       </javaActions>
    </extension>
 

@@ -66,7 +66,7 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 			PolicyVisibility.showHideContainers(selectedPolicy, seffDiagram);
 			
 			session.save(new NullProgressMonitor());
-			saveProject(seffDiagram);
+			refreshProject(seffDiagram);
 			
 			logger.info("Successfully added Policy to SEFF");
 		} else {
@@ -75,7 +75,7 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 		}
 	}
 	
-	public void saveProject(DSemanticDiagram seffDiagram) {		
+	public void refreshProject(DSemanticDiagram seffDiagram) {		
 		try {
 			String projectName = seffDiagram.eResource().getURI().segment(1);
 			IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
