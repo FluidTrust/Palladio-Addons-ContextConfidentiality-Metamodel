@@ -54,8 +54,8 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </containerMappings>
-          <toolSections name="New ContextAttribute Creation">
-            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Create HierachicalContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
+          <toolSections name="ContextAttributes">
+            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="HierachicalContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -64,7 +64,7 @@
                 </firstModelOperations>
               </initialOperation>
             </ownedTools>
-            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Create SingleAttributeContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
+            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="SingleAttributeContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -73,7 +73,7 @@
                 </firstModelOperations>
               </initialOperation>
             </ownedTools>
-            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Create RelatedContextSet" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
+            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="RelatedContextSet" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -137,8 +137,8 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </containerMappings>
-          <toolSections name="New Policy Creation">
-            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Create Policy" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@containerMappings[name='PolicyContainer']/@subContainerMappings[name='Policy']">
+          <toolSections name="Policy">
+            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Policy" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@containerMappings[name='PolicyContainer']/@subContainerMappings[name='Policy']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -153,7 +153,7 @@
                 <firstModelOperations xsi:type="tool:SetValue" featureName="entityName" valueExpression="var:0"/>
               </initialOperation>
             </ownedTools>
-            <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="setContexts" edgeMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@edgeMappings[name='policyContextRelation']">
+            <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="setContext" edgeMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@edgeMappings[name='policyContextRelation']">
               <sourceVariable name="source"/>
               <targetVariable name="target"/>
               <sourceViewVariable name="sourceView"/>
