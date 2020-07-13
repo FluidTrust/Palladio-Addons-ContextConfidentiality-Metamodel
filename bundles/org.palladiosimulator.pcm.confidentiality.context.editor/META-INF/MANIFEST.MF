@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.context.model.presentation,
  org.palladiosimulator.pcm.confidentiality.context.presentation,
  org.palladiosimulator.pcm.confidentiality.context.set.presentation,

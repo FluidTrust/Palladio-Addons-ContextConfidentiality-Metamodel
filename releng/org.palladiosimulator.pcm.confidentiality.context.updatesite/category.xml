@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.palladiosimulator.pcm.confidentiality.context.feature">
+      <category name="org.palladiosimulator.pcm.confidentiality.context.category"/>
+   </feature>
+   <feature id="org.palladiosimulator.pcm.confidentiality.context.feature.source">
+      <category name="org.palladiosimulator.pcm.confidentiality.context.source.category"/>
+   </feature>
+   <category-def name="org.palladiosimulator.pcm.confidentiality.context.category" label="Data Flow Confidentiality">
+   </category-def>
+   <category-def name="org.palladiosimulator.pcm.confidentiality.contextsource.category" label="Data Flow Confidentiality Developer Resources">
+   </category-def>
+</site>
+

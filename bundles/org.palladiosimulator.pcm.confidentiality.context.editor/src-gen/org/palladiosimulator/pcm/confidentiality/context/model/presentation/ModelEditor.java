@@ -176,6 +176,7 @@ import org.palladiosimulator.pcm.confidentiality.context.provider.ContextItemPro
 import org.palladiosimulator.pcm.confidentiality.context.set.provider.SetItemProviderAdapterFactory;
 
 import org.palladiosimulator.pcm.confidentiality.context.specification.provider.SpecificationItemProviderAdapterFactory;
+
 import org.palladiosimulator.pcm.core.composition.provider.CompositionItemProviderAdapterFactory;
 
 import org.palladiosimulator.pcm.core.entity.provider.EntityItemProviderAdapterFactory;
