@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated attacker -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerModelWizardID"
+            name="%_UI_AttackerModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AttackerModelFile.gif">
+         <description>%_UI_AttackerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated attacker -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerEditorID"
+            name="%_UI_AttackerEditor_label"
+            icon="icons/full/obj16/AttackerModelFile.gif"
+            extensions="attacker"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated attacker -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation.AttackSpecificationModelWizardID"
+            name="%_UI_AttackSpecificationModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation.AttackSpecificationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AttackSpecificationModelFile.gif">
+         <description>%_UI_AttackSpecificationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated attacker -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation.AttackSpecificationEditorID"
+            name="%_UI_AttackSpecificationEditor_label"
+            icon="icons/full/obj16/AttackSpecificationModelFile.gif"
+            extensions="attackspecification"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation.AttackSpecificationEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation.AttackSpecificationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

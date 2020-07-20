@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated attacker -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage"
+            genModel="model/attacker.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated attacker -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage"
+            genModel="model/attacker.genmodel"/>
+   </extension>
+
+</plugin>
