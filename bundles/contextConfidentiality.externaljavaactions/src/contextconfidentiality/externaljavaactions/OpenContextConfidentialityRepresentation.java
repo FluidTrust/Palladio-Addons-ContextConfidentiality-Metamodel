@@ -17,7 +17,7 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.palladiosimulator.editors.sirius.custom.util.SiriusCustomUtil;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
-import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
 
 public class OpenContextConfidentialityRepresentation implements IExternalJavaAction {
 
@@ -37,7 +37,7 @@ public class OpenContextConfidentialityRepresentation implements IExternalJavaAc
 		String representationDescriptionName = (String) parameters.get("RepresentationDescription");
 		String diagramName = (String) parameters.get("Diagram name");
 		
-		Policy policy = (Policy) parameters.get("element");
+		ContextSet policy = (ContextSet) parameters.get("element");
 		
 		ConfidentialAccessSpecification root = (ConfidentialAccessSpecification) policy.eContainer().eContainer();
 		

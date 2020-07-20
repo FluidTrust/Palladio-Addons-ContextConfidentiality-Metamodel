@@ -6,11 +6,11 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DDiagramElementContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
-import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
 
 /* Only show selected Policy --> hide unselected Policies */
 public class PolicyVisibility {
-	public static void showHideContainers(Policy chosenPolicy, DSemanticDiagram diagram) {
+	public static void showHideContainers(ContextSet chosenPolicy, DSemanticDiagram diagram) {
 		
 		EList<DDiagramElementContainer> containers = diagram.getContainers();
 		
@@ -21,9 +21,9 @@ public class PolicyVisibility {
 				EList<EObject> elementCrossReferences = element.eCrossReferences();
 				
 				for (EObject crossReference : elementCrossReferences) {					
-					
-					Policy policyCrossReference = (crossReference.getClass().getSimpleName().
-							contentEquals("PolicyImpl")) ? ((Policy) crossReference) : null;
+					//FIXME selecting wrong class
+				    ContextSet policyCrossReference = (crossReference.getClass().getSimpleName().
+							contentEquals("PolicyImpl")) ? ((ContextSet) crossReference) : null;
 					
 					if (policyCrossReference != null 
 							&& !policyCrossReference.getId().contains(chosenPolicy.getId())) {

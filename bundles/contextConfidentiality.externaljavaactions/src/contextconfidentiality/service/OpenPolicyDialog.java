@@ -2,28 +2,28 @@ package contextconfidentiality.service;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
 
 
 /* 
  * Select Policy from Chosen Resource 
  */
 public class OpenPolicyDialog {
-	public static EObject loadPolicy(EList<Policy> policyList) {	
+	public static EObject loadPolicy(EList<ContextSet> policyList) {	
 		Shell shell = Display.getCurrent().getActiveShell(); 
 		shell = getShell();
 		shell.open();
 	
 		String[] dialogElementList = new String[policyList.size()];
 		int index = 0;
-		for (Policy policy : policyList) {
+		for (var policy : policyList) {
     		dialogElementList[index] = policy.getEntityName() + "," + policy.getId();
     		++index;
 		}
@@ -37,7 +37,7 @@ public class OpenPolicyDialog {
 			Object[] selectedElement = dialog.getResult();
 			String[] selectedElementList = (selectedElement[0].toString().split(","));
 			
-			for (Policy policy : policyList) {
+			for (var policy : policyList) {
 				if (policy.getId().contains(selectedElementList[1])) {
 					return policy;
 				}

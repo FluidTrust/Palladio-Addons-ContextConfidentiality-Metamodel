@@ -11,8 +11,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.palladiosimulator.pcm.confidentiality.context.model.Direction;
-import org.palladiosimulator.pcm.confidentiality.context.model.HierachicalContext;
+import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
+import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
 
 public class SetDirection implements IExternalJavaAction {
 
@@ -28,17 +28,17 @@ public class SetDirection implements IExternalJavaAction {
 		Object object = (Object) parameters.get("element");
 
 		/* Direction can only be set for Hierarchical Contexts */
-		if (object.getClass().getSimpleName().contentEquals("HierachicalContextImpl")) {
+		if (object instanceof HierarchicalContext) {
 
-			HierachicalContext semantic = (HierachicalContext)
+		    HierarchicalContext semantic = (HierarchicalContext)
 					parameters.get("element");								
-			Direction direction = loadDirection();
-			semantic.setIncludeDirection(direction);
+			var direction = loadDirection();
+			semantic.setDirection(direction);
 		}
 		
 	}
 	
-	private static Direction loadDirection() {
+	private static IncludeDirection loadDirection() {
 		
 		Shell shell = Display.getCurrent().getActiveShell(); 
 		shell = getShell();
@@ -55,10 +55,10 @@ public class SetDirection implements IExternalJavaAction {
 		String selectionName = selection[0].toString();
 		
 		if (selectionName.contentEquals("BOTTOMUP")) {
-			Direction direction = Direction.BOTTOMUP;
+			IncludeDirection direction = IncludeDirection.BOTTOM_UP;
 			return direction;
 		} else if (selectionName.contentEquals("TOPDOWN")) {
-			Direction direction = Direction.TOPDOWN;
+		    IncludeDirection direction = IncludeDirection.TOP_DOWN;
 			return direction;
 		}		
 		return null;

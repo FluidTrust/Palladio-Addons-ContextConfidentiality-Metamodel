@@ -12,13 +12,13 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
-import org.palladiosimulator.mdsdprofiles.api.StereotypeAPI;
-import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
-import org.palladiosimulator.pcm.confidentiality.context.policy.PolicyContainer;
-import org.palladiosimulator.pcm.confidentiality.context.policy.impl.PolicyFactoryImpl;
-import org.palladiosimulator.pcm.confidentiality.profile.ProfileConstants;
+import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSetContainer;
+import org.palladiosimulator.pcm.confidentiality.context.set.SetFactory;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
-import contextconfidentiality.service.ApplyProfilesStereotypes;
+
+import contextconfidentiality.service.ApplyPolicyUtil;
 import contextconfidentiality.service.PolicyVisibility;
 
 /* 
@@ -32,11 +32,8 @@ public class AddNewPolicyToSeff implements IExternalJavaAction {
 	public AddNewPolicyToSeff() { }
 	@Override
 	public boolean canExecute(Collection<? extends EObject> arg0) {
-		for (EObject eObject : arg0) {
-			return 	(StereotypeAPI.isStereotypeApplicable(eObject, ProfileConstants.STEREOTYPE_POLICY) 
-					|| StereotypeAPI.isStereotypeApplied(eObject, ProfileConstants.STEREOTYPE_POLICY));
-		}
-		return false;
+	    return true;
+		//return false;
 	}
 
 	@Override
@@ -44,13 +41,13 @@ public class AddNewPolicyToSeff implements IExternalJavaAction {
 		ResourceDemandingSEFF seff = (ResourceDemandingSEFF) arg1.get("container");
 		DSemanticDiagram seffDiagram = (DSemanticDiagram) arg1.get("containerView");
 		
-		Policy policy = PolicyFactoryImpl.init().createPolicy();
+		ContextSet policy = SetFactory.eINSTANCE.createContextSet();
 		
 		EList<DDiagramElement> diagramElements = seffDiagram.getOwnedDiagramElements();
-		PolicyContainer policyContainer = null;
+		ContextSetContainer policyContainer = null;
 		for (DDiagramElement element : diagramElements) {
-			policyContainer = (element.getTarget().getClass().getSimpleName()
-					.contentEquals("PolicyContainerImpl")) ? (PolicyContainer) element.getTarget() : null;
+			policyContainer = (element.getTarget().getClass().getSimpleName() //FIXME not using the ClassName but rather the Interface
+					.contentEquals("PolicyContainerImpl")) ? (ContextSetContainer) element.getTarget() : null;
 		}
 		
 		if (policyContainer != null) {	
@@ -58,7 +55,8 @@ public class AddNewPolicyToSeff implements IExternalJavaAction {
 			policyContainer.getPolicies().add(policy);	
 			policy.setEntityName("Policy" + policy.getId());
 			
-			ApplyProfilesStereotypes.applyProfilesStereotypes(arg0, seff, policy);
+			ApplyPolicyUtil.createContextSeffSPecification(seff, policy, (ConfidentialAccessSpecification) policyContainer.eContainer());
+			
 			
 			Session session = SessionManager.INSTANCE.getExistingSession(
 					seffDiagram.eResource().getURI());				

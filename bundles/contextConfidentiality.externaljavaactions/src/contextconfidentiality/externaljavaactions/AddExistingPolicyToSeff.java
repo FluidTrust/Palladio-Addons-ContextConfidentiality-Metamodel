@@ -16,9 +16,11 @@ import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.palladiosimulator.pcm.confidentiality.context.ConfidentialAccessSpecification;
-import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
+import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
+import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationFactory;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
-import contextconfidentiality.service.ApplyProfilesStereotypes;
+
+import contextconfidentiality.service.ApplyPolicyUtil;
 import contextconfidentiality.service.OpenPolicyDialog;
 import contextconfidentiality.service.OpenResourceDialog;
 import contextconfidentiality.service.PolicyVisibility;
@@ -39,16 +41,17 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 	public void execute(Collection<? extends EObject> arg0, Map<String, Object> arg1) {
 		ResourceDemandingSEFF seff = (ResourceDemandingSEFF) arg1.get("container");
 		DSemanticDiagram seffDiagram = (DSemanticDiagram) arg1.get("containerView");
-
+	
 		ResourceObject confResourceObject = OpenResourceDialog.loadResource(seff, logger);
 		ConfidentialAccessSpecification confRoot = (confResourceObject != null 
 				&& confResourceObject.getRoot().getClass().getSimpleName()
 				.contentEquals("ConfidentialAccessSpecificationImpl")) 
 				? (ConfidentialAccessSpecification) confResourceObject.getRoot() : null;
 		
-		EList <Policy> policyList = (confRoot != null) ? confRoot.getPolicyContainer().getPolicies() : null;
-		Policy selectedPolicy = (policyList != null) 
-				? (Policy) OpenPolicyDialog.loadPolicy(policyList) : null;
+		//FIXME is now a list therefore the editor should also show a list
+		EList <ContextSet> policyList = (confRoot != null) ? confRoot.getSetContainer().get(0).getPolicies() : null;
+		ContextSet selectedPolicy = (policyList != null) 
+				? (ContextSet) OpenPolicyDialog.loadPolicy(policyList) : null;
 		
 		if (selectedPolicy != null) {
 			DAnalysisSession session = (DAnalysisSession) SessionManager.INSTANCE.getExistingSession(
@@ -58,13 +61,14 @@ public class AddExistingPolicyToSeff implements IExternalJavaAction {
 					new NullProgressMonitor());		
 			session.save(new NullProgressMonitor());
 			
-			logger.info("Adding " + selectedPolicy.getEntityName() + " Policy to SEFF");			
-			ApplyProfilesStereotypes.applyProfilesStereotypes(arg0, seff, selectedPolicy);
+			logger.info("Adding " + selectedPolicy.getEntityName() + " Policy to SEFF");
+			
+			ApplyPolicyUtil.createContextSeffSPecification(seff, selectedPolicy, confRoot);
+			
 									
 			DialectManager.INSTANCE.refresh(seffDiagram, new NullProgressMonitor());
 			
 			PolicyVisibility.showHideContainers(selectedPolicy, seffDiagram);
-			
 			session.save(new NullProgressMonitor());
 			refreshProject(seffDiagram);
 			

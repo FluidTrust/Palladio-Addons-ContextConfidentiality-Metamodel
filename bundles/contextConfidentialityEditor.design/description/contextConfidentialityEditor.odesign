@@ -13,10 +13,10 @@
         </filters>
         <diagramInitialisation>
           <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-            <subModelOperations xsi:type="tool:CreateInstance" typeName="policy::PolicyContainer" referenceName="policyContainer">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="set::ContextSet" referenceName="policyContainer">
               <subModelOperations xsi:type="tool:SetValue" featureName="entityName" valueExpression="Policy Container"/>
             </subModelOperations>
-            <subModelOperations xsi:type="tool:CreateInstance" typeName="model::Context" referenceName="contextcontainer">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="model::ContextAttribute" referenceName="contextcontainer">
               <subModelOperations xsi:type="tool:SetValue" featureName="entityName" valueExpression="Context Container"/>
             </subModelOperations>
           </firstModelOperations>
@@ -38,7 +38,7 @@
               </centerLabelStyleDescription>
             </style>
           </edgeMappings>
-          <containerMappings name="ContextContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ContextEntityName']" domainClass="model::Context">
+          <containerMappings name="ContextContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ContextEntityName']" domainClass="model::ContextAttribute">
             <subContainerMappings name="ContextAttribute" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ContextEntityName']" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='Set%20TOPDOWN_BOTTOMUP']" domainClass="model::ContextAttribute">
               <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:entityName">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -55,7 +55,7 @@
             </style>
           </containerMappings>
           <toolSections name="ContextAttributes">
-            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="HierachicalContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
+            <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="HierarchicalContext" containerMappings="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='ContextAttribute']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -121,8 +121,8 @@
               </centerLabelStyleDescription>
             </style>
           </edgeMappings>
-          <containerMappings name="PolicyContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" domainClass="policy::PolicyContainer">
-            <subContainerMappings name="Policy" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" semanticCandidatesExpression="feature:eAllContents" domainClass="policy::Policy">
+          <containerMappings name="PolicyContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" domainClass="set::ContextSetContainer">
+            <subContainerMappings name="Policy" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentations[name='ContextConfidentiality%20Diagram']/@additionalLayers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" semanticCandidatesExpression="feature:eAllContents" domainClass="set::ContextSet">
               <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:entityName">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -181,7 +181,7 @@
         <metamodel href="http://www.palladiosimulator.org/pcm/confidentiality/0.1/#//model"/>
         <metamodel href="http://www.palladiosimulator.org/pcm/confidentiality/0.1/#/"/>
         <layers name="PolicyLayer">
-          <containerMappings name="Policy" semanticCandidatesExpression="feature:eAllContents" domainClass="policy::Policy">
+          <containerMappings name="Policy" semanticCandidatesExpression="feature:eAllContents" domainClass="policy::ContextSet">
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:entityName">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -189,8 +189,8 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </containerMappings>
-          <containerMappings name="PolicyContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" domainClass="policy::PolicyContainer">
-            <subContainerMappings name="Policy" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='ContextConfidentiality%20Representation']" domainClass="policy::Policy">
+          <containerMappings name="PolicyContainer" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" domainClass="policy::ContextSetContainer">
+            <subContainerMappings name="Policy" labelDirectEdit="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='PolicyEntityName']" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="/0/@ownedViewpoints[name='ContextConfidentiality%20Viewpoint']/@ownedRepresentationExtensions[name='SEFF_Extension']/@layers[name='PolicyLayer']/@toolSections.0/@ownedTools[name='ContextConfidentiality%20Representation']" domainClass="policy::ContextSet">
               <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:entityName">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -250,7 +250,5 @@
       <ownedJavaExtensions qualifiedClassName="contextConfidentialityEditor.design.Services"/>
     </ownedViewpoints>
   </description:Group>
-  <emfprofileapplication:ProfileApplication>
-    <importedProfiles nsURI="org.palladiosimulator.pcm.confidentiality" location="platform:/resource/org.palladiosimulator.pcm.confidentiality.profile/profile.emfprofile_diagram"/>
-  </emfprofileapplication:ProfileApplication>
+  <emfprofileapplication:ProfileApplication/>
 </xmi:XMI>
