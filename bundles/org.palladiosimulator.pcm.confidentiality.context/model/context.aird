@@ -34,7 +34,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="context.ecore#//misusage"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q1zM8bbmEeq42clWkJd82g" name="model class diagram" repPath="#_Q1lxkLbmEeq42clWkJd82g" changeId="6569eeb0-08f1-4894-9a57-c3189578ac40">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q1zM8bbmEeq42clWkJd82g" name="model class diagram" repPath="#_Q1lxkLbmEeq42clWkJd82g" changeId="d9d2de5e-7c9b-43c5-8871-a2f2f76d4ba9">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="context.ecore#//model"/>
       </ownedRepresentationDescriptors>
@@ -627,6 +627,10 @@
         <children xmi:type="notation:Node" xmi:id="_RW35tLbmEeq42clWkJd82g" type="2003" element="_RWZYkLbmEeq42clWkJd82g">
           <children xmi:type="notation:Node" xmi:id="_RW4gwLbmEeq42clWkJd82g" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_RW4gwbbmEeq42clWkJd82g" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_oV8mYNfIEeqsNLG83FWXMA" type="3010" element="_oUnJoNfIEeqsNLG83FWXMA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_oV8mYdfIEeqsNLG83FWXMA" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_oV8mYtfIEeqsNLG83FWXMA"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_RW4gwrbmEeq42clWkJd82g"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_RW4gw7bmEeq42clWkJd82g"/>
           </children>
@@ -848,11 +852,20 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_RWZYkLbmEeq42clWkJd82g" name="ContextAttribute" tooltipText="" outgoingEdges="_RWrscLbmEeq42clWkJd82g" incomingEdges="_RWs6kLbmEeq42clWkJd82g _RWtho7bmEeq42clWkJd82g _RWv94LbmEeq42clWkJd82g _RWxMALbmEeq42clWkJd82g _RWxzE7bmEeq42clWkJd82g" width="12" height="10">
       <target xmi:type="ecore:EClass" href="context.ecore#//model/ContextAttribute"/>
       <semanticElements xmi:type="ecore:EClass" href="context.ecore#//model/ContextAttribute"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_RWZ_oLbmEeq42clWkJd82g" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WRGup9fNEeqsNLG83FWXMA" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_oUnJoNfIEeqsNLG83FWXMA" name="checkAccessRight(context ContextAttribute) : EBoolean" tooltipText="checkAccessRight(context) : EBoolean">
+        <target xmi:type="ecore:EOperation" href="context.ecore#//model/ContextAttribute/checkAccessRight"/>
+        <semanticElements xmi:type="ecore:EOperation" href="context.ecore#//model/ContextAttribute/checkAccessRight"/>
+        <semanticElements xmi:type="ecore:EParameter" href="context.ecore#//model/ContextAttribute/checkAccessRight/context"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_oUrbENfIEeqsNLG83FWXMA" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_RWamsLbmEeq42clWkJd82g" name="ContextContainer" tooltipText="" outgoingEdges="_RWtho7bmEeq42clWkJd82g" width="12" height="10">
       <target xmi:type="ecore:EClass" href="context.ecore#//model/ContextContainer"/>

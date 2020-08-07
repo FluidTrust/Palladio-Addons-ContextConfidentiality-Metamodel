@@ -112,4 +112,15 @@ Workflow {
 		srcPath = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
 		srcPath = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edior/src-gen"
 	}
+	
+	component = GapPatternPostProcessor {
+		folders = {
+			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/src-gen"
+			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/src"
+		}
+//		folders = {
+//			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
+//			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src"
+//		}
+	}
 }

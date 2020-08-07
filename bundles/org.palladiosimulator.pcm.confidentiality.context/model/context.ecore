@@ -26,6 +26,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextAttribute" abstract="true"
         eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eOperations name="checkAccessRight" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eParameters name="context" eType="#//model/ContextAttribute"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contexttype" eType="#//model/ContextType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextContainer" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ContextTests
+Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.context.tests
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.context.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.palladiosimulator.pcm.confidentiality.context;bundle-version="0.1.0",
+ org.junit,
+ org.junit.jupiter.api
