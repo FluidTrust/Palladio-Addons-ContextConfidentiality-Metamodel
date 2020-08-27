@@ -118,4 +118,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyModelWizardID"
+            name="%_UI_AssemblyModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AssemblyModelFile.gif">
+         <description>%_UI_AssemblyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyEditorID"
+            name="%_UI_AssemblyEditor_label"
+            icon="icons/full/obj16/AssemblyModelFile.gif"
+            extensions="assembly"
+            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

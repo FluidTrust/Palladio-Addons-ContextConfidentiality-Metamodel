@@ -12,6 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.context.model.provider,
  org.palladiosimulator.pcm.confidentiality.context.provider,
  org.palladiosimulator.pcm.confidentiality.context.set.provider,
+ org.palladiosimulator.pcm.confidentiality.context.specification.assembly.provider,
  org.palladiosimulator.pcm.confidentiality.context.specification.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.pcm.confidentiality.context;visibility:=reexport,

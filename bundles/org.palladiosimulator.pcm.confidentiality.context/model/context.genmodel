@@ -86,6 +86,13 @@
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/contextspecification"/>
       </genClasses>
+      <nestedGenPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="context.ecore#//specification/assembly">
+        <genClasses ecoreClass="context.ecore#//specification/assembly/AssemblyPolicySpecification"
+            labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AssemblyPolicySpecification/assemblyconnector"/>
+        </genClasses>
+      </nestedGenPackages>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
