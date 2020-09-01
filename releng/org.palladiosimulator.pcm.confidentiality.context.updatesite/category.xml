@@ -14,7 +14,7 @@
    </feature>
    <category-def name="org.palladiosimulator.pcm.confidentiality.context.category" label="Confidentiality Context">
    </category-def>
-   <category-def name="org.palladiosimulator.pcm.confidentiality.contextsource.category" label="Confidentiality Context Developer Resources">
+   <category-def name="org.palladiosimulator.pcm.confidentiality.context.source.category" label="Confidentiality Context Developer Resources">
    </category-def>
 </site>
 

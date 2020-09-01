@@ -79,12 +79,30 @@
           upperBound="-1" eType="#//specification/PolicySpecification" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contextspecification"
           upperBound="-1" eType="#//specification/ContextSpecification" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributeprovider" upperBound="-1"
+          eType="#//specification/assembly/AttributeProvider" containment="true"/>
     </eClassifiers>
     <eSubpackages name="assembly" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/"
         nsPrefix="asembly">
-      <eClassifiers xsi:type="ecore:EClass" name="AssemblyPolicySpecification" eSuperTypes="#//specification/PCMSpecificationContainer">
+      <eClassifiers xsi:type="ecore:EClass" name="SystemPolicySpecification" eSuperTypes="#//specification/PolicySpecification">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
+            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
+            eType="#//specification/assembly/MethodSpecification" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeProvider">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
+            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MethodSpecification">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationconnector"
+            lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/DelegationConnector"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyconnector"
-            lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyConnector"/>
+            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyConnector"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
