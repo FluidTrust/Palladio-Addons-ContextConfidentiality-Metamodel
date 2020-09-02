@@ -97,12 +97,10 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MethodSpecification">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationconnector"
-            lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/DelegationConnector"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connector" lowerBound="1"
+            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/Connector"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
             eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyconnector"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyConnector"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

@@ -9,11 +9,16 @@ import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
 import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelFactory;
+import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
+import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage;
+import org.palladiosimulator.pcm.confidentiality.context.specification.assembly.AssemblyPackage;
 
 class CheckAccessRightsHierachicalBottomTest {
     @BeforeAll
     static void init() {
+        
         ContextPackage.eINSTANCE.eClass();
+        
     }
     @Test
     void testHierachicalAttributeOneLayerBottom() {
