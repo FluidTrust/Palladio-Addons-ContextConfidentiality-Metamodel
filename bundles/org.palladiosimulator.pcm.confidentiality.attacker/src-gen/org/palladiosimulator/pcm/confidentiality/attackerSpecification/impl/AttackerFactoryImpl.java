@@ -64,8 +64,8 @@ public class AttackerFactoryImpl extends EFactoryImpl implements AttackerFactory
             return (EObject) createAttackerSpecification();
         case AttackerPackage.ATTACK_CONTAINER:
             return (EObject) createAttackContainer();
-        case AttackerPackage.VULNERABY_CONTAINER:
-            return (EObject) createVulnerabyContainer();
+        case AttackerPackage.VULNERABILITY_CONTAINER:
+            return (EObject) createVulnerabilityContainer();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -116,9 +116,9 @@ public class AttackerFactoryImpl extends EFactoryImpl implements AttackerFactory
      * <!-- end-user-doc -->
      * @generated
      */
-    public VulnerabyContainer createVulnerabyContainer() {
-        VulnerabyContainerImpl vulnerabyContainer = new VulnerabyContainerImpl();
-        return vulnerabyContainer;
+    public VulnerabilityContainer createVulnerabilityContainer() {
+        VulnerabilityContainerImpl vulnerabilityContainer = new VulnerabilityContainerImpl();
+        return vulnerabilityContainer;
     }
 
     /**

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_OxD7EO26Eeq-yNCPvHsSJQ" entityName="New Repository">
+  <components__Repository xsi:type="repository:BasicComponent" id="_zAgocO29Eeq6pfPMAIqEqg" entityName="UserDB">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_OEhoYO2-Eeq6pfPMAIqEqg" entityName="UserDB.UserDBInterface.OperationProvidedRole1" providedInterface__OperationProvidedRole="_HFVosO2-Eeq6pfPMAIqEqg"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OE1xcO2-Eeq6pfPMAIqEqg" describedService__SEFF="_J5tNwO2-Eeq6pfPMAIqEqg">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_OE2YgO2-Eeq6pfPMAIqEqg" successor_AbstractAction="_OE2Yge2-Eeq6pfPMAIqEqg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_OE2Yge2-Eeq6pfPMAIqEqg" predecessor_AbstractAction="_OE2YgO2-Eeq6pfPMAIqEqg"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_zXBD8O29Eeq6pfPMAIqEqg" entityName="UserTerminal">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Fq2AoO2-Eeq6pfPMAIqEqg" entityName="UserTerminal.Interface1.OperationProvidedRole1" providedInterface__OperationProvidedRole="_yrdlgO29Eeq6pfPMAIqEqg"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PvDQgO2-Eeq6pfPMAIqEqg" entityName="UserTerminal.UserDBInterface.OperationRequiredRole1" requiredInterface__OperationRequiredRole="_HFVosO2-Eeq6pfPMAIqEqg"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ZZn4YO2-Eeq6pfPMAIqEqg" entityName="UserTerminal.LocationInterface.OperationRequiredRole2" requiredInterface__OperationRequiredRole="_TIbAEO2-Eeq6pfPMAIqEqg"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Frfg4O2-Eeq6pfPMAIqEqg" describedService__SEFF="_0cTRAO29Eeq6pfPMAIqEqg">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_FrgH8O2-Eeq6pfPMAIqEqg" successor_AbstractAction="_faB7oO2-Eeq6pfPMAIqEqg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_FrgH8e2-Eeq6pfPMAIqEqg" predecessor_AbstractAction="_gnxhIO2-Eeq6pfPMAIqEqg"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_faB7oO2-Eeq6pfPMAIqEqg" entityName="ExternalCallAction1" predecessor_AbstractAction="_FrgH8O2-Eeq6pfPMAIqEqg" successor_AbstractAction="_gnxhIO2-Eeq6pfPMAIqEqg" calledService_ExternalService="_VeITMO2-Eeq6pfPMAIqEqg" role_ExternalService="_ZZn4YO2-Eeq6pfPMAIqEqg"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_gnxhIO2-Eeq6pfPMAIqEqg" entityName="ExternalCallAction2" predecessor_AbstractAction="_faB7oO2-Eeq6pfPMAIqEqg" successor_AbstractAction="_FrgH8e2-Eeq6pfPMAIqEqg" calledService_ExternalService="_J5tNwO2-Eeq6pfPMAIqEqg" role_ExternalService="_PvDQgO2-Eeq6pfPMAIqEqg"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_zr2EcO29Eeq6pfPMAIqEqg" entityName="LocationSystem">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_YDHYcO2-Eeq6pfPMAIqEqg" entityName="LocationSystem.LocationInterface.OperationProvidedRole1" providedInterface__OperationProvidedRole="_TIbAEO2-Eeq6pfPMAIqEqg"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_YDH_gO2-Eeq6pfPMAIqEqg" describedService__SEFF="_VeITMO2-Eeq6pfPMAIqEqg">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_YDH_ge2-Eeq6pfPMAIqEqg" successor_AbstractAction="_YDH_gu2-Eeq6pfPMAIqEqg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_YDH_gu2-Eeq6pfPMAIqEqg" predecessor_AbstractAction="_YDH_ge2-Eeq6pfPMAIqEqg"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_yrdlgO29Eeq6pfPMAIqEqg" entityName="Interface1">
+    <signatures__OperationInterface id="_0cTRAO29Eeq6pfPMAIqEqg" entityName="checkUserData"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_HFVosO2-Eeq6pfPMAIqEqg" entityName="UserDBInterface">
+    <signatures__OperationInterface id="_J5tNwO2-Eeq6pfPMAIqEqg" entityName="getUserData"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_TIbAEO2-Eeq6pfPMAIqEqg" entityName="LocationInterface">
+    <signatures__OperationInterface id="_VeITMO2-Eeq6pfPMAIqEqg" entityName="getLoation"/>
+  </interfaces__Repository>
+</repository:Repository>

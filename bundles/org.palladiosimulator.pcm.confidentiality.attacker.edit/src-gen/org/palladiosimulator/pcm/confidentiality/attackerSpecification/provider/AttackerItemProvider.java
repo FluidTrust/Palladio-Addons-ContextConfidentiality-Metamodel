@@ -93,7 +93,7 @@ public class AttackerItemProvider extends EntityItemProvider {
      */
     @Override
     public String getText(Object object) {
-        String label = ((Attacker) object).getId();
+        String label = ((Attacker) object).getEntityName();
         return label == null || label.length() == 0 ? getString("_UI_Attacker_type")
                 : getString("_UI_Attacker_type") + " " + label;
     }

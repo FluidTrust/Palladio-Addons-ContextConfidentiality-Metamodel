@@ -25,7 +25,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerC
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerFactory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSpecification;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 
@@ -75,7 +75,7 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass vulnerabyContainerEClass = null;
+    private EClass vulnerabilityContainerEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -253,8 +253,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getVulnerabyContainer() {
-        return vulnerabyContainerEClass;
+    public EClass getVulnerabilityContainer() {
+        return vulnerabilityContainerEClass;
     }
 
     /**
@@ -262,8 +262,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getVulnerabyContainer_Vulnerability() {
-        return (EReference) vulnerabyContainerEClass.getEStructuralFeatures().get(0);
+    public EReference getVulnerabilityContainer_Vulnerability() {
+        return (EReference) vulnerabilityContainerEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -309,8 +309,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         attackContainerEClass = createEClass(ATTACK_CONTAINER);
         createEReference(attackContainerEClass, ATTACK_CONTAINER__ATTACK);
 
-        vulnerabyContainerEClass = createEClass(VULNERABY_CONTAINER);
-        createEReference(vulnerabyContainerEClass, VULNERABY_CONTAINER__VULNERABILITY);
+        vulnerabilityContainerEClass = createEClass(VULNERABILITY_CONTAINER);
+        createEReference(vulnerabilityContainerEClass, VULNERABILITY_CONTAINER__VULNERABILITY);
     }
 
     /**
@@ -373,9 +373,9 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         initEReference(getAttackerSpecification_Attacks(), this.getAttackContainer(), null, "attacks", null, 0, 1,
                 AttackerSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAttackerSpecification_Vulnerabilites(), this.getVulnerabyContainer(), null, "vulnerabilites",
-                null, 0, 1, AttackerSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAttackerSpecification_Vulnerabilites(), this.getVulnerabilityContainer(), null,
+                "vulnerabilites", null, 0, 1, AttackerSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(attackContainerEClass, AttackContainer.class, "AttackContainer", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
@@ -383,11 +383,11 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
                 -1, AttackContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(vulnerabyContainerEClass, VulnerabyContainer.class, "VulnerabyContainer", !IS_ABSTRACT,
+        initEClass(vulnerabilityContainerEClass, VulnerabilityContainer.class, "VulnerabilityContainer", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getVulnerabyContainer_Vulnerability(), theAttackSpecificationPackage.getVulnerability(), null,
-                "vulnerability", null, 0, -1, VulnerabyContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getVulnerabilityContainer_Vulnerability(), theAttackSpecificationPackage.getVulnerability(),
+                null, "vulnerability", null, 0, -1, VulnerabilityContainer.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

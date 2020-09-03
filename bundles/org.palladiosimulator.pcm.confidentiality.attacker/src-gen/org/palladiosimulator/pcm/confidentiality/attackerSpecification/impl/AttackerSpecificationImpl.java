@@ -10,7 +10,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackCon
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSpecification;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,8 +98,8 @@ public class AttackerSpecificationImpl extends CDOObjectImpl implements Attacker
      * <!-- end-user-doc -->
      * @generated
      */
-    public VulnerabyContainer getVulnerabilites() {
-        return (VulnerabyContainer) eGet(AttackerPackage.Literals.ATTACKER_SPECIFICATION__VULNERABILITES, true);
+    public VulnerabilityContainer getVulnerabilites() {
+        return (VulnerabilityContainer) eGet(AttackerPackage.Literals.ATTACKER_SPECIFICATION__VULNERABILITES, true);
     }
 
     /**
@@ -107,7 +107,7 @@ public class AttackerSpecificationImpl extends CDOObjectImpl implements Attacker
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setVulnerabilites(VulnerabyContainer newVulnerabilites) {
+    public void setVulnerabilites(VulnerabilityContainer newVulnerabilites) {
         eSet(AttackerPackage.Literals.ATTACKER_SPECIFICATION__VULNERABILITES, newVulnerabilites);
     }
 

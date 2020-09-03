@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context:ConfidentialAccessSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asembly="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/" xmlns:context="http://www.palladiosimulator.org/pcm/confidentiality/0.1/" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/">
+  <setContainer id="_Oo7ycO29Eeq6pfPMAIqEqg">
+    <policies id="_RTNAUO29Eeq6pfPMAIqEqg" entityName="accessHardware" contexts="_XE-xsO29Eeq6pfPMAIqEqg"/>
+    <policies id="_syGlcO29Eeq6pfPMAIqEqg" entityName="Attacker" contexts="_abPi4O29Eeq6pfPMAIqEqg"/>
+  </setContainer>
+  <contextContainer id="_O_0ocu29Eeq6pfPMAIqEqg">
+    <context xsi:type="model:HierarchicalContext" id="_XE-xsO29Eeq6pfPMAIqEqg" entityName="root" including="_abPi4O29Eeq6pfPMAIqEqg"/>
+    <context xsi:type="model:HierarchicalContext" id="_abPi4O29Eeq6pfPMAIqEqg" entityName="Maintenance"/>
+  </contextContainer>
+  <typeContainer/>
+  <pcmspecificationcontainer id="_fi2V4-29Eeq6pfPMAIqEqg">
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_lryYIe2_Eeq6pfPMAIqEqg" entityName="accessDatabase" policy="_RTNAUO29Eeq6pfPMAIqEqg">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_E9_FMe2_Eeq6pfPMAIqEqg"/>
+    </policyspecification>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_x8kNQe2_Eeq6pfPMAIqEqg"/>
+  </pcmspecificationcontainer>
+</context:ConfidentialAccessSpecification>

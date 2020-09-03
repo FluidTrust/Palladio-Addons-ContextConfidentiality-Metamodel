@@ -162,7 +162,7 @@ public class AttackerSpecificationItemProvider extends ItemProviderAdapter imple
                 AttackerFactory.eINSTANCE.createAttackContainer()));
 
         newChildDescriptors.add(createChildParameter(AttackerPackage.Literals.ATTACKER_SPECIFICATION__VULNERABILITES,
-                AttackerFactory.eINSTANCE.createVulnerabyContainer()));
+                AttackerFactory.eINSTANCE.createVulnerabilityContainer()));
     }
 
     /**

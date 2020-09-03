@@ -59,13 +59,13 @@ public interface AttackerFactory extends EFactory {
     AttackContainer createAttackContainer();
 
     /**
-     * Returns a new object of class '<em>Vulneraby Container</em>'.
+     * Returns a new object of class '<em>Vulnerability Container</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Vulneraby Container</em>'.
+     * @return a new object of class '<em>Vulnerability Container</em>'.
      * @generated
      */
-    VulnerabyContainer createVulnerabyContainer();
+    VulnerabilityContainer createVulnerabilityContainer();
 
     /**
      * Returns the package supported by this factory.

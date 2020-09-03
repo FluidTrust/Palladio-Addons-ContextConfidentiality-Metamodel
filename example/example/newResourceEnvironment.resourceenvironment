@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" entityName="New ResourceEnvironment">
+  <linkingResources__ResourceEnvironment id="__1EDk-2-Eeq6pfPMAIqEqg" entityName="Ethernet" connectedResourceContainers_LinkingResource="_E9_FMe2_Eeq6pfPMAIqEqg _9i8P8e2-Eeq6pfPMAIqEqg _Fg8BQe2_Eeq6pfPMAIqEqg"/>
+  <linkingResources__ResourceEnvironment id="_CsbSQO2_Eeq6pfPMAIqEqg" entityName="Internet" connectedResourceContainers_LinkingResource="_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+  <resourceContainer_ResourceEnvironment id="_9i8P8e2-Eeq6pfPMAIqEqg" entityName="MachineLocationSystem"/>
+  <resourceContainer_ResourceEnvironment id="_E9_FMe2_Eeq6pfPMAIqEqg" entityName="DatabaseMachine"/>
+  <resourceContainer_ResourceEnvironment id="_Fg8BQe2_Eeq6pfPMAIqEqg" entityName="UserTerminal"/>
+</resourceenvironment:ResourceEnvironment>

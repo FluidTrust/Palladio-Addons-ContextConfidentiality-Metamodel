@@ -107,7 +107,7 @@ public class CredentialAttackItemProvider extends AttackItemProvider {
      */
     @Override
     public String getText(Object object) {
-        String label = ((CredentialAttack) object).getId();
+        String label = ((CredentialAttack) object).getEntityName();
         return label == null || label.length() == 0 ? getString("_UI_CredentialAttack_type")
                 : getString("_UI_CredentialAttack_type") + " " + label;
     }

@@ -183,26 +183,26 @@ public class AttackerItemProviderAdapterFactory extends AttackerAdapterFactory
     }
 
     /**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer} instances.
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected VulnerabyContainerItemProvider vulnerabyContainerItemProvider;
+    protected VulnerabilityContainerItemProvider vulnerabilityContainerItemProvider;
 
     /**
-     * This creates an adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer}.
+     * This creates an adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public Adapter createVulnerabyContainerAdapter() {
-        if (vulnerabyContainerItemProvider == null) {
-            vulnerabyContainerItemProvider = new VulnerabyContainerItemProvider(this);
+    public Adapter createVulnerabilityContainerAdapter() {
+        if (vulnerabilityContainerItemProvider == null) {
+            vulnerabilityContainerItemProvider = new VulnerabilityContainerItemProvider(this);
         }
 
-        return vulnerabyContainerItemProvider;
+        return vulnerabilityContainerItemProvider;
     }
 
     /**
@@ -339,8 +339,8 @@ public class AttackerItemProviderAdapterFactory extends AttackerAdapterFactory
             attackerSpecificationItemProvider.dispose();
         if (attackContainerItemProvider != null)
             attackContainerItemProvider.dispose();
-        if (vulnerabyContainerItemProvider != null)
-            vulnerabyContainerItemProvider.dispose();
+        if (vulnerabilityContainerItemProvider != null)
+            vulnerabilityContainerItemProvider.dispose();
     }
 
 }

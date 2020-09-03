@@ -25,7 +25,7 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_sDyxcKCvEeq6X7ZFKo9w0Q" name="attackSpecification class diagram" repPath="#_sDwVMKCvEeq6X7ZFKo9w0Q" changeId="1be22082-fefb-47e6-8a8c-2973219bbf07">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_lv0TUbbnEeq42clWkJd82g" name="attackerSpecification class diagram" repPath="#_lvsXgLbnEeq42clWkJd82g" changeId="6d3b03c2-a84b-4345-a629-17b96b14b0e2">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_lv0TUbbnEeq42clWkJd82g" name="attackerSpecification class diagram" repPath="#_lvsXgLbnEeq42clWkJd82g" changeId="2aa4b9bb-e791-4172-9746-23d681517721">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -712,16 +712,16 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_mRfdALbnEeq42clWkJd82g" name="VulnerabyContainer" tooltipText="" incomingEdges="_mRsRVrbnEeq42clWkJd82g" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="attacker.ecore#//VulnerabyContainer"/>
-      <semanticElements xmi:type="ecore:EClass" href="attacker.ecore#//VulnerabyContainer"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_mRfdALbnEeq42clWkJd82g" name="VulnerabilityContainer" tooltipText="" incomingEdges="_mRsRVrbnEeq42clWkJd82g" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="attacker.ecore#//VulnerabilityContainer"/>
+      <semanticElements xmi:type="ecore:EClass" href="attacker.ecore#//VulnerabilityContainer"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_mRfdAbbnEeq42clWkJd82g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_mRmxwLbnEeq42clWkJd82g" name=" vulnerability : Vulnerability" tooltipText="">
-        <target xmi:type="ecore:EReference" href="attacker.ecore#//VulnerabyContainer/vulnerability"/>
-        <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//VulnerabyContainer/vulnerability"/>
+        <target xmi:type="ecore:EReference" href="attacker.ecore#//VulnerabilityContainer/vulnerability"/>
+        <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//VulnerabilityContainer/vulnerability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mRmxwbbnEeq42clWkJd82g" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>

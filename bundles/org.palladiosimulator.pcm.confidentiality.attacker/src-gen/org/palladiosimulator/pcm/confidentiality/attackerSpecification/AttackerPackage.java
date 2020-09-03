@@ -206,14 +206,14 @@ public interface AttackerPackage extends EPackage {
     int ATTACK_CONTAINER_FEATURE_COUNT = 1;
 
     /**
-     * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabyContainerImpl <em>Vulneraby Container</em>}' class.
+     * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabilityContainerImpl <em>Vulnerability Container</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabyContainerImpl
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getVulnerabyContainer()
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabilityContainerImpl
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getVulnerabilityContainer()
      * @generated
      */
-    int VULNERABY_CONTAINER = 4;
+    int VULNERABILITY_CONTAINER = 4;
 
     /**
      * The feature id for the '<em><b>Vulnerability</b></em>' containment reference list.
@@ -222,16 +222,16 @@ public interface AttackerPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int VULNERABY_CONTAINER__VULNERABILITY = 0;
+    int VULNERABILITY_CONTAINER__VULNERABILITY = 0;
 
     /**
-     * The number of structural features of the '<em>Vulneraby Container</em>' class.
+     * The number of structural features of the '<em>Vulnerability Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VULNERABY_CONTAINER_FEATURE_COUNT = 1;
+    int VULNERABILITY_CONTAINER_FEATURE_COUNT = 1;
 
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer <em>Container</em>}'.
@@ -340,25 +340,25 @@ public interface AttackerPackage extends EPackage {
     EReference getAttackContainer_Attack();
 
     /**
-     * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer <em>Vulneraby Container</em>}'.
+     * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer <em>Vulnerability Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Vulneraby Container</em>'.
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer
+     * @return the meta object for class '<em>Vulnerability Container</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer
      * @generated
      */
-    EClass getVulnerabyContainer();
+    EClass getVulnerabilityContainer();
 
     /**
-     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer#getVulnerability <em>Vulnerability</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer#getVulnerability <em>Vulnerability</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Vulnerability</em>'.
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabyContainer#getVulnerability()
-     * @see #getVulnerabyContainer()
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer#getVulnerability()
+     * @see #getVulnerabilityContainer()
      * @generated
      */
-    EReference getVulnerabyContainer_Vulnerability();
+    EReference getVulnerabilityContainer_Vulnerability();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -471,14 +471,14 @@ public interface AttackerPackage extends EPackage {
         EReference ATTACK_CONTAINER__ATTACK = eINSTANCE.getAttackContainer_Attack();
 
         /**
-         * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabyContainerImpl <em>Vulneraby Container</em>}' class.
+         * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabilityContainerImpl <em>Vulnerability Container</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabyContainerImpl
-         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getVulnerabyContainer()
+         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.VulnerabilityContainerImpl
+         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getVulnerabilityContainer()
          * @generated
          */
-        EClass VULNERABY_CONTAINER = eINSTANCE.getVulnerabyContainer();
+        EClass VULNERABILITY_CONTAINER = eINSTANCE.getVulnerabilityContainer();
 
         /**
          * The meta object literal for the '<em><b>Vulnerability</b></em>' containment reference list feature.
@@ -486,7 +486,7 @@ public interface AttackerPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference VULNERABY_CONTAINER__VULNERABILITY = eINSTANCE.getVulnerabyContainer_Vulnerability();
+        EReference VULNERABILITY_CONTAINER__VULNERABILITY = eINSTANCE.getVulnerabilityContainer_Vulnerability();
 
     }
 

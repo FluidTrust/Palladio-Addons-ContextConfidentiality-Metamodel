@@ -73,12 +73,12 @@ public interface AttackerSpecification extends CDOObject {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Vulnerabilites</em>' containment reference.
-     * @see #setVulnerabilites(VulnerabyContainer)
+     * @see #setVulnerabilites(VulnerabilityContainer)
      * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage#getAttackerSpecification_Vulnerabilites()
      * @model containment="true"
      * @generated
      */
-    VulnerabyContainer getVulnerabilites();
+    VulnerabilityContainer getVulnerabilites();
 
     /**
      * Sets the value of the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSpecification#getVulnerabilites <em>Vulnerabilites</em>}' containment reference.
@@ -88,6 +88,6 @@ public interface AttackerSpecification extends CDOObject {
      * @see #getVulnerabilites()
      * @generated
      */
-    void setVulnerabilites(VulnerabyContainer value);
+    void setVulnerabilites(VulnerabilityContainer value);
 
 } // AttackerSpecification
