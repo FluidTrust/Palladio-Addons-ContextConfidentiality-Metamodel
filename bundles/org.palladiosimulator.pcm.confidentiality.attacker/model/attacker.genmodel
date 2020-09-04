@@ -20,6 +20,8 @@
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//Attacker" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/capabilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/compromisedComponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/compromisedResources"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//AttackerSpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/attackers"/>

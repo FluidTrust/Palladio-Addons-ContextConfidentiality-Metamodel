@@ -4,7 +4,7 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSp
 
 import org.eclipse.emf.common.util.EList;
 
-import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
+import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
 public interface CredentialAttack extends Attack {
     /**
      * Returns the value of the '<em><b>Contexts</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.context.set.ContextSet}.
+     * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Contexts</em>' reference list.
@@ -34,7 +34,7 @@ public interface CredentialAttack extends Attack {
      * @model
      * @generated
      */
-    EList<ContextSet> getContexts();
+    EList<ContextAttribute> getContexts();
 
     /**
      * Returns the value of the '<em><b>Exploits</b></em>' reference list.

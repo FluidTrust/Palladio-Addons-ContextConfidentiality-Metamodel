@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<context:ConfidentialAccessSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asembly="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/" xmlns:context="http://www.palladiosimulator.org/pcm/confidentiality/0.1/" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/">
+<context:ConfidentialAccessSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asembly="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:context="http://www.palladiosimulator.org/pcm/confidentiality/0.1/" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2">
   <setContainer id="_Oo7ycO29Eeq6pfPMAIqEqg">
     <policies id="_RTNAUO29Eeq6pfPMAIqEqg" entityName="accessHardware" contexts="_XE-xsO29Eeq6pfPMAIqEqg"/>
     <policies id="_syGlcO29Eeq6pfPMAIqEqg" entityName="Attacker" contexts="_abPi4O29Eeq6pfPMAIqEqg"/>
+    <policies id="_TRgRQO6HEeq5scioEFym-g" entityName="QueryUserData" contexts="_OeIo4e6HEeq5scioEFym-g _v5vkYe6EEeq5scioEFym-g"/>
+    <policies id="_m1yeUO6JEeqJxIE3oSjITQ" entityName="LocationProvider" contexts="_OeIo4e6HEeq5scioEFym-g"/>
+    <policies id="_Jl_RYO6LEeqJxIE3oSjITQ" entityName="Maintenance" contexts="_abPi4O29Eeq6pfPMAIqEqg"/>
+    <policies id="_f7DZcO6MEeq8PsSVKRGSHQ" entityName="accessUserTerminal" contexts="_v5vkYe6EEeq5scioEFym-g"/>
   </setContainer>
   <contextContainer id="_O_0ocu29Eeq6pfPMAIqEqg">
-    <context xsi:type="model:HierarchicalContext" id="_XE-xsO29Eeq6pfPMAIqEqg" entityName="root" including="_abPi4O29Eeq6pfPMAIqEqg"/>
+    <context xsi:type="model:HierarchicalContext" id="_XE-xsO29Eeq6pfPMAIqEqg" entityName="root" including="_abPi4O29Eeq6pfPMAIqEqg _v5vkYe6EEeq5scioEFym-g"/>
     <context xsi:type="model:HierarchicalContext" id="_abPi4O29Eeq6pfPMAIqEqg" entityName="Maintenance"/>
+    <context xsi:type="model:SingleAttributeContext" id="_v5vkYe6EEeq5scioEFym-g" entityName="CustomerService"/>
+    <context xsi:type="model:SingleAttributeContext" id="_OeIo4e6HEeq5scioEFym-g" entityName="Location A"/>
   </contextContainer>
   <typeContainer/>
   <pcmspecificationcontainer id="_fi2V4-29Eeq6pfPMAIqEqg">
-    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_lryYIe2_Eeq6pfPMAIqEqg" entityName="accessDatabase" policy="_RTNAUO29Eeq6pfPMAIqEqg">
-      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_E9_FMe2_Eeq6pfPMAIqEqg"/>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_lryYIe2_Eeq6pfPMAIqEqg" entityName="hardwareAccess" policy="_RTNAUO29Eeq6pfPMAIqEqg">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
     </policyspecification>
-    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_x8kNQe2_Eeq6pfPMAIqEqg"/>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_x8kNQe2_Eeq6pfPMAIqEqg" entityName="AccessDB">
+      <methodspecification>
+        <connector xsi:type="composition:AssemblyConnector" href="newAssembly.system#_1oErIO2-Eeq6pfPMAIqEqg"/>
+        <signature xsi:type="repository:OperationSignature" href="newRepository.repository#_J5tNwO2-Eeq6pfPMAIqEqg"/>
+      </methodspecification>
+    </policyspecification>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_pr6Pge6MEeq8PsSVKRGSHQ" entityName="policyUserTerminal" policy="_f7DZcO6MEeq8PsSVKRGSHQ">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+    </policyspecification>
+    <attributeprovider id="_Gc8nYe6MEeq8PsSVKRGSHQ" entityName="ProvidingLocationContexts" contextset="_m1yeUO6JEeqJxIE3oSjITQ">
+      <assemblycontext href="newAssembly.system#_mwxfsO2-Eeq6pfPMAIqEqg"/>
+    </attributeprovider>
+    <attributeprovider id="_Gc9Oce6MEeq8PsSVKRGSHQ" entityName="ProvidingMaintenance" contextset="_Jl_RYO6LEeqJxIE3oSjITQ">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+    </attributeprovider>
   </pcmspecificationcontainer>
 </context:ConfidentialAccessSpecification>

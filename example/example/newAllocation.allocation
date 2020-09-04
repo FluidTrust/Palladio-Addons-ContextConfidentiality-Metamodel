@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_TNaKkO26Eeq-yNCPvHsSJQ" entityName="New Allocation">
-  <allocationContexts_Allocation id="_SFfuAO2_Eeq6pfPMAIqEqg" entityName="Database Allocation">
-    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_E9_FMe2_Eeq6pfPMAIqEqg"/>
-    <assemblyContext_AllocationContext href="newAssembly.system#_nhYdQO2-Eeq6pfPMAIqEqg"/>
-  </allocationContexts_Allocation>
-  <allocationContexts_Allocation id="_SknS8O2_Eeq6pfPMAIqEqg" entityName="LocationAllocation">
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_klAj8O6IEeqE7MyXYeeR9A" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="newResourceEnvironment.resourceenvironment#/"/>
+  <system_Allocation href="newAssembly.system#_PgGLUO26Eeq-yNCPvHsSJQ"/>
+  <allocationContexts_Allocation id="_t-c_kO6IEeqE7MyXYeeR9A" entityName="Allocation_Assembly_LocationSystem">
     <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_9i8P8e2-Eeq6pfPMAIqEqg"/>
     <assemblyContext_AllocationContext href="newAssembly.system#_mwxfsO2-Eeq6pfPMAIqEqg"/>
   </allocationContexts_Allocation>
-  <allocationContexts_Allocation id="_iA4MoO2_Eeq6pfPMAIqEqg" entityName="TerminalAllocation">
+  <allocationContexts_Allocation id="_uhgCQO6IEeqE7MyXYeeR9A" entityName="Allocation_Assembly_UserDB">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_E9_FMe2_Eeq6pfPMAIqEqg"/>
+    <assemblyContext_AllocationContext href="newAssembly.system#_nhYdQO2-Eeq6pfPMAIqEqg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_uvQxcO6IEeqE7MyXYeeR9A" entityName="Allocation_Assembly_UserTerminal">
     <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
     <assemblyContext_AllocationContext href="newAssembly.system#_oO9U8O2-Eeq6pfPMAIqEqg"/>
   </allocationContexts_Allocation>

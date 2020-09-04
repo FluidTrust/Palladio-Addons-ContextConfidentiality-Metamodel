@@ -34,8 +34,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.Atta
 
 import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 
-import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
-
+import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 import org.palladiosimulator.pcm.core.entity.EntityPackage;
 
 /**
@@ -294,7 +293,7 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
 
         // Obtain other dependent packages
         EntityPackage theEntityPackage = (EntityPackage) EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-        SetPackage theSetPackage = (SetPackage) EPackage.Registry.INSTANCE.getEPackage(SetPackage.eNS_URI);
+        ModelPackage theModelPackage = (ModelPackage) EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
 
         // Create type parameters
 
@@ -311,9 +310,9 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
 
         initEClass(credentialAttackEClass, CredentialAttack.class, "CredentialAttack", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getCredentialAttack_Contexts(), theSetPackage.getContextSet(), null, "contexts", null, 0, -1,
-                CredentialAttack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getCredentialAttack_Contexts(), theModelPackage.getContextAttribute(), null, "contexts", null, 0,
+                -1, CredentialAttack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getCredentialAttack_Exploits(), this.getCredentialVulnerability(), null, "exploits", null, 0, -1,
                 CredentialAttack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -10,7 +10,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialVulnerability;
 
-import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
+import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,8 +52,8 @@ public class CredentialAttackImpl extends AttackImpl implements CredentialAttack
      * @generated
      */
     @SuppressWarnings("unchecked")
-    public EList<ContextSet> getContexts() {
-        return (EList<ContextSet>) eGet(AttackSpecificationPackage.Literals.CREDENTIAL_ATTACK__CONTEXTS, true);
+    public EList<ContextAttribute> getContexts() {
+        return (EList<ContextAttribute>) eGet(AttackSpecificationPackage.Literals.CREDENTIAL_ATTACK__CONTEXTS, true);
     }
 
     /**

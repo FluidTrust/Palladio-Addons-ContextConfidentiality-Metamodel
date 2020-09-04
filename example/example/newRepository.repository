@@ -32,6 +32,6 @@
     <signatures__OperationInterface id="_J5tNwO2-Eeq6pfPMAIqEqg" entityName="getUserData"/>
   </interfaces__Repository>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_TIbAEO2-Eeq6pfPMAIqEqg" entityName="LocationInterface">
-    <signatures__OperationInterface id="_VeITMO2-Eeq6pfPMAIqEqg" entityName="getLoation"/>
+    <signatures__OperationInterface id="_VeITMO2-Eeq6pfPMAIqEqg" entityName="getLocation"/>
   </interfaces__Repository>
 </repository:Repository>

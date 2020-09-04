@@ -33,7 +33,9 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 
 import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 
+import org.palladiosimulator.pcm.core.composition.CompositionPackage;
 import org.palladiosimulator.pcm.core.entity.EntityPackage;
+import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -199,6 +201,24 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getAttacker_CompromisedComponents() {
+        return (EReference) attackerEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getAttacker_CompromisedResources() {
+        return (EReference) attackerEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getAttackerSpecification() {
         return attackerSpecificationEClass;
     }
@@ -300,6 +320,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 
         attackerEClass = createEClass(ATTACKER);
         createEReference(attackerEClass, ATTACKER__CAPABILITIES);
+        createEReference(attackerEClass, ATTACKER__COMPROMISED_COMPONENTS);
+        createEReference(attackerEClass, ATTACKER__COMPROMISED_RESOURCES);
 
         attackerSpecificationEClass = createEClass(ATTACKER_SPECIFICATION);
         createEReference(attackerSpecificationEClass, ATTACKER_SPECIFICATION__ATTACKERS);
@@ -341,6 +363,10 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         AttackSpecificationPackage theAttackSpecificationPackage = (AttackSpecificationPackage) EPackage.Registry.INSTANCE
                 .getEPackage(AttackSpecificationPackage.eNS_URI);
         EntityPackage theEntityPackage = (EntityPackage) EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+        CompositionPackage theCompositionPackage = (CompositionPackage) EPackage.Registry.INSTANCE
+                .getEPackage(CompositionPackage.eNS_URI);
+        ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage) EPackage.Registry.INSTANCE
+                .getEPackage(ResourceenvironmentPackage.eNS_URI);
 
         // Add subpackages
         getESubpackages().add(theAttackSpecificationPackage);
@@ -364,6 +390,12 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         initEReference(getAttacker_Capabilities(), theAttackSpecificationPackage.getAttack(), null, "capabilities",
                 null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAttacker_CompromisedComponents(), theCompositionPackage.getAssemblyContext(), null,
+                "compromisedComponents", null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAttacker_CompromisedResources(), theResourceenvironmentPackage.getResourceContainer(), null,
+                "compromisedResources", null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(attackerSpecificationEClass, AttackerSpecification.class, "AttackerSpecification", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
