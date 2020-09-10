@@ -7,7 +7,7 @@
   </attackers>
   <attacks>
     <attack xsi:type="attack:CredentialAttack" id="_pIoEsO26Eeq-yNCPvHsSJQ" entityName="StolenCustomerCredentials" exploits="_HeBq8O29Eeq6pfPMAIqEqg">
-      <contexts xsi:type="model:SingleAttributeContext" href="My.context#_v5vkYe6EEeq5scioEFym-g"/>
+      <contexts xsi:type="model:HierarchicalContext" href="My.context#_XE-xsO29Eeq6pfPMAIqEqg"/>
     </attack>
   </attacks>
   <vulnerabilites>

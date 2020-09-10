@@ -55,6 +55,9 @@
           eType="#//set/ContextSet" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextSet" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eOperations name="checkAccessRight" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eParameters name="set" eType="#//set/ContextSet"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
           eType="#//model/ContextAttribute"/>
     </eClassifiers>

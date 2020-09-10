@@ -61,6 +61,9 @@
       <genClasses ecoreClass="context.ecore#//set/ContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//set/ContextSet/contexts"/>
+        <genOperations ecoreOperation="context.ecore#//set/ContextSet/checkAccessRight">
+          <genParameters ecoreParameter="context.ecore#//set/ContextSet/checkAccessRight/set"/>
+        </genOperations>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Specification" disposableProviderFactory="true" childCreationExtenders="true"

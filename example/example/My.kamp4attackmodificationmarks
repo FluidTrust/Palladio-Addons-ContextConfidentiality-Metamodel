@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<KAMP4attackModificationmarks:KAMP4attackModificationRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KAMP4attackModificationmarks="http://sdq.ipd.kit.edu/KAMP4attackModificationmarks/1.0" xmlns:attacker="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/" xmlns:modificationmarks="http://sdq.ipd.kit.edu/Modificationmarks/1.0">
+<KAMP4attackModificationmarks:KAMP4attackModificationRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KAMP4attackModificationmarks="http://sdq.ipd.kit.edu/KAMP4attackModificationmarks/1.0" xmlns:attacker="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2">
   <seedModifications xsi:type="KAMP4attackModificationmarks:KAMP4attackSeedModifications">
     <attackcomponent>
       <affectedElement xsi:type="attacker:Attacker" href="My.attacker#_nXTRAO26Eeq-yNCPvHsSJQ"/>
+      <causingElements xsi:type="attacker:Attacker" href="My.attacker#_nXTRAO26Eeq-yNCPvHsSJQ"/>
     </attackcomponent>
   </seedModifications>
-  <changePropagationSteps xsi:type="modificationmarks:ChangePropagationStep"/>
+  <changePropagationSteps xsi:type="KAMP4attackModificationmarks:CredentialChange">
+    <compromisedresource toolderived="true">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+    </compromisedresource>
+    <compromisedassembly>
+      <affectedElement xsi:type="composition:AssemblyContext" href="newAssembly.system#_oO9U8O2-Eeq6pfPMAIqEqg"/>
+    </compromisedassembly>
+    <contextchange>
+      <affectedElement xsi:type="model:HierarchicalContext" href="My.context#_XE-xsO29Eeq6pfPMAIqEqg"/>
+    </contextchange>
+    <contextchange toolderived="true">
+      <affectedElement xsi:type="model:HierarchicalContext" href="My.context#_abPi4O29Eeq6pfPMAIqEqg"/>
+    </contextchange>
+  </changePropagationSteps>
 </KAMP4attackModificationmarks:KAMP4attackModificationRepository>
