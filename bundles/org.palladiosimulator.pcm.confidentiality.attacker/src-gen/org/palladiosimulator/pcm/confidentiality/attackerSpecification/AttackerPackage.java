@@ -141,13 +141,22 @@ public interface AttackerPackage extends EPackage {
     int ATTACKER__COMPROMISED_RESOURCES = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Compromised Linking Resources</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ATTACKER__COMPROMISED_LINKING_RESOURCES = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Attacker</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ATTACKER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+    int ATTACKER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
     /**
      * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerSpecificationImpl <em>Specification</em>}' class.
@@ -316,6 +325,17 @@ public interface AttackerPackage extends EPackage {
     EReference getAttacker_CompromisedResources();
 
     /**
+     * Returns the meta object for the reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCompromisedLinkingResources <em>Compromised Linking Resources</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Compromised Linking Resources</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCompromisedLinkingResources()
+     * @see #getAttacker()
+     * @generated
+     */
+    EReference getAttacker_CompromisedLinkingResources();
+
+    /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSpecification <em>Specification</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -473,6 +493,14 @@ public interface AttackerPackage extends EPackage {
          * @generated
          */
         EReference ATTACKER__COMPROMISED_RESOURCES = eINSTANCE.getAttacker_CompromisedResources();
+
+        /**
+         * The meta object literal for the '<em><b>Compromised Linking Resources</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ATTACKER__COMPROMISED_LINKING_RESOURCES = eINSTANCE.getAttacker_CompromisedLinkingResources();
 
         /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerSpecificationImpl <em>Specification</em>}' class.

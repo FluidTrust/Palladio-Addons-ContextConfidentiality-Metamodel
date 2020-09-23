@@ -99,6 +99,8 @@
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/resourcecontainer"/>
           <genFeatures children="true" createChild="true" propertySortChoices="true"
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/methodspecification"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/linkingresource"/>
         </genClasses>
         <genClasses ecoreClass="context.ecore#//specification/assembly/AttributeProvider"
             labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
@@ -108,6 +110,8 @@
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/assemblycontext"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/contextset"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/linkingresource"/>
         </genClasses>
         <genClasses ecoreClass="context.ecore#//specification/assembly/MethodSpecification">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"

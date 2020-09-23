@@ -8,6 +8,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.resourceenvironment.LinkingResource;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**
@@ -22,6 +23,7 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCapabilities <em>Capabilities</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCompromisedComponents <em>Compromised Components</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCompromisedResources <em>Compromised Resources</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker#getCompromisedLinkingResources <em>Compromised Linking Resources</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage#getAttacker()
@@ -64,5 +66,17 @@ public interface Attacker extends Entity {
      * @generated
      */
     EList<ResourceContainer> getCompromisedResources();
+
+    /**
+     * Returns the value of the '<em><b>Compromised Linking Resources</b></em>' reference list.
+     * The list contents are of type {@link org.palladiosimulator.pcm.resourceenvironment.LinkingResource}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Compromised Linking Resources</em>' reference list.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage#getAttacker_CompromisedLinkingResources()
+     * @model
+     * @generated
+     */
+    EList<LinkingResource> getCompromisedLinkingResources();
 
 } // Attacker

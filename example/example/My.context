@@ -7,6 +7,7 @@
     <policies id="_m1yeUO6JEeqJxIE3oSjITQ" entityName="LocationProvider" contexts="_OeIo4e6HEeq5scioEFym-g"/>
     <policies id="_Jl_RYO6LEeqJxIE3oSjITQ" entityName="Maintenance" contexts="_abPi4O29Eeq6pfPMAIqEqg"/>
     <policies id="_f7DZcO6MEeq8PsSVKRGSHQ" entityName="accessUserTerminal" contexts="_v5vkYe6EEeq5scioEFym-g"/>
+    <policies id="_JTyPEPf3EeqdXvAYFrj-Sw" entityName="ProvidingCustomerService" contexts="_v5vkYe6EEeq5scioEFym-g"/>
   </setContainer>
   <contextContainer id="_O_0ocu29Eeq6pfPMAIqEqg">
     <context xsi:type="model:HierarchicalContext" id="_XE-xsO29Eeq6pfPMAIqEqg" entityName="root" including="_abPi4O29Eeq6pfPMAIqEqg _v5vkYe6EEeq5scioEFym-g"/>
@@ -16,8 +17,14 @@
   </contextContainer>
   <typeContainer/>
   <pcmspecificationcontainer id="_fi2V4-29Eeq6pfPMAIqEqg">
-    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_lryYIe2_Eeq6pfPMAIqEqg" entityName="hardwareAccess" policy="_RTNAUO29Eeq6pfPMAIqEqg">
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_lryYIe2_Eeq6pfPMAIqEqg" entityName="hardwareAccessUserTerminal" policy="_RTNAUO29Eeq6pfPMAIqEqg _Jl_RYO6LEeqJxIE3oSjITQ">
       <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+    </policyspecification>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_jbUOEff2EeqdXvAYFrj-Sw" entityName="hardwareAccessDB" policy="_RTNAUO29Eeq6pfPMAIqEqg">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_E9_FMe2_Eeq6pfPMAIqEqg"/>
+    </policyspecification>
+    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_qh85kff2EeqdXvAYFrj-Sw" entityName="hardwareAccessLocationSystem" policy="_RTNAUO29Eeq6pfPMAIqEqg _Jl_RYO6LEeqJxIE3oSjITQ">
+      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_9i8P8e2-Eeq6pfPMAIqEqg"/>
     </policyspecification>
     <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_x8kNQe2_Eeq6pfPMAIqEqg" entityName="AccessDB">
       <methodspecification>
@@ -25,14 +32,14 @@
         <signature xsi:type="repository:OperationSignature" href="newRepository.repository#_J5tNwO2-Eeq6pfPMAIqEqg"/>
       </methodspecification>
     </policyspecification>
-    <policyspecification xsi:type="asembly:SystemPolicySpecification" id="_pr6Pge6MEeq8PsSVKRGSHQ" entityName="policyUserTerminal" policy="_f7DZcO6MEeq8PsSVKRGSHQ">
-      <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
-    </policyspecification>
     <attributeprovider id="_Gc8nYe6MEeq8PsSVKRGSHQ" entityName="ProvidingLocationContexts" contextset="_m1yeUO6JEeqJxIE3oSjITQ">
       <assemblycontext href="newAssembly.system#_mwxfsO2-Eeq6pfPMAIqEqg"/>
     </attributeprovider>
     <attributeprovider id="_Gc9Oce6MEeq8PsSVKRGSHQ" entityName="ProvidingMaintenance" contextset="_Jl_RYO6LEeqJxIE3oSjITQ">
       <resourcecontainer href="newResourceEnvironment.resourceenvironment#_Fg8BQe2_Eeq6pfPMAIqEqg"/>
+    </attributeprovider>
+    <attributeprovider id="_B1eqc_f3EeqdXvAYFrj-Sw" entityName="UserTerminal" contextset="_JTyPEPf3EeqdXvAYFrj-Sw">
+      <assemblycontext href="newAssembly.system#_oO9U8O2-Eeq6pfPMAIqEqg"/>
     </attributeprovider>
   </pcmspecificationcontainer>
 </context:ConfidentialAccessSpecification>

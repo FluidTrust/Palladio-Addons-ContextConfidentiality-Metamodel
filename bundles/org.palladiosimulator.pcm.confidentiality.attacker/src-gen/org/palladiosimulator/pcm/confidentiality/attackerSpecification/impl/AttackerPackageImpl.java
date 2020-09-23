@@ -219,6 +219,15 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getAttacker_CompromisedLinkingResources() {
+        return (EReference) attackerEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getAttackerSpecification() {
         return attackerSpecificationEClass;
     }
@@ -322,6 +331,7 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         createEReference(attackerEClass, ATTACKER__CAPABILITIES);
         createEReference(attackerEClass, ATTACKER__COMPROMISED_COMPONENTS);
         createEReference(attackerEClass, ATTACKER__COMPROMISED_RESOURCES);
+        createEReference(attackerEClass, ATTACKER__COMPROMISED_LINKING_RESOURCES);
 
         attackerSpecificationEClass = createEClass(ATTACKER_SPECIFICATION);
         createEReference(attackerSpecificationEClass, ATTACKER_SPECIFICATION__ATTACKERS);
@@ -396,6 +406,9 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
         initEReference(getAttacker_CompromisedResources(), theResourceenvironmentPackage.getResourceContainer(), null,
                 "compromisedResources", null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAttacker_CompromisedLinkingResources(), theResourceenvironmentPackage.getLinkingResource(),
+                null, "compromisedLinkingResources", null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(attackerSpecificationEClass, AttackerSpecification.class, "AttackerSpecification", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

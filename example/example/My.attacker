@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <attacker:AttackerSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attack="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/" xmlns:attacker="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/" xmlns:model="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/">
   <attackers>
-    <attacker id="_nXTRAO26Eeq-yNCPvHsSJQ" entityName="StolenCustomer" capabilities="_pIoEsO26Eeq-yNCPvHsSJQ">
-      <compromisedComponents href="newAssembly.system#_oO9U8O2-Eeq6pfPMAIqEqg"/>
-    </attacker>
+    <attacker id="_nXTRAO26Eeq-yNCPvHsSJQ" entityName="StolenCustomer" capabilities="_pIoEsO26Eeq-yNCPvHsSJQ"/>
   </attackers>
   <attacks>
     <attack xsi:type="attack:CredentialAttack" id="_pIoEsO26Eeq-yNCPvHsSJQ" entityName="StolenCustomerCredentials" exploits="_HeBq8O29Eeq6pfPMAIqEqg">

@@ -13,6 +13,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
+import org.palladiosimulator.pcm.resourceenvironment.LinkingResource;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**
@@ -26,6 +27,7 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerImpl#getCapabilities <em>Capabilities</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerImpl#getCompromisedComponents <em>Compromised Components</em>}</li>
  *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerImpl#getCompromisedResources <em>Compromised Resources</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerImpl#getCompromisedLinkingResources <em>Compromised Linking Resources</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +80,16 @@ public class AttackerImpl extends EntityImpl implements Attacker {
     @SuppressWarnings("unchecked")
     public EList<ResourceContainer> getCompromisedResources() {
         return (EList<ResourceContainer>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_RESOURCES, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    public EList<LinkingResource> getCompromisedLinkingResources() {
+        return (EList<LinkingResource>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_LINKING_RESOURCES, true);
     }
 
 } //AttackerImpl
