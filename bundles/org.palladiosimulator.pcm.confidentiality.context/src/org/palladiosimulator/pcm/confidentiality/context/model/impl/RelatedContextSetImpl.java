@@ -74,6 +74,10 @@ public class RelatedContextSetImpl extends ContextAttributeImpl implements Relat
         
         if(EcoreUtil.equals(this, context))
             return true;     
+        if(context == null)
+            return false;
+        if(!EcoreUtil.equals(this.getContexttype(), context.getContexttype()))
+            return false;
         if(!(context instanceof RelatedContextSet))
             return false;                   
         var contextAttribute = (RelatedContextSet) context;

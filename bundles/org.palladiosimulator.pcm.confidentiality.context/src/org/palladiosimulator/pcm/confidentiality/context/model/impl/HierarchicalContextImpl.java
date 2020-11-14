@@ -81,6 +81,10 @@ public class HierarchicalContextImpl extends ContextAttributeImpl implements Hie
     public boolean checkAccessRight(ContextAttribute context) {
         if (EcoreUtil.equals(this, context))
             return true;
+        if(context == null)
+            return false;
+        if(!EcoreUtil.equals(this.getContexttype(), context.getContexttype()))
+            return false;
         switch (getDirection().getValue()) {
         case IncludeDirection.BOTTOM_UP_VALUE:
             var includes = this.getIncluding();

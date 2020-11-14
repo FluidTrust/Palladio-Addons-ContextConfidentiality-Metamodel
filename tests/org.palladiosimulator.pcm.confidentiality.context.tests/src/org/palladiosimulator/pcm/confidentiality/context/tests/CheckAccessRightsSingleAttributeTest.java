@@ -45,5 +45,39 @@ class CheckAccessRightsSingleAttributeTest {
         var poliyHierachicalType = ModelFactory.eINSTANCE.createHierarchicalContext();
         assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
     }
+    
+    @Test
+    void testSingleAttributeSameNameDifferentTypeNull() {
+        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var type = ModelFactory.eINSTANCE.createContextType();
+        requestSingleType.setContexttype(type);
+        requestSingleType.setEntityName("Test");
+        poliyHierachicalType.setEntityName("Test");
+        assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
+    }
+    @Test
+    void testSingleAttributeSameNameDifferentType() {
+        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var type = ModelFactory.eINSTANCE.createContextType();
+        var type2 = ModelFactory.eINSTANCE.createContextType();
+        requestSingleType.setContexttype(type);
+        poliyHierachicalType.setContexttype(type2);
+        requestSingleType.setEntityName("Test");
+        poliyHierachicalType.setEntityName("Test");
+        assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
+    }
+    @Test
+    void testSingleAttributeSameType() {
+        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        var type = ModelFactory.eINSTANCE.createContextType();
+        requestSingleType.setContexttype(type);
+        poliyHierachicalType.setContexttype(type);
+        requestSingleType.setEntityName("Test");
+        poliyHierachicalType.setEntityName("Test");
+        assertTrue(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
+    }
 
 }

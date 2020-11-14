@@ -7,11 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack;
 
 /**
@@ -42,40 +38,8 @@ public class CredentialAttackItemProvider extends AttackItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addContextsPropertyDescriptor(object);
-            addExploitsPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Contexts feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addContextsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-                getString("_UI_CredentialAttack_contexts_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_CredentialAttack_contexts_feature",
-                        "_UI_CredentialAttack_type"),
-                AttackSpecificationPackage.Literals.CREDENTIAL_ATTACK__CONTEXTS, true, false, true, null, null, null));
-    }
-
-    /**
-     * This adds a property descriptor for the Exploits feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addExploitsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-                getString("_UI_CredentialAttack_exploits_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_CredentialAttack_exploits_feature",
-                        "_UI_CredentialAttack_type"),
-                AttackSpecificationPackage.Literals.CREDENTIAL_ATTACK__EXPLOITS, true, false, true, null, null, null));
     }
 
     /**

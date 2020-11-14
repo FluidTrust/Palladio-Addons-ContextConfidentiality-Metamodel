@@ -27,6 +27,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="ContextAttribute" abstract="true"
         eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eOperations name="checkAccessRight" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Checks wheter the the given Contextattribute would fullfill this contextattribute&#xA;@param context ContextAttribute to check&#xA;@return true if ContextAttribute context fullfills it&#xA;"/>
+        </eAnnotations>
         <eParameters name="context" eType="#//model/ContextAttribute"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contexttype" eType="#//model/ContextType"/>

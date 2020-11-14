@@ -63,5 +63,61 @@ class CheckAccessRightsHierachicalTopTest {
         
         assertTrue(policy.checkAccessRight(request), "Comparison failed");
     }
+    @Test
+    void testHierachicalAttributeSingleAttributeWrongTypeNull() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        var type = ModelFactory.eINSTANCE.createContextType();
+        request.setContexttype(type);
+        request.setEntityName("root");
+        policy.setEntityName("test");
+        request.getIncluding().add(policy);
+        
+        assertFalse(policy.checkAccessRight(request), "Comparison failed");
+    }
+    @Test
+    void testHierachicalAttributeSingleAttributeWrongTypeNullSingle() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        var type = ModelFactory.eINSTANCE.createContextType();
+        policy.setContexttype(type);
+        request.setEntityName("root");
+        policy.setEntityName("test");
+        request.getIncluding().add(policy);
+        
+        assertFalse(policy.checkAccessRight(request), "Comparison failed");
+    }
+    @Test
+    void testHierachicalAttributeSingleAttributeWrongType() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        var type = ModelFactory.eINSTANCE.createContextType();
+        var type2 = ModelFactory.eINSTANCE.createContextType();
+        request.setContexttype(type);
+        policy.setContexttype(type2);
+        request.setEntityName("root");
+        policy.setEntityName("test");
+        request.getIncluding().add(policy);
+        
+        assertFalse(policy.checkAccessRight(request), "Comparison failed");
+    }
+    
+    @Test
+    void testHierachicalAttributeSingleAttributeType() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        var type = ModelFactory.eINSTANCE.createContextType();
+        
+        request.setContexttype(type);
+        policy.setContexttype(type);
+        request.setEntityName("root");
+        policy.setEntityName("test");
+        request.getIncluding().add(policy);        
+        assertTrue(policy.checkAccessRight(request), "Comparison failed");
+    }
 
 }

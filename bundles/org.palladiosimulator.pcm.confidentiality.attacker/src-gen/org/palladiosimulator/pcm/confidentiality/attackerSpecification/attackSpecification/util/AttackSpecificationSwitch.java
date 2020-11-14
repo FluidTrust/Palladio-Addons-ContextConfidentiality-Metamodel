@@ -27,7 +27,7 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage
  * @generated
  */
-public class AttackSpecificationSwitch<T> extends Switch<T> {
+public class AttackSpecificationSwitch<T1> extends Switch<T1> {
     /**
      * The cached model package
      * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    protected T doSwitch(int classifierID, EObject theEObject) {
+    protected T1 doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
         case AttackSpecificationPackage.ATTACK: {
-            Attack attack = (Attack) theEObject;
-            T result = caseAttack(attack);
+            Attack<?> attack = (Attack<?>) theEObject;
+            T1 result = caseAttack(attack);
             if (result == null)
                 result = caseEntity(attack);
             if (result == null)
@@ -86,7 +86,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
         }
         case AttackSpecificationPackage.CREDENTIAL_ATTACK: {
             CredentialAttack credentialAttack = (CredentialAttack) theEObject;
-            T result = caseCredentialAttack(credentialAttack);
+            T1 result = caseCredentialAttack(credentialAttack);
             if (result == null)
                 result = caseAttack(credentialAttack);
             if (result == null)
@@ -101,7 +101,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
         }
         case AttackSpecificationPackage.CREDENTIAL_VULNERABILITY: {
             CredentialVulnerability credentialVulnerability = (CredentialVulnerability) theEObject;
-            T result = caseCredentialVulnerability(credentialVulnerability);
+            T1 result = caseCredentialVulnerability(credentialVulnerability);
             if (result == null)
                 result = caseVulnerability(credentialVulnerability);
             if (result == null)
@@ -116,13 +116,20 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
         }
         case AttackSpecificationPackage.VULNERABILITY: {
             Vulnerability vulnerability = (Vulnerability) theEObject;
-            T result = caseVulnerability(vulnerability);
+            T1 result = caseVulnerability(vulnerability);
             if (result == null)
                 result = caseEntity(vulnerability);
             if (result == null)
                 result = caseIdentifier(vulnerability);
             if (result == null)
                 result = caseNamedElement(vulnerability);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case AttackSpecificationPackage.NEW_ABSTRACT_CLASS5: {
+            NewAbstractClass5<?> newAbstractClass5 = (NewAbstractClass5<?>) theEObject;
+            T1 result = caseNewAbstractClass5(newAbstractClass5);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -143,7 +150,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAttack(Attack object) {
+    public <T extends Vulnerability> T1 caseAttack(Attack<T> object) {
         return null;
     }
 
@@ -158,7 +165,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseCredentialAttack(CredentialAttack object) {
+    public T1 caseCredentialAttack(CredentialAttack object) {
         return null;
     }
 
@@ -173,7 +180,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseCredentialVulnerability(CredentialVulnerability object) {
+    public T1 caseCredentialVulnerability(CredentialVulnerability object) {
         return null;
     }
 
@@ -188,7 +195,22 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseVulnerability(Vulnerability object) {
+    public T1 caseVulnerability(Vulnerability object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>New Abstract Class5</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>New Abstract Class5</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public <T> T1 caseNewAbstractClass5(NewAbstractClass5<T> object) {
         return null;
     }
 
@@ -203,7 +225,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(Identifier object) {
+    public T1 caseIdentifier(Identifier object) {
         return null;
     }
 
@@ -218,7 +240,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNamedElement(NamedElement object) {
+    public T1 caseNamedElement(NamedElement object) {
         return null;
     }
 
@@ -233,7 +255,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEntity(Entity object) {
+    public T1 caseEntity(Entity object) {
         return null;
     }
 
@@ -249,7 +271,7 @@ public class AttackSpecificationSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(EObject object) {
+    public T1 defaultCase(EObject object) {
         return null;
     }
 

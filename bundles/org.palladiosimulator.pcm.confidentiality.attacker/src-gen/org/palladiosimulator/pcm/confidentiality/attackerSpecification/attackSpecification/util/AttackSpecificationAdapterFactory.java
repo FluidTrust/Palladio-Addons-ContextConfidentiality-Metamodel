@@ -72,7 +72,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl {
      */
     protected AttackSpecificationSwitch<Adapter> modelSwitch = new AttackSpecificationSwitch<Adapter>() {
         @Override
-        public Adapter caseAttack(Attack object) {
+        public <T extends Vulnerability> Adapter caseAttack(Attack<T> object) {
             return createAttackAdapter();
         }
 
@@ -89,6 +89,11 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseVulnerability(Vulnerability object) {
             return createVulnerabilityAdapter();
+        }
+
+        @Override
+        public <T> Adapter caseNewAbstractClass5(NewAbstractClass5<T> object) {
+            return createNewAbstractClass5Adapter();
         }
 
         @Override
@@ -178,6 +183,20 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createVulnerabilityAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.NewAbstractClass5 <em>New Abstract Class5</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.NewAbstractClass5
+     * @generated
+     */
+    public Adapter createNewAbstractClass5Adapter() {
         return null;
     }
 

@@ -87,13 +87,22 @@ public interface AttackSpecificationPackage extends EPackage {
     int ATTACK__ENTITY_NAME = EntityPackage.ENTITY__ENTITY_NAME;
 
     /**
+     * The feature id for the '<em><b>Exploits</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ATTACK__EXPLOITS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Attack</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ATTACK_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+    int ATTACK_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
     /**
      * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.CredentialAttackImpl <em>Credential Attack</em>}' class.
@@ -124,22 +133,13 @@ public interface AttackSpecificationPackage extends EPackage {
     int CREDENTIAL_ATTACK__ENTITY_NAME = ATTACK__ENTITY_NAME;
 
     /**
-     * The feature id for the '<em><b>Contexts</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CREDENTIAL_ATTACK__CONTEXTS = ATTACK_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Exploits</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CREDENTIAL_ATTACK__EXPLOITS = ATTACK_FEATURE_COUNT + 1;
+    int CREDENTIAL_ATTACK__EXPLOITS = ATTACK__EXPLOITS;
 
     /**
      * The number of structural features of the '<em>Credential Attack</em>' class.
@@ -148,7 +148,7 @@ public interface AttackSpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CREDENTIAL_ATTACK_FEATURE_COUNT = ATTACK_FEATURE_COUNT + 2;
+    int CREDENTIAL_ATTACK_FEATURE_COUNT = ATTACK_FEATURE_COUNT + 0;
 
     /**
      * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.VulnerabilityImpl <em>Vulnerability</em>}' class.
@@ -216,13 +216,41 @@ public interface AttackSpecificationPackage extends EPackage {
     int CREDENTIAL_VULNERABILITY__ENTITY_NAME = VULNERABILITY__ENTITY_NAME;
 
     /**
+     * The feature id for the '<em><b>Context</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CREDENTIAL_VULNERABILITY__CONTEXT = VULNERABILITY_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Credential Vulnerability</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CREDENTIAL_VULNERABILITY_FEATURE_COUNT = VULNERABILITY_FEATURE_COUNT + 0;
+    int CREDENTIAL_VULNERABILITY_FEATURE_COUNT = VULNERABILITY_FEATURE_COUNT + 1;
+
+    /**
+     * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.NewAbstractClass5Impl <em>New Abstract Class5</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.NewAbstractClass5Impl
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.AttackSpecificationPackageImpl#getNewAbstractClass5()
+     * @generated
+     */
+    int NEW_ABSTRACT_CLASS5 = 4;
+
+    /**
+     * The number of structural features of the '<em>New Abstract Class5</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEW_ABSTRACT_CLASS5_FEATURE_COUNT = 0;
 
     /**
      * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.ActionTyp <em>Action Typ</em>}' enum.
@@ -232,7 +260,7 @@ public interface AttackSpecificationPackage extends EPackage {
      * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.AttackSpecificationPackageImpl#getActionTyp()
      * @generated
      */
-    int ACTION_TYP = 4;
+    int ACTION_TYP = 5;
 
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack <em>Attack</em>}'.
@@ -245,6 +273,17 @@ public interface AttackSpecificationPackage extends EPackage {
     EClass getAttack();
 
     /**
+     * Returns the meta object for the reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack#getExploits <em>Exploits</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Exploits</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack#getExploits()
+     * @see #getAttack()
+     * @generated
+     */
+    EReference getAttack_Exploits();
+
+    /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack <em>Credential Attack</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -253,28 +292,6 @@ public interface AttackSpecificationPackage extends EPackage {
      * @generated
      */
     EClass getCredentialAttack();
-
-    /**
-     * Returns the meta object for the reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack#getContexts <em>Contexts</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Contexts</em>'.
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack#getContexts()
-     * @see #getCredentialAttack()
-     * @generated
-     */
-    EReference getCredentialAttack_Contexts();
-
-    /**
-     * Returns the meta object for the reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack#getExploits <em>Exploits</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Exploits</em>'.
-     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack#getExploits()
-     * @see #getCredentialAttack()
-     * @generated
-     */
-    EReference getCredentialAttack_Exploits();
 
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialVulnerability <em>Credential Vulnerability</em>}'.
@@ -287,6 +304,17 @@ public interface AttackSpecificationPackage extends EPackage {
     EClass getCredentialVulnerability();
 
     /**
+     * Returns the meta object for the reference '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialVulnerability#getContext <em>Context</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Context</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialVulnerability#getContext()
+     * @see #getCredentialVulnerability()
+     * @generated
+     */
+    EReference getCredentialVulnerability_Context();
+
+    /**
      * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability <em>Vulnerability</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -295,6 +323,16 @@ public interface AttackSpecificationPackage extends EPackage {
      * @generated
      */
     EClass getVulnerability();
+
+    /**
+     * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.NewAbstractClass5 <em>New Abstract Class5</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>New Abstract Class5</em>'.
+     * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.NewAbstractClass5
+     * @generated
+     */
+    EClass getNewAbstractClass5();
 
     /**
      * Returns the meta object for enum '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.ActionTyp <em>Action Typ</em>}'.
@@ -339,6 +377,14 @@ public interface AttackSpecificationPackage extends EPackage {
         EClass ATTACK = eINSTANCE.getAttack();
 
         /**
+         * The meta object literal for the '<em><b>Exploits</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ATTACK__EXPLOITS = eINSTANCE.getAttack_Exploits();
+
+        /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.CredentialAttackImpl <em>Credential Attack</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -347,22 +393,6 @@ public interface AttackSpecificationPackage extends EPackage {
          * @generated
          */
         EClass CREDENTIAL_ATTACK = eINSTANCE.getCredentialAttack();
-
-        /**
-         * The meta object literal for the '<em><b>Contexts</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference CREDENTIAL_ATTACK__CONTEXTS = eINSTANCE.getCredentialAttack_Contexts();
-
-        /**
-         * The meta object literal for the '<em><b>Exploits</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference CREDENTIAL_ATTACK__EXPLOITS = eINSTANCE.getCredentialAttack_Exploits();
 
         /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.CredentialVulnerabilityImpl <em>Credential Vulnerability</em>}' class.
@@ -375,6 +405,14 @@ public interface AttackSpecificationPackage extends EPackage {
         EClass CREDENTIAL_VULNERABILITY = eINSTANCE.getCredentialVulnerability();
 
         /**
+         * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CREDENTIAL_VULNERABILITY__CONTEXT = eINSTANCE.getCredentialVulnerability_Context();
+
+        /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.VulnerabilityImpl <em>Vulnerability</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -383,6 +421,16 @@ public interface AttackSpecificationPackage extends EPackage {
          * @generated
          */
         EClass VULNERABILITY = eINSTANCE.getVulnerability();
+
+        /**
+         * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.NewAbstractClass5Impl <em>New Abstract Class5</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.NewAbstractClass5Impl
+         * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.AttackSpecificationPackageImpl#getNewAbstractClass5()
+         * @generated
+         */
+        EClass NEW_ABSTRACT_CLASS5 = eINSTANCE.getNewAbstractClass5();
 
         /**
          * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.ActionTyp <em>Action Typ</em>}' enum.

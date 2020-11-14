@@ -12,8 +12,10 @@ import de.uka.ipd.sdq.units.UnitsPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -28,6 +30,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialAttack;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CredentialVulnerability;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.NewAbstractClass5;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl;
@@ -71,6 +74,13 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
      * @generated
      */
     private EClass vulnerabilityEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass newAbstractClass5EClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -175,26 +185,17 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getAttack_Exploits() {
+        return (EReference) attackEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getCredentialAttack() {
         return credentialAttackEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getCredentialAttack_Contexts() {
-        return (EReference) credentialAttackEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getCredentialAttack_Exploits() {
-        return (EReference) credentialAttackEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -211,8 +212,26 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getCredentialVulnerability_Context() {
+        return (EReference) credentialVulnerabilityEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getVulnerability() {
         return vulnerabilityEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getNewAbstractClass5() {
+        return newAbstractClass5EClass;
     }
 
     /**
@@ -254,14 +273,16 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
 
         // Create classes and their features
         attackEClass = createEClass(ATTACK);
+        createEReference(attackEClass, ATTACK__EXPLOITS);
 
         credentialAttackEClass = createEClass(CREDENTIAL_ATTACK);
-        createEReference(credentialAttackEClass, CREDENTIAL_ATTACK__CONTEXTS);
-        createEReference(credentialAttackEClass, CREDENTIAL_ATTACK__EXPLOITS);
 
         credentialVulnerabilityEClass = createEClass(CREDENTIAL_VULNERABILITY);
+        createEReference(credentialVulnerabilityEClass, CREDENTIAL_VULNERABILITY__CONTEXT);
 
         vulnerabilityEClass = createEClass(VULNERABILITY);
+
+        newAbstractClass5EClass = createEClass(NEW_ABSTRACT_CLASS5);
 
         // Create enums
         actionTypEEnum = createEEnum(ACTION_TYP);
@@ -296,31 +317,42 @@ public class AttackSpecificationPackageImpl extends EPackageImpl implements Atta
         ModelPackage theModelPackage = (ModelPackage) EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
 
         // Create type parameters
+        ETypeParameter attackEClass_T = addETypeParameter(attackEClass, "T");
+        addETypeParameter(newAbstractClass5EClass, "T");
 
         // Set bounds for type parameters
+        EGenericType g1 = createEGenericType(this.getVulnerability());
+        attackEClass_T.getEBounds().add(g1);
 
         // Add supertypes to classes
         attackEClass.getESuperTypes().add(theEntityPackage.getEntity());
-        credentialAttackEClass.getESuperTypes().add(this.getAttack());
+        g1 = createEGenericType(this.getAttack());
+        EGenericType g2 = createEGenericType(this.getCredentialVulnerability());
+        g1.getETypeArguments().add(g2);
+        credentialAttackEClass.getEGenericSuperTypes().add(g1);
         credentialVulnerabilityEClass.getESuperTypes().add(this.getVulnerability());
         vulnerabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
         // Initialize classes and features; add operations and parameters
         initEClass(attackEClass, Attack.class, "Attack", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        g1 = createEGenericType(attackEClass_T);
+        initEReference(getAttack_Exploits(), g1, null, "exploits", null, 0, -1, Attack.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+                IS_ORDERED);
 
         initEClass(credentialAttackEClass, CredentialAttack.class, "CredentialAttack", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getCredentialAttack_Contexts(), theModelPackage.getContextAttribute(), null, "contexts", null, 0,
-                -1, CredentialAttack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getCredentialAttack_Exploits(), this.getCredentialVulnerability(), null, "exploits", null, 0, -1,
-                CredentialAttack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(credentialVulnerabilityEClass, CredentialVulnerability.class, "CredentialVulnerability",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getCredentialVulnerability_Context(), theModelPackage.getContextAttribute(), null, "context",
+                null, 0, 1, CredentialVulnerability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(vulnerabilityEClass, Vulnerability.class, "Vulnerability", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(newAbstractClass5EClass, NewAbstractClass5.class, "NewAbstractClass5", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
         // Initialize enums and add enum literals

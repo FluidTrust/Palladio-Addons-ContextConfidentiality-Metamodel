@@ -46,6 +46,10 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
         
         if(EcoreUtil.equals(this, context))
             return true;
+        if(context == null)
+            return false;
+        if(!EcoreUtil.equals(context.getContexttype(), this.getContexttype()))
+            return false;
         if(context instanceof HierarchicalContext) {
             var hierarchicalContext = (HierarchicalContext) context;
             return hierarchicalContext.getIncluding().stream().anyMatch(this::checkAccessRight);
