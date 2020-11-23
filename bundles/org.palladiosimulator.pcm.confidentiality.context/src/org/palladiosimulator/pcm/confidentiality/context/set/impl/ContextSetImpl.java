@@ -2,6 +2,8 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.set.impl;
 
+import java.security.Policy;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -67,6 +69,9 @@ public class ContextSetImpl extends EntityImpl implements ContextSet
 	 */
 	public boolean checkAccessRight(ContextSet set)
 	{
+	    if(this.getContexts().isEmpty()) {
+	        return false;
+	    }
         for (var policyItem : this.getContexts()) {
             if (!checkContextAttribute(policyItem, set))
                 return false;
