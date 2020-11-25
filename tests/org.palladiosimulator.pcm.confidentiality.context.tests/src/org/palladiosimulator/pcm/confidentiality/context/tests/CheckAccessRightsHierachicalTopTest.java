@@ -38,6 +38,22 @@ class CheckAccessRightsHierachicalTopTest {
         assertTrue(policy.checkAccessRight(request), "Comparison failed");
     }
     @Test
+    void testHierachicalAttributeOneLayerSingle() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy1 = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        request.setEntityName("Root");
+        request.getIncluding().add(policy);
+        policy.getIncluding().add(policy1);
+        policy.setEntityName("test");
+        
+        
+        assertFalse(request.checkAccessRight(policy));
+        
+        assertTrue(policy.checkAccessRight(request), "Comparison failed");
+    }
+    @Test
     void testHierachicalAttributeTwoLayers() {
         var request = ModelFactory.eINSTANCE.createHierarchicalContext();
         var policy = ModelFactory.eINSTANCE.createHierarchicalContext();

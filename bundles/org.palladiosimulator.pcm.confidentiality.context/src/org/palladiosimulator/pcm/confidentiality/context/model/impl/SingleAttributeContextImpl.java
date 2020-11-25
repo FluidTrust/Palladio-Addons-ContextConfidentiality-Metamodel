@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
+import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.SingleAttributeContext;
 
@@ -52,7 +53,15 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
             return false;
         if(context instanceof HierarchicalContext) {
             var hierarchicalContext = (HierarchicalContext) context;
-            return hierarchicalContext.getIncluding().stream().anyMatch(this::checkAccessRight);
+            switch (hierarchicalContext.getDirection().getValue()) {
+            case IncludeDirection.BOTTOM_UP_VALUE:
+                return false;
+            case IncludeDirection.TOP_DOWN_VALUE:
+                return hierarchicalContext.getIncluding().stream().anyMatch(this::checkAccessRight);
+            default:
+                assert false;
+            }
+            
         }
         
         

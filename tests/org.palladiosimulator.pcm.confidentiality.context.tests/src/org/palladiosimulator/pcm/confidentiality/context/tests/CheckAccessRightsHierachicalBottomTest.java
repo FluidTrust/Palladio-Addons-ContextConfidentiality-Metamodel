@@ -13,6 +13,7 @@ import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
 import org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.context.specification.assembly.AssemblyPackage;
 
+//TODO check naming 
 class CheckAccessRightsHierachicalBottomTest {
     @BeforeAll
     static void init() {
@@ -25,13 +26,29 @@ class CheckAccessRightsHierachicalBottomTest {
         var request = ModelFactory.eINSTANCE.createHierarchicalContext();
         var policy = ModelFactory.eINSTANCE.createHierarchicalContext();
         var policy1 = ModelFactory.eINSTANCE.createHierarchicalContext();
-        
+        //FIXME wrong oder of naming
         request.setEntityName("Gebäude");
         policy.setEntityName("Raum A");
         policy1.setEntityName("Plat1");
         
         policy.getIncluding().add(request);
         setDirection(request, policy, policy1);
+        policy.getIncluding().add(policy1);
+        
+        assertTrue(policy.checkAccessRight(request), "Comparison failed");
+    }
+    @Test
+    void testHierachicalAttributeOneLayerBottomLastSingle() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy1 = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        request.setEntityName("Gebäude");
+        policy.setEntityName("Raum A");
+        policy1.setEntityName("Plat1");
+        
+        policy.getIncluding().add(request);
+        setDirection(request, policy);
         policy.getIncluding().add(policy1);
         
         assertTrue(policy.checkAccessRight(request), "Comparison failed");
@@ -47,6 +64,22 @@ class CheckAccessRightsHierachicalBottomTest {
         policy1.setEntityName("Plat1");
         request.getIncluding().add(policy);
         setDirection(request, policy, policy1);
+        
+        assertFalse(policy.checkAccessRight(request), "Comparison failed");
+        policy.getIncluding().add(policy1);
+        assertFalse(policy1.checkAccessRight(request), "Comparison failed");
+    }
+    @Test
+    void testHierachicalAttributeOneLayerBottomDenySingle() {
+        var request = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy = ModelFactory.eINSTANCE.createHierarchicalContext();
+        var policy1 = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        
+        request.setEntityName("Gebäude");
+        policy.setEntityName("Raum A");
+        policy1.setEntityName("Plat1");
+        request.getIncluding().add(policy);
+        setDirection(request, policy);
         
         assertFalse(policy.checkAccessRight(request), "Comparison failed");
         policy.getIncluding().add(policy1);
