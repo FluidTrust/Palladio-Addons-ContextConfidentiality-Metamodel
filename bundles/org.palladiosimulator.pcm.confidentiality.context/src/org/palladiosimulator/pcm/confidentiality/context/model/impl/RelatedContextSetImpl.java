@@ -82,7 +82,7 @@ public class RelatedContextSetImpl extends ContextAttributeImpl implements Relat
             return false;                   
         var contextAttribute = (RelatedContextSet) context;
         
-        return Objects.equals(contextAttribute.getContextset(), getContextset());
+        return getContextset().checkAccessRight(contextAttribute.getContextset());
         
         
     }
