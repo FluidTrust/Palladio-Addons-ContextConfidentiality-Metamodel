@@ -23,6 +23,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilites" eType="#//VulnerabilityContainer"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categoryspecification"
+        eType="#//CategorySpecification" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attack" upperBound="-1"
@@ -32,31 +34,45 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" upperBound="-1"
         eType="#//attackSpecification/Vulnerability" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CategorySpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
+        eType="#//attackSpecification/AttackCategory" containment="true"/>
+  </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
-    <eClassifiers xsi:type="ecore:EClass" name="Attack" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eTypeParameters name="T">
-        <eBounds eClassifier="#//attackSpecification/Vulnerability"/>
-      </eTypeParameters>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="exploits" upperBound="-1">
-        <eGenericType eTypeParameter="#//attackSpecification/Attack/T"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CredentialAttack">
-      <eGenericSuperTypes eClassifier="#//attackSpecification/Attack">
-        <eTypeArguments eClassifier="#//attackSpecification/CredentialVulnerability"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ActionTyp">
-      <eLiterals name="Compromised" literal="Compromised"/>
-      <eLiterals name="Injectable" value="1" literal="Injectable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Attack" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CredentialAttack" eSuperTypes="#//attackSpecification/Attack">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" upperBound="-1"
+          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CredentialVulnerability" eSuperTypes="#//attackSpecification/Vulnerability">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+          upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Vulnerability" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="NewAbstractClass5" abstract="true">
-      <eTypeParameters name="T"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CategoryAttack" eSuperTypes="#//attackSpecification/Attack"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CVEVulnerability" eSuperTypes="#//attackSpecification/Vulnerability"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="AttackVector">
+      <eLiterals name="Network"/>
+      <eLiterals name="AdjacentNetwork" value="1"/>
+      <eLiterals name="Local" value="2"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Privileges">
+      <eLiterals name="None"/>
+      <eLiterals name="Low" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ConfidentialityImpact">
+      <eLiterals name="High"/>
+      <eLiterals name="Low" value="1"/>
+      <eLiterals name="None" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CWEID" eSuperTypes="#//attackSpecification/AttackCategory">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cweID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+          eType="#//attackSpecification/CWEID" eOpposite="#//attackSpecification/CWEID/parents"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
+          eType="#//attackSpecification/CWEID" eOpposite="#//attackSpecification/CWEID/children"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttackCategory" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement"/>
   </eSubpackages>
 </ecore:EPackage>

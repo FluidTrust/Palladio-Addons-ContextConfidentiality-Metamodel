@@ -28,6 +28,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/attackers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/attacks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/vulnerabilites"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/categoryspecification"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//AttackContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackContainer/attack"/>
@@ -35,29 +36,47 @@
     <genClasses ecoreClass="attacker.ecore#//VulnerabilityContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//VulnerabilityContainer/vulnerability"/>
     </genClasses>
+    <genClasses ecoreClass="attacker.ecore#//CategorySpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//CategorySpecification/%"/>
+    </genClasses>
     <nestedGenPackages prefix="AttackSpecification" disposableProviderFactory="true"
         ecorePackage="attacker.ecore#//attackSpecification">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/ActionTyp">
-        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/ActionTyp/Compromised"/>
-        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/ActionTyp/Injectable"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/AttackVector">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackVector/Network"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackVector/AdjacentNetwork"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackVector/Local"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/Privileges">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/Privileges/None"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/Privileges/Low"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/ConfidentialityImpact">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/ConfidentialityImpact/High"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/ConfidentialityImpact/Low"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/ConfidentialityImpact/None"/>
       </genEnums>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Attack"
-          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genTypeParameters ecoreTypeParameter="attacker.ecore#//attackSpecification/Attack/T"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Attack/exploits"/>
-      </genClasses>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CredentialAttack"
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CredentialAttack"
+          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CredentialAttack/credentials"/>
+      </genClasses>
       <genClasses ecoreClass="attacker.ecore#//attackSpecification/CredentialVulnerability"
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CredentialVulnerability/context"/>
       </genClasses>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Vulnerability"/>
-      <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/NewAbstractClass5">
-        <genTypeParameters ecoreTypeParameter="attacker.ecore#//attackSpecification/NewAbstractClass5/T"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CategoryAttack"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEVulnerability"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CWEID">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/CWEID/cweID"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CWEID/children"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CWEID/parents"/>
       </genClasses>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/AttackCategory"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
