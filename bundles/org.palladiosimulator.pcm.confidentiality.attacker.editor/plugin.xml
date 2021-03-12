@@ -62,4 +62,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated attacker -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation.PcmIntegrationModelWizardID"
+            name="%_UI_PcmIntegrationModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation.PcmIntegrationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PcmIntegrationModelFile.gif">
+         <description>%_UI_PcmIntegrationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated attacker -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation.PcmIntegrationEditorID"
+            name="%_UI_PcmIntegrationEditor_label"
+            icon="icons/full/obj16/PcmIntegrationModelFile.gif"
+            extensions="pcmintegration"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation.PcmIntegrationEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation.PcmIntegrationActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

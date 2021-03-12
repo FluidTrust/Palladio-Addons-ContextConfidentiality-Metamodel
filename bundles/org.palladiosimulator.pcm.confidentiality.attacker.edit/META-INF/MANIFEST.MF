@@ -10,6 +10,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider,
+ org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.provider,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.pcm.confidentiality.attacker;visibility:=reexport,
