@@ -30,6 +30,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/attacks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/vulnerabilites"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/categoryspecification"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/systemintegration"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//AttackContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackContainer/attack"/>
@@ -40,6 +41,7 @@
     <genClasses ecoreClass="attacker.ecore#//CategorySpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//CategorySpecification/categories"/>
     </genClasses>
+    <genClasses ecoreClass="attacker.ecore#//VulnerabilitySystemSpecification"/>
     <nestedGenPackages prefix="AttackSpecification" disposableProviderFactory="true"
         ecorePackage="attacker.ecore#//attackSpecification">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/AttackVector">

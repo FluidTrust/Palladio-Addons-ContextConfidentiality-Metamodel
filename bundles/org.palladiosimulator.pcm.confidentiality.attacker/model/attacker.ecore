@@ -26,6 +26,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categoryspecification"
         eType="#//CategorySpecification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemintegration" eType="#//VulnerabilitySystemSpecification"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attack" upperBound="-1"
@@ -38,6 +40,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="CategorySpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
         eType="#//attackSpecification/AttackCategory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VulnerabilitySystemSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilities" upperBound="-1"
+        eType="#//pcmIntegration/SystemIntegration" containment="true"/>
   </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
@@ -137,7 +143,7 @@
           eType="#//attackSpecification/CWEID"/>
     </eClassifiers>
   </eSubpackages>
-    <eSubpackages name="pcmIntegration" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
+  <eSubpackages name="pcmIntegration" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
       nsPrefix="pcmIntegration">
     <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" lowerBound="1"
