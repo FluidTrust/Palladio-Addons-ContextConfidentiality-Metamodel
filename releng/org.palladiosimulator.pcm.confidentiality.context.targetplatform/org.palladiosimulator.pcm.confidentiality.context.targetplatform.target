@@ -2,10 +2,6 @@
 <?pde version="3.8"?>
 <target name="Target Platform" sequenceNumber="1">
 	<locations>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false">
-			<unit id="org.eclipse.equinox.p2.installer" />
-			<repository location="http://download.eclipse.org/releases/2020-12/"/>
-		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="2.1.0.201611171324"/>
 			<unit id="org.palladiosimulator.commons.stoex.sdk.feature.group" version="tbd"/>
