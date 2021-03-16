@@ -7,7 +7,7 @@
         eType="#//Attacker" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="capabilities" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attacks" upperBound="-1"
         eType="#//attackSpecification/Attack"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedComponents"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
@@ -15,7 +15,12 @@
         eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedLinkingResources"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" upperBound="-1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exploitContextProviders"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exploitableContextAttributes"
+        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackerSpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackers" eType="#//AttackerContainer"
