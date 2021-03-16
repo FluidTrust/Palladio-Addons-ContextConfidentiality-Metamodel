@@ -22,4 +22,12 @@
             genModel="model/attacker.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated attacker -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
+            class="org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage"
+            genModel="model/attacker.genmodel"/>
+   </extension>
+
 </plugin>
