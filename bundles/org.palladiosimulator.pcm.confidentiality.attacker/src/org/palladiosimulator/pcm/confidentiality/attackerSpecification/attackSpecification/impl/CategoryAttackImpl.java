@@ -83,7 +83,7 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
         }
         if(vulnerability.getPrivileges() != Privileges.NONE) {
             var tmpCredentials = EcoreUtil.copy(credentialsNeeded);
-            if (vulnerability.getPrivileges() == Privileges.SPECIAL)
+            if (vulnerability.getPrivileges() == Privileges.SPECIAL) //TODO think whether this is useful?
                 tmpCredentials.getContexts().addAll(vulnerability.getRequiredCredentials().getContexts());
             if(!tmpCredentials.checkAccessRight(credentialsAttacker)) {
                 return false;

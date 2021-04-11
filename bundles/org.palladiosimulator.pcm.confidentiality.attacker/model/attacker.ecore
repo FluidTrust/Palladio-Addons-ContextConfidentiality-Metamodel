@@ -73,9 +73,6 @@
           eType="#//attackSpecification/IntegrityImpact" defaultValueLiteral="None"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="availabilityImpact" lowerBound="1"
           eType="#//attackSpecification/AvailabilityImpact" defaultValueLiteral="None"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootPrivilege" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="false"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gainedPrivilege" upperBound="-1"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//set/ContextSet"/>
     </eClassifiers>
@@ -162,6 +159,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="serviceeffectspecification"
           eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//seff/ServiceEffectSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
