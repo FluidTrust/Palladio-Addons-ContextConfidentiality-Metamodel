@@ -9,6 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.context,
+ org.palladiosimulator.pcm.confidentiality.context.helper,
  org.palladiosimulator.pcm.confidentiality.context.impl,
  org.palladiosimulator.pcm.confidentiality.context.model,
  org.palladiosimulator.pcm.confidentiality.context.model.impl,
