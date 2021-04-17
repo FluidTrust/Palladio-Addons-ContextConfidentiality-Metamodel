@@ -101,6 +101,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/availabilityImpact"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/gainedPrivilege"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/takeOver"/>
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//attackSpecification/CategoryAttack">
         <genTypeParameters ecoreTypeParameter="attacker.ecore#//attackSpecification/CategoryAttack/T"/>

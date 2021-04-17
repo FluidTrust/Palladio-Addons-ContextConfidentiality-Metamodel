@@ -81,6 +81,7 @@
           eType="#//attackSpecification/AvailabilityImpact" defaultValueLiteral="None"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gainedPrivilege" upperBound="-1"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//set/ContextSet"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="takeOver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CategoryAttack" abstract="true" eSuperTypes="#//attackSpecification/Attack">
       <eTypeParameters name="T">

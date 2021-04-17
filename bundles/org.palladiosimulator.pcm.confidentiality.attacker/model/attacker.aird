@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="c5f9c644-eff9-4e47-93b5-ee081f256721">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="ed9b7157-2178-43b1-a13c-90b21fc2ce43">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
@@ -1403,6 +1403,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_fglAgYGjEeuKVfwkduT1lQ" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_fglAgoGjEeuKVfwkduT1lQ"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_84ta4J9tEeux-eMuthHSpg" type="3010" element="_83kycJ9tEeux-eMuthHSpg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_84ta4Z9tEeux-eMuthHSpg" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_84ta4p9tEeux-eMuthHSpg"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_-DvdUIGiEeuKVfwkduT1lQ" type="3010" element="_-DT_g4GiEeuKVfwkduT1lQ">
               <styles xmi:type="notation:FontStyle" xmi:id="_-DvdUYGiEeuKVfwkduT1lQ" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_-DvdUoGiEeuKVfwkduT1lQ"/>
@@ -1867,7 +1871,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_v1_Eg4GqEeuKVfwkduT1lQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="__2JcY59tEeux-eMuthHSpg" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
@@ -1909,6 +1913,14 @@
         <semanticElements xmi:type="ecore:EAttribute" href="attacker.ecore#//attackSpecification/Vulnerability/availabilityImpact"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_jmZmYYGjEeuKVfwkduT1lQ" labelAlignment="LEFT" description="_pgJdcIGiEeuKVfwkduT1lQ">
           <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_83kycJ9tEeux-eMuthHSpg" name="takeOver : EBoolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="attacker.ecore#//attackSpecification/Vulnerability/takeOver"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="attacker.ecore#//attackSpecification/Vulnerability/takeOver"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="__2OU4Z9tEeux-eMuthHSpg" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
