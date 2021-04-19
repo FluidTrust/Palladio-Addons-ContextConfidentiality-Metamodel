@@ -19,8 +19,6 @@
         eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exploitContextProviders"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exploitableContextAttributes"
-        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//model/ContextAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromiseddata" upperBound="-1"
         eType="#//CompromisedData" containment="true"/>
   </eClassifiers>
