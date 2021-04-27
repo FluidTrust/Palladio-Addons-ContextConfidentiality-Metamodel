@@ -69,7 +69,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="attackVector" lowerBound="1"
           eType="#//attackSpecification/AttackVector" defaultValueLiteral=""/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="privileges" lowerBound="1"
-          eType="#//attackSpecification/Privileges" defaultValueLiteral=""/>
+          eType="#//attackSpecification/Privileges" defaultValueLiteral="None"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCredentials"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//set/ContextSet"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="confidentialityImpact"

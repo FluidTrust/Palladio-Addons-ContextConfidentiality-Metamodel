@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="ed9b7157-2178-43b1-a13c-90b21fc2ce43">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="577d6741-76c6-4a78-a3bc-e408f8fd92b9">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
@@ -1865,7 +1865,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_nwg_wLbnEeq42clWkJd82g" name="Vulnerability" tooltipText="&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type" incomingEdges="_V-3d5oGcEeuKVfwkduT1lQ _P0fe7IJjEeuJRfvggg8KXA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_nwg_wLbnEeq42clWkJd82g" name="Vulnerability" tooltipText="&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type" incomingEdges="_V-3d5oGcEeuKVfwkduT1lQ _P0fe7IJjEeuJRfvggg8KXA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="attacker.ecore#//attackSpecification/Vulnerability"/>
       <semanticElements xmi:type="ecore:EClass" href="attacker.ecore#//attackSpecification/Vulnerability"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1884,7 +1884,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_tWh5IIGiEeuKVfwkduT1lQ" name="privileges : Privileges" tooltipText="&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_tWh5IIGiEeuKVfwkduT1lQ" name="privileges : Privileges = None" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="attacker.ecore#//attackSpecification/Vulnerability/privileges"/>
         <semanticElements xmi:type="ecore:EAttribute" href="attacker.ecore#//attackSpecification/Vulnerability/privileges"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_vZ_lsoGiEeuKVfwkduT1lQ" labelAlignment="LEFT" description="_pgJdcIGiEeuKVfwkduT1lQ">
