@@ -108,7 +108,8 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CategoryAttack/category"/>
       </genClasses>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEVulnerability">
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEVulnerability"
+          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CVEVulnerability/cveID"/>
       </genClasses>
@@ -130,7 +131,8 @@
       <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEID">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/CVEID/cveID"/>
       </genClasses>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CWEVulnerability"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CWEVulnerability"
+          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/CWEBasedVulnerability">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CWEBasedVulnerability/cweID"/>

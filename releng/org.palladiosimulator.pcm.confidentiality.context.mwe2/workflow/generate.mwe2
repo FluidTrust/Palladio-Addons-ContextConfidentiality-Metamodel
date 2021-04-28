@@ -118,9 +118,9 @@ Workflow {
 			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/src-gen"
 			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/src"
 		}
-//		folders = {
-//			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
-//			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src"
-//		}
+		folders = {
+			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
+			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src"
+		}
 	}
 }
