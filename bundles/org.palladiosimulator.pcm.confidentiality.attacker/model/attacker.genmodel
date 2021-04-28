@@ -103,7 +103,8 @@
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/gainedPrivilege"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/takeOver"/>
       </genClasses>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CategoryAttack">
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CategoryAttack"
+          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genTypeParameters ecoreTypeParameter="attacker.ecore#//attackSpecification/CategoryAttack/T"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CategoryAttack/category"/>
@@ -126,8 +127,8 @@
           <genParameters ecoreParameter="attacker.ecore#//attackSpecification/AttackCategory/equalAttackType/category"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CWEAttack"/>
-      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEAttack"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CWEAttack" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEAttack" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
       <genClasses ecoreClass="attacker.ecore#//attackSpecification/CVEID">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/CVEID/cveID"/>
       </genClasses>
@@ -152,10 +153,6 @@
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/compositecomponent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/methodspecification"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/signature"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/serviceeffectspecification"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/linkingresource"/>
       </genClasses>
