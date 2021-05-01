@@ -26,7 +26,7 @@ public class TestHelpers {
         return category;
     }
 
-    public static CVEID createCVECategory(int id, String name) {
+    public static CVEID createCVECategory(String id, String name) {
         var category = AttackSpecificationFactory.eINSTANCE.createCVEID();
         category.setCveID(id);
         category.setEntityName(name);

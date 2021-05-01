@@ -26,7 +26,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerability() {
         var cweID = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
         var attack = TestHelpers.createCWEAttack(cweID);
@@ -38,7 +38,7 @@ public class CWEAttackTest {
     void testVulnerabilityNotTheSameObject() {
         var cweID = TestHelpers.createCWECategory(0, "test");
         var cweID2 = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
         var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweID);
@@ -52,7 +52,7 @@ public class CWEAttackTest {
     void testVulnerabilityHierachical() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
         var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         cweIDAttackerCapabilities.getChildren().add(cweIDVulnerability);
 
@@ -68,7 +68,7 @@ public class CWEAttackTest {
     void testVulnerabilityWrongHierachical() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
         var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         cweIDVulnerability.getChildren().add(cweIDAttackerCapabilities);
 
@@ -83,7 +83,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityAdjacentNetwork() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID,
                 AttackVector.ADJACENT_NETWORK);
@@ -102,7 +102,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityLocal() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.LOCAL);
         var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.LOCAL);
@@ -120,7 +120,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeLowSameContextSetObject() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentials = TestHelpers.createContextSet("test", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
@@ -137,7 +137,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeLowDifferentContextSetObject() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
         var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
 
@@ -155,7 +155,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeLowErrorWrongSet() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentialsAttacker = TestHelpers.createContextSet("test");
         var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
 
@@ -173,7 +173,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeSpecial() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentialsAttacker = TestHelpers.createContextSet("test", "test2", "test3");
         var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
         var credentialsSpecial = TestHelpers.createContextSet("test3");
@@ -192,7 +192,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeSpecialMissing() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
         var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
         var credentialsSpecial = TestHelpers.createContextSet("test3");
@@ -211,7 +211,7 @@ public class CWEAttackTest {
     @Test
     void testVulnerabilityPrivilegeLowAdditional() {
         var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
         var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
         var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
         var credentialsSpecial = TestHelpers.createContextSet("test3");
@@ -230,7 +230,7 @@ public class CWEAttackTest {
     void testVulnerabilityWrongCWE() {
         var cweID = TestHelpers.createCWECategory(0, "test");
         var cweIDWrong = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory(1, "test2");
+        var cveID = TestHelpers.createCVECategory("1", "test2");
 
         var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
         var attack = TestHelpers.createCWEAttack(cweIDWrong);

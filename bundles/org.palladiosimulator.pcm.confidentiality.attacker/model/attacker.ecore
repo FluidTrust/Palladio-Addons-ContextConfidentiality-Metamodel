@@ -132,7 +132,7 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CVEID" eSuperTypes="#//attackSpecification/AttackCategory">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cveID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cveID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CWEVulnerability" eSuperTypes="#//attackSpecification/Vulnerability #//attackSpecification/CWEBasedVulnerability"/>
     <eClassifiers xsi:type="ecore:EEnum" name="IntegrityImpact">
