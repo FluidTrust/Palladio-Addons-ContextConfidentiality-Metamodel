@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="b87307b9-4b85-464e-b9d8-acb256207977">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="a00d1d52-2692-4af2-9100-6574d9f6dae0">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
@@ -2362,7 +2362,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ZRqUAIJPEeubvMYfrPI5lQ" name="[1..1] cweID" sourceNode="_UYsZ8IJPEeubvMYfrPI5lQ" targetNode="_eyDH0HwXEeus9IBbclzG8A">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ZRqUAIJPEeubvMYfrPI5lQ" name="[1..*] cweID" sourceNode="_UYsZ8IJPEeubvMYfrPI5lQ" targetNode="_eyDH0HwXEeus9IBbclzG8A">
       <target xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/CWEBasedVulnerability/cweID"/>
       <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/CWEBasedVulnerability/cweID"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_gbvVEIJPEeubvMYfrPI5lQ" description="_9maoQIAaEeuHuME8ot5pSg" routingStyle="manhattan" strokeColor="0,0,0">

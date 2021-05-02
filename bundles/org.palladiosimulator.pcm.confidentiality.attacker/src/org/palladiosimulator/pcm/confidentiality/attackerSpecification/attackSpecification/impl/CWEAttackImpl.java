@@ -55,8 +55,11 @@ public class CWEAttackImpl extends CategoryAttackImpl<CWEID> implements CWEAttac
     @Override
     protected boolean checkID(Vulnerability vulnerability) {
         if(vulnerability instanceof CWEBasedVulnerability) {
-            var id = ((CWEBasedVulnerability) vulnerability).getCweID();
-            return this.getCategory().equalAttackType(id);
+            var ids = ((CWEBasedVulnerability) vulnerability).getCweID();
+            for(var id:ids) {
+                if(this.getCategory().equalAttackType(id))
+                    return true;
+            }
         }
         return false;
     }

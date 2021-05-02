@@ -148,7 +148,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="CWEBasedVulnerability" abstract="true"
         interface="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="cweID" lowerBound="1"
-          eType="#//attackSpecification/CWEID"/>
+          upperBound="-1" eType="#//attackSpecification/CWEID"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pcmIntegration" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
