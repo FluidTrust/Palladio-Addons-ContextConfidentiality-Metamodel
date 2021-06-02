@@ -6,7 +6,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
-import org.palladiosimulator.pcm.confidentiality.context.model.ContextContainer;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
 import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
 import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
@@ -29,7 +28,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 public class HierarchicalContextImpl extends ContextAttributeImpl implements HierarchicalContext {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected HierarchicalContextImpl() {
@@ -38,7 +37,7 @@ public class HierarchicalContextImpl extends ContextAttributeImpl implements Hie
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -48,54 +47,61 @@ public class HierarchicalContextImpl extends ContextAttributeImpl implements Hie
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     @SuppressWarnings("unchecked")
     public EList<ContextAttribute> getIncluding() {
-        return (EList<ContextAttribute>) eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__INCLUDING, true);
+        return (EList<ContextAttribute>) this.eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__INCLUDING, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public IncludeDirection getDirection() {
-        return (IncludeDirection) eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, true);
+        return (IncludeDirection) this.eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setDirection(IncludeDirection newDirection) {
-        eSet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, newDirection);
+    @Override
+    public void setDirection(final IncludeDirection newDirection) {
+        this.eSet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, newDirection);
     }
 
     /**
      * @generated NOT
      */
     @Override
-    public boolean checkAccessRight(ContextAttribute context) {
-        if (EcoreUtil.equals(this, context))
+    public boolean checkAccessRight(final ContextAttribute context) {
+        if (EcoreUtil.equals(this, context)) {
             return true;
-        if(context == null)
+        }
+        if (context == null) {
             return false;
-        if(!EcoreUtil.equals(this.getContexttype(), context.getContexttype()))
+        }
+        if (!EcoreUtil.equals(this.getContexttype(), context.getContexttype())) {
             return false;
-        switch (getDirection().getValue()) {
+        }
+        switch (this.getDirection().getValue()) {
         case IncludeDirection.BOTTOM_UP_VALUE:
-            var includes = this.getIncluding();
-            var value1 = includes.stream().anyMatch(e -> e.checkAccessRight(context));
+            final var includes = this.getIncluding();
+            final var value1 = includes.stream().anyMatch(e -> e.checkAccessRight(context));
             return value1;
 
         case IncludeDirection.TOP_DOWN_VALUE:
-            if(!(context instanceof HierarchicalContext))
+            if (!(context instanceof HierarchicalContext)) {
                 return false;
-            var contextAttribute = (HierarchicalContext) context;
-            var list = contextAttribute.getIncluding();
+            }
+            final var contextAttribute = (HierarchicalContext) context;
+            final var list = contextAttribute.getIncluding();
             return list.stream().anyMatch(this::checkAccessRight);
         default:
             assert false;

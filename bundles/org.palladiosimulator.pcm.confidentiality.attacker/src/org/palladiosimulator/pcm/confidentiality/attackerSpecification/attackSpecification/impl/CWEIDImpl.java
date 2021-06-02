@@ -5,7 +5,6 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSp
 import java.util.Objects;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
@@ -31,7 +30,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 public class CWEIDImpl extends AttackCategoryImpl implements CWEID {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected CWEIDImpl() {
@@ -40,7 +39,7 @@ public class CWEIDImpl extends AttackCategoryImpl implements CWEID {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -50,56 +49,63 @@ public class CWEIDImpl extends AttackCategoryImpl implements CWEID {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public int getCweID() {
-        return (Integer) eGet(AttackSpecificationPackage.Literals.CWEID__CWE_ID, true);
+        return (Integer) this.eGet(AttackSpecificationPackage.Literals.CWEID__CWE_ID, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setCweID(int newCweID) {
-        eSet(AttackSpecificationPackage.Literals.CWEID__CWE_ID, newCweID);
+    @Override
+    public void setCweID(final int newCweID) {
+        this.eSet(AttackSpecificationPackage.Literals.CWEID__CWE_ID, newCweID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     @SuppressWarnings("unchecked")
     public EList<CWEID> getChildren() {
-        return (EList<CWEID>) eGet(AttackSpecificationPackage.Literals.CWEID__CHILDREN, true);
+        return (EList<CWEID>) this.eGet(AttackSpecificationPackage.Literals.CWEID__CHILDREN, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     @SuppressWarnings("unchecked")
     public EList<CWEID> getParents() {
-        return (EList<CWEID>) eGet(AttackSpecificationPackage.Literals.CWEID__PARENTS, true);
+        return (EList<CWEID>) this.eGet(AttackSpecificationPackage.Literals.CWEID__PARENTS, true);
     }
 
     /**
      * @generated NOT
      */
     @Override
-    public boolean equalAttackType(AttackCategory category) {
+    public boolean equalAttackType(final AttackCategory category) {
         Objects.requireNonNull(category);
-        if (!(category instanceof CWEID))
+        if (!(category instanceof CWEID)) {
             return false;
+        }
         if (Objects.equals(category.getEntityName(), this.getEntityName())
-                && this.getCweID() == ((CWEID) category).getCweID())
+                && this.getCweID() == ((CWEID) category).getCweID()) {
             return true;
-        for (var subcategory : getChildren()) {
-            if (subcategory.equalAttackType(category))
+        }
+        for (final var subcategory : this.getChildren()) {
+            if (subcategory.equalAttackType(category)) {
                 return true;
+            }
         }
         return false;
     }

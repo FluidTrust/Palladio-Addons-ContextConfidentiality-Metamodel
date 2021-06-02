@@ -8,17 +8,17 @@ import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 import org.palladiosimulator.pcm.confidentiality.context.set.SetFactory;
 
 class CheckContextSetTest {
-    
+
     @BeforeAll
     static void init() {
         ContextPackage.eINSTANCE.eClass();
     }
-    
+
     @Test
     void testEmptySet() {
-        var requestor = SetFactory.eINSTANCE.createContextSet();
-        var policy = SetFactory.eINSTANCE.createContextSet();
-        
+        final var requestor = SetFactory.eINSTANCE.createContextSet();
+        final var policy = SetFactory.eINSTANCE.createContextSet();
+
         assertFalse(policy.checkAccessRight(requestor));
     }
 

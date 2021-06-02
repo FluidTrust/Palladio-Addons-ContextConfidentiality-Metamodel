@@ -13,16 +13,15 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.SingleAttributeContext;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Single Attribute Context</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Single Attribute
+ * Context</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public class SingleAttributeContextImpl extends ContextAttributeImpl implements SingleAttributeContext {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     protected SingleAttributeContextImpl() {
@@ -30,29 +29,32 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     protected EClass eStaticClass() {
         return ModelPackage.Literals.SINGLE_ATTRIBUTE_CONTEXT;
     }
-    
+
     /**
-    @generated NOT
-    */
+     * @generated NOT
+     */
     @Override
-    public boolean checkAccessRight(ContextAttribute context) {
-        
-        if(EcoreUtil.equals(this, context))
+    public boolean checkAccessRight(final ContextAttribute context) {
+
+        if (EcoreUtil.equals(this, context)) {
             return true;
-        if(context == null)
+        }
+        if (context == null) {
             return false;
-        if(!EcoreUtil.equals(context.getContexttype(), this.getContexttype()))
+        }
+        if (!EcoreUtil.equals(context.getContexttype(), this.getContexttype())) {
             return false;
-        if(context instanceof HierarchicalContext) {
-            var hierarchicalContext = (HierarchicalContext) context;
+        }
+        if (context instanceof HierarchicalContext) {
+            final var hierarchicalContext = (HierarchicalContext) context;
             switch (hierarchicalContext.getDirection().getValue()) {
             case IncludeDirection.BOTTOM_UP_VALUE:
                 return false;
@@ -61,18 +63,16 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
             default:
                 assert false;
             }
-            
-        }
-        
-        
-        if(!(context instanceof SingleAttributeContext))
-            return false;                   
-        var contextAttribute = (SingleAttributeContext) context;
-        
 
-        
+        }
+
+        if (!(context instanceof SingleAttributeContext)) {
+            return false;
+        }
+        final var contextAttribute = (SingleAttributeContext) context;
+
         return Objects.equals(contextAttribute.getEntityName(), this.getEntityName());
-        
+
     }
 
-} //SingleAttributeContextImpl
+} // SingleAttributeContextImpl
