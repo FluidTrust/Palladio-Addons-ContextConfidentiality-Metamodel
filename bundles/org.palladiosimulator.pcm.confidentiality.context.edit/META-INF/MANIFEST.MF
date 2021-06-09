@@ -28,5 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.units;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ tools.mdsd.library.emfeditutils;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy

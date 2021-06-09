@@ -4,12 +4,10 @@ package org.palladiosimulator.pcm.confidentiality.context.model.impl;
 
 import java.util.Objects;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
 import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
-import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 import org.palladiosimulator.pcm.confidentiality.context.model.SingleAttributeContext;
 
 /**
@@ -18,25 +16,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.SingleAttributeCo
  *
  * @generated
  */
-public class SingleAttributeContextImpl extends ContextAttributeImpl implements SingleAttributeContext {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected SingleAttributeContextImpl() {
-        super();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return ModelPackage.Literals.SINGLE_ATTRIBUTE_CONTEXT;
-    }
+public class SingleAttributeContextImpl extends SingleAttributeContextImplGen implements SingleAttributeContext {
 
     /**
      * @generated NOT
@@ -50,7 +30,7 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
         if (context == null) {
             return false;
         }
-        if (!EcoreUtil.equals(context.getContexttype(), this.getContexttype())) {
+        if (!EcoreUtil.equals(context.getContexttype(), getContexttype())) {
             return false;
         }
         if (context instanceof HierarchicalContext) {
@@ -71,7 +51,7 @@ public class SingleAttributeContextImpl extends ContextAttributeImpl implements 
         }
         final var contextAttribute = (SingleAttributeContext) context;
 
-        return Objects.equals(contextAttribute.getEntityName(), this.getEntityName());
+        return Objects.equals(contextAttribute.getEntityName(), getEntityName());
 
     }
 

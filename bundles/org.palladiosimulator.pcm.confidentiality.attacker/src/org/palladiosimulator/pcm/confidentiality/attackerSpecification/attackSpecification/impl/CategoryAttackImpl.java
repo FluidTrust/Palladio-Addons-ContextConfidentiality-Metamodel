@@ -32,7 +32,6 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
      * @generated
      */
     protected CategoryAttackImpl() {
-        super();
     }
 
     /**

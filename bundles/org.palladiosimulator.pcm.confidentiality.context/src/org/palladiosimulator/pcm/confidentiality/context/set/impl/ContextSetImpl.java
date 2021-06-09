@@ -2,12 +2,8 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.set.impl;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
-import org.palladiosimulator.pcm.confidentiality.context.set.SetPackage;
-import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Context Set</b></em>'. <!--
@@ -22,37 +18,7 @@ import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
  *
  * @generated
  */
-public class ContextSetImpl extends EntityImpl implements ContextSet {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected ContextSetImpl() {
-        super();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return SetPackage.Literals.CONTEXT_SET;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    @SuppressWarnings("unchecked")
-    public EList<ContextAttribute> getContexts() {
-        return (EList<ContextAttribute>) this.eGet(SetPackage.Literals.CONTEXT_SET__CONTEXTS, true);
-    }
-
+public class ContextSetImpl extends ContextSetImplGen implements ContextSet {
     /**
      * Checks whether this context set is fullfilled by the attribute set
      *
@@ -62,11 +28,11 @@ public class ContextSetImpl extends EntityImpl implements ContextSet {
      */
     @Override
     public boolean checkAccessRight(final ContextSet set) {
-        if (this.getContexts().isEmpty()) {
+        if (getContexts().isEmpty()) {
             return false;
         }
-        for (final var policyItem : this.getContexts()) {
-            if (!this.checkContextAttribute(policyItem, set)) {
+        for (final var policyItem : getContexts()) {
+            if (!checkContextAttribute(policyItem, set)) {
                 return false;
             }
         }

@@ -4,13 +4,23 @@ package org.palladiosimulator.pcm.confidentiality.context.specification.assembly
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.pcm.confidentiality.context.specification.assembly.AssemblyPackage;
 import org.palladiosimulator.pcm.confidentiality.context.specification.assembly.ConnectionRestriction;
+import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
+import org.palladiosimulator.pcm.core.composition.Connector;
+import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
+import org.palladiosimulator.pcm.core.composition.util.CompositionSwitch;
+import org.palladiosimulator.pcm.repository.OperationProvidedRole;
+import org.palladiosimulator.pcm.repository.Signature;
+
+import tools.mdsd.library.emfeditutils.itempropertydescriptor.ItemPropertyDescriptorUtils;
+import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalculatorBase;
 
 /**
  * This is the item provider adapter for a
@@ -19,66 +29,100 @@ import org.palladiosimulator.pcm.confidentiality.context.specification.assembly.
  *
  * @generated
  */
-public class ConnectionRestrictionItemProvider extends MethodSpecificationItemProvider {
-    /**
-     * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
+public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItemProviderGen {
+
     public ConnectionRestrictionItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
-    /**
-     * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (this.itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
-
-            addConnectorPropertyDescriptor(object);
-        }
-        return this.itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Connector feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
     protected void addConnectorPropertyDescriptor(Object object) {
-        this.itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-                getString("_UI_ConnectionRestriction_connector_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_ConnectionRestriction_connector_feature",
-                        "_UI_ConnectionRestriction_type"),
-                AssemblyPackage.Literals.CONNECTION_RESTRICTION__CONNECTOR, true, false, true, null, null, null));
+        super.addConnectorPropertyDescriptor(object);
+        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+
+        decorator.setValueChoiceCalculator(
+                new ValueChoiceCalculatorBase<>(ConnectionRestriction.class, Connector.class) {
+                    @Override
+                    protected Collection<?> getValueChoiceTyped(ConnectionRestriction object,
+                            List<Connector> typedList) {
+                        var signature = object.getSignature();
+                        if (signature == null) {
+                            return typedList;
+                        }
+                        final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
+                            @Override
+                            public OperationProvidedRole caseProvidedDelegationConnector(
+                                    ProvidedDelegationConnector object) {
+                                return object.getOuterProvidedRole_ProvidedDelegationConnector();
+                            }
+
+                            @Override
+                            public OperationProvidedRole caseAssemblyConnector(AssemblyConnector object) {
+                                return object.getProvidedRole_AssemblyConnector();
+                            }
+
+                        };
+                        return typedList.stream().filter(connector -> {
+                            if (connector == null) {
+                                return true;
+                            }
+                            var role = switchConnector.doSwitch(connector);
+                            if (role == null) {
+                                return false;
+                            }
+                            return role.getProvidedInterface__OperationProvidedRole()
+                                    .getSignatures__OperationInterface().stream()
+                                    .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
+
+                        }).collect(Collectors.toList());
+
+                    }
+                });
     }
 
-    /**
-     * This returns ConnectionRestriction.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectionRestriction"));
-    }
+    protected void addSignaturePropertyDescriptor(Object object) {
+        super.addSignaturePropertyDescriptor(object);
+        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected boolean shouldComposeCreationImage() {
-        return true;
+        decorator.setValueChoiceCalculator(
+                new ValueChoiceCalculatorBase<>(ConnectionRestriction.class, Signature.class) {
+                    @Override
+                    protected Collection<?> getValueChoiceTyped(ConnectionRestriction object,
+                            List<Signature> typedList) {
+                        var connector = object.getConnector();
+                        if (connector == null) {
+                            return typedList;
+                        }
+                        final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
+                            @Override
+                            public OperationProvidedRole caseProvidedDelegationConnector(
+                                    ProvidedDelegationConnector object) {
+                                return object.getOuterProvidedRole_ProvidedDelegationConnector();
+                            }
+
+                            @Override
+                            public OperationProvidedRole caseAssemblyConnector(AssemblyConnector object) {
+                                return object.getProvidedRole_AssemblyConnector();
+                            }
+
+                        };
+                        return typedList.stream().filter(signature -> {
+                            if (signature == null) {
+                                return true;
+                            }
+                            var role = switchConnector.doSwitch(connector);
+                            if (role == null) {
+                                return false;
+                            }
+                            return role.getProvidedInterface__OperationProvidedRole()
+                                    .getSignatures__OperationInterface().stream()
+                                    .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
+
+                        }).collect(Collectors.toList());
+
+                    }
+                });
     }
 
     /**
@@ -110,18 +154,12 @@ public class ConnectionRestrictionItemProvider extends MethodSpecificationItemPr
     @Override
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
+        switch (notification.getFeatureID(ConnectionRestriction.class)) {
+        case AssemblyPackage.CONNECTION_RESTRICTION__CONNECTOR:
+        case AssemblyPackage.CONNECTION_RESTRICTION__SIGNATURE:
+            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+        }
         super.notifyChanged(notification);
-    }
-
-    /**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
-     * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
     }
 
 }

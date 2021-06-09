@@ -2,13 +2,10 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.model.impl;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.context.model.ContextAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.model.HierarchicalContext;
 import org.palladiosimulator.pcm.confidentiality.context.model.IncludeDirection;
-import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Hierarchical
@@ -25,57 +22,7 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage;
  *
  * @generated
  */
-public class HierarchicalContextImpl extends ContextAttributeImpl implements HierarchicalContext {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected HierarchicalContextImpl() {
-        super();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return ModelPackage.Literals.HIERARCHICAL_CONTEXT;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    @SuppressWarnings("unchecked")
-    public EList<ContextAttribute> getIncluding() {
-        return (EList<ContextAttribute>) this.eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__INCLUDING, true);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public IncludeDirection getDirection() {
-        return (IncludeDirection) this.eGet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, true);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void setDirection(final IncludeDirection newDirection) {
-        this.eSet(ModelPackage.Literals.HIERARCHICAL_CONTEXT__DIRECTION, newDirection);
-    }
-
+public class HierarchicalContextImpl extends HierarchicalContextImplGen implements HierarchicalContext {
     /**
      * @generated NOT
      */
@@ -87,12 +34,12 @@ public class HierarchicalContextImpl extends ContextAttributeImpl implements Hie
         if (context == null) {
             return false;
         }
-        if (!EcoreUtil.equals(this.getContexttype(), context.getContexttype())) {
+        if (!EcoreUtil.equals(getContexttype(), context.getContexttype())) {
             return false;
         }
-        switch (this.getDirection().getValue()) {
+        switch (getDirection().getValue()) {
         case IncludeDirection.BOTTOM_UP_VALUE:
-            final var includes = this.getIncluding();
+            final var includes = getIncluding();
             final var value1 = includes.stream().anyMatch(e -> e.checkAccessRight(context));
             return value1;
 
@@ -109,4 +56,4 @@ public class HierarchicalContextImpl extends ContextAttributeImpl implements Hie
         return false;
     }
 
-} // HierarchicalContextImpl
+}
