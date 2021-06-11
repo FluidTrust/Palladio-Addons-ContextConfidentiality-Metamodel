@@ -10,34 +10,35 @@ import org.palladiosimulator.pcm.confidentiality.context.model.ModelFactory;
 import org.palladiosimulator.pcm.confidentiality.context.set.SetFactory;
 
 public class CheckAccessRightsRelatedContextSetTest {
-    
+
     @BeforeAll
     static void init() {
         ContextPackage.eINSTANCE.eClass();
     }
+
     @Test
     void testSingleAttributeRelatedContext() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyRelatedType = ModelFactory.eINSTANCE.createRelatedContextSet();
-        var contextSet = SetFactory.eINSTANCE.createContextSet();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyRelatedType = ModelFactory.eINSTANCE.createRelatedContextSet();
+        final var contextSet = SetFactory.eINSTANCE.createContextSet();
         contextSet.getContexts().add(requestSingleType);
         poliyRelatedType.setContextset(contextSet);
-        
+
         assertFalse(poliyRelatedType.checkAccessRight(requestSingleType), "Comparison failed");
     }
+
     @Test
     void testSingleAttributeRelatedContextRelated() {
-        var singleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyRelatedType = ModelFactory.eINSTANCE.createRelatedContextSet();
-        var requestType = ModelFactory.eINSTANCE.createRelatedContextSet();
-        var contextSet = SetFactory.eINSTANCE.createContextSet();
-        
+        final var singleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyRelatedType = ModelFactory.eINSTANCE.createRelatedContextSet();
+        final var requestType = ModelFactory.eINSTANCE.createRelatedContextSet();
+        final var contextSet = SetFactory.eINSTANCE.createContextSet();
+
         contextSet.getContexts().add(singleType);
         poliyRelatedType.setContextset(contextSet);
         requestType.setContextset(contextSet);
-        
+
         assertTrue(poliyRelatedType.checkAccessRight(requestType), "Comparison failed");
     }
-    
 
 }

@@ -35,5 +35,9 @@
 			<unit id="de.uka.ipd.sdq.workflow.feature.core.feature.group" version="2.2.3.201709282207"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/nightly/"/>
 		</location>
+			<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+			<unit id="tools.mdsd.library.emfeditutils" version="0.0.0"/>
+			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/nightly/"/>
+		</location>
 	</locations>
 </target>

@@ -36,6 +36,8 @@
       <genClasses ecoreClass="context.ecore#//model/RelatedContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//model/RelatedContextSet/contextset"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//model/RelatedContextSet/modelEntity"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//model/ContextAttribute" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -78,12 +80,6 @@
             ecoreFeature="ecore:EReference context.ecore#//specification/ContextSpecification/usagescenario"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//specification/ContextSpecification/missageUse"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//specification/PolicySpecification" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//specification/PolicySpecification/policy"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//specification/PolicySpecification/resourcedemandingbehaviour"/>
-      </genClasses>
       <genClasses ecoreClass="context.ecore#//specification/PCMSpecificationContainer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/policyspecification"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/contextspecification"/>
@@ -101,6 +97,8 @@
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/methodspecification"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/linkingresource"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/policy"/>
         </genClasses>
         <genClasses ecoreClass="context.ecore#//specification/assembly/AttributeProvider"
             labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
@@ -117,9 +115,17 @@
         </genClasses>
         <genClasses ecoreClass="context.ecore#//specification/assembly/MethodSpecification">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/MethodSpecification/connector"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/MethodSpecification/signature"/>
+        </genClasses>
+        <genClasses ecoreClass="context.ecore#//specification/assembly/ConnectionRestriction">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ConnectionRestriction/connector"/>
+        </genClasses>
+        <genClasses ecoreClass="context.ecore#//specification/assembly/ProvidedRestriction">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ProvidedRestriction/providedrole"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ProvidedRestriction/assemblycontext"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

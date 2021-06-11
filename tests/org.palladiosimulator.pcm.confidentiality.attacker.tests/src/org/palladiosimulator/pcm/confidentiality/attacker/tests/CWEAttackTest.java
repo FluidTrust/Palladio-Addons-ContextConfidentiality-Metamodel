@@ -25,70 +25,71 @@ public class CWEAttackTest {
 
     @Test
     void testVulnerability() {
-        var cweID = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweID = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
-        var attack = TestHelpers.createCWEAttack(cweID);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
+        final var attack = TestHelpers.createCWEAttack(cweID);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
     }
 
     @Test
     void testVulnerabilityNotTheSameObject() {
-        var cweID = TestHelpers.createCWECategory(0, "test");
-        var cweID2 = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweID = TestHelpers.createCWECategory(0, "test");
+        final var cweID2 = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweID);
-        var attack = TestHelpers.createCWEAttack(cweID2);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweID);
+        final var attack = TestHelpers.createCWEAttack(cweID2);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, null, null);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, null, null);
     }
 
     @Test
     void testVulnerabilityHierachical() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
         cweIDAttackerCapabilities.getChildren().add(cweIDVulnerability);
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability);
-        var attack = TestHelpers.createCWEAttack(cweIDAttackerCapabilities);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID);
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability);
+        final var attack = TestHelpers.createCWEAttack(cweIDAttackerCapabilities);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, null, null);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, null, null);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, null, null);
     }
 
     @Test
     void testVulnerabilityWrongHierachical() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cweIDAttackerCapabilities = TestHelpers.createCWECategory(1, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
         cweIDVulnerability.getChildren().add(cweIDAttackerCapabilities);
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability);
-        var attack = TestHelpers.createCWEAttack(cweIDAttackerCapabilities);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID);
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability);
+        final var attack = TestHelpers.createCWEAttack(cweIDAttackerCapabilities);
 
-        testAllAttackVectorsFalse(attack, vulnerabilityCVE, null, null);
-        testAllAttackVectorsFalse(attack, vulnerabilityCWE, null, null);
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCVE, null, null);
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCWE, null, null);
     }
 
     @Test
     void testVulnerabilityAdjacentNetwork() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID,
                 AttackVector.ADJACENT_NETWORK);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.ADJACENT_NETWORK);
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability,
+                AttackVector.ADJACENT_NETWORK);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
         assertFalse(attack.canExploit(vulnerabilityCVE, null, null, AttackVector.NETWORK));
         assertTrue(attack.canExploit(vulnerabilityCVE, null, null, AttackVector.ADJACENT_NETWORK));
@@ -101,12 +102,12 @@ public class CWEAttackTest {
 
     @Test
     void testVulnerabilityLocal() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.LOCAL);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.LOCAL);
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.LOCAL);
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.LOCAL);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
         assertFalse(attack.canExploit(vulnerabilityCVE, null, null, AttackVector.NETWORK));
         assertFalse(attack.canExploit(vulnerabilityCVE, null, null, AttackVector.ADJACENT_NETWORK));
@@ -119,135 +120,135 @@ public class CWEAttackTest {
 
     @Test
     void testVulnerabilityPrivilegeLowSameContextSetObject() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentials = TestHelpers.createContextSet("test", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentials = TestHelpers.createContextSet("test", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.LOW, null);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.LOW, null);
 
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentials, credentials);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentials, credentials);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentials, credentials);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentials, credentials);
     }
 
     @Test
     void testVulnerabilityPrivilegeLowDifferentContextSetObject() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
-        var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
+        final var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.LOW, null);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.LOW, null);
 
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
     }
 
     @Test
     void testVulnerabilityPrivilegeLowErrorWrongSet() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentialsAttacker = TestHelpers.createContextSet("test");
-        var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentialsAttacker = TestHelpers.createContextSet("test");
+        final var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.LOW, null);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.LOW, null);
-        
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsFalse(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
-        testAllAttackVectorsFalse(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
     }
 
     @Test
     void testVulnerabilityPrivilegeSpecial() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentialsAttacker = TestHelpers.createContextSet("test", "test2", "test3");
-        var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
-        var credentialsSpecial = TestHelpers.createContextSet("test3");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentialsAttacker = TestHelpers.createContextSet("test", "test2", "test3");
+        final var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
+        final var credentialsSpecial = TestHelpers.createContextSet("test3");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.SPECIAL, credentialsSpecial);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.SPECIAL, credentialsSpecial);
-        
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
     }
 
     @Test
     void testVulnerabilityPrivilegeSpecialMissing() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
-        var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
-        var credentialsSpecial = TestHelpers.createContextSet("test3");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
+        final var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
+        final var credentialsSpecial = TestHelpers.createContextSet("test3");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.SPECIAL, credentialsSpecial);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.SPECIAL, credentialsSpecial);
-        
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsFalse(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
-        testAllAttackVectorsFalse(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
     }
 
     @Test
     void testVulnerabilityPrivilegeLowAdditional() {
-        var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
-        var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
-        var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
-        var credentialsSpecial = TestHelpers.createContextSet("test3");
+        final var cweIDVulnerability = TestHelpers.createCWECategory(0, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var credentialsAttacker = TestHelpers.createContextSet("test", "test2");
+        final var credentialsNeeded = TestHelpers.createContextSet("test", "test2");
+        final var credentialsSpecial = TestHelpers.createContextSet("test3");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweIDVulnerability, cveID, AttackVector.NETWORK,
                 Privileges.LOW, credentialsSpecial);
-        var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
+        final var vulnerabilityCWE = TestHelpers.createCWEVulnerability(cweIDVulnerability, AttackVector.NETWORK,
                 Privileges.LOW, credentialsSpecial);
-        var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
+        final var attack = TestHelpers.createCWEAttack(cweIDVulnerability);
 
-        testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
-        testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCVE, credentialsAttacker, credentialsNeeded);
+        this.testAllAttackVectorsTrue(attack, vulnerabilityCWE, credentialsAttacker, credentialsNeeded);
     }
 
     @Test
     void testVulnerabilityWrongCWE() {
-        var cweID = TestHelpers.createCWECategory(0, "test");
-        var cweIDWrong = TestHelpers.createCWECategory(1, "test");
-        var cveID = TestHelpers.createCVECategory("1", "test2");
+        final var cweID = TestHelpers.createCWECategory(0, "test");
+        final var cweIDWrong = TestHelpers.createCWECategory(1, "test");
+        final var cveID = TestHelpers.createCVECategory("1", "test2");
 
-        var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
-        var attack = TestHelpers.createCWEAttack(cweIDWrong);
+        final var vulnerabilityCVE = TestHelpers.createCVEVulnerability(cweID, cveID);
+        final var attack = TestHelpers.createCWEAttack(cweIDWrong);
 
-        testAllAttackVectorsFalse(attack, vulnerabilityCVE, null, null);
+        this.testAllAttackVectorsFalse(attack, vulnerabilityCVE, null, null);
     }
 
-    private void testAllAttackVectorsTrue(Attack attack, Vulnerability vulnerability, ContextSet credentialsAttacker,
-            ContextSet credentialsNeeded) {
+    private void testAllAttackVectorsTrue(final Attack attack, final Vulnerability vulnerability,
+            final ContextSet credentialsAttacker, final ContextSet credentialsNeeded) {
         assertTrue(attack.canExploit(vulnerability, credentialsAttacker, credentialsNeeded, AttackVector.NETWORK));
         assertTrue(attack.canExploit(vulnerability, credentialsAttacker, credentialsNeeded,
                 AttackVector.ADJACENT_NETWORK));
         assertTrue(attack.canExploit(vulnerability, credentialsAttacker, credentialsNeeded, AttackVector.LOCAL));
     }
 
-    private void testAllAttackVectorsFalse(Attack attack, Vulnerability vulnerability, ContextSet credentialsAttacker,
-            ContextSet credentialsNeeded) {
+    private void testAllAttackVectorsFalse(final Attack attack, final Vulnerability vulnerability,
+            final ContextSet credentialsAttacker, final ContextSet credentialsNeeded) {
         assertFalse(attack.canExploit(vulnerability, credentialsAttacker, credentialsNeeded, AttackVector.NETWORK));
         assertFalse(attack.canExploit(vulnerability, credentialsAttacker, credentialsNeeded,
                 AttackVector.ADJACENT_NETWORK));

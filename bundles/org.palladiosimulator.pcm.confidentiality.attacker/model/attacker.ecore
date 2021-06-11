@@ -161,7 +161,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/BasicComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//specification/assembly/MethodSpecification"/>
+          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//specification/assembly/MethodSpecification"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
     </eClassifiers>
   </eSubpackages>

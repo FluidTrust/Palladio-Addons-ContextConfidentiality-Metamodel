@@ -17,16 +17,16 @@ class CheckAccessRightsSingleAttributeTest {
 
     @Test
     void testSingleAttributeNull() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliySingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliySingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
         assertTrue(poliySingleType.checkAccessRight(requestSingleType), "Comparison failed");
     }
 
     @Test
     void testSingleAttributeName() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliySingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliySingleTypeName = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliySingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliySingleTypeName = ModelFactory.eINSTANCE.createSingleAttributeContext();
         requestSingleType.setEntityName("Test");
         poliySingleTypeName.setEntityName("Test");
         assertFalse(poliySingleType.checkAccessRight(requestSingleType));
@@ -35,44 +35,46 @@ class CheckAccessRightsSingleAttributeTest {
 
     @Test
     void testSingleAttributeSame() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
         assertTrue(requestSingleType.checkAccessRight(requestSingleType), "Comparison failed");
     }
-    
+
     @Test
     void testSingleAttributeDifferentContext() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyHierachicalType = ModelFactory.eINSTANCE.createHierarchicalContext();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyHierachicalType = ModelFactory.eINSTANCE.createHierarchicalContext();
         assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
     }
-    
+
     @Test
     void testSingleAttributeSameNameDifferentTypeNull() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var type = ModelFactory.eINSTANCE.createContextType();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var type = ModelFactory.eINSTANCE.createContextType();
         requestSingleType.setContexttype(type);
         requestSingleType.setEntityName("Test");
         poliyHierachicalType.setEntityName("Test");
         assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
     }
+
     @Test
     void testSingleAttributeSameNameDifferentType() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var type = ModelFactory.eINSTANCE.createContextType();
-        var type2 = ModelFactory.eINSTANCE.createContextType();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var type = ModelFactory.eINSTANCE.createContextType();
+        final var type2 = ModelFactory.eINSTANCE.createContextType();
         requestSingleType.setContexttype(type);
         poliyHierachicalType.setContexttype(type2);
         requestSingleType.setEntityName("Test");
         poliyHierachicalType.setEntityName("Test");
         assertFalse(poliyHierachicalType.checkAccessRight(requestSingleType), "Comparison failed");
     }
+
     @Test
     void testSingleAttributeSameType() {
-        var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
-        var type = ModelFactory.eINSTANCE.createContextType();
+        final var requestSingleType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var poliyHierachicalType = ModelFactory.eINSTANCE.createSingleAttributeContext();
+        final var type = ModelFactory.eINSTANCE.createContextType();
         requestSingleType.setContexttype(type);
         poliyHierachicalType.setContexttype(type);
         requestSingleType.setEntityName("Test");
