@@ -146,4 +146,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyModelWizardID"
+            name="%_UI_PolicyModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PolicyModelFile.gif">
+         <description>%_UI_PolicyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyEditorID"
+            name="%_UI_PolicyEditor_label"
+            icon="icons/full/obj16/PolicyModelFile.gif"
+            extensions="policy"
+            class="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

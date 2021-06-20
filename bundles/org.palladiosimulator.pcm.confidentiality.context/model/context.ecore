@@ -11,6 +11,8 @@
         eType="#//model/TypeContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pcmspecificationcontainer"
         lowerBound="1" eType="#//specification/PCMSpecificationContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policyset" eType="#//policy/PolicySet"
+        containment="true"/>
   </eClassifiers>
   <eSubpackages name="model" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/"
       nsPrefix="model">
@@ -121,5 +123,26 @@
             eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
       </eClassifiers>
     </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="policy" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/policy/0.1/"
+      nsPrefix="policy">
+    <eClassifiers xsi:type="ecore:EClass" name="PolicySet" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/Identifier"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="policyset" upperBound="-1"
+          eType="#//policy/PolicySet" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="policy" upperBound="-1"
+          eType="#//policy/Policy" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Identifier" instanceClassName="com.att.research.xacml.api.Identifier"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Policy" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/Identifier"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1"
+          eType="#//policy/Rule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Rule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="permit" eType="#//policy/PermitType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="PermitType" instanceClassName="oasis.names.tc.xacml._3_0.core.schema.wd_17.EffectType"/>
   </eSubpackages>
 </ecore:EPackage>

@@ -20,6 +20,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/contextContainer"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/typeContainer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/pcmspecificationcontainer"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/policyset"/>
     </genClasses>
     <nestedGenPackages prefix="Model" basePackage="org.palladiosimulator.pcm.confidentiality.context"
         disposableProviderFactory="true" ecorePackage="context.ecore#//model">
@@ -128,6 +129,26 @@
               ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ProvidedRestriction/assemblycontext"/>
         </genClasses>
       </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Policy" disposableProviderFactory="true" ecorePackage="context.ecore#//policy">
+      <genDataTypes ecoreDataType="context.ecore#//policy/Identifier"/>
+      <genDataTypes ecoreDataType="context.ecore#//policy/PermitType"/>
+      <genClasses ecoreClass="context.ecore#//policy/PolicySet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/PolicySet/combiningAlgorithm"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/PolicySet/policyset"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/PolicySet/policy"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/Policy">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Policy/combiningAlgorithm"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Policy/rule"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/Condition"/>
+      <genClasses ecoreClass="context.ecore#//policy/Rule">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Rule/permit"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
