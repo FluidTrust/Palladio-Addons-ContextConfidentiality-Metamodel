@@ -3,32 +3,30 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.context;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.context
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.3.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.palladiosimulator.pcm.confidentiality.context,
+Export-Package: org.palladiosimulator.pcm.confidentiality.accessControl,
+ org.palladiosimulator.pcm.confidentiality.accessControl.impl,
+ org.palladiosimulator.pcm.confidentiality.accessControl.util,
+ org.palladiosimulator.pcm.confidentiality.context.context,
+ org.palladiosimulator.pcm.confidentiality.context.context.impl,
+ org.palladiosimulator.pcm.confidentiality.context.context.util,
  org.palladiosimulator.pcm.confidentiality.context.helper,
- org.palladiosimulator.pcm.confidentiality.context.impl,
- org.palladiosimulator.pcm.confidentiality.context.model,
- org.palladiosimulator.pcm.confidentiality.context.model.impl,
- org.palladiosimulator.pcm.confidentiality.context.model.util,
  org.palladiosimulator.pcm.confidentiality.context.policy,
  org.palladiosimulator.pcm.confidentiality.context.policy.impl,
  org.palladiosimulator.pcm.confidentiality.context.policy.util,
- org.palladiosimulator.pcm.confidentiality.context.predefined,
- org.palladiosimulator.pcm.confidentiality.context.predefined.impl,
- org.palladiosimulator.pcm.confidentiality.context.set,
- org.palladiosimulator.pcm.confidentiality.context.set.impl,
- org.palladiosimulator.pcm.confidentiality.context.set.util,
- org.palladiosimulator.pcm.confidentiality.context.specification,
- org.palladiosimulator.pcm.confidentiality.context.specification.assembly,
- org.palladiosimulator.pcm.confidentiality.context.specification.assembly.impl,
- org.palladiosimulator.pcm.confidentiality.context.specification.assembly.util,
- org.palladiosimulator.pcm.confidentiality.context.specification.impl,
- org.palladiosimulator.pcm.confidentiality.context.specification.util,
- org.palladiosimulator.pcm.confidentiality.context.util
+ org.palladiosimulator.pcm.confidentiality.context.system,
+ org.palladiosimulator.pcm.confidentiality.context.system.impl,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.impl,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.util,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.impl,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.util,
+ org.palladiosimulator.pcm.confidentiality.context.system.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.cdo;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
@@ -36,8 +34,6 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  de.uka.ipd.sdq.probfunction;visibility:=reexport,
  de.uka.ipd.sdq.stoex;visibility:=reexport,
  de.uka.ipd.sdq.units;visibility:=reexport,
- org.eclipse.core.runtime,
- external-dependencies;bundle-version="1.0.0"
+ org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
 Eclipse-ExtensibleAPI: true
-Service-Component: OSGI-INF/org.palladiosimulator.pcm.confidentiality.context.predefined.impl.PolicyCombiningAlgorithmImpl.xml

@@ -1,148 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="context" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/0.1/"
-    nsPrefix="context">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="accessControl" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/0.1/"
+    nsPrefix="accessControl">
   <eClassifiers xsi:type="ecore:EClass" name="ConfidentialAccessSpecification">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="setContainer" lowerBound="1"
-        upperBound="-1" eType="#//set/ContextSetContainer" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contextContainer" lowerBound="1"
-        upperBound="-1" eType="#//model/ContextContainer" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typeContainer" lowerBound="1"
-        eType="#//model/TypeContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pcmspecificationcontainer"
-        lowerBound="1" eType="#//specification/PCMSpecificationContainer" containment="true"/>
+        lowerBound="1" eType="#//system/SystemSpecificationContainer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="policyset" eType="#//policy/PolicySet"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//context/Attributes"
+        containment="true"/>
   </eClassifiers>
-  <eSubpackages name="model" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/"
-      nsPrefix="model">
-    <eClassifiers xsi:type="ecore:EClass" name="HierarchicalContext" eSuperTypes="#//model/ContextAttribute">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="including" upperBound="-1"
-          eType="#//model/ContextAttribute"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//model/IncludeDirection"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SingleAttributeContext" eSuperTypes="#//model/ContextAttribute"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RelatedContextSet" eSuperTypes="#//model/ContextAttribute">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contextset" lowerBound="1"
-          eType="#//set/ContextSet"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="modelEntity" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextAttribute" abstract="true"
-        eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eOperations name="checkAccessRight" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Checks wheter the the given Contextattribute would fullfill this contextattribute&#xA;@param context ContextAttribute to check&#xA;@return true if ContextAttribute context fullfills it&#xA;"/>
-        </eAnnotations>
-        <eParameters name="context" eType="#//model/ContextAttribute"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contexttype" eType="#//model/ContextType"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextContainer" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-          eType="#//model/ContextAttribute" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextType" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          defaultValueLiteral="false"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-          eType="#//model/ContextType" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="IncludeDirection">
-      <eLiterals name="TOP_DOWN"/>
-      <eLiterals name="BOTTOM_UP" value="1"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="set" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/set/0.1/"
-      nsPrefix="set">
-    <eClassifiers xsi:type="ecore:EClass" name="ContextSetContainer" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="policies" upperBound="-1"
-          eType="#//set/ContextSet" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextSet" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eOperations name="checkAccessRight" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
-        <eParameters name="set" eType="#//set/ContextSet"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
-          eType="#//model/ContextAttribute"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="specification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/0.1/"
-      nsPrefix="specification">
-    <eClassifiers xsi:type="ecore:EClass" name="ContextSpecification" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contextset" lowerBound="1"
-          eType="#//set/ContextSet"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="entrylevelsystemcall"
-          eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="missageUse" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PCMSpecificationContainer" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="policyspecification"
-          upperBound="-1" eType="#//specification/assembly/SystemPolicySpecification"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contextspecification"
-          upperBound="-1" eType="#//specification/ContextSpecification" containment="true"/>
+  <eSubpackages name="system" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/systemSpecification/0.1/"
+      nsPrefix="system">
+    <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificationContainer" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeprovider" upperBound="-1"
-          eType="#//specification/assembly/AttributeProvider" containment="true"/>
+          eType="#//system/AttributeProvider" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="usagespecification" upperBound="-1"
+          eType="#//system/UsageSpecification" containment="true"/>
     </eClassifiers>
-    <eSubpackages name="assembly" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/"
-        nsPrefix="asembly">
-      <eClassifiers xsi:type="ecore:EClass" name="SystemPolicySpecification" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
-            eType="#//specification/assembly/MethodSpecification" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="policy" lowerBound="1"
-            upperBound="-1" eType="#//set/ContextSet"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AttributeProvider" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="contextset" eType="#//set/ContextSet"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
-            eType="#//specification/assembly/ConnectionRestriction"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MethodSpecification" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectionRestriction" eSuperTypes="#//specification/assembly/MethodSpecification">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connector" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/Connector"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ProvidedRestriction" eSuperTypes="#//specification/assembly/MethodSpecification">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/ProvidedRole"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-      </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeProvider" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
+          eType="#//context/AttributeValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UsageSpecification" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" upperBound="-1"
+          eType="#//context/AttributeValue"/>
+    </eClassifiers>
+    <eSubpackages name="pcm" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/0.1/"
+        nsPrefix="pcm">
+      <eSubpackages name="structure" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/structure/0.1/"
+          nsPrefix="structure">
+        <eClassifiers xsi:type="ecore:EClass" name="PCMAttributeProvider" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity #//system/AttributeProvider">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
+              eType="#//system/pcm/structure/ConnectionRestriction"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="MethodSpecification" abstract="true">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ConnectionRestriction" eSuperTypes="#//system/pcm/structure/MethodSpecification">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="connector" lowerBound="1"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/Connector"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ProvidedRestriction" eSuperTypes="#//system/pcm/structure/MethodSpecification">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/ProvidedRole"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext"
+              lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="LinkingMatch" eSuperTypes="#//policy/Match">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ResourceMatch" eSuperTypes="#//policy/Match">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
+              lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ComponentMatch" eSuperTypes="#//policy/Match">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext"
+              lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="GenericMatch" eSuperTypes="#//policy/Match">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
+              eType="#//context/AttributeValue"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+              eType="#//policy/Operations"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//policy/Category"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="MethodMatch">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
+              lowerBound="1" eType="#//system/pcm/structure/MethodSpecification" containment="true"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="usage" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/usage/0.1/"
+          nsPrefix="usage">
+        <eClassifiers xsi:type="ecore:EClass" name="PCMUsageSpecification" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="entrylevelsystemcall"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="missageUse" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        </eClassifiers>
+      </eSubpackages>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="policy" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/policy/0.1/"
-      nsPrefix="policy">
+      nsPrefix="">
     <eClassifiers xsi:type="ecore:EClass" name="PolicySet" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/Identifier"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/PolicyCombiningAlgorithm"
+          defaultValueLiteral="DENY_UNLESS_PERMIT"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="policyset" upperBound="-1"
           eType="#//policy/PolicySet" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="policy" upperBound="-1"
           eType="#//policy/Policy" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          upperBound="-1" eType="#//policy/AnyOff" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="Identifier" instanceClassName="com.att.research.xacml.api.Identifier"/>
     <eClassifiers xsi:type="ecore:EClass" name="Policy" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/Identifier"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/RuleCombiningAlgorihtm"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1"
           eType="#//policy/Rule" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          upperBound="-1" eType="#//policy/AnyOff" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
     <eClassifiers xsi:type="ecore:EClass" name="Rule">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="permit" eType="#//policy/PermitType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+          eType="#//policy/AnyOff" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="PermitType" instanceClassName="oasis.names.tc.xacml._3_0.core.schema.wd_17.EffectType"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="PermitType">
+      <eLiterals name="DENY"/>
+      <eLiterals name="PERMIT" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="PolicyCombiningAlgorithm">
+      <eLiterals name="DENY_OVERRIDES"/>
+      <eLiterals name="PERMIT_OVERRIDES" value="1"/>
+      <eLiterals name="FIRST_APPLICABLE" value="2"/>
+      <eLiterals name="ONLY_ONE_APPLICABLE" value="3"/>
+      <eLiterals name="ORDERED_DENY_OVERRIDES" value="4"/>
+      <eLiterals name="ORDERED_PERMIT_OVERRIDES" value="5"/>
+      <eLiterals name="DENY_UNLESS_PERMIT" value="6"/>
+      <eLiterals name="PERMIT_UNLESS_DENY" value="7"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="RuleCombiningAlgorihtm">
+      <eLiterals name="DENY_OVERRIDES" literal="DENY_OVERRIDES"/>
+      <eLiterals name="PERMIT_OVERRIDES" value="1"/>
+      <eLiterals name="FIRST_APPLICABLE" value="2"/>
+      <eLiterals name="ONLY_ONE_APPLICABLE" value="3"/>
+      <eLiterals name="ORDERED_DENY_OVERRIDES" value="4"/>
+      <eLiterals name="ORDERED_PERMIT_OVERRIDES" value="5"/>
+      <eLiterals name="DENY_UNLESS_PERMIT" value="6"/>
+      <eLiterals name="PERMIT_UNLESS_DENY" value="7"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AllOf">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="match" lowerBound="1"
+          upperBound="-1" eType="#//policy/Match" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnyOff">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allof" lowerBound="1"
+          upperBound="-1" eType="#//policy/AllOf" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Match" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="Operations">
+      <eLiterals name="EQUALS"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Category">
+      <eLiterals name="SUBJECT"/>
+      <eLiterals name="RESOURCE" value="1"/>
+      <eLiterals name="ENVIRONMENT" value="2"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="context" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
+      nsPrefix="context">
+    <eClassifiers xsi:type="ecore:EClass" name="Attributes">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+          eType="#//context/Attribute" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
+          upperBound="-1" eType="#//context/AttributeValue" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//context/DataTypes"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DataTypes">
+      <eLiterals name="String"/>
+      <eLiterals name="Boolean" value="1"/>
+      <eLiterals name="Integer" value="2"/>
+      <eLiterals name="Double" value="3"/>
+      <eLiterals name="Date" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityAttribute" eSuperTypes="#//context/Attribute">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modelEntity" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExternalAttribute" eSuperTypes="#//context/Attribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//context/Attribute"/>
   </eSubpackages>
 </ecore:EPackage>

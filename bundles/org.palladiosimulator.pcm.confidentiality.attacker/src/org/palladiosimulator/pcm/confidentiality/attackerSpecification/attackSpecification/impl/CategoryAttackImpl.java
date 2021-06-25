@@ -2,15 +2,14 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackVector;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CategoryAttack;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Privileges;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability;
-import org.palladiosimulator.pcm.confidentiality.context.set.ContextSet;
+import org.palladiosimulator.pcm.confidentiality.context.context.AttributeValue;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Category Attack</b></em>'.
@@ -70,8 +69,8 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
     }
 
     @Override
-    public boolean canExploit(final Vulnerability vulnerability, final ContextSet credentialsAttacker,
-            final ContextSet credentialsNeeded, final AttackVector attackVector) {
+    public boolean canExploit(Vulnerability vulnerability, EList<AttributeValue> credentialsAttacker,
+            EList<AttributeValue> credentialsNeeded, AttackVector attackVector) {
         if (!this.checkID(vulnerability)) {
             return false;
         }
@@ -79,15 +78,16 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
         if (!this.isIncluded(attackVector, vulnerability.getAttackVector())) {
             return false;
         }
-        if (vulnerability.getPrivileges() != Privileges.NONE) {
-            final var tmpCredentials = EcoreUtil.copy(credentialsNeeded);
-            if (vulnerability.getPrivileges() == Privileges.SPECIAL) {
-                tmpCredentials.getContexts().addAll(vulnerability.getRequiredCredentials().getContexts());
-            }
-            if (!tmpCredentials.checkAccessRight(credentialsAttacker)) {
-                return false;
-            }
-        }
+        // TODO adapt to new model
+//        if (vulnerability.getPrivileges() != Privileges.NONE) {
+//            final var tmpCredentials = EcoreUtil.copy(credentialsNeeded);
+//            if (vulnerability.getPrivileges() == Privileges.SPECIAL) {
+//                tmpCredentials.getContexts().addAll(vulnerability.getRequiredCredentials().getContexts());
+//            }
+//            if (!tmpCredentials.checkAccessRight(credentialsAttacker)) {
+//                return false;
+//            }
+//        }
 
         return true;
     }
