@@ -158,7 +158,7 @@
           eType="#//attackSpecification/Vulnerability"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/BasicComponent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure/MethodSpecification"
