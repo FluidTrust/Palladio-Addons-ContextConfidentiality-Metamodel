@@ -10,47 +10,47 @@
       <!-- @generated context -->
       <package
             uri="http://www.palladiosimulator.org/pcm/confidentiality/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.ContextPackage"
+            class="org.palladiosimulator.pcm.confidentiality.accessControl.ContextPackage"
+            genModel="model/context.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated context -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/systemSpecification/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.SystemPackage"
             genModel="model/context.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
       <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.model.ModelPackage"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/structure/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.StructurePackage"
             genModel="model/context.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
       <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/set/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.set.SetPackage"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/usage/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.UsagePackage"
             genModel="model/context.genmodel"/>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated context -->
-      <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.SpecificationPackage"
-            genModel="model/context.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated context -->
-      <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.AssemblyPackage"
-            genModel="model/context.genmodel"/>
-   </extension>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
       <package
             uri="http://www.palladiosimulator.org/pcm/confidentiality/context/policy/0.1/"
             class="org.palladiosimulator.pcm.confidentiality.context.policy.PolicyPackage"
+            genModel="model/context.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated context -->
+      <package
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.context.ContextPackage"
             genModel="model/context.genmodel"/>
    </extension>
 

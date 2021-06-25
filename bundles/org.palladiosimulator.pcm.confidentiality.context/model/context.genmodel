@@ -7,7 +7,7 @@
     modelPluginID="org.palladiosimulator.pcm.confidentiality.context" modelName="Context"
     rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     reflectiveDelegation="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
-    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units"
     importOrganizing="true">
   <foreignModel>context.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
@@ -16,139 +16,180 @@
       disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
       ecorePackage="context.ecore#/">
     <genClasses ecoreClass="context.ecore#//ConfidentialAccessSpecification">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/setContainer"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/contextContainer"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/typeContainer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/pcmspecificationcontainer"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/policyset"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference context.ecore#//ConfidentialAccessSpecification/attributes"/>
     </genClasses>
-    <nestedGenPackages prefix="Model" basePackage="org.palladiosimulator.pcm.confidentiality.context"
-        disposableProviderFactory="true" ecorePackage="context.ecore#//model">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//model/IncludeDirection">
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//model/IncludeDirection/TOP_DOWN"/>
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//model/IncludeDirection/BOTTOM_UP"/>
-      </genEnums>
-      <genClasses ecoreClass="context.ecore#//model/HierarchicalContext" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+    <nestedGenPackages prefix="System" basePackage="org.palladiosimulator.pcm.confidentiality.context"
+        disposableProviderFactory="true" ecorePackage="context.ecore#//system">
+      <genClasses ecoreClass="context.ecore#//system/SystemSpecificationContainer">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/attributeprovider"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/usagespecification"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//system/AttributeProvider">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//model/HierarchicalContext/including"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//model/HierarchicalContext/direction"/>
+            ecoreFeature="ecore:EReference context.ecore#//system/AttributeProvider/attributevalue"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//model/SingleAttributeContext" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
-      <genClasses ecoreClass="context.ecore#//model/RelatedContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+      <genClasses ecoreClass="context.ecore#//system/UsageSpecification">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//model/RelatedContextSet/contextset"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//model/RelatedContextSet/modelEntity"/>
+            ecoreFeature="ecore:EReference context.ecore#//system/UsageSpecification/attributevalue"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//model/ContextAttribute" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//model/ContextAttribute/contexttype"/>
-        <genOperations ecoreOperation="context.ecore#//model/ContextAttribute/checkAccessRight">
-          <genParameters ecoreParameter="context.ecore#//model/ContextAttribute/checkAccessRight/context"/>
-        </genOperations>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//model/ContextContainer" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//model/ContextContainer/context"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//model/ContextType" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//model/ContextType/unique"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//model/TypeContainer">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//model/TypeContainer/types"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Set" disposableProviderFactory="true" ecorePackage="context.ecore#//set">
-      <genClasses ecoreClass="context.ecore#//set/ContextSetContainer" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//set/ContextSetContainer/policies"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//set/ContextSet" labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//set/ContextSet/contexts"/>
-        <genOperations ecoreOperation="context.ecore#//set/ContextSet/checkAccessRight">
-          <genParameters ecoreParameter="context.ecore#//set/ContextSet/checkAccessRight/set"/>
-        </genOperations>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Specification" disposableProviderFactory="true" childCreationExtenders="true"
-        ecorePackage="context.ecore#//specification">
-      <genClasses ecoreClass="context.ecore#//specification/ContextSpecification"
-          labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//specification/ContextSpecification/contextset"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//specification/ContextSpecification/entrylevelsystemcall"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//specification/ContextSpecification/usagescenario"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//specification/ContextSpecification/missageUse"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//specification/PCMSpecificationContainer">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/policyspecification"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/contextspecification"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//specification/PCMSpecificationContainer/attributeprovider"/>
-      </genClasses>
-      <nestedGenPackages prefix="Assembly" disposableProviderFactory="true" childCreationExtenders="true"
-          ecorePackage="context.ecore#//specification/assembly">
-        <genClasses ecoreClass="context.ecore#//specification/assembly/SystemPolicySpecification"
-            labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/assemblycontext"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/resourcecontainer"/>
-          <genFeatures children="true" createChild="true" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/methodspecification"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/linkingresource"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/SystemPolicySpecification/policy"/>
-        </genClasses>
-        <genClasses ecoreClass="context.ecore#//specification/assembly/AttributeProvider"
-            labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/resourcecontainer"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/assemblycontext"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/contextset"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/linkingresource"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/AttributeProvider/methodspecification"/>
-        </genClasses>
-        <genClasses ecoreClass="context.ecore#//specification/assembly/MethodSpecification">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/MethodSpecification/signature"/>
-        </genClasses>
-        <genClasses ecoreClass="context.ecore#//specification/assembly/ConnectionRestriction">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ConnectionRestriction/connector"/>
-        </genClasses>
-        <genClasses ecoreClass="context.ecore#//specification/assembly/ProvidedRestriction">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ProvidedRestriction/providedrole"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference context.ecore#//specification/assembly/ProvidedRestriction/assemblycontext"/>
-        </genClasses>
+      <nestedGenPackages prefix="Pcm" basePackage="org.palladiosimulator.pcm.confidentiality.context.system"
+          disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm">
+        <nestedGenPackages prefix="Structure" basePackage="org.palladiosimulator.pcm.confidentiality.context.system.pcm"
+            disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm/structure">
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/PCMAttributeProvider">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/resourcecontainer"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/assemblycontext"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/linkingresource"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/methodspecification"/>
+          </genClasses>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/structure/MethodSpecification">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/signature"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ConnectionRestriction">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ConnectionRestriction/connector"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ProvidedRestriction">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ProvidedRestriction/providedrole"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ProvidedRestriction/assemblycontext"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/LinkingMatch">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/LinkingMatch/linkingresource"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ResourceMatch">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ResourceMatch/resourcecontainer"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ComponentMatch">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ComponentMatch/assemblycontext"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/GenericMatch">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/GenericMatch/attributevalue"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/GenericMatch/operation"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/GenericMatch/category"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/MethodMatch">
+            <genFeatures children="true" createChild="true" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodMatch/methodspecification"/>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Usage" basePackage="org.palladiosimulator.pcm.confidentiality.context.system.pcm"
+            disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm/usage">
+          <genClasses ecoreClass="context.ecore#//system/pcm/usage/PCMUsageSpecification">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/entrylevelsystemcall"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/usagescenario"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/usage/PCMUsageSpecification/missageUse"/>
+          </genClasses>
+        </nestedGenPackages>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Policy" disposableProviderFactory="true" ecorePackage="context.ecore#//policy">
-      <genDataTypes ecoreDataType="context.ecore#//policy/Identifier"/>
-      <genDataTypes ecoreDataType="context.ecore#//policy/PermitType"/>
+    <nestedGenPackages prefix="Policy" basePackage="org.palladiosimulator.pcm.confidentiality.context"
+        disposableProviderFactory="true" ecorePackage="context.ecore#//policy">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/PermitType">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PermitType/DENY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PermitType/PERMIT"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/PolicyCombiningAlgorithm">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/DENY_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/PERMIT_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/FIRST_APPLICABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/ONLY_ONE_APPLICABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/ORDERED_DENY_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/ORDERED_PERMIT_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/DENY_UNLESS_PERMIT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/PolicyCombiningAlgorithm/PERMIT_UNLESS_DENY"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/RuleCombiningAlgorihtm">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/DENY_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/PERMIT_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/FIRST_APPLICABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/ONLY_ONE_APPLICABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/ORDERED_DENY_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/ORDERED_PERMIT_OVERRIDES"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/DENY_UNLESS_PERMIT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/PERMIT_UNLESS_DENY"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/Operations">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/EQUALS"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/Category">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/SUBJECT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/RESOURCE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/ENVIRONMENT"/>
+      </genEnums>
       <genClasses ecoreClass="context.ecore#//policy/PolicySet">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/PolicySet/combiningAlgorithm"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/PolicySet/policyset"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/PolicySet/policy"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/PolicySet/target"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/Policy">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Policy/combiningAlgorithm"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Policy/rule"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Policy/target"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/Condition"/>
       <genClasses ecoreClass="context.ecore#//policy/Rule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Rule/permit"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Rule/target"/>
       </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/AllOf">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/AllOf/match"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/AnyOff">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/AnyOff/allof"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="context.ecore#//policy/Match"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Context" basePackage="org.palladiosimulator.pcm.confidentiality.context"
+        disposableProviderFactory="true" ecorePackage="context.ecore#//context">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//context/DataTypes">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/String"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Boolean"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Integer"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Double"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Date"/>
+      </genEnums>
+      <genClasses ecoreClass="context.ecore#//context/Attributes">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//context/Attributes/attribute"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="context.ecore#//context/Attribute">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//context/Attribute/attributevalue"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//context/AttributeValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/AttributeValue/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/AttributeValue/value"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//context/EntityAttribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//context/EntityAttribute/modelEntity"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//context/ExternalAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/ExternalAttribute/externalName"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//context/SimpleAttribute"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

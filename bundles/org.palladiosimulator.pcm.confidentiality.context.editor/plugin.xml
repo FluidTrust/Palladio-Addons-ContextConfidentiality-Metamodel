@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizardID"
+            id="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextModelWizardID"
             name="%_UI_ContextModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizard"
+            class="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ContextModelFile.gif">
          <description>%_UI_ContextModelWizard_description</description>
@@ -22,15 +22,16 @@
       </wizard>
    </extension>
 
+
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditorID"
+            id="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextEditorID"
             name="%_UI_ContextEditor_label"
             icon="icons/full/obj16/ContextModelFile.gif"
             extensions="context"
-            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextActionBarContributor">
+            class="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextActionBarContributor">
       </editor>
    </extension>
 
@@ -40,12 +41,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelModelWizardID"
-            name="%_UI_ModelModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelModelWizard"
+            id="org.palladiosimulator.pcm.confidentiality.context.system.presentation.SystemModelWizardID"
+            name="%_UI_SystemModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.presentation.SystemModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ModelModelFile.gif">
-         <description>%_UI_ModelModelWizard_description</description>
+            icon="icons/full/obj16/SystemModelFile.gif">
+         <description>%_UI_SystemModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -53,12 +54,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelEditorID"
-            name="%_UI_ModelEditor_label"
-            icon="icons/full/obj16/ModelModelFile.gif"
-            extensions="model"
-            class="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.model.presentation.ModelActionBarContributor">
+            id="org.palladiosimulator.pcm.confidentiality.context.system.presentation.SystemEditorID"
+            name="%_UI_SystemEditor_label"
+            icon="icons/full/obj16/SystemModelFile.gif"
+            extensions="system"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.presentation.SystemEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.system.presentation.SystemActionBarContributor">
       </editor>
    </extension>
 
@@ -68,12 +69,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetModelWizardID"
-            name="%_UI_SetModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetModelWizard"
+            id="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation.StructureModelWizardID"
+            name="%_UI_StructureModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation.StructureModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SetModelFile.gif">
-         <description>%_UI_SetModelWizard_description</description>
+            icon="icons/full/obj16/StructureModelFile.gif">
+         <description>%_UI_StructureModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -81,12 +82,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetEditorID"
-            name="%_UI_SetEditor_label"
-            icon="icons/full/obj16/SetModelFile.gif"
-            extensions="set"
-            class="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.set.presentation.SetActionBarContributor">
+            id="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation.StructureEditorID"
+            name="%_UI_StructureEditor_label"
+            icon="icons/full/obj16/StructureModelFile.gif"
+            extensions="structure"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation.StructureEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation.StructureActionBarContributor">
       </editor>
    </extension>
 
@@ -96,12 +97,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationModelWizardID"
-            name="%_UI_SpecificationModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationModelWizard"
+            id="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation.UsageModelWizardID"
+            name="%_UI_UsageModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation.UsageModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SpecificationModelFile.gif">
-         <description>%_UI_SpecificationModelWizard_description</description>
+            icon="icons/full/obj16/UsageModelFile.gif">
+         <description>%_UI_UsageModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -109,43 +110,14 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationEditorID"
-            name="%_UI_SpecificationEditor_label"
-            icon="icons/full/obj16/SpecificationModelFile.gif"
-            extensions="specification"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.specification.presentation.SpecificationActionBarContributor">
+            id="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation.UsageEditorID"
+            name="%_UI_UsageEditor_label"
+            icon="icons/full/obj16/UsageModelFile.gif"
+            extensions="usage"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation.UsageEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation.UsageActionBarContributor">
       </editor>
    </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated context -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyModelWizardID"
-            name="%_UI_AssemblyModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/AssemblyModelFile.gif">
-         <description>%_UI_AssemblyModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated context -->
-      <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyEditorID"
-            name="%_UI_AssemblyEditor_label"
-            icon="icons/full/obj16/AssemblyModelFile.gif"
-            extensions="assembly"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation.AssemblyActionBarContributor">
-      </editor>
-   </extension>
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated context -->
       <category
@@ -171,6 +143,34 @@
             extensions="policy"
             class="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyEditor"
             contributorClass="org.palladiosimulator.pcm.confidentiality.context.policy.presentation.PolicyActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated context -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextModelWizardID"
+            name="%_UI_ContextModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ContextModelFile.gif">
+         <description>%_UI_ContextModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated context -->
+      <editor
+            id="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextEditorID"
+            name="%_UI_ContextEditor_label"
+            icon="icons/full/obj16/ContextModelFile.gif"
+            extensions="context"
+            class="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextActionBarContributor">
       </editor>
    </extension>
 

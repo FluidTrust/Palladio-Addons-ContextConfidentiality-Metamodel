@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_N-uDAKCpEeq6X7ZFKo9w0Q" selectedViews="_OB6g8KCpEeq6X7ZFKo9w0Q" version="14.3.1.202003261200">
+  <viewpoint:DAnalysis uid="_N-uDAKCpEeq6X7ZFKo9w0Q" selectedViews="_OB6g8KCpEeq6X7ZFKo9w0Q" version="14.5.0.202104161500">
     <semanticResources>attacker.ecore</semanticResources>
     <semanticResources>attacker.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.palladiosimulator.pcm.confidentiality.context/model/context.ecore</semanticResources>
@@ -25,11 +25,11 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_sDyxcKCvEeq6X7ZFKo9w0Q" name="attackSpecification class diagram" repPath="#_sDwVMKCvEeq6X7ZFKo9w0Q" changeId="1be22082-fefb-47e6-8a8c-2973219bbf07">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_lv0TUbbnEeq42clWkJd82g" name="attackerSpecification class diagram" repPath="#_lvsXgLbnEeq42clWkJd82g" changeId="dec415e8-397e-4d7a-919d-848aa697336c">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_lv0TUbbnEeq42clWkJd82g" name="attackerSpecification class diagram" repPath="#_lvsXgLbnEeq42clWkJd82g" changeId="36824fee-89fc-401e-b912-7007a46e613c">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="a00d1d52-2692-4af2-9100-6574d9f6dae0">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_nbDtIbbnEeq42clWkJd82g" name="attackSpecification class diagram" repPath="#_nbBQ4LbnEeq42clWkJd82g" changeId="9a062981-bc0c-4130-aa03-5497b447b24a">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
@@ -935,7 +935,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_sAahw4Y3Eeu46-EUc33bqg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ptcug9Q0EeuqgN0JGecCYw" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -947,7 +947,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_MR_BcYJjEeuJRfvggg8KXA" name=" credentials : ContextAttribute" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_MR_BcYJjEeuJRfvggg8KXA" name=" credentials : AttributeValue" tooltipText="">
         <target xmi:type="ecore:EReference" href="attacker.ecore#//Attacker/credentials"/>
         <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//Attacker/credentials"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_MSA2oIJjEeuJRfvggg8KXA" labelAlignment="LEFT" color="114,159,207">
@@ -1847,12 +1847,12 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hKUs4YGgEeuKVfwkduT1lQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KRMA4NTBEeu0nL85TsTDVA" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_HHkjgIAdEeuHuME8ot5pSg" name="canExploit(vulnerability Vulnerability, credentialsAttacker ContextSet, credentialsNeeded ContextSet, attackVector AttackVector) : EBoolean" tooltipText="canExploit(vulnerability, credentialsAttacker, credentialsNeeded, attackVector) : EBoolean">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_HHkjgIAdEeuHuME8ot5pSg" name="canExploit(vulnerability Vulnerability, credentialsAttacker AttributeValue, credentialsNeeded AttributeValue, attackVector AttackVector) : EBoolean" tooltipText="canExploit(vulnerability, credentialsAttacker, credentialsNeeded, attackVector) : EBoolean">
         <target xmi:type="ecore:EOperation" href="attacker.ecore#//attackSpecification/Attack/canExploit"/>
         <semanticElements xmi:type="ecore:EOperation" href="attacker.ecore#//attackSpecification/Attack/canExploit"/>
         <semanticElements xmi:type="ecore:EParameter" href="attacker.ecore#//attackSpecification/Attack/canExploit/attackVector"/>
@@ -1871,7 +1871,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="__2JcY59tEeux-eMuthHSpg" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_DYNcg9Q1EeuqgN0JGecCYw" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
@@ -1924,7 +1924,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_-DT_g4GiEeuKVfwkduT1lQ" name=" requiredCredentials : ContextSet" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_-DT_g4GiEeuKVfwkduT1lQ" name=" requiredCredentials : Policy" tooltipText="">
         <target xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/requiredCredentials"/>
         <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/requiredCredentials"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_-DUmkIGiEeuKVfwkduT1lQ" labelAlignment="LEFT" color="114,159,207">
@@ -1932,9 +1932,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_1V3NlIGqEeuKVfwkduT1lQ" name=" gainedPrivilege : ContextSet" tooltipText="">
-        <target xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/gainedPrivilege"/>
-        <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/gainedPrivilege"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_1V3NlIGqEeuKVfwkduT1lQ" name=" gainedAttributes : AttributeValue" tooltipText="">
+        <target xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/gainedAttributes"/>
+        <semanticElements xmi:type="ecore:EReference" href="attacker.ecore#//attackSpecification/Vulnerability/gainedAttributes"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_1V30oIGqEeuKVfwkduT1lQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>

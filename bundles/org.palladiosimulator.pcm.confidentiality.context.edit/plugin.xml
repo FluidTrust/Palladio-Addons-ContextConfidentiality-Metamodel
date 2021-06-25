@@ -10,7 +10,21 @@
       <!-- @generated context -->
       <factory
             uri="http://www.palladiosimulator.org/pcm/confidentiality/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.provider.ContextItemProviderAdapterFactory"
+            class="org.palladiosimulator.pcm.confidentiality.accessControl.provider.ContextItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated context -->
+      <factory
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/systemSpecification/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.provider.SystemItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -22,8 +36,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated context -->
       <factory
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/model/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.model.provider.ModelItemProviderAdapterFactory"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/structure/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.provider.StructureItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -35,8 +49,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated context -->
       <factory
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/set/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.set.provider.SetItemProviderAdapterFactory"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/usage/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.provider.UsageItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -44,38 +58,24 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
-
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated context -->
-      <factory
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.provider.SpecificationItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated context -->
-      <factory
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/assembly/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.specification.assembly.provider.AssemblyItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated context -->
       <factory
             uri="http://www.palladiosimulator.org/pcm/confidentiality/context/policy/0.1/"
             class="org.palladiosimulator.pcm.confidentiality.context.policy.provider.PolicyItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated context -->
+      <factory
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.context.provider.ContextItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

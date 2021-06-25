@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.palladiosimulator.pcm.confidentiality.accessControl.ContextPackage;
 import org.palladiosimulator.pcm.confidentiality.attacker.tests.common.TestHelpers;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
-import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 
 class CheckCWEIDTest {
     @BeforeAll

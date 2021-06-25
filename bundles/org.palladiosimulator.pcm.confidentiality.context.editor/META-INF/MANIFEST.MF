@@ -5,16 +5,16 @@ Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.context.editor;si
 Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.context.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditorPlugin$Implementation
+Bundle-Activator: org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.palladiosimulator.pcm.confidentiality.context.model.presentation,
+Export-Package: org.palladiosimulator.pcm.confidentiality.accessControl.presentation,
+ org.palladiosimulator.pcm.confidentiality.context.context.presentation,
  org.palladiosimulator.pcm.confidentiality.context.policy.presentation,
- org.palladiosimulator.pcm.confidentiality.context.presentation,
- org.palladiosimulator.pcm.confidentiality.context.set.presentation,
- org.palladiosimulator.pcm.confidentiality.context.specification.assembly.presentation,
- org.palladiosimulator.pcm.confidentiality.context.specification.presentation
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.presentation,
+ org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.presentation,
+ org.palladiosimulator.pcm.confidentiality.context.system.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.palladiosimulator.pcm.confidentiality.context.edit;visibility:=reexport,
