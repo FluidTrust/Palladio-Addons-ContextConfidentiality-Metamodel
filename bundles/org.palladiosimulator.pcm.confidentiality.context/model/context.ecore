@@ -84,7 +84,7 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="entrylevelsystemcall"
               eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="missageUse" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="missageUse" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
         </eClassifiers>
       </eSubpackages>
     </eSubpackages>
@@ -107,12 +107,19 @@
           eType="#//policy/Rule" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
           upperBound="-1" eType="#//policy/AnyOff" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variabledefinitions"
+          upperBound="-1" eType="#//policy/VariableDefinitions" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//policy/Expression"
+          containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Rule">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="permit" eType="#//policy/PermitType"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
           eType="#//policy/AnyOff" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//policy/Condition"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="PermitType">
       <eLiterals name="DENY"/>
@@ -155,6 +162,27 @@
       <eLiterals name="RESOURCE" value="1"/>
       <eLiterals name="ENVIRONMENT" value="2"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Apply" eSuperTypes="#//policy/Expression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//policy/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeSelector" eSuperTypes="#//policy/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeValue" eSuperTypes="#//policy/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//policy/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeDesignator" eSuperTypes="#//policy/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLString" eSuperTypes="#//policy/Expression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableDefinitions" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+          eType="#//policy/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//policy/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variabledefinitions"
+          eType="#//policy/VariableDefinitions"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
       nsPrefix="context">
@@ -168,7 +196,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//context/DataTypes"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DataTypes">
       <eLiterals name="String"/>

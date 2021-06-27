@@ -148,12 +148,18 @@
             ecoreFeature="ecore:EReference context.ecore#//policy/Policy/rule"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Policy/target"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Policy/variabledefinitions"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//policy/Condition"/>
+      <genClasses ecoreClass="context.ecore#//policy/Condition">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Condition/expression"/>
+      </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/Rule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Rule/permit"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Rule/target"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/Rule/condition"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/AllOf">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/AllOf/match"/>
@@ -162,6 +168,27 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/AnyOff/allof"/>
       </genClasses>
       <genClasses image="false" ecoreClass="context.ecore#//policy/Match"/>
+      <genClasses ecoreClass="context.ecore#//policy/Apply">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Apply/description"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Apply/parameters"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeSelector"/>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeValue"/>
+      <genClasses ecoreClass="context.ecore#//policy/Function"/>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeDesignator"/>
+      <genClasses ecoreClass="context.ecore#//policy/XMLString">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/XMLString/string"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/Expression"/>
+      <genClasses ecoreClass="context.ecore#//policy/VariableDefinitions">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/VariableDefinitions/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/VariableReference">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/VariableReference/variabledefinitions"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Context" basePackage="org.palladiosimulator.pcm.confidentiality.context"
         disposableProviderFactory="true" ecorePackage="context.ecore#//context">
