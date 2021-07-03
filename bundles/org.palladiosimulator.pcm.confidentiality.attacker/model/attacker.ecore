@@ -16,7 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedLinkingResources"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" upperBound="-1"
-        eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//context/AttributeValue"/>
+        eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//systemcontext/AttributeValue"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exploitContextProviders"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromiseddata" upperBound="-1"
@@ -50,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilities" upperBound="-1"
         eType="#//pcmIntegration/SystemIntegration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompromisedData" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+  <eClassifiers xsi:type="ecore:EClass" name="CompromisedData" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
@@ -60,8 +60,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Attack" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eOperations name="canExploit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eParameters name="vulnerability" eType="#//attackSpecification/Vulnerability"/>
-        <eParameters name="credentialsAttacker" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//context/AttributeValue"/>
-        <eParameters name="credentialsNeeded" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//context/AttributeValue"/>
+        <eParameters name="credentialsAttacker" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//systemcontext/AttributeValue"/>
+        <eParameters name="credentialsNeeded" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//systemcontext/AttributeValue"/>
         <eParameters name="attackVector" eType="#//attackSpecification/AttackVector"/>
       </eOperations>
     </eClassifiers>
@@ -79,7 +79,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="availabilityImpact" lowerBound="1"
           eType="#//attackSpecification/AvailabilityImpact" defaultValueLiteral="None"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gainedAttributes" upperBound="-1"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//context/AttributeValue"/>
+          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//systemcontext/AttributeValue"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="takeOver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CategoryAttack" abstract="true" eSuperTypes="#//attackSpecification/Attack">
@@ -153,7 +153,7 @@
   </eSubpackages>
   <eSubpackages name="pcmIntegration" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
       nsPrefix="pcmIntegration">
-    <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" lowerBound="1"
           eType="#//attackSpecification/Vulnerability"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>

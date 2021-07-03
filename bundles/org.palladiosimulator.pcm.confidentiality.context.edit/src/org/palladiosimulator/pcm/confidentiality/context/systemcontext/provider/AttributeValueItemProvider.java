@@ -1,11 +1,11 @@
-package org.palladiosimulator.pcm.confidentiality.context.context.provider;
+package org.palladiosimulator.pcm.confidentiality.context.systemcontext.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.confidentiality.context.context.Attribute;
-import org.palladiosimulator.pcm.confidentiality.context.context.AttributeValue;
-import org.palladiosimulator.pcm.confidentiality.context.context.ContextPackage;
+import org.palladiosimulator.pcm.confidentiality.context.systemcontext.Attribute;
+import org.palladiosimulator.pcm.confidentiality.context.systemcontext.AttributeValue;
+import org.palladiosimulator.pcm.confidentiality.context.systemcontext.SystemcontextPackage;
 
 public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
 
@@ -44,8 +44,8 @@ public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
         switch (notification.getFeatureID(AttributeValue.class)) {
-        case ContextPackage.ATTRIBUTE_VALUE__TYPE:
-        case ContextPackage.ATTRIBUTE_VALUE__VALUE:
+        case SystemcontextPackage.ATTRIBUTE_VALUE__TYPE:
+        case SystemcontextPackage.ATTRIBUTE_VALUE__VALUE:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);

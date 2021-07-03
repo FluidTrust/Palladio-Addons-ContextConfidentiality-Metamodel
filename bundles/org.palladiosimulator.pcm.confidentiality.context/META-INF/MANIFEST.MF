@@ -8,13 +8,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.palladiosimulator.pcm.confidentiality.accessControl,
- org.palladiosimulator.pcm.confidentiality.accessControl.impl,
- org.palladiosimulator.pcm.confidentiality.accessControl.util,
- org.palladiosimulator.pcm.confidentiality.context.context,
- org.palladiosimulator.pcm.confidentiality.context.context.impl,
- org.palladiosimulator.pcm.confidentiality.context.context.util,
+Export-Package: org.palladiosimulator.pcm.confidentiality.context,
  org.palladiosimulator.pcm.confidentiality.context.helper,
+ org.palladiosimulator.pcm.confidentiality.context.impl,
  org.palladiosimulator.pcm.confidentiality.context.policy,
  org.palladiosimulator.pcm.confidentiality.context.policy.impl,
  org.palladiosimulator.pcm.confidentiality.context.policy.util,
@@ -26,7 +22,11 @@ Export-Package: org.palladiosimulator.pcm.confidentiality.accessControl,
  org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage,
  org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.impl,
  org.palladiosimulator.pcm.confidentiality.context.system.pcm.usage.util,
- org.palladiosimulator.pcm.confidentiality.context.system.util
+ org.palladiosimulator.pcm.confidentiality.context.system.util,
+ org.palladiosimulator.pcm.confidentiality.context.systemcontext,
+ org.palladiosimulator.pcm.confidentiality.context.systemcontext.impl,
+ org.palladiosimulator.pcm.confidentiality.context.systemcontext.util,
+ org.palladiosimulator.pcm.confidentiality.context.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.cdo;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,

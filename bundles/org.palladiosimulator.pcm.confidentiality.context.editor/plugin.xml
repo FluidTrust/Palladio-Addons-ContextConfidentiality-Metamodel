@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextModelWizardID"
+            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizardID"
             name="%_UI_ContextModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextModelWizard"
+            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ContextModelFile.gif">
          <description>%_UI_ContextModelWizard_description</description>
@@ -26,15 +26,14 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextEditorID"
+            id="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditorID"
             name="%_UI_ContextEditor_label"
             icon="icons/full/obj16/ContextModelFile.gif"
             extensions="context"
-            class="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.accessControl.presentation.ContextActionBarContributor">
+            class="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.presentation.ContextActionBarContributor">
       </editor>
    </extension>
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated context -->
       <category
@@ -152,12 +151,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextModelWizardID"
-            name="%_UI_ContextModelWizard_label"
-            class="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextModelWizard"
+            id="org.palladiosimulator.pcm.confidentiality.context.systemcontext.presentation.SystemcontextModelWizardID"
+            name="%_UI_SystemcontextModelWizard_label"
+            class="org.palladiosimulator.pcm.confidentiality.context.systemcontext.presentation.SystemcontextModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ContextModelFile.gif">
-         <description>%_UI_ContextModelWizard_description</description>
+            icon="icons/full/obj16/SystemcontextModelFile.gif">
+         <description>%_UI_SystemcontextModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -165,12 +164,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated context -->
       <editor
-            id="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextEditorID"
-            name="%_UI_ContextEditor_label"
-            icon="icons/full/obj16/ContextModelFile.gif"
-            extensions="context"
-            class="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextEditor"
-            contributorClass="org.palladiosimulator.pcm.confidentiality.context.context.presentation.ContextActionBarContributor">
+            id="org.palladiosimulator.pcm.confidentiality.context.systemcontext.presentation.SystemcontextEditorID"
+            name="%_UI_SystemcontextEditor_label"
+            icon="icons/full/obj16/SystemcontextModelFile.gif"
+            extensions="systemcontext"
+            class="org.palladiosimulator.pcm.confidentiality.context.systemcontext.presentation.SystemcontextEditor"
+            contributorClass="org.palladiosimulator.pcm.confidentiality.context.systemcontext.presentation.SystemcontextActionBarContributor">
       </editor>
    </extension>
 

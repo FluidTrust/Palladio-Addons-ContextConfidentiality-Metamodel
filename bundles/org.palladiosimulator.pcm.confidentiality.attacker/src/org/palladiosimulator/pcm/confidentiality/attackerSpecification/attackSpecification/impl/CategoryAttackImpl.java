@@ -9,7 +9,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackVector;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CategoryAttack;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability;
-import org.palladiosimulator.pcm.confidentiality.context.context.AttributeValue;
+import org.palladiosimulator.pcm.confidentiality.context.systemcontext.AttributeValue;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Category Attack</b></em>'.
