@@ -1,8 +1,8 @@
 package org.palladiosimulator.pcm.confidentiality.attacker.tests;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.palladiosimulator.pcm.confidentiality.accessControl.ContextPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
+import org.palladiosimulator.pcm.confidentiality.context.ContextPackage;
 
 public class CWEAttackTest {
     @BeforeAll

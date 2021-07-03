@@ -9,11 +9,10 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
       <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.accessControl.ContextPackage"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.ContextPackage"
             genModel="model/context.genmodel"/>
    </extension>
-
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
@@ -49,8 +48,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated context -->
       <package
-            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/0.1/"
-            class="org.palladiosimulator.pcm.confidentiality.context.context.ContextPackage"
+            uri="http://www.palladiosimulator.org/pcm/confidentiality/context/systemcontext/0.1/"
+            class="org.palladiosimulator.pcm.confidentiality.context.systemcontext.SystemcontextPackage"
             genModel="model/context.genmodel"/>
    </extension>
 

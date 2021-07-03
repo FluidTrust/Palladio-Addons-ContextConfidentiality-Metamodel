@@ -81,6 +81,7 @@
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/GenericMatch/attributevalue"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/GenericMatch/operation"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/GenericMatch/category"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/GenericMatch/mustBePresent"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/MethodMatch">
             <genFeatures children="true" createChild="true" propertySortChoices="true"
@@ -151,15 +152,12 @@
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Policy/variabledefinitions"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//policy/Condition">
-        <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//policy/Condition/expression"/>
-      </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/Rule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Rule/permit"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Rule/target"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/Rule/condition"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Rule/condition"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/AllOf">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//policy/AllOf/match"/>
@@ -169,14 +167,23 @@
       </genClasses>
       <genClasses image="false" ecoreClass="context.ecore#//policy/Match"/>
       <genClasses ecoreClass="context.ecore#//policy/Apply">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Apply/description"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Apply/parameters"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/Apply/function"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Apply/operation"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/AttributeSelector"/>
-      <genClasses ecoreClass="context.ecore#//policy/AttributeValue"/>
-      <genClasses ecoreClass="context.ecore#//policy/Function"/>
-      <genClasses ecoreClass="context.ecore#//policy/AttributeDesignator"/>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeValueExpression"/>
+      <genClasses ecoreClass="context.ecore#//policy/FunctionReference">
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/FunctionReference/function"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeDesignator">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//policy/AttributeDesignator/attribute"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/AttributeDesignator/type"/>
+      </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/XMLString">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/XMLString/string"/>
       </genClasses>
@@ -189,34 +196,47 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/VariableReference/variabledefinitions"/>
       </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Context" basePackage="org.palladiosimulator.pcm.confidentiality.context"
-        disposableProviderFactory="true" ecorePackage="context.ecore#//context">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//context/DataTypes">
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/String"/>
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Boolean"/>
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Integer"/>
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Double"/>
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//context/DataTypes/Date"/>
-      </genEnums>
-      <genClasses ecoreClass="context.ecore#//context/Attributes">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//context/Attributes/attribute"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="context.ecore#//context/Attribute">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//context/Attribute/attributevalue"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//context/AttributeValue">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/AttributeValue/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/AttributeValue/value"/>
-      </genClasses>
-      <genClasses ecoreClass="context.ecore#//context/EntityAttribute">
+      <genClasses ecoreClass="context.ecore#//policy/AttributeValueReference">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//context/EntityAttribute/modelEntity"/>
+            ecoreFeature="ecore:EReference context.ecore#//policy/AttributeValueReference/attributevalue"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//context/ExternalAttribute">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//context/ExternalAttribute/externalName"/>
+      <genClasses ecoreClass="context.ecore#//policy/Function"/>
+      <genClasses ecoreClass="context.ecore#//policy/CustomFunction"/>
+      <genClasses ecoreClass="context.ecore#//policy/PredefinedFunction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/PredefinedFunction/newAttribute"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//context/SimpleAttribute"/>
+      <genClasses ecoreClass="context.ecore#//policy/AttributeSelection">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/AttributeSelection/category"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/AttributeSelection/mustBePresent"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Systemcontext" basePackage="org.palladiosimulator.pcm.confidentiality.context"
+        disposableProviderFactory="true" ecorePackage="context.ecore#//systemcontext">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//systemcontext/DataTypes">
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//systemcontext/DataTypes/String"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//systemcontext/DataTypes/Boolean"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//systemcontext/DataTypes/Integer"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//systemcontext/DataTypes/Double"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//systemcontext/DataTypes/Date"/>
+      </genEnums>
+      <genClasses ecoreClass="context.ecore#//systemcontext/Attributes">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//systemcontext/Attributes/attribute"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="context.ecore#//systemcontext/Attribute">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference context.ecore#//systemcontext/Attribute/attributevalue"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//systemcontext/AttributeValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/value"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//systemcontext/EntityAttribute">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//systemcontext/EntityAttribute/modelEntity"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//systemcontext/ExternalAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/ExternalAttribute/externalName"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//systemcontext/SimpleAttribute"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
