@@ -25,6 +25,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="UsageSpecification" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" upperBound="-1"
           eType="#//systemcontext/AttributeValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+          eType="#//systemcontext/Attribute"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" lowerBound="1"
+          eType="#//policy/Category">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Decide whe"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eSubpackages name="pcm" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/0.1/"
         nsPrefix="pcm">
@@ -54,17 +62,11 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext"
               lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="LinkingMatch" eSuperTypes="#//policy/Match">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource"
-              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="ResourceMatch" eSuperTypes="#//policy/Match">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer"
-              lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="ComponentMatch" eSuperTypes="#//policy/Match">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext"
-              lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+        <eClassifiers xsi:type="ecore:EClass" name="EntityMatch" eSuperTypes="#//policy/Match">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//policy/Category"
+              defaultValueLiteral="RESOURCE"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="GenericMatch" eSuperTypes="#//policy/Match">
           <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
@@ -74,14 +76,14 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//policy/Category"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="mustBePresent" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="MethodMatch">
+        <eClassifiers xsi:type="ecore:EClass" name="MethodMatch" eSuperTypes="#//policy/Match">
           <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
               lowerBound="1" eType="#//system/pcm/structure/MethodSpecification" containment="true"/>
         </eClassifiers>
       </eSubpackages>
       <eSubpackages name="usage" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/usage/0.1/"
           nsPrefix="usage">
-        <eClassifiers xsi:type="ecore:EClass" name="PCMUsageSpecification" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+        <eClassifiers xsi:type="ecore:EClass" name="PCMUsageSpecification" eSuperTypes="#//system/UsageSpecification">
           <eStructuralFeatures xsi:type="ecore:EReference" name="entrylevelsystemcall"
               eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
@@ -150,14 +152,279 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="allof" lowerBound="1"
           upperBound="-1" eType="#//policy/AllOf" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Match" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Match" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity #//policy/XMLString"/>
     <eClassifiers xsi:type="ecore:EEnum" name="Operations">
-      <eLiterals name="EQUALS"/>
+      <eLiterals name="STRING_EQUAL"/>
+      <eLiterals name="BOOLEAN_EQUAL"/>
+      <eLiterals name="INTEGER_EQUAL"/>
+      <eLiterals name="DOUBLE_EQUAL"/>
+      <eLiterals name="DATE_EQUAL"/>
+      <eLiterals name="TIME_EQUAL"/>
+      <eLiterals name="DATETIME_EQUAL"/>
+      <eLiterals name="DAYTIMEDURATION_EQUAL"/>
+      <eLiterals name="YEARMONTHDURATION_EQUAL"/>
+      <eLiterals name="STRING_EQUAL_IGNORE_CASE"/>
+      <eLiterals name="ANYURI_EQUAL"/>
+      <eLiterals name="X500NAME_EQUAL"/>
+      <eLiterals name="RFC822NAME_EQUAL"/>
+      <eLiterals name="HEXBINARY_EQUAL"/>
+      <eLiterals name="BASE64BINARY_EQUAL"/>
+      <eLiterals name="INTEGER_ADD"/>
+      <eLiterals name="DOUBLE_ADD"/>
+      <eLiterals name="INTEGER_SUBTRACT"/>
+      <eLiterals name="DOUBLE_SUBTRACT"/>
+      <eLiterals name="INTEGER_MULTIPLY"/>
+      <eLiterals name="DOUBLE_MULTIPLY"/>
+      <eLiterals name="INTEGER_DIVIDE"/>
+      <eLiterals name="DOUBLE_DIVIDE"/>
+      <eLiterals name="INTEGER_MOD"/>
+      <eLiterals name="INTEGER_ABS"/>
+      <eLiterals name="DOUBLE_ABS"/>
+      <eLiterals name="ROUND"/>
+      <eLiterals name="FLOOR"/>
+      <eLiterals name="STRING_NORMALIZE_SPACE"/>
+      <eLiterals name="STRING_NORMALIZE_TO_LOWER_CASE"/>
+      <eLiterals name="DOUBLE_TO_INTEGER"/>
+      <eLiterals name="INTEGER_TO_DOUBLE"/>
+      <eLiterals name="OR"/>
+      <eLiterals name="AND"/>
+      <eLiterals name="N_OF"/>
+      <eLiterals name="NOT"/>
+      <eLiterals name="PRESENT"/>
+      <eLiterals name="INTEGER_GREATER_THAN"/>
+      <eLiterals name="INTEGER_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="INTEGER_LESS_THAN"/>
+      <eLiterals name="INTEGER_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="DOUBLE_GREATER_THAN"/>
+      <eLiterals name="DOUBLE_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="DOUBLE_LESS_THAN"/>
+      <eLiterals name="DOUBLE_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="DATETIME_ADD_DAYTIMEDURATION"/>
+      <eLiterals name="DATETIME_ADD_YEARMONTHDURATION"/>
+      <eLiterals name="DATETIME_SUBTRACT_DAYTIMEDURATION"/>
+      <eLiterals name="DATETIME_SUBTRACT_YEARMONTHDURATION"/>
+      <eLiterals name="DATE_ADD_YEARMONTHDURATION"/>
+      <eLiterals name="DATE_SUBTRACT_YEARMONTHDURATION"/>
+      <eLiterals name="STRING_GREATER_THAN"/>
+      <eLiterals name="STRING_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="STRING_LESS_THAN"/>
+      <eLiterals name="STRING_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="TIME_GREATER_THAN"/>
+      <eLiterals name="TIME_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="TIME_LESS_THAN"/>
+      <eLiterals name="TIME_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="TIME_IN_RANGE"/>
+      <eLiterals name="DATETIME_GREATER_THAN"/>
+      <eLiterals name="DATETIME_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="DATETIME_LESS_THAN"/>
+      <eLiterals name="DATETIME_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="DATE_GREATER_THAN"/>
+      <eLiterals name="DATE_GREATER_THAN_OR_EQUAL"/>
+      <eLiterals name="DATE_LESS_THAN"/>
+      <eLiterals name="DATE_LESS_THAN_OR_EQUAL"/>
+      <eLiterals name="STRING_ONE_AND_ONLY"/>
+      <eLiterals name="STRING_BAG_SIZE"/>
+      <eLiterals name="STRING_IS_IN"/>
+      <eLiterals name="STRING_BAG"/>
+      <eLiterals name="BOOLEAN_ONE_AND_ONLY"/>
+      <eLiterals name="BOOLEAN_BAG_SIZE"/>
+      <eLiterals name="BOOLEAN_IS_IN"/>
+      <eLiterals name="BOOLEAN_BAG"/>
+      <eLiterals name="INTEGER_ONE_AND_ONLY"/>
+      <eLiterals name="INTEGER_BAG_SIZE"/>
+      <eLiterals name="INTEGER_IS_IN"/>
+      <eLiterals name="INTEGER_BAG"/>
+      <eLiterals name="DOUBLE_ONE_AND_ONLY"/>
+      <eLiterals name="DOUBLE_BAG_SIZE"/>
+      <eLiterals name="DOUBLE_IS_IN"/>
+      <eLiterals name="DOUBLE_BAG"/>
+      <eLiterals name="TIME_ONE_AND_ONLY"/>
+      <eLiterals name="TIME_BAG_SIZE"/>
+      <eLiterals name="TIME_IS_IN"/>
+      <eLiterals name="TIME_BAG"/>
+      <eLiterals name="DATE_ONE_AND_ONLY"/>
+      <eLiterals name="DATE_BAG_SIZE"/>
+      <eLiterals name="DATE_IS_IN"/>
+      <eLiterals name="DATE_BAG"/>
+      <eLiterals name="DATETIME_ONE_AND_ONLY"/>
+      <eLiterals name="DATETIME_BAG_SIZE"/>
+      <eLiterals name="DATETIME_IS_IN"/>
+      <eLiterals name="DATETIME_BAG"/>
+      <eLiterals name="ANYURI_ONE_AND_ONLY"/>
+      <eLiterals name="ANYURI_BAG_SIZE"/>
+      <eLiterals name="ANYURI_IS_IN"/>
+      <eLiterals name="ANYURI_BAG"/>
+      <eLiterals name="HEXBINARY_ONE_AND_ONLY"/>
+      <eLiterals name="HEXBINARY_BAG_SIZE"/>
+      <eLiterals name="HEXBINARY_IS_IN"/>
+      <eLiterals name="HEXBINARY_BAG"/>
+      <eLiterals name="BASE64BINARY_ONE_AND_ONLY"/>
+      <eLiterals name="BASE64BINARY_BAG_SIZE"/>
+      <eLiterals name="BASE64BINARY_IS_IN"/>
+      <eLiterals name="BASE64BINARY_BAG"/>
+      <eLiterals name="DAYTIMEDURATION_ONE_AND_ONLY"/>
+      <eLiterals name="DAYTIMEDURATION_BAG_SIZE"/>
+      <eLiterals name="DAYTIMEDURATION_IS_IN"/>
+      <eLiterals name="DAYTIMEDURATION_BAG"/>
+      <eLiterals name="YEARMONTHDURATION_ONE_AND_ONLY"/>
+      <eLiterals name="YEARMONTHDURATION_BAG_SIZE"/>
+      <eLiterals name="YEARMONTHDURATION_IS_IN"/>
+      <eLiterals name="YEARMONTHDURATION_BAG"/>
+      <eLiterals name="X500NAME_ONE_AND_ONLY"/>
+      <eLiterals name="X500NAME_BAG_SIZE"/>
+      <eLiterals name="X500NAME_IS_IN"/>
+      <eLiterals name="X500NAME_BAG"/>
+      <eLiterals name="RFC822NAME_ONE_AND_ONLY"/>
+      <eLiterals name="RFC822NAME_BAG_SIZE"/>
+      <eLiterals name="RFC822NAME_IS_IN"/>
+      <eLiterals name="RFC822NAME_BAG"/>
+      <eLiterals name="IPADDRESS_ONE_AND_ONLY"/>
+      <eLiterals name="IPADDRESS_BAG_SIZE"/>
+      <eLiterals name="IPADDRESS_IS_IN"/>
+      <eLiterals name="IPADDRESS_BAG"/>
+      <eLiterals name="DNSNAME_ONE_AND_ONLY"/>
+      <eLiterals name="DNSNAME_BAG_SIZE"/>
+      <eLiterals name="DNSNAME_IS_IN"/>
+      <eLiterals name="DNSNAME_BAG"/>
+      <eLiterals name="STRING_CONCATENATE"/>
+      <eLiterals name="BOOLEAN_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_BOOLEAN"/>
+      <eLiterals name="INTEGER_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_INTEGER"/>
+      <eLiterals name="DOUBLE_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_DOUBLE"/>
+      <eLiterals name="TIME_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_TIME"/>
+      <eLiterals name="DATE_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_DATE"/>
+      <eLiterals name="DATETIME_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_DATETIME"/>
+      <eLiterals name="ANYURI_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_ANYURI"/>
+      <eLiterals name="DAYTIMEDURATION_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_DAYTIMEDURATION"/>
+      <eLiterals name="YEARMONTHDURATION_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_YEARMONTHDURATION"/>
+      <eLiterals name="X500NAME_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_X500NAME"/>
+      <eLiterals name="RFC822NAME_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_RFC822NAME"/>
+      <eLiterals name="IPADDRESS_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_IPADDRESS"/>
+      <eLiterals name="DNSNAME_FROM_STRING"/>
+      <eLiterals name="STRING_FROM_DNSNAME"/>
+      <eLiterals name="STRING_STARTS_WITH"/>
+      <eLiterals name="ANYURI_STARTS_WITH"/>
+      <eLiterals name="STRING_ENDS_WITH"/>
+      <eLiterals name="ANYURI_ENDS_WITH"/>
+      <eLiterals name="STRING_CONTAINS"/>
+      <eLiterals name="ANYURI_CONTAINS"/>
+      <eLiterals name="STRING_SUBSTRING"/>
+      <eLiterals name="ANYURI_SUBSTRING"/>
+      <eLiterals name="ANY_OF"/>
+      <eLiterals name="ALL_OF"/>
+      <eLiterals name="ANY_OF_ANY"/>
+      <eLiterals name="ALL_OF_ANY"/>
+      <eLiterals name="ANY_OF_ALL"/>
+      <eLiterals name="ALL_OF_ALL"/>
+      <eLiterals name="MAP"/>
+      <eLiterals name="X500NAME_MATCH"/>
+      <eLiterals name="RFC822NAME_MATCH"/>
+      <eLiterals name="STRING_REGEXP_MATCH"/>
+      <eLiterals name="ANYURI_REGEXP_MATCH"/>
+      <eLiterals name="IPADDRESS_REGEXP_MATCH"/>
+      <eLiterals name="DNSNAME_REGEXP_MATCH"/>
+      <eLiterals name="RFC822NAME_REGEXP_MATCH"/>
+      <eLiterals name="X500NAME_REGEXP_MATCH"/>
+      <eLiterals name="XPATH_NODE_COUNT"/>
+      <eLiterals name="XPATH_NODE_EQUAL"/>
+      <eLiterals name="XPATH_NODE_MATCH"/>
+      <eLiterals name="STRING_INTERSECTION"/>
+      <eLiterals name="STRING_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="STRING_UNION"/>
+      <eLiterals name="STRING_SUBSET"/>
+      <eLiterals name="STRING_SET_EQUALS"/>
+      <eLiterals name="BOOLEAN_INTERSECTION"/>
+      <eLiterals name="BOOLEAN_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="BOOLEAN_UNION"/>
+      <eLiterals name="BOOLEAN_SUBSET"/>
+      <eLiterals name="BOOLEAN_SET_EQUALS"/>
+      <eLiterals name="INTEGER_INTERSECTION"/>
+      <eLiterals name="INTEGER_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="INTEGER_UNION"/>
+      <eLiterals name="INTEGER_SUBSET"/>
+      <eLiterals name="INTEGER_SET_EQUALS"/>
+      <eLiterals name="DOUBLE_INTERSECTION"/>
+      <eLiterals name="DOUBLE_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="DOUBLE_UNION"/>
+      <eLiterals name="DOUBLE_SUBSET"/>
+      <eLiterals name="DOUBLE_SET_EQUALS"/>
+      <eLiterals name="TIME_INTERSECTION"/>
+      <eLiterals name="TIME_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="TIME_UNION"/>
+      <eLiterals name="TIME_SUBSET"/>
+      <eLiterals name="TIME_SET_EQUALS"/>
+      <eLiterals name="DATE_INTERSECTION"/>
+      <eLiterals name="DATE_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="DATE_UNION"/>
+      <eLiterals name="DATE_SUBSET"/>
+      <eLiterals name="DATE_SET_EQUALS"/>
+      <eLiterals name="DATETIME_INTERSECTION"/>
+      <eLiterals name="DATETIME_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="DATETIME_UNION"/>
+      <eLiterals name="DATETIME_SUBSET"/>
+      <eLiterals name="DATETIME_SET_EQUALS"/>
+      <eLiterals name="ANYURI_INTERSECTION"/>
+      <eLiterals name="ANYURI_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="ANYURI_UNION"/>
+      <eLiterals name="ANYURI_SUBSET"/>
+      <eLiterals name="ANYURI_SET_EQUALS"/>
+      <eLiterals name="HEXBINARY_INTERSECTION"/>
+      <eLiterals name="HEXBINARY_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="HEXBINARY_UNION"/>
+      <eLiterals name="HEXBINARY_SUBSET"/>
+      <eLiterals name="HEXBINARY_SET_EQUALS"/>
+      <eLiterals name="BASE64BINARY_INTERSECTION"/>
+      <eLiterals name="BASE64BINARY_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="BASE64BINARY_UNION"/>
+      <eLiterals name="BASE64BINARY_SUBSET"/>
+      <eLiterals name="BASE64BINARY_SET_EQUALS"/>
+      <eLiterals name="DAYTIMEDURATION_INTERSECTION"/>
+      <eLiterals name="DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="DAYTIMEDURATION_UNION"/>
+      <eLiterals name="DAYTIMEDURATION_SUBSET"/>
+      <eLiterals name="DAYTIMEDURATION_SET_EQUALS"/>
+      <eLiterals name="YEARMONTHDURATION_INTERSECTION"/>
+      <eLiterals name="YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="YEARMONTHDURATION_UNION"/>
+      <eLiterals name="YEARMONTHDURATION_SUBSET"/>
+      <eLiterals name="YEARMONTHDURATION_SET_EQUALS"/>
+      <eLiterals name="X500NAME_INTERSECTION"/>
+      <eLiterals name="X500NAME_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="X500NAME_UNION"/>
+      <eLiterals name="X500NAME_SUBSET"/>
+      <eLiterals name="X500NAME_SET_EQUALS"/>
+      <eLiterals name="RFC822NAME_INTERSECTION"/>
+      <eLiterals name="RFC822NAME_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="RFC822NAME_UNION"/>
+      <eLiterals name="RFC822NAME_SUBSET"/>
+      <eLiterals name="RFC822NAME_SET_EQUALS"/>
+      <eLiterals name="IPADDRESS_INTERSECTION"/>
+      <eLiterals name="IPADDRESS_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="IPADDRESS_UNION"/>
+      <eLiterals name="IPADDRESS_SUBSET"/>
+      <eLiterals name="IPADDRESS_SET_EQUALS"/>
+      <eLiterals name="DNSNAME_INTERSECTION"/>
+      <eLiterals name="DNSNAME_AT_LEAST_ONE_MEMBER_OF"/>
+      <eLiterals name="DNSNAME_UNION"/>
+      <eLiterals name="DNSNAME_SUBSET"/>
+      <eLiterals name="DNSNAME_SET_EQUALS"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="Category">
       <eLiterals name="SUBJECT"/>
       <eLiterals name="RESOURCE" value="1"/>
       <eLiterals name="ENVIRONMENT" value="2"/>
+      <eLiterals name="ACTION" value="3"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Apply" eSuperTypes="#//policy/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -165,10 +432,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//policy/Operations"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeSelector" eSuperTypes="#//policy/AttributeSelection"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//policy/Expression"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionReference" eSuperTypes="#//policy/Expression">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" lowerBound="1"
-          eType="#//policy/Operations" defaultValueLiteral="EQUALS"/>
+          eType="#//policy/Operations" defaultValueLiteral="STRING_EQUALS"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeDesignator" eSuperTypes="#//policy/AttributeSelection">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
@@ -180,12 +446,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="VariableDefinitions" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
           eType="#//policy/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//policy/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="variabledefinitions"
-          eType="#//policy/VariableDefinitions"/>
+          lowerBound="1" eType="#//policy/VariableDefinitions"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeValueReference" eSuperTypes="#//policy/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
@@ -224,13 +490,23 @@
       <eLiterals name="Double" value="3"/>
       <eLiterals name="Date" value="4"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityAttribute" eSuperTypes="#//systemcontext/Attribute">
+    <eClassifiers xsi:type="ecore:EClass" name="SystemEntityAttribute" eSuperTypes="#//systemcontext/Attribute">
       <eStructuralFeatures xsi:type="ecore:EReference" name="modelEntity" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExternalAttribute" eSuperTypes="#//systemcontext/Attribute">
+    <eClassifiers xsi:type="ecore:EClass" name="ExternalSystemAttribute" eSuperTypes="#//systemcontext/Attribute">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalName" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="environment" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//systemcontext/Attribute"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//systemcontext/Attribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="environment" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLAttribute" eSuperTypes="#//systemcontext/Attribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="xmlString" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
