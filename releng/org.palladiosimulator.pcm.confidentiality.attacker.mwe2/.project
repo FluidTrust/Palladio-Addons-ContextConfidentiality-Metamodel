@@ -8,6 +8,7 @@
 		<buildCommand>
 			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
 			<arguments>
+			--illegal-access=permit
 			</arguments>
 		</buildCommand>
 		<buildCommand>

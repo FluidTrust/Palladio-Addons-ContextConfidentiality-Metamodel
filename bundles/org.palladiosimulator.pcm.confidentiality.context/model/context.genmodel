@@ -35,6 +35,9 @@
       <genClasses ecoreClass="context.ecore#//system/UsageSpecification">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//system/UsageSpecification/attributevalue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//system/UsageSpecification/attribute"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/UsageSpecification/category"/>
       </genClasses>
       <nestedGenPackages prefix="Pcm" basePackage="org.palladiosimulator.pcm.confidentiality.context.system"
           disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm">
@@ -64,17 +67,10 @@
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ProvidedRestriction/assemblycontext"/>
           </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/LinkingMatch">
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/EntityMatch">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/LinkingMatch/linkingresource"/>
-          </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ResourceMatch">
-            <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ResourceMatch/resourcecontainer"/>
-          </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ComponentMatch">
-            <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ComponentMatch/assemblycontext"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/EntityMatch/entity"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/EntityMatch/category"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/GenericMatch">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -127,12 +123,277 @@
         <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/RuleCombiningAlgorihtm/PERMIT_UNLESS_DENY"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/Operations">
-        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_EQUAL_IGNORE_CASE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_ADD"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_ADD"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_SUBTRACT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_SUBTRACT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_MULTIPLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_MULTIPLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_DIVIDE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_DIVIDE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_MOD"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_ABS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_ABS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ROUND"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/FLOOR"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_NORMALIZE_SPACE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_NORMALIZE_TO_LOWER_CASE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_TO_INTEGER"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_TO_DOUBLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/OR"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/AND"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/N_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/NOT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/PRESENT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_ADD_DAYTIMEDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_ADD_YEARMONTHDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_SUBTRACT_DAYTIMEDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_SUBTRACT_YEARMONTHDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_ADD_YEARMONTHDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_SUBTRACT_YEARMONTHDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_IN_RANGE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_GREATER_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_GREATER_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_LESS_THAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_LESS_THAN_OR_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_ONE_AND_ONLY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_BAG_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_IS_IN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_BAG"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_CONCATENATE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_BOOLEAN"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_INTEGER"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_DOUBLE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_TIME"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_DATE"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_DATETIME"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_ANYURI"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_DAYTIMEDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_YEARMONTHDURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_X500NAME"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_RFC822NAME"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_IPADDRESS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_FROM_STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_FROM_DNSNAME"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_STARTS_WITH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_STARTS_WITH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_ENDS_WITH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_ENDS_WITH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_CONTAINS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_CONTAINS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_SUBSTRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_SUBSTRING"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANY_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ALL_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANY_OF_ANY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ALL_OF_ANY"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANY_OF_ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ALL_OF_ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/MAP"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_REGEXP_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/XPATH_NODE_COUNT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/XPATH_NODE_EQUAL"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/XPATH_NODE_MATCH"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/STRING_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BOOLEAN_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/INTEGER_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DOUBLE_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/TIME_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATE_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DATETIME_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/ANYURI_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/HEXBINARY_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/BASE64BINARY_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DAYTIMEDURATION_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/YEARMONTHDURATION_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/X500NAME_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/RFC822NAME_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/IPADDRESS_SET_EQUALS"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_INTERSECTION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_AT_LEAST_ONE_MEMBER_OF"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_UNION"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_SUBSET"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Operations/DNSNAME_SET_EQUALS"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="context.ecore#//policy/Category">
         <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/SUBJECT"/>
         <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/RESOURCE"/>
         <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/ENVIRONMENT"/>
+        <genEnumLiterals ecoreEnumLiteral="context.ecore#//policy/Category/ACTION"/>
       </genEnums>
       <genClasses ecoreClass="context.ecore#//policy/PolicySet">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/PolicySet/combiningAlgorithm"/>
@@ -169,15 +430,12 @@
       <genClasses ecoreClass="context.ecore#//policy/Apply">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/Apply/parameters"/>
-        <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//policy/Apply/function"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/Apply/operation"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/AttributeSelector"/>
-      <genClasses ecoreClass="context.ecore#//policy/AttributeValueExpression"/>
       <genClasses ecoreClass="context.ecore#//policy/FunctionReference">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//policy/FunctionReference/function"/>
+            ecoreFeature="ecore:EAttribute context.ecore#//policy/FunctionReference/function"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//policy/AttributeDesignator">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -200,7 +458,6 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//policy/AttributeValueReference/attributevalue"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//policy/Function"/>
       <genClasses ecoreClass="context.ecore#//policy/CustomFunction"/>
       <genClasses ecoreClass="context.ecore#//policy/PredefinedFunction">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/PredefinedFunction/newAttribute"/>
@@ -229,14 +486,20 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/type"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/value"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//systemcontext/EntityAttribute">
+      <genClasses ecoreClass="context.ecore#//systemcontext/SystemEntityAttribute">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference context.ecore#//systemcontext/EntityAttribute/modelEntity"/>
+            ecoreFeature="ecore:EReference context.ecore#//systemcontext/SystemEntityAttribute/modelEntity"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//systemcontext/ExternalAttribute">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/ExternalAttribute/externalName"/>
+      <genClasses ecoreClass="context.ecore#//systemcontext/ExternalSystemAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/ExternalSystemAttribute/externalName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/ExternalSystemAttribute/environment"/>
       </genClasses>
-      <genClasses ecoreClass="context.ecore#//systemcontext/SimpleAttribute"/>
+      <genClasses ecoreClass="context.ecore#//systemcontext/SimpleAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/SimpleAttribute/environment"/>
+      </genClasses>
+      <genClasses ecoreClass="context.ecore#//systemcontext/XMLAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/XMLAttribute/xmlString"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
