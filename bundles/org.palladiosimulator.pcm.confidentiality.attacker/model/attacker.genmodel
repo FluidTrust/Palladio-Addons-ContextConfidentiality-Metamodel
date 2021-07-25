@@ -43,8 +43,8 @@
     <genClasses ecoreClass="attacker.ecore#//CategorySpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//CategorySpecification/categories"/>
     </genClasses>
-    <genClasses ecoreClass="attacker.ecore#//VulnerabilitySystemSpecification">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//VulnerabilitySystemSpecification/vulnerabilities"/>
+    <genClasses ecoreClass="attacker.ecore#//SystemSpecificationContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//SystemSpecificationContainer/vulnerabilities"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//CompromisedData">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//CompromisedData/dataType"/>
@@ -85,8 +85,7 @@
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genOperations ecoreOperation="attacker.ecore#//attackSpecification/Attack/canExploit">
           <genParameters ecoreParameter="attacker.ecore#//attackSpecification/Attack/canExploit/vulnerability"/>
-          <genParameters ecoreParameter="attacker.ecore#//attackSpecification/Attack/canExploit/credentialsAttacker"/>
-          <genParameters ecoreParameter="attacker.ecore#//attackSpecification/Attack/canExploit/credentialsNeeded"/>
+          <genParameters ecoreParameter="attacker.ecore#//attackSpecification/Attack/canExploit/authentificated"/>
           <genParameters ecoreParameter="attacker.ecore#//attackSpecification/Attack/canExploit/attackVector"/>
         </genOperations>
       </genClasses>
@@ -101,6 +100,8 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/gainedAttributes"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/takeOver"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/role"/>
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//attackSpecification/CategoryAttack"
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
@@ -136,24 +137,34 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/CWEBasedVulnerability/cweID"/>
       </genClasses>
+      <genClasses ecoreClass="attacker.ecore#//attackSpecification/Role"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="PcmIntegration" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//pcmIntegration">
+      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/VulnerabilitySystemIntegration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/VulnerabilitySystemIntegration/vulnerability"/>
+      </genClasses>
+      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/PCMElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/resourcecontainer"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/linkingresource"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/compositecomponent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/basiccomponent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/assemblycontext"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/PCMElement/methodspecification"/>
+      </genClasses>
+      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/RoleSystemIntegration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/RoleSystemIntegration/role"/>
+      </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/SystemIntegration">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/vulnerability"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/resourcecontainer"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/assemblycontext"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/basiccomponent"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/compositecomponent"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/methodspecification"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/linkingresource"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/pcmelement"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

@@ -10,11 +10,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ProvidedRestriction;
+import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ServiceRestriction;
 import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.StructurePackage;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
-import org.palladiosimulator.pcm.repository.ProvidedRole;
 import org.palladiosimulator.pcm.repository.Signature;
 
 import tools.mdsd.library.emfeditutils.itempropertydescriptor.ItemPropertyDescriptorUtils;
@@ -22,12 +21,12 @@ import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalcula
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.pcm.confidentiality.context.specification.assembly.ProvidedRestriction}
+ * {@link org.palladiosimulator.pcm.confidentiality.context.ServiceRestriction.assembly.ProvidedRestriction}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProviderGen {
+public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProviderGen {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
@@ -35,61 +34,61 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
      *
      * @generated
      */
-    public ProvidedRestrictionItemProvider(AdapterFactory adapterFactory) {
+    public ServiceRestrictionItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
-    /**
-     * This adds a property descriptor for the Providedrole feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected void addProvidedrolePropertyDescriptor(Object object) {
-        super.addProvidedrolePropertyDescriptor(object);
-        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
-
-        decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ProvidedRestriction.class, ProvidedRole.class) {
-                    @Override
-                    protected Collection<?> getValueChoiceTyped(ProvidedRestriction object,
-                            List<ProvidedRole> typedList) {
-                        var context = object.getAssemblycontext();
-                        if (context == null) {
-                            return typedList;
-                        }
-                        var listProvidedRoles = context.getEncapsulatedComponent__AssemblyContext()
-                                .getProvidedRoles_InterfaceProvidingEntity();
-                        typedList = typedList.stream().filter(role -> {
-                            if (role == null) {
-                                return true;
-                            }
-                            return listProvidedRoles.stream()
-                                    .anyMatch(roleCompare -> EcoreUtil.equals(role, roleCompare));
-
-                        }).collect(Collectors.toList());
-
-                        var signature = object.getSignature();
-                        if (signature == null) {
-                            return typedList;
-                        }
-                        return typedList.stream().filter(role -> {
-                            if (role == null) {
-                                return true;
-                            }
-                            if (role instanceof OperationProvidedRole) {
-                                var oRole = (OperationProvidedRole) role;
-                                return oRole.getProvidedInterface__OperationProvidedRole()
-                                        .getSignatures__OperationInterface().stream()
-                                        .anyMatch(tmpSignature -> EcoreUtil.equals(tmpSignature, signature));
-                            }
-                            return false;
-                        }).collect(Collectors.toList());
-
-                    }
-                });
-    }
+//    /**
+//     * This adds a property descriptor for the Providedrole feature. <!-- begin-user-doc --> <!--
+//     * end-user-doc -->
+//     *
+//     * @generated
+//     */
+//    @Override
+//    protected void addProvidedrolePropertyDescriptor(Object object) {
+//        super.addProvidedrolePropertyDescriptor(object);
+//        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+//
+//        decorator.setValueChoiceCalculator(
+//                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, ProvidedRole.class) {
+//                    @Override
+//                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
+//                            List<ProvidedRole> typedList) {
+//                        var context = object.getAssemblycontext();
+//                        if (context == null) {
+//                            return typedList;
+//                        }
+//                        var listProvidedRoles = context.getEncapsulatedComponent__AssemblyContext()
+//                                .getProvidedRoles_InterfaceProvidingEntity();
+//                        typedList = typedList.stream().filter(role -> {
+//                            if (role == null) {
+//                                return true;
+//                            }
+//                            return listProvidedRoles.stream()
+//                                    .anyMatch(roleCompare -> EcoreUtil.equals(role, roleCompare));
+//
+//                        }).collect(Collectors.toList());
+//
+//                        var signature = object.getSignature();
+//                        if (signature == null) {
+//                            return typedList;
+//                        }
+//                        return typedList.stream().filter(role -> {
+//                            if (role == null) {
+//                                return true;
+//                            }
+//                            if (role instanceof OperationProvidedRole) {
+//                                var oRole = (OperationProvidedRole) role;
+//                                return oRole.getProvidedInterface__OperationProvidedRole()
+//                                        .getSignatures__OperationInterface().stream()
+//                                        .anyMatch(tmpSignature -> EcoreUtil.equals(tmpSignature, signature));
+//                            }
+//                            return false;
+//                        }).collect(Collectors.toList());
+//
+//                    }
+//                });
+//    }
 
     /**
      * This adds a property descriptor for the Assemblycontext feature. <!-- begin-user-doc --> <!--
@@ -103,9 +102,9 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
         decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ProvidedRestriction.class, AssemblyContext.class) {
+                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, AssemblyContext.class) {
                     @Override
-                    protected Collection<?> getValueChoiceTyped(ProvidedRestriction object,
+                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
                             List<AssemblyContext> typedList) {
                         var signature = object.getSignature();
                         if (signature == null) {
@@ -125,7 +124,8 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
 
                         }).collect(Collectors.toList());
 //                        return typedList;
-                        var role = object.getProvidedrole();
+                        var role = object.getService(); // TODO check for changed type provided ->
+                                                        // rsef
                         if (role == null) {
                             return typedList;
                         }
@@ -147,9 +147,9 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
         super.addSignaturePropertyDescriptor(object);
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
-        decorator.setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ProvidedRestriction.class, Signature.class) {
+        decorator.setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ServiceRestriction.class, Signature.class) {
             @Override
-            protected Collection<?> getValueChoiceTyped(ProvidedRestriction object, List<Signature> typedList) {
+            protected Collection<?> getValueChoiceTyped(ServiceRestriction object, List<Signature> typedList) {
                 var context = object.getAssemblycontext();
                 if (context == null) {
                     return typedList;
@@ -179,8 +179,8 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
      */
     @Override
     public String getText(Object object) {
-        if (object instanceof ProvidedRestriction) {
-            final var methodSpecification = (ProvidedRestriction) object;
+        if (object instanceof ServiceRestriction) {
+            final var methodSpecification = (ServiceRestriction) object;
             if (methodSpecification.getAssemblycontext() != null && methodSpecification.getSignature() != null) {
                 return methodSpecification.getAssemblycontext().getEntityName() + ": "
                         + methodSpecification.getSignature().getEntityName();
@@ -199,9 +199,9 @@ public class ProvidedRestrictionItemProvider extends ProvidedRestrictionItemProv
     @Override
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
-        switch (notification.getFeatureID(ProvidedRestriction.class)) {
-        case StructurePackage.PROVIDED_RESTRICTION__ASSEMBLYCONTEXT:
-        case StructurePackage.PROVIDED_RESTRICTION__SIGNATURE:
+        switch (notification.getFeatureID(ServiceRestriction.class)) {
+        case StructurePackage.SERVICE_RESTRICTION__ASSEMBLYCONTEXT:
+        case StructurePackage.SERVICE_RESTRICTION__SIGNATURE:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);
