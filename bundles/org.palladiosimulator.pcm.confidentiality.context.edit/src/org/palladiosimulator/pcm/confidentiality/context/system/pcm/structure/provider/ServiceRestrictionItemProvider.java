@@ -13,8 +13,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ServiceRestriction;
 import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.StructurePackage;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
+import org.palladiosimulator.pcm.repository.BasicComponent;
+import org.palladiosimulator.pcm.repository.CompositeComponent;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
 import org.palladiosimulator.pcm.repository.Signature;
+import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
 import tools.mdsd.library.emfeditutils.itempropertydescriptor.ItemPropertyDescriptorUtils;
 import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalculatorBase;
@@ -143,6 +146,54 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
     }
 
     @Override
+    protected void addServicePropertyDescriptor(Object object) {
+        super.addServicePropertyDescriptor(object);
+        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+        decorator.setValueChoiceCalculator(
+                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, ResourceDemandingSEFF.class) {
+                    @Override
+                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
+                            List<ResourceDemandingSEFF> typedList) {
+                        var context = object.getAssemblycontext();
+
+                        typedList = filterAssemblyContext(typedList, context);
+
+                        typedList = filterSignature(typedList, object.getSignature());
+
+                        return typedList;
+
+                    }
+                });
+    }
+
+    private List<ResourceDemandingSEFF> filterAssemblyContext(List<ResourceDemandingSEFF> listSeff,
+            AssemblyContext context) {
+        if (context == null) {
+            return listSeff;
+        }
+        if (context.getEncapsulatedComponent__AssemblyContext() instanceof BasicComponent) {
+            var component = (BasicComponent) context.getEncapsulatedComponent__AssemblyContext();
+
+            listSeff = listSeff.stream()
+                    .filter(seff -> seff != null ? EcoreUtil.equals(seff.eContainer(), component) : true)
+                    .collect(Collectors.toList());
+        } else if (context.getEncapsulatedComponent__AssemblyContext() instanceof CompositeComponent) {
+            // TODO implement behaviour for composite components
+            throw new IllegalStateException("Not implemented yet");
+        }
+        return listSeff;
+    }
+
+    private List<ResourceDemandingSEFF> filterSignature(List<ResourceDemandingSEFF> listSeff, Signature signature) {
+        if (signature == null) {
+            return listSeff;
+        }
+        return listSeff.stream()
+                .filter(seff -> seff != null ? EcoreUtil.equals(seff.getDescribedService__SEFF(), signature) : true)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     protected void addSignaturePropertyDescriptor(Object object) {
         super.addSignaturePropertyDescriptor(object);
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
@@ -186,7 +237,7 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
                         + methodSpecification.getSignature().getEntityName();
             }
         }
-        return getString("_UI_ProvidedRestriction_type");
+        return getString("_UI_ServiceRestriction_type");
     }
 
     /**

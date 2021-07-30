@@ -23,10 +23,10 @@ public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
     public String getText(Object object) {
         if (object instanceof AttributeValue) {
             final var attributeValue = (AttributeValue) object;
-            if (attributeValue.getType() != null && attributeValue.getValue() != null) {
+            if (attributeValue.getType() != null && attributeValue.getValues() != null) {
                 if (attributeValue.eContainer() instanceof Attribute) {
                     var category = (Attribute) attributeValue.eContainer();
-                    return category.getEntityName() + ": " + attributeValue.getValue();
+                    return category.getEntityName() + ": " + attributeValue.getValues();
                 }
             }
         }
@@ -45,7 +45,7 @@ public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
         updateChildren(notification);
         switch (notification.getFeatureID(AttributeValue.class)) {
         case SystemcontextPackage.ATTRIBUTE_VALUE__TYPE:
-        case SystemcontextPackage.ATTRIBUTE_VALUE__VALUE:
+        case SystemcontextPackage.ATTRIBUTE_VALUE__VALUES:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);

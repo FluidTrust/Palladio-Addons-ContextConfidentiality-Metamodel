@@ -76,7 +76,7 @@ public class PolicyHelper {
                 listXML.add(specification);
             }
         }
-        createResourceUsageSpecification(component);
+        listResource.add(createResourceUsageSpecification(component));
 
     }
 
@@ -104,12 +104,15 @@ public class PolicyHelper {
         attribute.setId(XACMLConstants.RESOURCE_ID);
 
         value.setType(DataTypes.STRING);
-        var valueString = component.stream().map(Entity::getId).collect(Collectors.joining(" ", "", actionID)).strip();
-        value.setValue(valueString);
+        var valueString = component.stream().map(Entity::getId)
+                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName() + " " + actionID))
+                .strip();
+        value.getValues().add(valueString);
 
         attribute.getAttributevalue().add(value);
 
         usage.setAttribute(attribute);
+        usage.setAttributevalue(value);
         return usage;
 
     }
@@ -122,7 +125,7 @@ public class PolicyHelper {
         attribute.setId(XACMLConstants.ACTION_ID);
 
         value.setType(DataTypes.STRING);
-        value.setValue(signature.getId());
+        value.getValues().add(signature.getId());
 
         attribute.getAttributevalue().add(value);
 

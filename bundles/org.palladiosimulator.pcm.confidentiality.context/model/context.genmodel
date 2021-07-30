@@ -29,7 +29,7 @@
             ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/usagespecification"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//system/AttributeProvider">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//system/AttributeProvider/attribute"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//system/UsageSpecification">
@@ -55,6 +55,8 @@
           <genClasses image="false" ecoreClass="context.ecore#//system/pcm/structure/MethodSpecification">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/signature"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/hierachy"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/ConnectionRestriction">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -85,6 +87,9 @@
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/HierarchicalContext">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/HierarchicalContext/hierachy"/>
+          </genClasses>
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/XMLMatch">
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/XMLMatch/xmlString"/>
           </genClasses>
         </nestedGenPackages>
         <nestedGenPackages prefix="Usage" basePackage="org.palladiosimulator.pcm.confidentiality.context.system.pcm"
@@ -469,6 +474,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/AttributeSelection/category"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//policy/AttributeSelection/mustBePresent"/>
       </genClasses>
+      <genClasses ecoreClass="context.ecore#//policy/SimpleAttributeCondition"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Systemcontext" basePackage="org.palladiosimulator.pcm.confidentiality.context"
         disposableProviderFactory="true" ecorePackage="context.ecore#//systemcontext">
@@ -487,7 +493,7 @@
       </genClasses>
       <genClasses ecoreClass="context.ecore#//systemcontext/AttributeValue">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//systemcontext/AttributeValue/values"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//systemcontext/SystemEntityAttribute">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
