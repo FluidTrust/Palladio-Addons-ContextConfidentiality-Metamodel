@@ -104,24 +104,24 @@
           eType="#//policy/PolicySet" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="policy" upperBound="-1"
           eType="#//policy/Policy" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-          upperBound="-1" eType="#//policy/AnyOff" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+          eType="#//policy/AllOf" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Policy" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="combiningAlgorithm" eType="#//policy/RuleCombiningAlgorihtm"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1"
           eType="#//policy/Rule" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-          upperBound="-1" eType="#//policy/AnyOff" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="variabledefinitions"
           upperBound="-1" eType="#//policy/VariableDefinitions" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+          eType="#//policy/AllOf" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="permit" eType="#//policy/PermitType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
-          eType="#//policy/AnyOff" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//policy/Expression"
           containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+          eType="#//policy/AllOf" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="PermitType">
       <eLiterals name="DENY"/>
@@ -150,10 +150,6 @@
     <eClassifiers xsi:type="ecore:EClass" name="AllOf">
       <eStructuralFeatures xsi:type="ecore:EReference" name="match" lowerBound="1"
           upperBound="-1" eType="#//policy/Match" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AnyOff">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allof" lowerBound="1"
-          upperBound="-1" eType="#//policy/AllOf" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Match" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
     <eClassifiers xsi:type="ecore:EEnum" name="Operations">
