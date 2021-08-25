@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.pcm.confidentiality.context.model.feature"
       label="Confidentiality Meta Models"
-      version="0.1.0.qualifier"
+      version="0.2.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
       license-feature-version="1.0.0">
@@ -13,10 +13,12 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.palladiosimulator.pcm.confidentiality.attacker"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
 </feature>

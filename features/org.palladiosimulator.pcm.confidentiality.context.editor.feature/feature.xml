@@ -2,15 +2,14 @@
 <feature
       id="org.palladiosimulator.pcm.confidentiality.context.editor.feature"
       label="Confidentiality Editors"
-      version="0.1.0.qualifier"
+      version="0.2.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
       license-feature-version="1.0.0">
 
    <includes
          id="org.palladiosimulator.pcm.confidentiality.context.model.feature"
-         version="0.0.0"
-            />
+         version="0.0.0"/>
 
    <plugin
          id="org.palladiosimulator.pcm.confidentiality.context.edit"
