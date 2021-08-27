@@ -16,40 +16,38 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.Signature;
 
-import de.uka.ipd.sdq.identifier.Identifier;
-
 public class PolicyHelper {
 
     private PolicyHelper() {
         assert false;
     }
 
-//    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-//            final MethodSpecification object) {
-//        return getPolicicy(specification, SystemPolicySpecification::getMethodspecification, object);
-//    }
-//
-//    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-//            final ResourceContainer object) {
-//        return getPolicicy(specification, SystemPolicySpecification::getResourcecontainer, object);
-//    }
-//
-//    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-//            final LinkingResource object) {
-//        return getPolicicy(specification, SystemPolicySpecification::getLinkingresource, object);
-//    }
-//
-//    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-//            final AssemblyContext object) {
-//        return getPolicicy(specification, SystemPolicySpecification::getAssemblycontext, object);
-//    }
-//
-//    private static List<ContextSet> getPolicicy(final PCMSpecificationContainer specification,
-//            final Function<SystemPolicySpecification, EObject> method, final EObject object) {
-//        return specification.getPolicyspecification().stream()
-//                .filter(policy -> EcoreUtil.equals(method.apply(policy), object))
-//                .flatMap(policy -> policy.getPolicy().stream()).collect(Collectors.toList());
-//    }
+    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
+    //            final MethodSpecification object) {
+    //        return getPolicicy(specification, SystemPolicySpecification::getMethodspecification, object);
+    //    }
+    //
+    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
+    //            final ResourceContainer object) {
+    //        return getPolicicy(specification, SystemPolicySpecification::getResourcecontainer, object);
+    //    }
+    //
+    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
+    //            final LinkingResource object) {
+    //        return getPolicicy(specification, SystemPolicySpecification::getLinkingresource, object);
+    //    }
+    //
+    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
+    //            final AssemblyContext object) {
+    //        return getPolicicy(specification, SystemPolicySpecification::getAssemblycontext, object);
+    //    }
+    //
+    //    private static List<ContextSet> getPolicicy(final PCMSpecificationContainer specification,
+    //            final Function<SystemPolicySpecification, EObject> method, final EObject object) {
+    //        return specification.getPolicyspecification().stream()
+    //                .filter(policy -> EcoreUtil.equals(method.apply(policy), object))
+    //                .flatMap(policy -> policy.getPolicy().stream()).collect(Collectors.toList());
+    //    }
 
     public static void createRequestAttributes(Deque<? extends Entity> component,
             List<? extends UsageSpecification> requestorContext, List<UsageSpecification> listSubject,
@@ -86,26 +84,18 @@ public class PolicyHelper {
             List<UsageSpecification> listAction, List<UsageSpecification> listXML) {
         createRequestAttributes(component, requestorContext, listSubject, listEnvironment, listResource, listXML);
         listAction.add(createActionUsageSpecification(signature));
-        listResource.add(createResourceUsageSpecification(component, signature));
     }
 
     private static UsageSpecification createResourceUsageSpecification(Deque<? extends Entity> component) {
-        return createResourceUsageSpecification(component, null);
-
-    }
-
-    private static UsageSpecification createResourceUsageSpecification(Deque<? extends Entity> component,
-            Identifier action) {
         var usage = SystemFactory.eINSTANCE.createUsageSpecification();
         var attribute = SystemcontextFactory.eINSTANCE.createSimpleAttribute();
         var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
-        var actionID = action == null ? "" : action.getId();
 
         attribute.setId(XACMLConstants.RESOURCE_ID);
 
         value.setType(DataTypes.STRING);
         var valueString = component.stream().map(Entity::getId)
-                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName() + " " + actionID))
+                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName()))
                 .strip();
         value.getValues().add(valueString);
 
@@ -130,6 +120,7 @@ public class PolicyHelper {
         attribute.getAttributevalue().add(value);
 
         usage.setAttribute(attribute);
+        usage.setAttributevalue(value);
         return usage;
 
     }
