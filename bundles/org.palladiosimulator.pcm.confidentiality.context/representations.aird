@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_KbV8ENwMEeufu9ftlEJ81g" selectedViews="_LwwP0NwMEeufu9ftlEJ81g" version="14.3.1.202003261200">
+  <viewpoint:DAnalysis uid="_KbV8ENwMEeufu9ftlEJ81g" selectedViews="_LwwP0NwMEeufu9ftlEJ81g" version="14.5.0.202104161500">
     <semanticResources>model/context.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore</semanticResources>
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.ecore</semanticResources>
@@ -17,7 +17,7 @@
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_LwwP0NwMEeufu9ftlEJ81g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="c785cbe9-6618-4e5d-86ec-04a5e5f7c729">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="24793880-7343-4825-a070-5186d894ef8d">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/context.ecore#//policy"/>
       </ownedRepresentationDescriptors>
@@ -1885,7 +1885,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORmb8NwMEeufu9ftlEJ81g" name="combiningAlgorithm : RuleCombiningAlgorihtm = DENY_OVERRIDES" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORmb8NwMEeufu9ftlEJ81g" name="combiningAlgorithm : RuleCombiningAlgorihtm = DENY_UNLESS_PERMIT" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Policy/combiningAlgorithm"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Policy/combiningAlgorithm"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_ORnDANwMEeufu9ftlEJ81g" labelAlignment="LEFT">
@@ -1894,14 +1894,14 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQtEENwMEeufu9ftlEJ81g" name="Rule" tooltipText="" outgoingEdges="_OSOuENwMEeufu9ftlEJ81g _bZuRAPXwEeujZoL3IWV7oA" incomingEdges="_OSJ1kNwMEeufu9ftlEJ81g" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQtEENwMEeufu9ftlEJ81g" name="Rule" tooltipText="&#xA;WARNING : The default value literal 'ALLOW' must be a valid literal of the attribute's type" outgoingEdges="_OSOuENwMEeufu9ftlEJ81g _bZuRAPXwEeujZoL3IWV7oA" incomingEdges="_OSJ1kNwMEeufu9ftlEJ81g" width="12" height="10">
       <target xmi:type="ecore:EClass" href="model/context.ecore#//policy/Rule"/>
       <semanticElements xmi:type="ecore:EClass" href="model/context.ecore#//policy/Rule"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_OQtrINwMEeufu9ftlEJ81g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORnqENwMEeufu9ftlEJ81g" name="permit : PermitType = DENY" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORnqENwMEeufu9ftlEJ81g" name="permit : PermitType = ALLOW" tooltipText="&#xA;WARNING : The default value literal 'ALLOW' must be a valid literal of the attribute's type">
         <target xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Rule/permit"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Rule/permit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_ORoRINwMEeufu9ftlEJ81g" labelAlignment="LEFT">

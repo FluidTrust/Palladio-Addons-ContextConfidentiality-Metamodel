@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.palladiosimulator.pcm.confidentiality.context.policy.Policy;
 import org.palladiosimulator.pcm.confidentiality.context.system.SystemFactory;
 import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
 import org.palladiosimulator.pcm.confidentiality.context.systemcontext.DataTypes;
@@ -12,44 +13,39 @@ import org.palladiosimulator.pcm.confidentiality.context.systemcontext.Environme
 import org.palladiosimulator.pcm.confidentiality.context.systemcontext.SystemEntityAttribute;
 import org.palladiosimulator.pcm.confidentiality.context.systemcontext.SystemcontextFactory;
 import org.palladiosimulator.pcm.confidentiality.context.systemcontext.XMLAttribute;
-import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.Signature;
 
+/**
+ * Helper class for converting {@link Policy} elements to ABAC queries
+ *
+ * @author majuwa
+ * @version 1.0
+ */
 public class PolicyHelper {
 
     private PolicyHelper() {
         assert false;
     }
 
-    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-    //            final MethodSpecification object) {
-    //        return getPolicicy(specification, SystemPolicySpecification::getMethodspecification, object);
-    //    }
-    //
-    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-    //            final ResourceContainer object) {
-    //        return getPolicicy(specification, SystemPolicySpecification::getResourcecontainer, object);
-    //    }
-    //
-    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-    //            final LinkingResource object) {
-    //        return getPolicicy(specification, SystemPolicySpecification::getLinkingresource, object);
-    //    }
-    //
-    //    public static List<ContextSet> getPolicy(final PCMSpecificationContainer specification,
-    //            final AssemblyContext object) {
-    //        return getPolicicy(specification, SystemPolicySpecification::getAssemblycontext, object);
-    //    }
-    //
-    //    private static List<ContextSet> getPolicicy(final PCMSpecificationContainer specification,
-    //            final Function<SystemPolicySpecification, EObject> method, final EObject object) {
-    //        return specification.getPolicyspecification().stream()
-    //                .filter(policy -> EcoreUtil.equals(method.apply(policy), object))
-    //                .flatMap(policy -> policy.getPolicy().stream()).collect(Collectors.toList());
-    //    }
-
-    public static void createRequestAttributes(Deque<? extends Entity> component,
+    /**
+     * Converts the context of a requestor and the requested entity to abac statements based on
+     * attributes list for subjec, resource, environment
+     *
+     * @param requestedEntity
+     *            requested entity
+     * @param requestorContext
+     *            context of the requestor
+     * @param listSubject
+     *            empty list for subject attributes
+     * @param listEnvironment
+     *            empty list for environment attributes
+     * @param listResource
+     *            empty list for resource attributes
+     * @param listXML
+     *            empty list for {@link XMLAttribute} attributes
+     */
+    public static void createRequestAttributes(Deque<? extends Entity> requestedEntity,
             List<? extends UsageSpecification> requestorContext, List<UsageSpecification> listSubject,
             List<UsageSpecification> listEnvironment, List<UsageSpecification> listResource,
             List<UsageSpecification> listXML) {
@@ -65,7 +61,7 @@ public class PolicyHelper {
             } else if (attribute instanceof SystemEntityAttribute) {
                 var systemEntity = (SystemEntityAttribute) attribute;
 
-                if (EcoreUtil.equals(systemEntity.getModelEntity(), component.getFirst())) {
+                if (EcoreUtil.equals(systemEntity.getModelEntity(), requestedEntity.getFirst())) {
                     listResource.add(specification);
                 } else {
                     listEnvironment.add(specification);
@@ -74,11 +70,11 @@ public class PolicyHelper {
                 listXML.add(specification);
             }
         }
-        listResource.add(createResourceUsageSpecification(component));
+        listResource.add(createResourceUsageSpecification(requestedEntity));
 
     }
 
-    public static void createRequestAttributes(Signature signature, Deque<AssemblyContext> component,
+    public static void createRequestAttributes(Signature signature, Deque<? extends Entity> component,
             List<? extends UsageSpecification> requestorContext, List<UsageSpecification> listSubject,
             List<UsageSpecification> listEnvironment, List<UsageSpecification> listResource,
             List<UsageSpecification> listAction, List<UsageSpecification> listXML) {

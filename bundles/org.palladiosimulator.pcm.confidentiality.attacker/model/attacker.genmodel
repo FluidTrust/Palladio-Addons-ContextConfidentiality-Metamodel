@@ -43,8 +43,8 @@
     <genClasses ecoreClass="attacker.ecore#//CategorySpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//CategorySpecification/categories"/>
     </genClasses>
-    <genClasses ecoreClass="attacker.ecore#//SystemSpecificationContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//SystemSpecificationContainer/vulnerabilities"/>
+    <genClasses ecoreClass="attacker.ecore#//AttackerSystemSpecificationContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSystemSpecificationContainer/vulnerabilities"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//CompromisedData">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//CompromisedData/dataType"/>
