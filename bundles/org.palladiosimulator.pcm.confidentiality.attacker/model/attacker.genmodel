@@ -166,6 +166,7 @@
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/pcmelement"/>
       </genClasses>
+      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/NonGlobalCommunication"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
