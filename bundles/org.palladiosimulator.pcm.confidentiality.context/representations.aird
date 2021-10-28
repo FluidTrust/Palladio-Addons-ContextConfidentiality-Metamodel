@@ -17,7 +17,7 @@
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_LwwP0NwMEeufu9ftlEJ81g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="922bdd5f-d408-4c6c-b307-d1672ed626b2">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="8f52b12f-ea8f-47a8-bfa6-c6afb67e57e6">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/context.ecore#//policy"/>
       </ownedRepresentationDescriptors>
@@ -1878,7 +1878,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQtEENwMEeufu9ftlEJ81g" name="Rule" tooltipText="&#xA;WARNING : The default value literal 'ALLOW' must be a valid literal of the attribute's type" outgoingEdges="_OSOuENwMEeufu9ftlEJ81g _bZuRAPXwEeujZoL3IWV7oA" incomingEdges="_OSJ1kNwMEeufu9ftlEJ81g" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQtEENwMEeufu9ftlEJ81g" name="Rule" tooltipText="" outgoingEdges="_OSOuENwMEeufu9ftlEJ81g _bZuRAPXwEeujZoL3IWV7oA" incomingEdges="_OSJ1kNwMEeufu9ftlEJ81g" width="12" height="10">
       <target xmi:type="ecore:EClass" href="model/context.ecore#//policy/Rule"/>
       <semanticElements xmi:type="ecore:EClass" href="model/context.ecore#//policy/Rule"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1888,7 +1888,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORnqENwMEeufu9ftlEJ81g" name="permit : PermitType = ALLOW" tooltipText="&#xA;WARNING : The default value literal 'ALLOW' must be a valid literal of the attribute's type">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ORnqENwMEeufu9ftlEJ81g" name="permit : PermitType = PERMIT" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Rule/permit"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/Rule/permit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_ORoRINwMEeufu9ftlEJ81g" labelAlignment="LEFT">
