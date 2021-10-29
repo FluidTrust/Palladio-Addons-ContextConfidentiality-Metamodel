@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
+import org.palladiosimulator.pcm.confidentiality.context.systemcontext.Attribute;
 import org.palladiosimulator.pcm.confidentiality.context.systemcontext.AttributeValue;
 
 import tools.mdsd.library.emfeditutils.itempropertydescriptor.ItemPropertyDescriptorUtils;
@@ -35,7 +36,33 @@ public class UsageSpecificationItemProvider extends UsageSpecificationItemProvid
                         typedList = typedList.stream().filter(
                                 value -> value != null ? EcoreUtil.equals(value.eContainer(), attribute) : false)
                                 .collect(Collectors.toList());
-//                        typedList.add(null);
+                        typedList.add(null);
+                        return typedList;
+
+                    }
+                });
+    }
+
+    @Override
+    protected void addAttributePropertyDescriptor(Object object) {
+        super.addAttributePropertyDescriptor(object);
+        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+
+        decorator.setValueChoiceCalculator(
+                new ValueChoiceCalculatorBase<>(UsageSpecification.class, Attribute.class) {
+                    @Override
+                    protected Collection<?> getValueChoiceTyped(UsageSpecification object,
+                            List<Attribute> typedList) {
+                        var attributeValue = object.getAttributevalue();
+                        if (attributeValue == null) {
+                            return typedList;
+                        }
+                        typedList = typedList.stream().filter(
+                                attribute -> attribute != null
+                                        ? EcoreUtil.equals(attribute, attributeValue.eContainer())
+                                        : false)
+                                .collect(Collectors.toList());
+                        typedList.add(null);
                         return typedList;
 
                     }
