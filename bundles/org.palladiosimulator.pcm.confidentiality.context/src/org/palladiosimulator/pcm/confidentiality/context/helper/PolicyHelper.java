@@ -96,7 +96,7 @@ public class PolicyHelper {
         value.getValues().add(valueString);
 
         attribute.getAttributevalue().add(value);
-
+        usage.setEntityName(component.getLast().getEntityName());// for easier debugging
         usage.setAttribute(attribute);
         usage.setAttributevalue(value);
         return usage;
