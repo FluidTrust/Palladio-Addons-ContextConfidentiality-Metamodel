@@ -118,6 +118,10 @@ Workflow {
 			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.attacker/src-gen"
 			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.attacker/src"
 		}
+		folders = {
+			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.attacker.edit/src-gen"
+			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.attacker.edit/src"
+		}
 //		folders = {
 //			gen = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src-gen"
 //			src = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context.edit/src"
