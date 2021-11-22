@@ -435,7 +435,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AttributeSelector" eSuperTypes="#//policy/AttributeSelection"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionReference" eSuperTypes="#//policy/Expression">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" lowerBound="1"
-          eType="#//policy/Operations" defaultValueLiteral="STRING_EQUALS"/>
+          eType="#//policy/Operations" defaultValueLiteral="STRING_EQUAL"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeDesignator" eSuperTypes="#//policy/AttributeSelection">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
