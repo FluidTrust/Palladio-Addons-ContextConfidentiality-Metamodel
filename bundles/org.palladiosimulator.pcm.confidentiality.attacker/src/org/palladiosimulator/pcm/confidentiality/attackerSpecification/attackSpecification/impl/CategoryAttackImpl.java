@@ -2,12 +2,16 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackVector;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CategoryAttack;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Privileges;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Role;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability;
 
 /**
@@ -68,7 +72,8 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
     }
 
     @Override
-    public boolean canExploit(Vulnerability vulnerability, boolean authenticated, AttackVector attackVector) {
+    public boolean canExploit(Vulnerability vulnerability, boolean authentificated, AttackVector attackVector,
+            List<Role> roles) {
         if (!this.checkID(vulnerability)) {
             return false;
         }
@@ -76,8 +81,12 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
         if (!this.isIncluded(attackVector, vulnerability.getAttackVector())) {
             return false;
         }
+        if (!vulnerability.getRole().stream()
+                .allMatch(role -> roles.stream().anyMatch(compareRole -> EcoreUtil.equals(role, compareRole)))) {
+            return false;
+        }
         if (vulnerability.getPrivileges() != Privileges.NONE) {
-            return authenticated;
+            return authentificated;
         }
 
         return true;
