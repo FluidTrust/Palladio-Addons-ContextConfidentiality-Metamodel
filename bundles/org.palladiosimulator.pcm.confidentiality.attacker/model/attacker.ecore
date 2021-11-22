@@ -65,6 +65,8 @@
         eType="#//pcmIntegration/EntityToRoleListMap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="global" upperBound="-1"
         eType="#//pcmIntegration/AssemblyContextToGlobalCommunication" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure/MethodSpecification"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompromisedData" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/DataType"/>
@@ -229,7 +231,7 @@
         <details key="documentation" value="The key value should always be the id of the value object"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/BasicComponent"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
