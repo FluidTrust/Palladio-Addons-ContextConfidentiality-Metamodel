@@ -2,7 +2,8 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
@@ -72,7 +73,7 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
 
     @Override
     public boolean canExploit(Vulnerability vulnerability, boolean authentificated, AttackVector attackVector,
-            EList<Role> roles) {
+            List<Role> roles) {
         if (!this.checkID(vulnerability)) {
             return false;
         }
