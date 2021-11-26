@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# src-gen folder
+src-gen
+
 # BlueJ files
 *.ctxt
 
