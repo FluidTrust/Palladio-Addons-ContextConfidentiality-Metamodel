@@ -25,7 +25,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/compromisedLinkingResources"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/credentials"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//Attacker/exploitContextProviders"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//Attacker/compromiseddata"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//AttackerSpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSpecification/attackers"/>
@@ -46,10 +45,10 @@
     <genClasses ecoreClass="attacker.ecore#//AttackerSystemSpecificationContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackerSystemSpecificationContainer/vulnerabilities"/>
     </genClasses>
-    <genClasses ecoreClass="attacker.ecore#//CompromisedData">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//CompromisedData/dataType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//CompromisedData/referenceName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//CompromisedData/source"/>
+    <genClasses ecoreClass="attacker.ecore#//DatamodelAttacker">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//DatamodelAttacker/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//DatamodelAttacker/referenceName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//DatamodelAttacker/source"/>
     </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
