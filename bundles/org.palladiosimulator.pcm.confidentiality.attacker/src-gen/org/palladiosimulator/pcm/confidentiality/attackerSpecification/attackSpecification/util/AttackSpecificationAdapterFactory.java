@@ -27,8 +27,7 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage
  * @generated
  */
-public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
-{
+public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -43,10 +42,8 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackSpecificationAdapterFactory()
-	{
-		if (modelPackage == null)
-		{
+	public AttackSpecificationAdapterFactory() {
+		if (modelPackage == null) {
 			modelPackage = AttackSpecificationPackage.eINSTANCE;
 		}
 	}
@@ -60,15 +57,12 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object)
-	{
-		if (object == modelPackage)
-		{
+	public boolean isFactoryForType(Object object) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -79,100 +73,97 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttackSpecificationSwitch<Adapter> modelSwitch =
-		new AttackSpecificationSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseAttack(Attack object)
-			{
-				return createAttackAdapter();
-			}
-			@Override
-			public Adapter caseVulnerability(Vulnerability object)
-			{
-				return createVulnerabilityAdapter();
-			}
-			@Override
-			public <T extends AttackCategory> Adapter caseCategoryAttack(CategoryAttack<T> object)
-			{
-				return createCategoryAttackAdapter();
-			}
-			@Override
-			public Adapter caseCVEVulnerability(CVEVulnerability object)
-			{
-				return createCVEVulnerabilityAdapter();
-			}
-			@Override
-			public Adapter caseCWEID(CWEID object)
-			{
-				return createCWEIDAdapter();
-			}
-			@Override
-			public Adapter caseAttackCategory(AttackCategory object)
-			{
-				return createAttackCategoryAdapter();
-			}
-			@Override
-			public Adapter caseCWEAttack(CWEAttack object)
-			{
-				return createCWEAttackAdapter();
-			}
-			@Override
-			public Adapter caseCVEAttack(CVEAttack object)
-			{
-				return createCVEAttackAdapter();
-			}
-			@Override
-			public Adapter caseCVEID(CVEID object)
-			{
-				return createCVEIDAdapter();
-			}
-			@Override
-			public Adapter caseCWEVulnerability(CWEVulnerability object)
-			{
-				return createCWEVulnerabilityAdapter();
-			}
-			@Override
-			public Adapter caseCWEBasedVulnerability(CWEBasedVulnerability object)
-			{
-				return createCWEBasedVulnerabilityAdapter();
-			}
-			@Override
-			public Adapter caseRole(Role object)
-			{
-				return createRoleAdapter();
-			}
-			@Override
-			public Adapter caseIdentifier(Identifier object)
-			{
-				return createIdentifierAdapter();
-			}
-			@Override
-			public Adapter casePCMClass(PCMClass object)
-			{
-				return createPCMClassAdapter();
-			}
-			@Override
-			public Adapter casePCMBaseClass(PCMBaseClass object)
-			{
-				return createPCMBaseClassAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object)
-			{
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object)
-			{
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected AttackSpecificationSwitch<Adapter> modelSwitch = new AttackSpecificationSwitch<Adapter>() {
+		@Override
+		public Adapter caseAttack(Attack object) {
+			return createAttackAdapter();
+		}
+
+		@Override
+		public Adapter caseVulnerability(Vulnerability object) {
+			return createVulnerabilityAdapter();
+		}
+
+		@Override
+		public <T extends AttackCategory> Adapter caseCategoryAttack(CategoryAttack<T> object) {
+			return createCategoryAttackAdapter();
+		}
+
+		@Override
+		public Adapter caseCVEVulnerability(CVEVulnerability object) {
+			return createCVEVulnerabilityAdapter();
+		}
+
+		@Override
+		public Adapter caseCWEID(CWEID object) {
+			return createCWEIDAdapter();
+		}
+
+		@Override
+		public Adapter caseAttackCategory(AttackCategory object) {
+			return createAttackCategoryAdapter();
+		}
+
+		@Override
+		public Adapter caseCWEAttack(CWEAttack object) {
+			return createCWEAttackAdapter();
+		}
+
+		@Override
+		public Adapter caseCVEAttack(CVEAttack object) {
+			return createCVEAttackAdapter();
+		}
+
+		@Override
+		public Adapter caseCVEID(CVEID object) {
+			return createCVEIDAdapter();
+		}
+
+		@Override
+		public Adapter caseCWEVulnerability(CWEVulnerability object) {
+			return createCWEVulnerabilityAdapter();
+		}
+
+		@Override
+		public Adapter caseCWEBasedVulnerability(CWEBasedVulnerability object) {
+			return createCWEBasedVulnerabilityAdapter();
+		}
+
+		@Override
+		public Adapter caseRole(Role object) {
+			return createRoleAdapter();
+		}
+
+		@Override
+		public Adapter caseIdentifier(Identifier object) {
+			return createIdentifierAdapter();
+		}
+
+		@Override
+		public Adapter casePCMClass(PCMClass object) {
+			return createPCMClassAdapter();
+		}
+
+		@Override
+		public Adapter casePCMBaseClass(PCMBaseClass object) {
+			return createPCMBaseClassAdapter();
+		}
+
+		@Override
+		public Adapter caseNamedElement(NamedElement object) {
+			return createNamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseEntity(Entity object) {
+			return createEntityAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -183,11 +174,9 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target)
-	{
-		return modelSwitch.doSwitch((EObject)target);
+	public Adapter createAdapter(Notifier target) {
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack <em>Attack</em>}'.
@@ -199,8 +188,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack
 	 * @generated
 	 */
-	public Adapter createAttackAdapter()
-	{
+	public Adapter createAttackAdapter() {
 		return null;
 	}
 
@@ -214,8 +202,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Vulnerability
 	 * @generated
 	 */
-	public Adapter createVulnerabilityAdapter()
-	{
+	public Adapter createVulnerabilityAdapter() {
 		return null;
 	}
 
@@ -229,8 +216,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CategoryAttack
 	 * @generated
 	 */
-	public Adapter createCategoryAttackAdapter()
-	{
+	public Adapter createCategoryAttackAdapter() {
 		return null;
 	}
 
@@ -244,8 +230,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CVEVulnerability
 	 * @generated
 	 */
-	public Adapter createCVEVulnerabilityAdapter()
-	{
+	public Adapter createCVEVulnerabilityAdapter() {
 		return null;
 	}
 
@@ -259,8 +244,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CWEID
 	 * @generated
 	 */
-	public Adapter createCWEIDAdapter()
-	{
+	public Adapter createCWEIDAdapter() {
 		return null;
 	}
 
@@ -274,8 +258,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory
 	 * @generated
 	 */
-	public Adapter createAttackCategoryAdapter()
-	{
+	public Adapter createAttackCategoryAdapter() {
 		return null;
 	}
 
@@ -289,8 +272,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CWEAttack
 	 * @generated
 	 */
-	public Adapter createCWEAttackAdapter()
-	{
+	public Adapter createCWEAttackAdapter() {
 		return null;
 	}
 
@@ -304,8 +286,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CVEAttack
 	 * @generated
 	 */
-	public Adapter createCVEAttackAdapter()
-	{
+	public Adapter createCVEAttackAdapter() {
 		return null;
 	}
 
@@ -319,8 +300,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CVEID
 	 * @generated
 	 */
-	public Adapter createCVEIDAdapter()
-	{
+	public Adapter createCVEIDAdapter() {
 		return null;
 	}
 
@@ -334,8 +314,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CWEVulnerability
 	 * @generated
 	 */
-	public Adapter createCWEVulnerabilityAdapter()
-	{
+	public Adapter createCWEVulnerabilityAdapter() {
 		return null;
 	}
 
@@ -349,8 +328,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.CWEBasedVulnerability
 	 * @generated
 	 */
-	public Adapter createCWEBasedVulnerabilityAdapter()
-	{
+	public Adapter createCWEBasedVulnerabilityAdapter() {
 		return null;
 	}
 
@@ -364,8 +342,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Role
 	 * @generated
 	 */
-	public Adapter createRoleAdapter()
-	{
+	public Adapter createRoleAdapter() {
 		return null;
 	}
 
@@ -379,8 +356,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see de.uka.ipd.sdq.identifier.Identifier
 	 * @generated
 	 */
-	public Adapter createIdentifierAdapter()
-	{
+	public Adapter createIdentifierAdapter() {
 		return null;
 	}
 
@@ -394,8 +370,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMClass
 	 * @generated
 	 */
-	public Adapter createPCMClassAdapter()
-	{
+	public Adapter createPCMClassAdapter() {
 		return null;
 	}
 
@@ -409,8 +384,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMBaseClass
 	 * @generated
 	 */
-	public Adapter createPCMBaseClassAdapter()
-	{
+	public Adapter createPCMBaseClassAdapter() {
 		return null;
 	}
 
@@ -424,8 +398,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.NamedElement
 	 * @generated
 	 */
-	public Adapter createNamedElementAdapter()
-	{
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -439,8 +412,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.Entity
 	 * @generated
 	 */
-	public Adapter createEntityAdapter()
-	{
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 
@@ -452,8 +424,7 @@ public class AttackSpecificationAdapterFactory extends AdapterFactoryImpl
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter()
-	{
+	public Adapter createEObjectAdapter() {
 		return null;
 	}
 

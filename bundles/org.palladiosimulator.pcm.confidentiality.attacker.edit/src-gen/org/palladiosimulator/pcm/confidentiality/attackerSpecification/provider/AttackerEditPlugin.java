@@ -26,8 +26,7 @@ import org.palladiosimulator.pcm.core.provider.PalladioComponentModelEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class AttackerEditPlugin extends EMFPlugin
-{
+public final class AttackerEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -50,19 +49,10 @@ public final class AttackerEditPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackerEditPlugin()
-	{
-		super
-		  (new ResourceLocator [] 
-		   {
-		     ContextEditPlugin.INSTANCE,
-		     EcoreEditPlugin.INSTANCE,
-		     IdentifierEditPlugin.INSTANCE,
-		     PalladioComponentModelEditPlugin.INSTANCE,
-		     ProbabilityFunctionEditPlugin.INSTANCE,
-		     StoexEditPlugin.INSTANCE,
-		     UnitsEditPlugin.INSTANCE,
-		   });
+	public AttackerEditPlugin() {
+		super(new ResourceLocator[] { ContextEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE,
+				IdentifierEditPlugin.INSTANCE, PalladioComponentModelEditPlugin.INSTANCE,
+				ProbabilityFunctionEditPlugin.INSTANCE, StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
 	}
 
 	/**
@@ -73,8 +63,7 @@ public final class AttackerEditPlugin extends EMFPlugin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getPluginResourceLocator()
-	{
+	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
 
@@ -85,8 +74,7 @@ public final class AttackerEditPlugin extends EMFPlugin
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	public static Implementation getPlugin()
-	{
+	public static Implementation getPlugin() {
 		return plugin;
 	}
 
@@ -96,16 +84,14 @@ public final class AttackerEditPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipsePlugin
-	{
+	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Implementation()
-		{
+		public Implementation() {
 			super();
 
 			// Remember the static instance.

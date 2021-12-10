@@ -12,15 +12,15 @@ import org.eclipse.emf.ecore.EFactory;
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage
  * @generated
  */
-public interface AttackSpecificationFactory extends EFactory
-{
+public interface AttackSpecificationFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AttackSpecificationFactory eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.AttackSpecificationFactoryImpl.init();
+	AttackSpecificationFactory eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl.AttackSpecificationFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>CVE Vulnerability</em>'.

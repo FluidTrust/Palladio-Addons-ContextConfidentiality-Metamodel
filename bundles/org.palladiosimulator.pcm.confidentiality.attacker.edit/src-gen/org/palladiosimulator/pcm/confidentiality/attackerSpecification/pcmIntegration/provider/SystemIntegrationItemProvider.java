@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -31,16 +30,14 @@ import org.palladiosimulator.pcm.core.entity.provider.EntityItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SystemIntegrationItemProvider extends EntityItemProvider
-{
+public class SystemIntegrationItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SystemIntegrationItemProvider(AdapterFactory adapterFactory)
-	{
+	public SystemIntegrationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,10 +48,8 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addPcmelementPropertyDescriptor(object);
@@ -68,21 +63,13 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPcmelementPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SystemIntegration_pcmelement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SystemIntegration_pcmelement_feature", "_UI_SystemIntegration_type"),
-				 PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addPcmelementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SystemIntegration_pcmelement_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SystemIntegration_pcmelement_feature",
+						"_UI_SystemIntegration_type"),
+				PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -94,10 +81,8 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT);
 		}
@@ -110,8 +95,7 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -125,8 +109,7 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/SystemIntegration"));
 	}
 
@@ -136,8 +119,7 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -148,14 +130,11 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((SystemIntegration)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SystemIntegration_type") :
-			getString("_UI_SystemIntegration_type") + " " + label;
+	public String getText(Object object) {
+		String label = ((SystemIntegration) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_SystemIntegration_type")
+				: getString("_UI_SystemIntegration_type") + " " + label;
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -165,15 +144,13 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SystemIntegration.class))
-		{
-			case PcmIntegrationPackage.SYSTEM_INTEGRATION__PCMELEMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(SystemIntegration.class)) {
+		case PcmIntegrationPackage.SYSTEM_INTEGRATION__PCMELEMENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -186,14 +163,11 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT,
-				 PcmIntegrationFactory.eINSTANCE.createPCMElement()));
+		newChildDescriptors.add(createChildParameter(PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT,
+				PcmIntegrationFactory.eINSTANCE.createPCMElement()));
 	}
 
 	/**
@@ -203,8 +177,7 @@ public class SystemIntegrationItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return AttackerEditPlugin.INSTANCE;
 	}
 

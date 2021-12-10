@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Category Attack</b></em>'.
@@ -19,8 +18,7 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSp
  * @model abstract="true"
  * @generated
  */
-public interface CategoryAttack<T extends AttackCategory> extends Attack
-{
+public interface CategoryAttack<T extends AttackCategory> extends Attack {
 	/**
 	 * Returns the value of the '<em><b>Category</b></em>' reference.
 	 * <!-- begin-user-doc -->

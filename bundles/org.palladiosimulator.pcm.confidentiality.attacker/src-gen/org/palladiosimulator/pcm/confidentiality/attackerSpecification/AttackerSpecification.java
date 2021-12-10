@@ -25,8 +25,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * @extends CDOObject
  * @generated
  */
-public interface AttackerSpecification extends CDOObject
-{
+public interface AttackerSpecification extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Attackers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

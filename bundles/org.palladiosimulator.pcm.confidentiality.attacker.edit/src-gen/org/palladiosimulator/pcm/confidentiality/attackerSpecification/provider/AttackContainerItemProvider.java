@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -34,23 +33,15 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackContainerItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource
-{
+public class AttackContainerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackContainerItemProvider(AdapterFactory adapterFactory)
-	{
+	public AttackContainerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,10 +52,8 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -80,10 +69,8 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AttackerPackage.Literals.ATTACK_CONTAINER__ATTACK);
 		}
@@ -96,8 +83,7 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -111,8 +97,7 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttackContainer"));
 	}
 
@@ -122,8 +107,7 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -134,11 +118,9 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		return getString("_UI_AttackContainer_type");
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -148,15 +130,13 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AttackContainer.class))
-		{
-			case AttackerPackage.ATTACK_CONTAINER__ATTACK:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(AttackContainer.class)) {
+		case AttackerPackage.ATTACK_CONTAINER__ATTACK:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,19 +149,14 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(AttackerPackage.Literals.ATTACK_CONTAINER__ATTACK,
-				 AttackSpecificationFactory.eINSTANCE.createCWEAttack()));
+		newChildDescriptors.add(createChildParameter(AttackerPackage.Literals.ATTACK_CONTAINER__ATTACK,
+				AttackSpecificationFactory.eINSTANCE.createCWEAttack()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(AttackerPackage.Literals.ATTACK_CONTAINER__ATTACK,
-				 AttackSpecificationFactory.eINSTANCE.createCVEAttack()));
+		newChildDescriptors.add(createChildParameter(AttackerPackage.Literals.ATTACK_CONTAINER__ATTACK,
+				AttackSpecificationFactory.eINSTANCE.createCVEAttack()));
 	}
 
 	/**
@@ -191,9 +166,8 @@ public class AttackContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

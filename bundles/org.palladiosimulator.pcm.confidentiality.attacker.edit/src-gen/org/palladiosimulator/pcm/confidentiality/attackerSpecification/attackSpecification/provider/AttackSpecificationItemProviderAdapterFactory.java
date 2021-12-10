@@ -32,8 +32,8 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecificationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
-{
+public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecificationAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -64,8 +64,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackSpecificationItemProviderAdapterFactory()
-	{
+	public AttackSpecificationItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -88,10 +87,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCVEVulnerabilityAdapter()
-	{
-		if (cveVulnerabilityItemProvider == null)
-		{
+	public Adapter createCVEVulnerabilityAdapter() {
+		if (cveVulnerabilityItemProvider == null) {
 			cveVulnerabilityItemProvider = new CVEVulnerabilityItemProvider(this);
 		}
 
@@ -113,10 +110,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCWEIDAdapter()
-	{
-		if (cweidItemProvider == null)
-		{
+	public Adapter createCWEIDAdapter() {
+		if (cweidItemProvider == null) {
 			cweidItemProvider = new CWEIDItemProvider(this);
 		}
 
@@ -138,10 +133,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCWEAttackAdapter()
-	{
-		if (cweAttackItemProvider == null)
-		{
+	public Adapter createCWEAttackAdapter() {
+		if (cweAttackItemProvider == null) {
 			cweAttackItemProvider = new CWEAttackItemProvider(this);
 		}
 
@@ -163,10 +156,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCVEAttackAdapter()
-	{
-		if (cveAttackItemProvider == null)
-		{
+	public Adapter createCVEAttackAdapter() {
+		if (cveAttackItemProvider == null) {
 			cveAttackItemProvider = new CVEAttackItemProvider(this);
 		}
 
@@ -188,10 +179,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCVEIDAdapter()
-	{
-		if (cveidItemProvider == null)
-		{
+	public Adapter createCVEIDAdapter() {
+		if (cveidItemProvider == null) {
 			cveidItemProvider = new CVEIDItemProvider(this);
 		}
 
@@ -213,10 +202,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createCWEVulnerabilityAdapter()
-	{
-		if (cweVulnerabilityItemProvider == null)
-		{
+	public Adapter createCWEVulnerabilityAdapter() {
+		if (cweVulnerabilityItemProvider == null) {
 			cweVulnerabilityItemProvider = new CWEVulnerabilityItemProvider(this);
 		}
 
@@ -238,10 +225,8 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter createRoleAdapter()
-	{
-		if (roleItemProvider == null)
-		{
+	public Adapter createRoleAdapter() {
+		if (roleItemProvider == null) {
 			roleItemProvider = new RoleItemProvider(this);
 		}
 
@@ -254,8 +239,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory()
-	{
+	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
@@ -265,8 +249,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-	{
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -276,8 +259,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type)
-	{
+	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -288,8 +270,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type)
-	{
+	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
 
@@ -299,13 +280,10 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type)
-	{
-		if (isFactoryForType(type))
-		{
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -319,8 +297,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -330,8 +307,7 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -341,12 +317,10 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification)
-	{
+	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -357,15 +331,21 @@ public class AttackSpecificationItemProviderAdapterFactory extends AttackSpecifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose()
-	{
-		if (cveVulnerabilityItemProvider != null) cveVulnerabilityItemProvider.dispose();
-		if (cweidItemProvider != null) cweidItemProvider.dispose();
-		if (cweAttackItemProvider != null) cweAttackItemProvider.dispose();
-		if (cveAttackItemProvider != null) cveAttackItemProvider.dispose();
-		if (cveidItemProvider != null) cveidItemProvider.dispose();
-		if (cweVulnerabilityItemProvider != null) cweVulnerabilityItemProvider.dispose();
-		if (roleItemProvider != null) roleItemProvider.dispose();
+	public void dispose() {
+		if (cveVulnerabilityItemProvider != null)
+			cveVulnerabilityItemProvider.dispose();
+		if (cweidItemProvider != null)
+			cweidItemProvider.dispose();
+		if (cweAttackItemProvider != null)
+			cweAttackItemProvider.dispose();
+		if (cveAttackItemProvider != null)
+			cveAttackItemProvider.dispose();
+		if (cveidItemProvider != null)
+			cveidItemProvider.dispose();
+		if (cweVulnerabilityItemProvider != null)
+			cweVulnerabilityItemProvider.dispose();
+		if (roleItemProvider != null)
+			roleItemProvider.dispose();
 	}
 
 }

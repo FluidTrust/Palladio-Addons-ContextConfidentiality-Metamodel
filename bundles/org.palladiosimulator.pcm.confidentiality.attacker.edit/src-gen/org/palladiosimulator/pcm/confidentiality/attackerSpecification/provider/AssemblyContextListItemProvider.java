@@ -1,6 +1,6 @@
 /**
  */
-package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider;
+package org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -10,28 +10,33 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Role;
-
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider.AttackerEditPlugin;
-
-import org.palladiosimulator.pcm.core.entity.provider.EntityItemProvider;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Role} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleItemProvider extends EntityItemProvider {
+public class AssemblyContextListItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleItemProvider(AdapterFactory adapterFactory) {
+	public AssemblyContextListItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,19 +51,35 @@ public class RoleItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAssembyListPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns Role.gif.
+	 * This adds a property descriptor for the Assemby List feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssembyListPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AssemblyContextList_assembyList_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AssemblyContextList_assembyList_feature",
+						"_UI_AssemblyContextList_type"),
+				AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This returns AssemblyContextList.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Role"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyContextList"));
 	}
 
 	/**
@@ -79,9 +100,7 @@ public class RoleItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Role) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Role_type")
-				: getString("_UI_Role_type") + " " + label;
+		return getString("_UI_AssemblyContextList_type");
 	}
 
 	/**
@@ -117,7 +136,7 @@ public class RoleItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return AttackerEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

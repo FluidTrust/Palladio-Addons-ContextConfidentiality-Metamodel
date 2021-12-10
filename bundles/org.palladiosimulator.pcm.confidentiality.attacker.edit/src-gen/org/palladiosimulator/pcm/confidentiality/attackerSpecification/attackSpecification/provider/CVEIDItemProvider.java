@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -23,16 +22,14 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpe
  * <!-- end-user-doc -->
  * @generated
  */
-public class CVEIDItemProvider extends AttackCategoryItemProvider
-{
+public class CVEIDItemProvider extends AttackCategoryItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CVEIDItemProvider(AdapterFactory adapterFactory)
-	{
+	public CVEIDItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,10 +40,8 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCveIDPropertyDescriptor(object);
@@ -60,21 +55,13 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCveIDPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CVEID_cveID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CVEID_cveID_feature", "_UI_CVEID_type"),
-				 AttackSpecificationPackage.Literals.CVEID__CVE_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	protected void addCveIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_CVEID_cveID_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_CVEID_cveID_feature", "_UI_CVEID_type"),
+						AttackSpecificationPackage.Literals.CVEID__CVE_ID, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -84,8 +71,7 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/CVEID"));
 	}
 
@@ -95,8 +81,7 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -107,14 +92,11 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((CVEID)object).getEntityName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CVEID_type") :
-			getString("_UI_CVEID_type") + " " + label;
+	public String getText(Object object) {
+		String label = ((CVEID) object).getEntityName();
+		return label == null || label.length() == 0 ? getString("_UI_CVEID_type")
+				: getString("_UI_CVEID_type") + " " + label;
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -124,15 +106,13 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CVEID.class))
-		{
-			case AttackSpecificationPackage.CVEID__CVE_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(CVEID.class)) {
+		case AttackSpecificationPackage.CVEID__CVE_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -145,8 +125,7 @@ public class CVEIDItemProvider extends AttackCategoryItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

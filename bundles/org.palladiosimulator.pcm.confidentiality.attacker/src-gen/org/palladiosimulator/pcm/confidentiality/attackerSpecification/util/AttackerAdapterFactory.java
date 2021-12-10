@@ -27,8 +27,7 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage
  * @generated
  */
-public class AttackerAdapterFactory extends AdapterFactoryImpl
-{
+public class AttackerAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -43,10 +42,8 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackerAdapterFactory()
-	{
-		if (modelPackage == null)
-		{
+	public AttackerAdapterFactory() {
+		if (modelPackage == null) {
 			modelPackage = AttackerPackage.eINSTANCE;
 		}
 	}
@@ -60,15 +57,12 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object)
-	{
-		if (object == modelPackage)
-		{
+	public boolean isFactoryForType(Object object) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -79,80 +73,82 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttackerSwitch<Adapter> modelSwitch =
-		new AttackerSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseAttackerContainer(AttackerContainer object)
-			{
-				return createAttackerContainerAdapter();
-			}
-			@Override
-			public Adapter caseAttacker(Attacker object)
-			{
-				return createAttackerAdapter();
-			}
-			@Override
-			public Adapter caseAttackerSpecification(AttackerSpecification object)
-			{
-				return createAttackerSpecificationAdapter();
-			}
-			@Override
-			public Adapter caseAttackContainer(AttackContainer object)
-			{
-				return createAttackContainerAdapter();
-			}
-			@Override
-			public Adapter caseVulnerabilityContainer(VulnerabilityContainer object)
-			{
-				return createVulnerabilityContainerAdapter();
-			}
-			@Override
-			public Adapter caseCategorySpecification(CategorySpecification object)
-			{
-				return createCategorySpecificationAdapter();
-			}
-			@Override
-			public Adapter caseAttackerSystemSpecificationContainer(AttackerSystemSpecificationContainer object)
-			{
-				return createAttackerSystemSpecificationContainerAdapter();
-			}
-			@Override
-			public Adapter caseDatamodelAttacker(DatamodelAttacker object)
-			{
-				return createDatamodelAttackerAdapter();
-			}
-			@Override
-			public Adapter caseIdentifier(Identifier object)
-			{
-				return createIdentifierAdapter();
-			}
-			@Override
-			public Adapter casePCMClass(PCMClass object)
-			{
-				return createPCMClassAdapter();
-			}
-			@Override
-			public Adapter casePCMBaseClass(PCMBaseClass object)
-			{
-				return createPCMBaseClassAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object)
-			{
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object)
-			{
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected AttackerSwitch<Adapter> modelSwitch = new AttackerSwitch<Adapter>() {
+		@Override
+		public Adapter caseAttackerContainer(AttackerContainer object) {
+			return createAttackerContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseAttacker(Attacker object) {
+			return createAttackerAdapter();
+		}
+
+		@Override
+		public Adapter caseAttackerSpecification(AttackerSpecification object) {
+			return createAttackerSpecificationAdapter();
+		}
+
+		@Override
+		public Adapter caseAttackContainer(AttackContainer object) {
+			return createAttackContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseVulnerabilityContainer(VulnerabilityContainer object) {
+			return createVulnerabilityContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseCategorySpecification(CategorySpecification object) {
+			return createCategorySpecificationAdapter();
+		}
+
+		@Override
+		public Adapter caseAttackerSystemSpecificationContainer(AttackerSystemSpecificationContainer object) {
+			return createAttackerSystemSpecificationContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseDatamodelAttacker(DatamodelAttacker object) {
+			return createDatamodelAttackerAdapter();
+		}
+
+		@Override
+		public Adapter caseAssemblyContextList(AssemblyContextList object) {
+			return createAssemblyContextListAdapter();
+		}
+
+		@Override
+		public Adapter caseIdentifier(Identifier object) {
+			return createIdentifierAdapter();
+		}
+
+		@Override
+		public Adapter casePCMClass(PCMClass object) {
+			return createPCMClassAdapter();
+		}
+
+		@Override
+		public Adapter casePCMBaseClass(PCMBaseClass object) {
+			return createPCMBaseClassAdapter();
+		}
+
+		@Override
+		public Adapter caseNamedElement(NamedElement object) {
+			return createNamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseEntity(Entity object) {
+			return createEntityAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -163,11 +159,9 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target)
-	{
-		return modelSwitch.doSwitch((EObject)target);
+	public Adapter createAdapter(Notifier target) {
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer <em>Container</em>}'.
@@ -179,8 +173,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer
 	 * @generated
 	 */
-	public Adapter createAttackerContainerAdapter()
-	{
+	public Adapter createAttackerContainerAdapter() {
 		return null;
 	}
 
@@ -194,8 +187,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker
 	 * @generated
 	 */
-	public Adapter createAttackerAdapter()
-	{
+	public Adapter createAttackerAdapter() {
 		return null;
 	}
 
@@ -209,8 +201,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSpecification
 	 * @generated
 	 */
-	public Adapter createAttackerSpecificationAdapter()
-	{
+	public Adapter createAttackerSpecificationAdapter() {
 		return null;
 	}
 
@@ -224,8 +215,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackContainer
 	 * @generated
 	 */
-	public Adapter createAttackContainerAdapter()
-	{
+	public Adapter createAttackContainerAdapter() {
 		return null;
 	}
 
@@ -239,8 +229,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.VulnerabilityContainer
 	 * @generated
 	 */
-	public Adapter createVulnerabilityContainerAdapter()
-	{
+	public Adapter createVulnerabilityContainerAdapter() {
 		return null;
 	}
 
@@ -254,8 +243,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.CategorySpecification
 	 * @generated
 	 */
-	public Adapter createCategorySpecificationAdapter()
-	{
+	public Adapter createCategorySpecificationAdapter() {
 		return null;
 	}
 
@@ -269,8 +257,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerSystemSpecificationContainer
 	 * @generated
 	 */
-	public Adapter createAttackerSystemSpecificationContainerAdapter()
-	{
+	public Adapter createAttackerSystemSpecificationContainerAdapter() {
 		return null;
 	}
 
@@ -284,8 +271,21 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.DatamodelAttacker
 	 * @generated
 	 */
-	public Adapter createDatamodelAttackerAdapter()
-	{
+	public Adapter createDatamodelAttackerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList <em>Assembly Context List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList
+	 * @generated
+	 */
+	public Adapter createAssemblyContextListAdapter() {
 		return null;
 	}
 
@@ -299,8 +299,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see de.uka.ipd.sdq.identifier.Identifier
 	 * @generated
 	 */
-	public Adapter createIdentifierAdapter()
-	{
+	public Adapter createIdentifierAdapter() {
 		return null;
 	}
 
@@ -314,8 +313,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMClass
 	 * @generated
 	 */
-	public Adapter createPCMClassAdapter()
-	{
+	public Adapter createPCMClassAdapter() {
 		return null;
 	}
 
@@ -329,8 +327,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMBaseClass
 	 * @generated
 	 */
-	public Adapter createPCMBaseClassAdapter()
-	{
+	public Adapter createPCMBaseClassAdapter() {
 		return null;
 	}
 
@@ -344,8 +341,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.NamedElement
 	 * @generated
 	 */
-	public Adapter createNamedElementAdapter()
-	{
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -359,8 +355,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.Entity
 	 * @generated
 	 */
-	public Adapter createEntityAdapter()
-	{
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 
@@ -372,8 +367,7 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter()
-	{
+	public Adapter createEObjectAdapter() {
 		return null;
 	}
 

@@ -8,31 +8,31 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.CategorySpecification;
 
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
+import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Category Specification</b></em>'.
+ * An implementation of the model object '<em><b>Assembly Context List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.CategorySpecificationImpl#getCategories <em>Categories</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl#getAssembyList <em>Assemby List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CategorySpecificationImpl extends CDOObjectImpl implements CategorySpecification {
+public class AssemblyContextListImpl extends CDOObjectImpl implements AssemblyContextList {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CategorySpecificationImpl() {
+	protected AssemblyContextListImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class CategorySpecificationImpl extends CDOObjectImpl implements Category
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AttackerPackage.Literals.CATEGORY_SPECIFICATION;
+		return AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST;
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class CategorySpecificationImpl extends CDOObjectImpl implements Category
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<AttackCategory> getCategories() {
-		return (EList<AttackCategory>) eGet(AttackerPackage.Literals.CATEGORY_SPECIFICATION__CATEGORIES, true);
+	public EList<AssemblyContext> getAssembyList() {
+		return (EList<AssemblyContext>) eGet(AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST, true);
 	}
 
-} //CategorySpecificationImpl
+} //AssemblyContextListImpl

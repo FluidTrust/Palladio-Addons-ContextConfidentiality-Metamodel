@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -21,16 +20,14 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProvider
-{
+public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleSystemIntegrationItemProvider(AdapterFactory adapterFactory)
-	{
+	public RoleSystemIntegrationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,10 +38,8 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addRolePropertyDescriptor(object);
@@ -58,21 +53,13 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRolePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RoleSystemIntegration_role_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleSystemIntegration_role_feature", "_UI_RoleSystemIntegration_type"),
-				 PcmIntegrationPackage.Literals.ROLE_SYSTEM_INTEGRATION__ROLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_RoleSystemIntegration_role_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_RoleSystemIntegration_role_feature",
+						"_UI_RoleSystemIntegration_type"),
+				PcmIntegrationPackage.Literals.ROLE_SYSTEM_INTEGRATION__ROLE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -82,8 +69,7 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/RoleSystemIntegration"));
 	}
 
@@ -93,8 +79,7 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -105,14 +90,11 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((RoleSystemIntegration)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_RoleSystemIntegration_type") :
-			getString("_UI_RoleSystemIntegration_type") + " " + label;
+	public String getText(Object object) {
+		String label = ((RoleSystemIntegration) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_RoleSystemIntegration_type")
+				: getString("_UI_RoleSystemIntegration_type") + " " + label;
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -122,8 +104,7 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -136,8 +117,7 @@ public class RoleSystemIntegrationItemProvider extends SystemIntegrationItemProv
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

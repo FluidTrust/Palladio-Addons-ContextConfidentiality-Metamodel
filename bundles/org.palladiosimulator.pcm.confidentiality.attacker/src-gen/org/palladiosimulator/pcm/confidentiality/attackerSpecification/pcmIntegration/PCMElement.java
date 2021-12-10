@@ -35,8 +35,7 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  * @model
  * @generated
  */
-public interface PCMElement extends Entity
-{
+public interface PCMElement extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Resourcecontainer</b></em>' reference.
 	 * <!-- begin-user-doc -->

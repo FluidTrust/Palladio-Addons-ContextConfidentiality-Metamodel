@@ -14,8 +14,7 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface AttackCategory extends NamedElement
-{
+public interface AttackCategory extends NamedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

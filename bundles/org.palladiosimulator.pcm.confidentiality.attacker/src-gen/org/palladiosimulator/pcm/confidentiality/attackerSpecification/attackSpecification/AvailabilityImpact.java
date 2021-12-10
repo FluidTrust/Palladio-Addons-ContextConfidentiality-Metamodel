@@ -17,8 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum AvailabilityImpact implements Enumerator
-{
+public enum AvailabilityImpact implements Enumerator {
 	/**
 	 * The '<em><b>High</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -88,13 +87,7 @@ public enum AvailabilityImpact implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AvailabilityImpact[] VALUES_ARRAY =
-		new AvailabilityImpact[]
-		{
-			HIGH,
-			LOW,
-			NONE,
-		};
+	private static final AvailabilityImpact[] VALUES_ARRAY = new AvailabilityImpact[] { HIGH, LOW, NONE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Availability Impact</b></em>' enumerators.
@@ -112,13 +105,10 @@ public enum AvailabilityImpact implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static AvailabilityImpact get(String literal)
-	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+	public static AvailabilityImpact get(String literal) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			AvailabilityImpact result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -133,13 +123,10 @@ public enum AvailabilityImpact implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static AvailabilityImpact getByName(String name)
-	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+	public static AvailabilityImpact getByName(String name) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			AvailabilityImpact result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -154,13 +141,14 @@ public enum AvailabilityImpact implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static AvailabilityImpact get(int value)
-	{
-		switch (value)
-		{
-			case HIGH_VALUE: return HIGH;
-			case LOW_VALUE: return LOW;
-			case NONE_VALUE: return NONE;
+	public static AvailabilityImpact get(int value) {
+		switch (value) {
+		case HIGH_VALUE:
+			return HIGH;
+		case LOW_VALUE:
+			return LOW;
+		case NONE_VALUE:
+			return NONE;
 		}
 		return null;
 	}
@@ -192,8 +180,7 @@ public enum AvailabilityImpact implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private AvailabilityImpact(int value, String name, String literal)
-	{
+	private AvailabilityImpact(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -204,9 +191,8 @@ public enum AvailabilityImpact implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue()
-	{
-	  return value;
+	public int getValue() {
+		return value;
 	}
 
 	/**
@@ -214,9 +200,8 @@ public enum AvailabilityImpact implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName()
-	{
-	  return name;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -224,9 +209,8 @@ public enum AvailabilityImpact implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLiteral()
-	{
-	  return literal;
+	public String getLiteral() {
+		return literal;
 	}
 
 	/**
@@ -236,9 +220,8 @@ public enum AvailabilityImpact implements Enumerator
 	 * @generated
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return literal;
 	}
-	
+
 } //AvailabilityImpact

@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -34,23 +33,16 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackerSystemSpecificationContainerItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource
-{
+public class AttackerSystemSpecificationContainerItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackerSystemSpecificationContainerItemProvider(AdapterFactory adapterFactory)
-	{
+	public AttackerSystemSpecificationContainerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,10 +53,8 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -80,10 +70,8 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES);
 		}
@@ -96,8 +84,7 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -111,8 +98,7 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttackerSystemSpecificationContainer"));
 	}
 
@@ -122,8 +108,7 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -134,11 +119,9 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		return getString("_UI_AttackerSystemSpecificationContainer_type");
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -148,15 +131,13 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AttackerSystemSpecificationContainer.class))
-		{
-			case AttackerPackage.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(AttackerSystemSpecificationContainer.class)) {
+		case AttackerPackage.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,24 +150,20 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
-				 PcmIntegrationFactory.eINSTANCE.createVulnerabilitySystemIntegration()));
+		newChildDescriptors.add(
+				createChildParameter(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
+						PcmIntegrationFactory.eINSTANCE.createVulnerabilitySystemIntegration()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
-				 PcmIntegrationFactory.eINSTANCE.createRoleSystemIntegration()));
+		newChildDescriptors.add(
+				createChildParameter(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
+						PcmIntegrationFactory.eINSTANCE.createRoleSystemIntegration()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
-				 PcmIntegrationFactory.eINSTANCE.createNonGlobalCommunication()));
+		newChildDescriptors.add(
+				createChildParameter(AttackerPackage.Literals.ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES,
+						PcmIntegrationFactory.eINSTANCE.createNonGlobalCommunication()));
 	}
 
 	/**
@@ -196,9 +173,8 @@ public class AttackerSystemSpecificationContainerItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

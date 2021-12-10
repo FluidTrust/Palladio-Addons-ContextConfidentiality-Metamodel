@@ -22,8 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface CWEID extends AttackCategory
-{
+public interface CWEID extends AttackCategory {
 	/**
 	 * Returns the value of the '<em><b>Cwe ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->

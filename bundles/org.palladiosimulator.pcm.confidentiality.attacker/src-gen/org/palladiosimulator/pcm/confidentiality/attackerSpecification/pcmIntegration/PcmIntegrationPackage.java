@@ -23,8 +23,7 @@ import org.palladiosimulator.pcm.core.entity.EntityPackage;
  * @model kind="package"
  * @generated
  */
-public interface PcmIntegrationPackage extends EPackage
-{
+public interface PcmIntegrationPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -55,7 +54,8 @@ public interface PcmIntegrationPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PcmIntegrationPackage eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.PcmIntegrationPackageImpl.init();
+	PcmIntegrationPackage eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.PcmIntegrationPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.VulnerabilitySystemIntegrationImpl <em>Vulnerability System Integration</em>}' class.
@@ -350,7 +350,6 @@ public interface PcmIntegrationPackage extends EPackage
 	 */
 	int NON_GLOBAL_COMMUNICATION_FEATURE_COUNT = SYSTEM_INTEGRATION_FEATURE_COUNT + 0;
 
-
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.VulnerabilitySystemIntegration <em>Vulnerability System Integration</em>}'.
 	 * <!-- begin-user-doc -->
@@ -521,8 +520,7 @@ public interface PcmIntegrationPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals
-	{
+	interface Literals {
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.VulnerabilitySystemIntegrationImpl <em>Vulnerability System Integration</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -539,7 +537,8 @@ public interface PcmIntegrationPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VULNERABILITY_SYSTEM_INTEGRATION__VULNERABILITY = eINSTANCE.getVulnerabilitySystemIntegration_Vulnerability();
+		EReference VULNERABILITY_SYSTEM_INTEGRATION__VULNERABILITY = eINSTANCE
+				.getVulnerabilitySystemIntegration_Vulnerability();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.PCMElementImpl <em>PCM Element</em>}' class.

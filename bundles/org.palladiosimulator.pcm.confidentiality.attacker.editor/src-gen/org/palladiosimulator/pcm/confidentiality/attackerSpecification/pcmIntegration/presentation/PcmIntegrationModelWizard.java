@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -73,7 +72,6 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider.AttackerEditPlugin;
 
-
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -86,23 +84,21 @@ import org.eclipse.ui.PartInitException;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerEditorPlugin;
 
-
 /**
  * This is a simple wizard for creating a new model file.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PcmIntegrationModelWizard extends Wizard implements INewWizard
-{
+public class PcmIntegrationModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameExtensions").split("\\s*,\\s*")));
+	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(
+			AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -110,8 +106,8 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String FORMATTED_FILE_EXTENSIONS =
-		AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+	public static final String FORMATTED_FILE_EXTENSIONS = AttackerEditorPlugin.INSTANCE
+			.getString("_UI_PcmIntegrationEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -175,12 +171,12 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void init(IWorkbench workbench, IStructuredSelection selection)
-	{
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(AttackerEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(AttackerEditorPlugin.INSTANCE.getImage("full/wizban/NewPcmIntegration")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
+				.getImageDescriptor(AttackerEditorPlugin.INSTANCE.getImage("full/wizban/NewPcmIntegration")));
 	}
 
 	/**
@@ -189,18 +185,13 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<String> getInitialObjectNames()
-	{
-		if (initialObjectNames == null)
-		{
+	protected Collection<String> getInitialObjectNames() {
+		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : pcmIntegrationPackage.getEClassifiers())
-			{
-				if (eClassifier instanceof EClass)
-				{
-					EClass eClass = (EClass)eClassifier;
-					if (!eClass.isAbstract())
-					{
+			for (EClassifier eClassifier : pcmIntegrationPackage.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass) eClassifier;
+					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
 				}
@@ -216,9 +207,8 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EObject createInitialModel()
-	{
-		EClass eClass = (EClass)pcmIntegrationPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+	protected EObject createInitialModel() {
+		EClass eClass = (EClass) pcmIntegrationPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = pcmIntegrationFactory.create(eClass);
 		return rootObject;
 	}
@@ -230,60 +220,49 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * @generated
 	 */
 	@Override
-	public boolean performFinish()
-	{
-		try
-		{
+	public boolean performFinish() {
+		try {
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
 
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation()
-				{
-					@Override
-					protected void execute(IProgressMonitor progressMonitor)
-					{
-						try
-						{
-							// Create a resource set
-							//
-							ResourceSet resourceSet = new ResourceSetImpl();
+			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+				@Override
+				protected void execute(IProgressMonitor progressMonitor) {
+					try {
+						// Create a resource set
+						//
+						ResourceSet resourceSet = new ResourceSetImpl();
 
-							// Get the URI of the model file.
-							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+						// Get the URI of the model file.
+						//
+						URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-							// Create a resource for this file.
-							//
-							Resource resource = resourceSet.createResource(fileURI);
+						// Create a resource for this file.
+						//
+						Resource resource = resourceSet.createResource(fileURI);
 
-							// Add the initial model object to the contents.
-							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null)
-							{
-								resource.getContents().add(rootObject);
-							}
-
-							// Save the contents of the resource to the file system.
-							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
+						// Add the initial model object to the contents.
+						//
+						EObject rootObject = createInitialModel();
+						if (rootObject != null) {
+							resource.getContents().add(rootObject);
 						}
-						catch (Exception exception)
-						{
-							AttackerEditorPlugin.INSTANCE.log(exception);
-						}
-						finally
-						{
-							progressMonitor.done();
-						}
+
+						// Save the contents of the resource to the file system.
+						//
+						Map<Object, Object> options = new HashMap<Object, Object>();
+						options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+						resource.save(options);
+					} catch (Exception exception) {
+						AttackerEditorPlugin.INSTANCE.log(exception);
+					} finally {
+						progressMonitor.done();
 					}
-				};
+				}
+			};
 
 			getContainer().run(false, false, operation);
 
@@ -292,37 +271,28 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget)
-			{
+			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec
-					(new Runnable()
-					 {
-						 public void run()
-						 {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
+				getShell().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+					}
+				});
 			}
 
 			// Open an editor on the new file.
 			//
-			try
-			{
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception)
-			{
-				MessageDialog.openError(workbenchWindow.getShell(), AttackerEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+			try {
+				page.openEditor(new FileEditorInput(modelFile),
+						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception) {
+				MessageDialog.openError(workbenchWindow.getShell(),
+						AttackerEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			AttackerEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
@@ -334,16 +304,14 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class PcmIntegrationModelWizardNewFileCreationPage extends WizardNewFileCreationPage
-	{
+	public class PcmIntegrationModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public PcmIntegrationModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection)
-		{
+		public PcmIntegrationModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -354,15 +322,13 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * @generated
 		 */
 		@Override
-		protected boolean validatePage()
-		{
-			if (super.validatePage())
-			{
+		protected boolean validatePage() {
+			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension))
-				{
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(AttackerEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(
+							AttackerEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -375,8 +341,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public IFile getModelFile()
-		{
+		public IFile getModelFile() {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
 	}
@@ -387,8 +352,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class PcmIntegrationModelWizardInitialObjectCreationPage extends WizardPage
-	{
+	public class PcmIntegrationModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -416,8 +380,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public PcmIntegrationModelWizardInitialObjectCreationPage(String pageId)
-		{
+		public PcmIntegrationModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -426,8 +389,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public void createControl(Composite parent)
-		{
+		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE);
 			{
 				GridLayout layout = new GridLayout();
@@ -459,13 +421,11 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 				initialObjectField.setLayoutData(data);
 			}
 
-			for (String objectName : getInitialObjectNames())
-			{
+			for (String objectName : getInitialObjectNames()) {
 				initialObjectField.add(getLabel(objectName));
 			}
 
-			if (initialObjectField.getItemCount() == 1)
-			{
+			if (initialObjectField.getItemCount() == 1) {
 				initialObjectField.select(0);
 			}
 			initialObjectField.addModifyListener(validator);
@@ -486,8 +446,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 				encodingField.setLayoutData(data);
 			}
 
-			for (String encoding : getEncodings())
-			{
+			for (String encoding : getEncodings()) {
 				encodingField.add(encoding);
 			}
 
@@ -503,22 +462,18 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected ModifyListener validator =
-			new ModifyListener()
-			{
-				public void modifyText(ModifyEvent e)
-				{
-					setPageComplete(validatePage());
-				}
-			};
+		protected ModifyListener validator = new ModifyListener() {
+			public void modifyText(ModifyEvent e) {
+				setPageComplete(validatePage());
+			}
+		};
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected boolean validatePage()
-		{
+		protected boolean validatePage() {
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
@@ -528,18 +483,13 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * @generated
 		 */
 		@Override
-		public void setVisible(boolean visible)
-		{
+		public void setVisible(boolean visible) {
 			super.setVisible(visible);
-			if (visible)
-			{
-				if (initialObjectField.getItemCount() == 1)
-				{
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
-				}
-				else
-				{
+				} else {
 					encodingField.clearSelection();
 					initialObjectField.setFocus();
 				}
@@ -551,14 +501,11 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public String getInitialObjectName()
-		{
+		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
-			for (String name : getInitialObjectNames())
-			{
-				if (getLabel(name).equals(label))
-				{
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
 					return name;
 				}
 			}
@@ -570,8 +517,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public String getEncoding()
-		{
+		public String getEncoding() {
 			return encodingField.getText();
 		}
 
@@ -581,14 +527,10 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected String getLabel(String typeName)
-		{
-			try
-			{
+		protected String getLabel(String typeName) {
+			try {
 				return AttackerEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-			}
-			catch(MissingResourceException mre)
-			{
+			} catch (MissingResourceException mre) {
 				AttackerEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
@@ -599,13 +541,12 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected Collection<String> getEncodings()
-		{
-			if (encodings == null)
-			{
+		protected Collection<String> getEncodings() {
+			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(AttackerEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); )
-				{
+				for (StringTokenizer stringTokenizer = new StringTokenizer(
+						AttackerEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer
+								.hasMoreTokens();) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -619,49 +560,47 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-		@Override
-	public void addPages()
-	{
+	@Override
+	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new PcmIntegrationModelWizardNewFileCreationPage("Whatever", selection);
 		newFileCreationPage.setTitle(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationModelWizard_label"));
-		newFileCreationPage.setDescription(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationModelWizard_description"));
-		newFileCreationPage.setFileName(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage
+				.setDescription(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationModelWizard_description"));
+		newFileCreationPage
+				.setFileName(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameDefaultBase")
+						+ "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
-		if (selection != null && !selection.isEmpty())
-		{
+		if (selection != null && !selection.isEmpty()) {
 			// Get the resource...
 			//
 			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource)
-			{
+			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE)
-				{
+				IResource selectedResource = (IResource) selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
 
 				// This gives us a directory...
 				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
-				{
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
 					// Set this for the container.
 					//
 					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = AttackerEditorPlugin.INSTANCE
+							.getString("_UI_PcmIntegrationEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i)
-					{
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
@@ -669,8 +608,10 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 			}
 		}
 		initialObjectCreationPage = new PcmIntegrationModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationModelWizard_label"));
-		initialObjectCreationPage.setDescription(AttackerEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage
+				.setTitle(AttackerEditorPlugin.INSTANCE.getString("_UI_PcmIntegrationModelWizard_label"));
+		initialObjectCreationPage
+				.setDescription(AttackerEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 
@@ -680,8 +621,7 @@ public class PcmIntegrationModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IFile getModelFile()
-	{
+	public IFile getModelFile() {
 		return newFileCreationPage.getModelFile();
 	}
 

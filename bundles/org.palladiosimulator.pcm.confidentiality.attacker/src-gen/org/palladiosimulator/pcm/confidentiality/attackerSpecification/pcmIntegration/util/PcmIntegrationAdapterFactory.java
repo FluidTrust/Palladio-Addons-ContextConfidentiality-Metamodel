@@ -27,8 +27,7 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage
  * @generated
  */
-public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
-{
+public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -43,10 +42,8 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PcmIntegrationAdapterFactory()
-	{
-		if (modelPackage == null)
-		{
+	public PcmIntegrationAdapterFactory() {
+		if (modelPackage == null) {
 			modelPackage = PcmIntegrationPackage.eINSTANCE;
 		}
 	}
@@ -60,15 +57,12 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object)
-	{
-		if (object == modelPackage)
-		{
+	public boolean isFactoryForType(Object object) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -79,65 +73,62 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PcmIntegrationSwitch<Adapter> modelSwitch =
-		new PcmIntegrationSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseVulnerabilitySystemIntegration(VulnerabilitySystemIntegration object)
-			{
-				return createVulnerabilitySystemIntegrationAdapter();
-			}
-			@Override
-			public Adapter casePCMElement(PCMElement object)
-			{
-				return createPCMElementAdapter();
-			}
-			@Override
-			public Adapter caseRoleSystemIntegration(RoleSystemIntegration object)
-			{
-				return createRoleSystemIntegrationAdapter();
-			}
-			@Override
-			public Adapter caseSystemIntegration(SystemIntegration object)
-			{
-				return createSystemIntegrationAdapter();
-			}
-			@Override
-			public Adapter caseNonGlobalCommunication(NonGlobalCommunication object)
-			{
-				return createNonGlobalCommunicationAdapter();
-			}
-			@Override
-			public Adapter caseIdentifier(Identifier object)
-			{
-				return createIdentifierAdapter();
-			}
-			@Override
-			public Adapter casePCMClass(PCMClass object)
-			{
-				return createPCMClassAdapter();
-			}
-			@Override
-			public Adapter casePCMBaseClass(PCMBaseClass object)
-			{
-				return createPCMBaseClassAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object)
-			{
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object)
-			{
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected PcmIntegrationSwitch<Adapter> modelSwitch = new PcmIntegrationSwitch<Adapter>() {
+		@Override
+		public Adapter caseVulnerabilitySystemIntegration(VulnerabilitySystemIntegration object) {
+			return createVulnerabilitySystemIntegrationAdapter();
+		}
+
+		@Override
+		public Adapter casePCMElement(PCMElement object) {
+			return createPCMElementAdapter();
+		}
+
+		@Override
+		public Adapter caseRoleSystemIntegration(RoleSystemIntegration object) {
+			return createRoleSystemIntegrationAdapter();
+		}
+
+		@Override
+		public Adapter caseSystemIntegration(SystemIntegration object) {
+			return createSystemIntegrationAdapter();
+		}
+
+		@Override
+		public Adapter caseNonGlobalCommunication(NonGlobalCommunication object) {
+			return createNonGlobalCommunicationAdapter();
+		}
+
+		@Override
+		public Adapter caseIdentifier(Identifier object) {
+			return createIdentifierAdapter();
+		}
+
+		@Override
+		public Adapter casePCMClass(PCMClass object) {
+			return createPCMClassAdapter();
+		}
+
+		@Override
+		public Adapter casePCMBaseClass(PCMBaseClass object) {
+			return createPCMBaseClassAdapter();
+		}
+
+		@Override
+		public Adapter caseNamedElement(NamedElement object) {
+			return createNamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseEntity(Entity object) {
+			return createEntityAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -148,11 +139,9 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target)
-	{
-		return modelSwitch.doSwitch((EObject)target);
+	public Adapter createAdapter(Notifier target) {
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.VulnerabilitySystemIntegration <em>Vulnerability System Integration</em>}'.
@@ -164,8 +153,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.VulnerabilitySystemIntegration
 	 * @generated
 	 */
-	public Adapter createVulnerabilitySystemIntegrationAdapter()
-	{
+	public Adapter createVulnerabilitySystemIntegrationAdapter() {
 		return null;
 	}
 
@@ -179,8 +167,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PCMElement
 	 * @generated
 	 */
-	public Adapter createPCMElementAdapter()
-	{
+	public Adapter createPCMElementAdapter() {
 		return null;
 	}
 
@@ -194,8 +181,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.RoleSystemIntegration
 	 * @generated
 	 */
-	public Adapter createRoleSystemIntegrationAdapter()
-	{
+	public Adapter createRoleSystemIntegrationAdapter() {
 		return null;
 	}
 
@@ -209,8 +195,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration
 	 * @generated
 	 */
-	public Adapter createSystemIntegrationAdapter()
-	{
+	public Adapter createSystemIntegrationAdapter() {
 		return null;
 	}
 
@@ -224,8 +209,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.NonGlobalCommunication
 	 * @generated
 	 */
-	public Adapter createNonGlobalCommunicationAdapter()
-	{
+	public Adapter createNonGlobalCommunicationAdapter() {
 		return null;
 	}
 
@@ -239,8 +223,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see de.uka.ipd.sdq.identifier.Identifier
 	 * @generated
 	 */
-	public Adapter createIdentifierAdapter()
-	{
+	public Adapter createIdentifierAdapter() {
 		return null;
 	}
 
@@ -254,8 +237,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMClass
 	 * @generated
 	 */
-	public Adapter createPCMClassAdapter()
-	{
+	public Adapter createPCMClassAdapter() {
 		return null;
 	}
 
@@ -269,8 +251,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.PCMBaseClass
 	 * @generated
 	 */
-	public Adapter createPCMBaseClassAdapter()
-	{
+	public Adapter createPCMBaseClassAdapter() {
 		return null;
 	}
 
@@ -284,8 +265,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.NamedElement
 	 * @generated
 	 */
-	public Adapter createNamedElementAdapter()
-	{
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -299,8 +279,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @see org.palladiosimulator.pcm.core.entity.Entity
 	 * @generated
 	 */
-	public Adapter createEntityAdapter()
-	{
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 
@@ -312,8 +291,7 @@ public class PcmIntegrationAdapterFactory extends AdapterFactoryImpl
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter()
-	{
+	public Adapter createEObjectAdapter() {
 		return null;
 	}
 

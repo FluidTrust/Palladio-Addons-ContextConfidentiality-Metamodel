@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -25,16 +24,14 @@ import org.palladiosimulator.pcm.core.entity.provider.NamedElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackCategoryItemProvider extends NamedElementItemProvider
-{
+public class AttackCategoryItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackCategoryItemProvider(AdapterFactory adapterFactory)
-	{
+	public AttackCategoryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,10 +42,8 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -62,8 +57,7 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttackCategory"));
 	}
 
@@ -73,8 +67,7 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -85,14 +78,11 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((AttackCategory)object).getEntityName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AttackCategory_type") :
-			getString("_UI_AttackCategory_type") + " " + label;
+	public String getText(Object object) {
+		String label = ((AttackCategory) object).getEntityName();
+		return label == null || label.length() == 0 ? getString("_UI_AttackCategory_type")
+				: getString("_UI_AttackCategory_type") + " " + label;
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -102,8 +92,7 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -116,8 +105,7 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -128,8 +116,7 @@ public class AttackCategoryItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return AttackerEditPlugin.INSTANCE;
 	}
 

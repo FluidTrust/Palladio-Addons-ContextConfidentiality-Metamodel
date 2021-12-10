@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>CVEID</b></em>'.
@@ -19,8 +18,7 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSp
  * @model
  * @generated
  */
-public interface CVEID extends AttackCategory
-{
+public interface CVEID extends AttackCategory {
 	/**
 	 * Returns the value of the '<em><b>Cve ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->

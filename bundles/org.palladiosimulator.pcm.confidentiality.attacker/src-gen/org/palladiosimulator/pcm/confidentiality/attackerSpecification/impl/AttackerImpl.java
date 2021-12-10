@@ -6,15 +6,13 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack;
 
 import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
-
-import org.palladiosimulator.pcm.core.composition.AssemblyContext;
-
 import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 
 import org.palladiosimulator.pcm.resourceenvironment.LinkingResource;
@@ -38,15 +36,13 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  *
  * @generated
  */
-public class AttackerImpl extends EntityImpl implements Attacker
-{
+public abstract class AttackerImpl extends EntityImpl implements Attacker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttackerImpl()
-	{
+	protected AttackerImpl() {
 		super();
 	}
 
@@ -56,8 +52,7 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return AttackerPackage.Literals.ATTACKER;
 	}
 
@@ -67,9 +62,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Attack> getAttacks()
-	{
-		return (EList<Attack>)eGet(AttackerPackage.Literals.ATTACKER__ATTACKS, true);
+	public EList<Attack> getAttacks() {
+		return (EList<Attack>) eGet(AttackerPackage.Literals.ATTACKER__ATTACKS, true);
 	}
 
 	/**
@@ -78,9 +72,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<AssemblyContext> getCompromisedComponents()
-	{
-		return (EList<AssemblyContext>)eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS, true);
+	public EList<AssemblyContextList> getCompromisedComponents() {
+		return (EList<AssemblyContextList>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS, true);
 	}
 
 	/**
@@ -89,9 +82,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<ResourceContainer> getCompromisedResources()
-	{
-		return (EList<ResourceContainer>)eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_RESOURCES, true);
+	public EList<ResourceContainer> getCompromisedResources() {
+		return (EList<ResourceContainer>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_RESOURCES, true);
 	}
 
 	/**
@@ -100,9 +92,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<LinkingResource> getCompromisedLinkingResources()
-	{
-		return (EList<LinkingResource>)eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_LINKING_RESOURCES, true);
+	public EList<LinkingResource> getCompromisedLinkingResources() {
+		return (EList<LinkingResource>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_LINKING_RESOURCES, true);
 	}
 
 	/**
@@ -111,9 +102,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<UsageSpecification> getCredentials()
-	{
-		return (EList<UsageSpecification>)eGet(AttackerPackage.Literals.ATTACKER__CREDENTIALS, true);
+	public EList<UsageSpecification> getCredentials() {
+		return (EList<UsageSpecification>) eGet(AttackerPackage.Literals.ATTACKER__CREDENTIALS, true);
 	}
 
 	/**
@@ -121,9 +111,8 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isExploitContextProviders()
-	{
-		return (Boolean)eGet(AttackerPackage.Literals.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS, true);
+	public boolean isExploitContextProviders() {
+		return (Boolean) eGet(AttackerPackage.Literals.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS, true);
 	}
 
 	/**
@@ -131,8 +120,7 @@ public class AttackerImpl extends EntityImpl implements Attacker
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExploitContextProviders(boolean newExploitContextProviders)
-	{
+	public void setExploitContextProviders(boolean newExploitContextProviders) {
 		eSet(AttackerPackage.Literals.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS, newExploitContextProviders);
 	}
 

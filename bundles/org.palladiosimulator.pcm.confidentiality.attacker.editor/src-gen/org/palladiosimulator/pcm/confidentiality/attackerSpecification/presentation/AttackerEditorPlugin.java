@@ -28,8 +28,7 @@ import org.palladiosimulator.pcm.core.provider.PalladioComponentModelEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class AttackerEditorPlugin extends EMFPlugin
-{
+public final class AttackerEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -37,7 +36,7 @@ public final class AttackerEditorPlugin extends EMFPlugin
 	 * @generated
 	 */
 	public static final AttackerEditorPlugin INSTANCE = new AttackerEditorPlugin();
-	
+
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -52,19 +51,10 @@ public final class AttackerEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackerEditorPlugin()
-	{
-		super
-			(new ResourceLocator [] 
-			{
-				ContextEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE,
-				IdentifierEditPlugin.INSTANCE,
-				PalladioComponentModelEditPlugin.INSTANCE,
-				ProbabilityFunctionEditPlugin.INSTANCE,
-				StoexEditPlugin.INSTANCE,
-				UnitsEditPlugin.INSTANCE,
-			});
+	public AttackerEditorPlugin() {
+		super(new ResourceLocator[] { ContextEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE,
+				IdentifierEditPlugin.INSTANCE, PalladioComponentModelEditPlugin.INSTANCE,
+				ProbabilityFunctionEditPlugin.INSTANCE, StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
 	}
 
 	/**
@@ -75,11 +65,10 @@ public final class AttackerEditorPlugin extends EMFPlugin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getPluginResourceLocator()
-	{
+	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
-	
+
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
@@ -87,29 +76,26 @@ public final class AttackerEditorPlugin extends EMFPlugin
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	public static Implementation getPlugin()
-	{
+	public static Implementation getPlugin() {
 		return plugin;
 	}
-	
+
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin
-	{
+	public static class Implementation extends EclipseUIPlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Implementation()
-		{
+		public Implementation() {
 			super();
-	
+
 			// Remember the static instance.
 			//
 			plugin = this;

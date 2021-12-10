@@ -24,8 +24,7 @@ import org.palladiosimulator.pcm.core.entity.EntityPackage;
  * @model kind="package"
  * @generated
  */
-public interface AttackerPackage extends EPackage
-{
+public interface AttackerPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -56,7 +55,8 @@ public interface AttackerPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AttackerPackage eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl.init();
+	AttackerPackage eINSTANCE = org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerContainerImpl <em>Container</em>}' class.
@@ -426,6 +426,33 @@ public interface AttackerPackage extends EPackage
 	 */
 	int DATAMODEL_ATTACKER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl <em>Assembly Context List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getAssemblyContextList()
+	 * @generated
+	 */
+	int ASSEMBLY_CONTEXT_LIST = 8;
+
+	/**
+	 * The feature id for the '<em><b>Assemby List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST = 0;
+
+	/**
+	 * The number of structural features of the '<em>Assembly Context List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONTEXT_LIST_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer <em>Container</em>}'.
@@ -728,6 +755,27 @@ public interface AttackerPackage extends EPackage
 	EReference getDatamodelAttacker_Method();
 
 	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList <em>Assembly Context List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assembly Context List</em>'.
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList
+	 * @generated
+	 */
+	EClass getAssemblyContextList();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList#getAssembyList <em>Assemby List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Assemby List</em>'.
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList#getAssembyList()
+	 * @see #getAssemblyContextList()
+	 * @generated
+	 */
+	EReference getAssemblyContextList_AssembyList();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -748,8 +796,7 @@ public interface AttackerPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals
-	{
+	interface Literals {
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerContainerImpl <em>Container</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -866,7 +913,8 @@ public interface AttackerPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTACKER_SPECIFICATION__CATEGORYSPECIFICATION = eINSTANCE.getAttackerSpecification_Categoryspecification();
+		EReference ATTACKER_SPECIFICATION__CATEGORYSPECIFICATION = eINSTANCE
+				.getAttackerSpecification_Categoryspecification();
 
 		/**
 		 * The meta object literal for the '<em><b>Systemintegration</b></em>' containment reference feature.
@@ -946,7 +994,8 @@ public interface AttackerPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES = eINSTANCE.getAttackerSystemSpecificationContainer_Vulnerabilities();
+		EReference ATTACKER_SYSTEM_SPECIFICATION_CONTAINER__VULNERABILITIES = eINSTANCE
+				.getAttackerSystemSpecificationContainer_Vulnerabilities();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.DatamodelAttackerImpl <em>Datamodel Attacker</em>}' class.
@@ -989,6 +1038,24 @@ public interface AttackerPackage extends EPackage
 		 * @generated
 		 */
 		EReference DATAMODEL_ATTACKER__METHOD = eINSTANCE.getDatamodelAttacker_Method();
+
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl <em>Assembly Context List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl
+		 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AttackerPackageImpl#getAssemblyContextList()
+		 * @generated
+		 */
+		EClass ASSEMBLY_CONTEXT_LIST = eINSTANCE.getAssemblyContextList();
+
+		/**
+		 * The meta object literal for the '<em><b>Assemby List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST = eINSTANCE.getAssemblyContextList_AssembyList();
 
 	}
 

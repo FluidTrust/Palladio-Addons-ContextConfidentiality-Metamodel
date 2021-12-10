@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -25,16 +24,14 @@ import org.palladiosimulator.pcm.core.entity.provider.EntityItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackerItemProvider extends EntityItemProvider
-{
+public class AttackerItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackerItemProvider(AdapterFactory adapterFactory)
-	{
+	public AttackerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,10 +42,8 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addAttacksPropertyDescriptor(object);
@@ -67,21 +62,13 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttacksPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_attacks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_attacks_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__ATTACKS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addAttacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attacker_attacks_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attacker_attacks_feature",
+								"_UI_Attacker_type"),
+						AttackerPackage.Literals.ATTACKER__ATTACKS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -90,21 +77,14 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCompromisedComponentsPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_compromisedComponents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedComponents_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addCompromisedComponentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attacker_compromisedComponents_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedComponents_feature",
+								"_UI_Attacker_type"),
+						AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS, true, false, true, null, null,
+						null));
 	}
 
 	/**
@@ -113,21 +93,13 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCompromisedResourcesPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_compromisedResources_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedResources_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__COMPROMISED_RESOURCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addCompromisedResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attacker_compromisedResources_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedResources_feature",
+								"_UI_Attacker_type"),
+						AttackerPackage.Literals.ATTACKER__COMPROMISED_RESOURCES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -136,21 +108,13 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCompromisedLinkingResourcesPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_compromisedLinkingResources_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedLinkingResources_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__COMPROMISED_LINKING_RESOURCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addCompromisedLinkingResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Attacker_compromisedLinkingResources_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Attacker_compromisedLinkingResources_feature",
+						"_UI_Attacker_type"),
+				AttackerPackage.Literals.ATTACKER__COMPROMISED_LINKING_RESOURCES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -159,21 +123,13 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCredentialsPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_credentials_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_credentials_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__CREDENTIALS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	protected void addCredentialsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attacker_credentials_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attacker_credentials_feature",
+								"_UI_Attacker_type"),
+						AttackerPackage.Literals.ATTACKER__CREDENTIALS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -182,21 +138,14 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExploitContextProvidersPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attacker_exploitContextProviders_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attacker_exploitContextProviders_feature", "_UI_Attacker_type"),
-				 AttackerPackage.Literals.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+	protected void addExploitContextProvidersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attacker_exploitContextProviders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attacker_exploitContextProviders_feature",
+								"_UI_Attacker_type"),
+						AttackerPackage.Literals.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -206,8 +155,7 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Attacker"));
 	}
 
@@ -217,8 +165,7 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage()
-	{
+	protected boolean shouldComposeCreationImage() {
 		return true;
 	}
 
@@ -229,14 +176,11 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((Attacker)object).getEntityName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Attacker_type") :
-			getString("_UI_Attacker_type") + " " + label;
+	public String getText(Object object) {
+		String label = ((Attacker) object).getEntityName();
+		return label == null || label.length() == 0 ? getString("_UI_Attacker_type")
+				: getString("_UI_Attacker_type") + " " + label;
 	}
-
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -246,15 +190,13 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Attacker.class))
-		{
-			case AttackerPackage.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Attacker.class)) {
+		case AttackerPackage.ATTACKER__EXPLOIT_CONTEXT_PROVIDERS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -267,8 +209,7 @@ public class AttackerItemProvider extends EntityItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

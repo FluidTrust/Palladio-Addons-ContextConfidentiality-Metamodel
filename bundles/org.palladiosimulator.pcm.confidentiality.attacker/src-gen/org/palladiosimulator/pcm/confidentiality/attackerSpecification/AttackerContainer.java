@@ -23,8 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @extends CDOObject
  * @generated
  */
-public interface AttackerContainer extends CDOObject
-{
+public interface AttackerContainer extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Attacker</b></em>' containment reference list.
 	 * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker}.

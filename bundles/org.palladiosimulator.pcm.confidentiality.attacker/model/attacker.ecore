@@ -6,11 +6,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attacker" upperBound="-1"
         eType="#//Attacker" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Attacker" abstract="true" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attacks" upperBound="-1"
         eType="#//attackSpecification/Attack"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedComponents"
-        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+        upperBound="-1" eType="#//AssemblyContextList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedResources" upperBound="-1"
         eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedLinkingResources"
@@ -53,6 +53,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/OperationSignature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContextList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assembyList" upperBound="-1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
   </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
