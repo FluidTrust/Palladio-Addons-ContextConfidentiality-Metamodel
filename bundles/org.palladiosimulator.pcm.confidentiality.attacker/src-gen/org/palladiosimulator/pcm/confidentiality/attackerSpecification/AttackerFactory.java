@@ -86,13 +86,13 @@ public interface AttackerFactory extends EFactory {
 	DatamodelAttacker createDatamodelAttacker();
 
 	/**
-	 * Returns a new object of class '<em>Assembly Context List</em>'.
+	 * Returns a new object of class '<em>Assembly Context Detail</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assembly Context List</em>'.
+	 * @return a new object of class '<em>Assembly Context Detail</em>'.
 	 * @generated
 	 */
-	AssemblyContextList createAssemblyContextList();
+	AssemblyContextDetail createAssemblyContextDetail();
 
 	/**
 	 * Returns the package supported by this factory.

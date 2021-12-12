@@ -6,13 +6,14 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Attack;
 
 import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
+
 import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 
 import org.palladiosimulator.pcm.resourceenvironment.LinkingResource;
@@ -72,8 +73,8 @@ public abstract class AttackerImpl extends EntityImpl implements Attacker {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<AssemblyContextList> getCompromisedComponents() {
-		return (EList<AssemblyContextList>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS, true);
+	public EList<AssemblyContextDetail> getCompromisedComponents() {
+		return (EList<AssemblyContextDetail>) eGet(AttackerPackage.Literals.ATTACKER__COMPROMISED_COMPONENTS, true);
 	}
 
 	/**

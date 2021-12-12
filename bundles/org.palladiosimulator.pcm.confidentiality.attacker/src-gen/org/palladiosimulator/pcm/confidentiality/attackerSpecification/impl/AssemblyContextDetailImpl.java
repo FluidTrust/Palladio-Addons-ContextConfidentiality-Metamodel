@@ -8,31 +8,31 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Assembly Context List</b></em>'.
+ * An implementation of the model object '<em><b>Assembly Context Detail</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextListImpl#getAssembyList <em>Assemby List</em>}</li>
+ *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl.AssemblyContextDetailImpl#getAssemblyList <em>Assembly List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AssemblyContextListImpl extends CDOObjectImpl implements AssemblyContextList {
+public class AssemblyContextDetailImpl extends CDOObjectImpl implements AssemblyContextDetail {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssemblyContextListImpl() {
+	protected AssemblyContextDetailImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class AssemblyContextListImpl extends CDOObjectImpl implements AssemblyCo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST;
+		return AttackerPackage.Literals.ASSEMBLY_CONTEXT_DETAIL;
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class AssemblyContextListImpl extends CDOObjectImpl implements AssemblyCo
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<AssemblyContext> getAssembyList() {
-		return (EList<AssemblyContext>) eGet(AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST, true);
+	public EList<AssemblyContext> getAssemblyList() {
+		return (EList<AssemblyContext>) eGet(AttackerPackage.Literals.ASSEMBLY_CONTEXT_DETAIL__ASSEMBLY_LIST, true);
 	}
 
-} //AssemblyContextListImpl
+} //AssemblyContextDetailImpl

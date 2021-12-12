@@ -23,12 +23,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssemblyContextListItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class AssemblyContextDetailItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -36,7 +36,7 @@ public class AssemblyContextListItemProvider extends ItemProviderAdapter impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContextListItemProvider(AdapterFactory adapterFactory) {
+	public AssemblyContextDetailItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,35 +51,35 @@ public class AssemblyContextListItemProvider extends ItemProviderAdapter impleme
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssembyListPropertyDescriptor(object);
+			addAssemblyListPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Assemby List feature.
+	 * This adds a property descriptor for the Assembly List feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssembyListPropertyDescriptor(Object object) {
+	protected void addAssemblyListPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_AssemblyContextList_assembyList_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_AssemblyContextList_assembyList_feature",
-						"_UI_AssemblyContextList_type"),
-				AttackerPackage.Literals.ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST, true, false, true, null, null, null));
+				getString("_UI_AssemblyContextDetail_assemblyList_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AssemblyContextDetail_assemblyList_feature",
+						"_UI_AssemblyContextDetail_type"),
+				AttackerPackage.Literals.ASSEMBLY_CONTEXT_DETAIL__ASSEMBLY_LIST, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns AssemblyContextList.gif.
+	 * This returns AssemblyContextDetail.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyContextList"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyContextDetail"));
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class AssemblyContextListItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AssemblyContextList_type");
+		return getString("_UI_AssemblyContextDetail_type");
 	}
 
 	/**

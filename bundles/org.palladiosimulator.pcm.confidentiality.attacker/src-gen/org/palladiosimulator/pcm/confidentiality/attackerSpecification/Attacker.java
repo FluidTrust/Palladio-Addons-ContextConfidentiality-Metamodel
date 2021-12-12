@@ -48,7 +48,7 @@ public interface Attacker extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Compromised Components</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList}.
+	 * The list contents are of type {@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Compromised Components</em>' reference list.
@@ -56,7 +56,7 @@ public interface Attacker extends Entity {
 	 * @model
 	 * @generated
 	 */
-	EList<AssemblyContextList> getCompromisedComponents();
+	EList<AssemblyContextDetail> getCompromisedComponents();
 
 	/**
 	 * Returns the value of the '<em><b>Compromised Resources</b></em>' reference list.

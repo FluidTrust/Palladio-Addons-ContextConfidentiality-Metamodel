@@ -1,5 +1,3 @@
-/**
- */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -70,8 +68,8 @@ public class AttackerFactoryImpl extends EFactoryImpl implements AttackerFactory
 			return (EObject) createAttackerSystemSpecificationContainer();
 		case AttackerPackage.DATAMODEL_ATTACKER:
 			return createDatamodelAttacker();
-		case AttackerPackage.ASSEMBLY_CONTEXT_LIST:
-			return (EObject) createAssemblyContextList();
+		case AttackerPackage.ASSEMBLY_CONTEXT_DETAIL:
+			return (EObject) createAssemblyContextDetail();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -152,9 +150,9 @@ public class AttackerFactoryImpl extends EFactoryImpl implements AttackerFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContextList createAssemblyContextList() {
-		AssemblyContextListImpl assemblyContextList = new AssemblyContextListImpl();
-		return assemblyContextList;
+	public AssemblyContextDetail createAssemblyContextDetail() {
+		AssemblyContextDetailImpl assemblyContextDetail = new AssemblyContextDetailImpl();
+		return assemblyContextDetail;
 	}
 
 	/**

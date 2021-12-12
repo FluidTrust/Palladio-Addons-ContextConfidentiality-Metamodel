@@ -115,8 +115,8 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseAssemblyContextList(AssemblyContextList object) {
-			return createAssemblyContextListAdapter();
+		public Adapter caseAssemblyContextDetail(AssemblyContextDetail object) {
+			return createAssemblyContextDetailAdapter();
 		}
 
 		@Override
@@ -276,16 +276,16 @@ public class AttackerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList <em>Assembly Context List</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail <em>Assembly Context Detail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList
+	 * @see org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail
 	 * @generated
 	 */
-	public Adapter createAssemblyContextListAdapter() {
+	public Adapter createAssemblyContextDetailAdapter() {
 		return null;
 	}
 

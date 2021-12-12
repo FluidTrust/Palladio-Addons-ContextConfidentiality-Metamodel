@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.palladiosimulator.pcm.PcmPackage;
 
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextList;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AssemblyContextDetail;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackContainer;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.Attacker;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerContainer;
@@ -120,7 +120,7 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass assemblyContextListEClass = null;
+	private EClass assemblyContextDetailEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -466,8 +466,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAssemblyContextList() {
-		return assemblyContextListEClass;
+	public EClass getAssemblyContextDetail() {
+		return assemblyContextDetailEClass;
 	}
 
 	/**
@@ -475,8 +475,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAssemblyContextList_AssembyList() {
-		return (EReference) assemblyContextListEClass.getEStructuralFeatures().get(0);
+	public EReference getAssemblyContextDetail_AssemblyList() {
+		return (EReference) assemblyContextDetailEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -545,8 +545,8 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 		createEReference(datamodelAttackerEClass, DATAMODEL_ATTACKER__SOURCE);
 		createEReference(datamodelAttackerEClass, DATAMODEL_ATTACKER__METHOD);
 
-		assemblyContextListEClass = createEClass(ASSEMBLY_CONTEXT_LIST);
-		createEReference(assemblyContextListEClass, ASSEMBLY_CONTEXT_LIST__ASSEMBY_LIST);
+		assemblyContextDetailEClass = createEClass(ASSEMBLY_CONTEXT_DETAIL);
+		createEReference(assemblyContextDetailEClass, ASSEMBLY_CONTEXT_DETAIL__ASSEMBLY_LIST);
 	}
 
 	/**
@@ -611,7 +611,7 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 		initEReference(getAttacker_Attacks(), theAttackSpecificationPackage.getAttack(), null, "attacks", null, 0, -1,
 				Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttacker_CompromisedComponents(), this.getAssemblyContextList(), null,
+		initEReference(getAttacker_CompromisedComponents(), this.getAssemblyContextDetail(), null,
 				"compromisedComponents", null, 0, -1, Attacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttacker_CompromisedResources(), theResourceenvironmentPackage.getResourceContainer(), null,
@@ -685,10 +685,10 @@ public class AttackerPackageImpl extends EPackageImpl implements AttackerPackage
 				null, 0, 1, DatamodelAttacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(assemblyContextListEClass, AssemblyContextList.class, "AssemblyContextList", !IS_ABSTRACT,
+		initEClass(assemblyContextDetailEClass, AssemblyContextDetail.class, "AssemblyContextDetail", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssemblyContextList_AssembyList(), theCompositionPackage.getAssemblyContext(), null,
-				"assembyList", null, 0, -1, AssemblyContextList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getAssemblyContextDetail_AssemblyList(), theCompositionPackage.getAssemblyContext(), null,
+				"assemblyList", null, 0, -1, AssemblyContextDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

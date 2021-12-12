@@ -36,7 +36,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_heInAFj3EeymquYkChw8ig" name="attackerSpecification class diagram" repPath="#_heH_8Fj3EeymquYkChw8ig" changeId="a9abe7a8-2bb5-4be9-9167-565d85acfd20">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_heInAFj3EeymquYkChw8ig" name="attackerSpecification class diagram" repPath="#_heH_8Fj3EeymquYkChw8ig" changeId="df10b4af-38fc-4ec2-bd10-947cbcb20b5e">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -3144,17 +3144,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_h1A18lj3EeymquYkChw8ig" type="4001" element="_h06IRlj3EeymquYkChw8ig" source="_h08khFj3EeymquYkChw8ig" target="_h09Lm1j3EeymquYkChw8ig">
           <children xmi:type="notation:Node" xmi:id="_h1A19lj3EeymquYkChw8ig" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A191j3EeymquYkChw8ig" x="47" y="85"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A191j3EeymquYkChw8ig" x="-15" y="85"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_h1A1-Fj3EeymquYkChw8ig" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A1-Vj3EeymquYkChw8ig" x="-16" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A1-Vj3EeymquYkChw8ig" x="-30" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_h1A1-lj3EeymquYkChw8ig" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A1-1j3EeymquYkChw8ig" x="16" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1A1-1j3EeymquYkChw8ig" x="-119" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_h1A181j3EeymquYkChw8ig" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_h1A19Fj3EeymquYkChw8ig" fontColor="7490599" fontName="Open Sans" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h1A19Vj3EeymquYkChw8ig" points="[64, -23, -394, 247]$[217, -23, -241, 247]$[217, -233, -241, 37]$[352, -233, -106, 37]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h1A19Vj3EeymquYkChw8ig" points="[64, -23, -394, 247]$[217, -23, -241, 247]$[217, -179, -241, 91]$[459, -179, 1, 91]$[459, -221, 1, 49]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h1A1_Fj3EeymquYkChw8ig" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h1A1_Vj3EeymquYkChw8ig" id="(0.5,0.5)"/>
         </edges>
@@ -3442,9 +3442,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_QiXRUFkWEeymquYkChw8ig" name="AssemblyContextList" tooltipText="" incomingEdges="_rmQ8gFkWEeymquYkChw8ig" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="model/attacker.ecore#//AssemblyContextList"/>
-      <semanticElements xmi:type="ecore:EClass" href="model/attacker.ecore#//AssemblyContextList"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_QiXRUFkWEeymquYkChw8ig" name="AssemblyContextDetail" tooltipText="" incomingEdges="_rmQ8gFkWEeymquYkChw8ig" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="model/attacker.ecore#//AssemblyContextDetail"/>
+      <semanticElements xmi:type="ecore:EClass" href="model/attacker.ecore#//AssemblyContextDetail"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -3452,9 +3452,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Zk1XYFkWEeymquYkChw8ig" name=" assembyList : AssemblyContext" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AssemblyContextList/assembyList"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AssemblyContextList/assembyList"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Zk1XYFkWEeymquYkChw8ig" name=" assemblyList : AssemblyContext" tooltipText="">
+        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AssemblyContextDetail/assemblyList"/>
+        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AssemblyContextDetail/assemblyList"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Zk1XYVkWEeymquYkChw8ig" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
