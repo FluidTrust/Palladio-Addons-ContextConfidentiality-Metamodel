@@ -56,7 +56,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/OperationSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SurfaceAttacker">
+  <eClassifiers xsi:type="ecore:EClass" name="SurfaceAttacker" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="criticalElement" lowerBound="1"
         eType="#//pcmIntegration/PCMElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filtercriteria" upperBound="-1"
