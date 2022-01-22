@@ -30,4 +30,20 @@
             genModel="model/attacker.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated attacker -->
+      <package
+            uri="http://sdq.ipd.kit.edu/KAMP4attackModificationmarks/1.0"
+            class="KAMP4attackModificationmarks.KAMP4attackModificationmarksPackage"
+            genModel="model/attacker.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated attacker -->
+      <package
+            uri="http://sdq.ipd.kit.edu/Modificationmarks/1.0"
+            class="modificationmarks.ModificationmarksPackage"
+            genModel="model/attacker.genmodel"/>
+   </extension>
+
 </plugin>

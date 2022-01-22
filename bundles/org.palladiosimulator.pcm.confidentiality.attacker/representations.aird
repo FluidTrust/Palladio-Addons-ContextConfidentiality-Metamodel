@@ -17,6 +17,8 @@
     <semanticResources>platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.units/model/Units.genmodel</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.stoex/model/stoex.genmodel</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_dRLZoNwMEeufu9ftlEJ81g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yWjCcelVEeuNdZJVEoBqhA" name="attackSpecification class diagram" repPath="#_yWhNQOlVEeuNdZJVEoBqhA" changeId="00d728db-01ea-4095-ab88-92d68dc6bc5e">
@@ -27,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_hJ3fsHLsEeygVbu_-7qwmw" name="attackerSpecification class diagram" repPath="#_hJ0cYHLsEeygVbu_-7qwmw" changeId="f6f641da-3abd-49f6-a008-2dffd201464b">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_hJ3fsHLsEeygVbu_-7qwmw" name="attackerSpecification class diagram" repPath="#_hJ0cYHLsEeygVbu_-7qwmw" changeId="da2080fc-d358-4b06-b0d1-2a911052491f">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -2222,14 +2224,15 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_PVvkLHeJEeyg5vnQ0zqAbA" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Ah-Mh3toEeyZWuWihq6--w" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_gyZTIHeHEeyg5vnQ0zqAbA" name="isElementFiltered(systemIntegration SystemIntegration, surfaceAttacker SurfaceAttacker) : EBoolean" tooltipText="isElementFiltered(systemIntegration, surfaceAttacker) : EBoolean">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_gyZTIHeHEeyg5vnQ0zqAbA" name="isElementFiltered(systemIntegration SystemIntegration, surfaceAttacker SurfaceAttacker, credentialChange CredentialChange) : EBoolean" tooltipText="isElementFiltered(systemIntegration, surfaceAttacker, credentialChange) : EBoolean">
         <target xmi:type="ecore:EOperation" href="model/attacker.ecore#//FilterCriterion/isElementFiltered"/>
         <semanticElements xmi:type="ecore:EOperation" href="model/attacker.ecore#//FilterCriterion/isElementFiltered"/>
+        <semanticElements xmi:type="ecore:EParameter" href="model/attacker.ecore#//FilterCriterion/isElementFiltered/credentialChange"/>
         <semanticElements xmi:type="ecore:EParameter" href="model/attacker.ecore#//FilterCriterion/isElementFiltered/surfaceAttacker"/>
         <semanticElements xmi:type="ecore:EParameter" href="model/attacker.ecore#//FilterCriterion/isElementFiltered/systemIntegration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_gyZTIXeHEeyg5vnQ0zqAbA" labelAlignment="LEFT">

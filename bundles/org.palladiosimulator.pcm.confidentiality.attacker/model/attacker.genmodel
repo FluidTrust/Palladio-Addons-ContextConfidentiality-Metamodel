@@ -61,6 +61,7 @@
       <genOperations ecoreOperation="attacker.ecore#//FilterCriterion/isElementFiltered">
         <genParameters ecoreParameter="attacker.ecore#//FilterCriterion/isElementFiltered/systemIntegration"/>
         <genParameters ecoreParameter="attacker.ecore#//FilterCriterion/isElementFiltered/surfaceAttacker"/>
+        <genParameters ecoreParameter="attacker.ecore#//FilterCriterion/isElementFiltered/credentialChange"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//VulnerabilityFilterCriterion">
@@ -188,5 +189,78 @@
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/NonGlobalCommunication"/>
     </nestedGenPackages>
+  </genPackages>
+  <genPackages prefix="KAMP4attackModificationmarks" ecorePackage="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#/">
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AbstractKAMP4attackModificationRepository">
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AbstractKAMP4attackModificationRepository/T"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackModificationRepository"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications/attackcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications/surfaceattackcomponent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity">
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity/T"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AttackerSelection"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/compromisedresource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/compromisedassembly"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/contextchange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/changed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/compromisedlinkingresource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/compromisedservice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/servicerestrictioncontainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/compromiseddata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/datamodelcontainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange/attackpaths"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CompromisedResource"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CompromisedAssembly"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ContextChange"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CompromisedLinkingResource"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CompromisedService"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ServiceRestrictionContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ServiceRestrictionContainer/servicerestriction"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CompromisedData"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//DatamodelContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//DatamodelContainer/datamodelattacker"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//SurfaceAttackerSelection"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AttackPath">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AttackPath/path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AttackPath/criticalElement"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Modificationmarks" ecorePackage="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AcceptanceAndConfirmationState">
+      <genEnumLiterals ecoreEnumLiteral="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AcceptanceAndConfirmationState/NODECISION"/>
+      <genEnumLiterals ecoreEnumLiteral="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AcceptanceAndConfirmationState/CONFIRMED"/>
+      <genEnumLiterals ecoreEnumLiteral="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AcceptanceAndConfirmationState/EXCLUDED"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository">
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository/S"/>
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository/T"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository/seedModifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository/changePropagationSteps"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ModificationRepository"/>
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//SeedModifications">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//SeedModifications/seedElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractChangePropagationStep"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep"/>
+    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification">
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/S"/>
+      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/T"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/affectedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/causingElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/toolderived"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification/userDecision"/>
+    </genClasses>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//Modification"/>
   </genPackages>
 </genmodel:GenModel>
