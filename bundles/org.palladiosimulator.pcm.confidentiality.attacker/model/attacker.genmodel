@@ -55,7 +55,7 @@
     <genClasses ecoreClass="attacker.ecore#//SurfaceAttacker">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//SurfaceAttacker/criticalElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//SurfaceAttacker/filtercriteria"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//SurfaceAttacker/attacker"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference attacker.ecore#//SurfaceAttacker/attacker"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//FilterCriterion">
       <genOperations ecoreOperation="attacker.ecore#//FilterCriterion/isElementFiltered">
