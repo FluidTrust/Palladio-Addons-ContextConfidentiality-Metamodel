@@ -68,7 +68,7 @@
     <eOperations name="isElementFiltered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="systemIntegration" eType="#//pcmIntegration/SystemIntegration"/>
       <eParameters name="surfaceAttacker" eType="#//SurfaceAttacker"/>
-      <eParameters name="credentialChange" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange"/>
+      <eParameters name="attackPath" eType="#//AttackPath"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VulnerabilityFilterCriterion" abstract="true"
@@ -82,6 +82,11 @@
       eSuperTypes="#//VulnerabilityFilterCriterion"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImpactVulnerabilityFilterCriterion"
       eSuperTypes="#//VulnerabilityFilterCriterion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackPath">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//pcmIntegration/SystemIntegration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criticalElement" lowerBound="1"
+        eType="#//pcmIntegration/PCMElement"/>
+  </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
     <eClassifiers xsi:type="ecore:EClass" name="Attack" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
@@ -206,5 +211,7 @@
           eType="#//pcmIntegration/PCMElement" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NonGlobalCommunication" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DefaultSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CredentialSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
   </eSubpackages>
 </ecore:EPackage>

@@ -9,9 +9,7 @@ Bundle-Activator: org.palladiosimulator.pcm.confidentiality.attackerSpecificatio
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: KAMP4attackModificationmarks.provider,
- modificationmarks.provider,
- org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider,
+Export-Package: org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.provider,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.provider,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.provider
 Require-Bundle: org.eclipse.core.runtime,

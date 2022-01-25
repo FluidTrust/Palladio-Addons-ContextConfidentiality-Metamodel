@@ -9,12 +9,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.attacker.helper,
- KAMP4attackModificationmarks,
- KAMP4attackModificationmarks.impl,
- KAMP4attackModificationmarks.util,
- modificationmarks,
- modificationmarks.impl,
- modificationmarks.util,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl,
