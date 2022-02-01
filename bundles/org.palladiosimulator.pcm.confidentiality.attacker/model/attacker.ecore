@@ -207,11 +207,15 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" abstract="true"
         eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eOperations name="getIdOfContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pcmelement" lowerBound="1"
           eType="#//pcmIntegration/PCMElement" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NonGlobalCommunication" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
     <eClassifiers xsi:type="ecore:EClass" name="DefaultSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
-    <eClassifiers xsi:type="ecore:EClass" name="CredentialSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CredentialSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="credential" lowerBound="1"
+          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

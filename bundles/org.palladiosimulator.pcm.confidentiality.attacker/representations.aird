@@ -25,7 +25,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="0c08e74d-f6c6-4a26-8c8f-f7aae6bb10e8">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="cf137b77-d00d-4c02-9746-a727cb5ecb62">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
@@ -1222,6 +1222,10 @@
         <children xmi:type="notation:Node" xmi:id="_niBCcOoREeu2OdClVGutXQ" type="2003" element="_nhfeAOoREeu2OdClVGutXQ">
           <children xmi:type="notation:Node" xmi:id="_niBCc-oREeu2OdClVGutXQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_niBCdOoREeu2OdClVGutXQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_NbfFQINuEeyV0KXA5VPlYQ" type="3010" element="_NatpMINuEeyV0KXA5VPlYQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_NbfFQYNuEeyV0KXA5VPlYQ" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_NbfFQoNuEeyV0KXA5VPlYQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_niBCdeoREeu2OdClVGutXQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_niBCduoREeu2OdClVGutXQ"/>
           </children>
@@ -1249,6 +1253,10 @@
         <children xmi:type="notation:Node" xmi:id="_TawGAH39EeyLe6lTpQsazQ" type="2003" element="_TaXrgH39EeyLe6lTpQsazQ">
           <children xmi:type="notation:Node" xmi:id="_TawtEn39EeyLe6lTpQsazQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_TawtE339EeyLe6lTpQsazQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_az2qAINtEeyV0KXA5VPlYQ" type="3010" element="_azv8UYNtEeyV0KXA5VPlYQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_az2qAYNtEeyV0KXA5VPlYQ" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_az2qAoNtEeyV0KXA5VPlYQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_TawtFH39EeyLe6lTpQsazQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_TawtFX39EeyLe6lTpQsazQ"/>
           </children>
@@ -1482,6 +1490,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_NatpMINuEeyV0KXA5VPlYQ" name="getIdOfContent() : EString" tooltipText="getIdOfContent() : EString">
+        <target xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
+        <semanticElements xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_NauQQINuEeyV0KXA5VPlYQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_vMwgkOoREeu2OdClVGutXQ" sourceNode="_0I2ckOoQEeu2OdClVGutXQ" targetNode="_nhfeAOoREeu2OdClVGutXQ">
       <target xmi:type="ecore:EClass" href="model/attacker.ecore#//pcmIntegration/VulnerabilitySystemIntegration"/>
@@ -1574,6 +1590,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_azv8UYNtEeyV0KXA5VPlYQ" name=" credential : UsageSpecification" tooltipText="">
+        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//pcmIntegration/CredentialSystemIntegration/credential"/>
+        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//pcmIntegration/CredentialSystemIntegration/credential"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_fYkyYoNtEeyV0KXA5VPlYQ" labelAlignment="LEFT" description="_0I5f4-oQEeu2OdClVGutXQ" color="114,159,207">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_YKYd4H39EeyLe6lTpQsazQ" sourceNode="_TaXrgH39EeyLe6lTpQsazQ" targetNode="_nhfeAOoREeu2OdClVGutXQ">
       <target xmi:type="ecore:EClass" href="model/attacker.ecore#//pcmIntegration/CredentialSystemIntegration"/>

@@ -190,10 +190,14 @@
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/SystemIntegration">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/pcmelement"/>
+        <genOperations ecoreOperation="attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/NonGlobalCommunication"/>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/DefaultSystemIntegration"/>
-      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/CredentialSystemIntegration"/>
+      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/CredentialSystemIntegration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/CredentialSystemIntegration/credential"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
   <genPackages prefix="KAMP4attackModificationmarks" ecorePackage="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#/">
