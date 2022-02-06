@@ -5,8 +5,9 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmInteg
 import org.eclipse.emf.ecore.EClass;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.CredentialSystemIntegration;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationFactory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage;
-
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
 
 /**
@@ -22,7 +23,7 @@ import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecificati
  *
  * @generated
  */
-public class CredentialSystemIntegrationImpl extends SystemIntegrationImpl implements CredentialSystemIntegration
+public class CredentialSystemIntegrationImpl extends CredentialSystemIntegrationImplGen implements CredentialSystemIntegration
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +74,15 @@ public class CredentialSystemIntegrationImpl extends SystemIntegrationImpl imple
     public String getIdOfContent()
     {
         return this.getCredential() == null ? null : this.getCredential().getId();
+    }
+
+    @Override
+    public SystemIntegration getCopyExceptElement() {
+        final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createCredentialSystemIntegration();
+        sysIntegration.setCredential(getCredential());
+        
+        sysIntegration.setEntityName("copy of " + getEntityName());
+        return sysIntegration;
     }
 
 } //CredentialSystemIntegrationImpl

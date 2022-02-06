@@ -73,8 +73,8 @@
     <genClasses ecoreClass="attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion"/>
     <genClasses ecoreClass="attacker.ecore#//ImpactVulnerabilityFilterCriterion"/>
     <genClasses ecoreClass="attacker.ecore#//AttackPath">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/path"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/criticalElement"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/path"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/criticalElement"/>
     </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
@@ -191,6 +191,7 @@
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/SystemIntegration/pcmelement"/>
         <genOperations ecoreOperation="attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
+        <genOperations ecoreOperation="attacker.ecore#//pcmIntegration/SystemIntegration/getCopyExceptElement"/>
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/NonGlobalCommunication"/>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/DefaultSystemIntegration"/>

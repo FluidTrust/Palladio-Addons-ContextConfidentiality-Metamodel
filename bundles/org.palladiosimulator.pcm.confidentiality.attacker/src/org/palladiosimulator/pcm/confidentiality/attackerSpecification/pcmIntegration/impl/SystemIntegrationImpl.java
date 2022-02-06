@@ -23,7 +23,7 @@ import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
  *
  * @generated
  */
-public abstract class SystemIntegrationImpl extends EntityImpl implements SystemIntegration
+public abstract class SystemIntegrationImpl extends SystemIntegrationImplGen implements SystemIntegration
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,5 +75,4 @@ public abstract class SystemIntegrationImpl extends EntityImpl implements System
 	{
 		return null;
 	}
-
 } //SystemIntegrationImpl

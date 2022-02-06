@@ -83,9 +83,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImpactVulnerabilityFilterCriterion"
       eSuperTypes="#//VulnerabilityFilterCriterion"/>
   <eClassifiers xsi:type="ecore:EClass" name="AttackPath">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//pcmIntegration/SystemIntegration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//pcmIntegration/SystemIntegration"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="criticalElement" lowerBound="1"
-        eType="#//pcmIntegration/PCMElement"/>
+        eType="#//pcmIntegration/PCMElement" containment="true"/>
   </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
@@ -208,6 +209,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" abstract="true"
         eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eOperations name="getIdOfContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getCopyExceptElement" eType="#//pcmIntegration/SystemIntegration"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pcmelement" lowerBound="1"
           eType="#//pcmIntegration/PCMElement" containment="true"/>
     </eClassifiers>

@@ -25,7 +25,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="cf137b77-d00d-4c02-9746-a727cb5ecb62">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="f1375cf5-10a4-43f4-aa5e-709da9755b7d">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
@@ -1226,6 +1226,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_NbfFQYNuEeyV0KXA5VPlYQ" fontName="Noto Sans" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_NbfFQoNuEeyV0KXA5VPlYQ"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_W5E3YIdbEeyBLKI_E31IoA" type="3010" element="_W4KRYIdbEeyBLKI_E31IoA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_W5E3YYdbEeyBLKI_E31IoA" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_W5E3YodbEeyBLKI_E31IoA"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_niBCdeoREeu2OdClVGutXQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_niBCduoREeu2OdClVGutXQ"/>
           </children>
@@ -1494,6 +1498,14 @@
         <target xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
         <semanticElements xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_NauQQINuEeyV0KXA5VPlYQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_W4KRYIdbEeyBLKI_E31IoA" name="getCopyExceptElement() : SystemIntegration" tooltipText="getCopyExceptElement() : SystemIntegration">
+        <target xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getCopyExceptElement"/>
+        <semanticElements xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getCopyExceptElement"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_W4LfgIdbEeyBLKI_E31IoA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>

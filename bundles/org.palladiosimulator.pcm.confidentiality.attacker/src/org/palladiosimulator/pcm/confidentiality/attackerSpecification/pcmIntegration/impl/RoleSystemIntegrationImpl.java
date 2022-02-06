@@ -5,9 +5,10 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmInteg
 import org.eclipse.emf.ecore.EClass;
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.Role;
-
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationFactory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.RoleSystemIntegration;
+import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
  *
  * @generated
  */
-public class RoleSystemIntegrationImpl extends SystemIntegrationImpl implements RoleSystemIntegration
+public class RoleSystemIntegrationImpl extends RoleSystemIntegrationImplGen implements RoleSystemIntegration
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +74,15 @@ public class RoleSystemIntegrationImpl extends SystemIntegrationImpl implements 
     public String getIdOfContent()
     {
         return this.getRole() == null ? null : this.getRole().getId();
+    }
+    
+    @Override
+    public SystemIntegration getCopyExceptElement() {
+        final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createRoleSystemIntegration();
+        sysIntegration.setRole(getRole());
+        
+        sysIntegration.setEntityName("copy of " + getEntityName());
+        return sysIntegration;
     }
 
 } //RoleSystemIntegrationImpl
