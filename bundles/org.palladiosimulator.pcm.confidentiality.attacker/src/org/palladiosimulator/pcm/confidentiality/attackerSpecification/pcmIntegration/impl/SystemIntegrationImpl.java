@@ -28,49 +28,9 @@ public abstract class SystemIntegrationImpl extends SystemIntegrationImplGen imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SystemIntegrationImpl()
-	{
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass()
-	{
-		return PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PCMElement getPcmelement()
-	{
-		return (PCMElement)eGet(PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPcmelement(PCMElement newPcmelement)
-	{
-		eSet(PcmIntegrationPackage.Literals.SYSTEM_INTEGRATION__PCMELEMENT, newPcmelement);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getIdOfContent()
 	{
 		return null;

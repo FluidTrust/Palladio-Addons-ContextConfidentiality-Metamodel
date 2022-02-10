@@ -2,11 +2,8 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.NonGlobalCommunication;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationFactory;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
 /**
@@ -19,27 +16,11 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 public class NonGlobalCommunicationImpl extends NonGlobalCommunicationImplGen implements NonGlobalCommunication
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NonGlobalCommunicationImpl()
-	{
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass()
-	{
-		return PcmIntegrationPackage.Literals.NON_GLOBAL_COMMUNICATION;
-	}
-	
-	@Override
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
     public SystemIntegration getCopyExceptElement() {
         final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createNonGlobalCommunication();
         

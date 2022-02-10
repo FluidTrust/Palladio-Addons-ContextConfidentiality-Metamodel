@@ -2,13 +2,9 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.CredentialSystemIntegration;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationFactory;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
-import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,56 +22,21 @@ import org.palladiosimulator.pcm.confidentiality.context.system.UsageSpecificati
 public class CredentialSystemIntegrationImpl extends CredentialSystemIntegrationImplGen implements CredentialSystemIntegration
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CredentialSystemIntegrationImpl()
-	{
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass()
-	{
-		return PcmIntegrationPackage.Literals.CREDENTIAL_SYSTEM_INTEGRATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UsageSpecification getCredential()
-	{
-		return (UsageSpecification)eGet(PcmIntegrationPackage.Literals.CREDENTIAL_SYSTEM_INTEGRATION__CREDENTIAL, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCredential(UsageSpecification newCredential)
-	{
-		eSet(PcmIntegrationPackage.Literals.CREDENTIAL_SYSTEM_INTEGRATION__CREDENTIAL, newCredential);
-	}
-	
-	/**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated NOT
      */
+    @Override
     public String getIdOfContent()
     {
         return this.getCredential() == null ? null : this.getCredential().getId();
     }
 
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
     @Override
     public SystemIntegration getCopyExceptElement() {
         final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createCredentialSystemIntegration();

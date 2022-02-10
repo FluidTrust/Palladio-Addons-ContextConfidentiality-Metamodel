@@ -26,56 +26,21 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 public class RoleSystemIntegrationImpl extends RoleSystemIntegrationImplGen implements RoleSystemIntegration
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RoleSystemIntegrationImpl()
-	{
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass()
-	{
-		return PcmIntegrationPackage.Literals.ROLE_SYSTEM_INTEGRATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role getRole()
-	{
-		return (Role)eGet(PcmIntegrationPackage.Literals.ROLE_SYSTEM_INTEGRATION__ROLE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRole(Role newRole)
-	{
-		eSet(PcmIntegrationPackage.Literals.ROLE_SYSTEM_INTEGRATION__ROLE, newRole);
-	}
-	
-	/**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated NOT
      */
+    @Override
     public String getIdOfContent()
     {
         return this.getRole() == null ? null : this.getRole().getId();
     }
     
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
     @Override
     public SystemIntegration getCopyExceptElement() {
         final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createRoleSystemIntegration();

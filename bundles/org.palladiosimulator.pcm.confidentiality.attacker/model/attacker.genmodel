@@ -65,16 +65,29 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//VulnerabilityFilterCriterion">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//VulnerabilityFilterCriterion/vulnerabilityMaximum"/>
+      <genOperations ecoreOperation="attacker.ecore#//VulnerabilityFilterCriterion/isVulnerabilityInRange">
+        <genParameters ecoreParameter="attacker.ecore#//VulnerabilityFilterCriterion/isVulnerabilityInRange/vulnerability"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//MaximumPathLengthFilterCriterion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//MaximumPathLengthFilterCriterion/maximumPathLength"/>
     </genClasses>
-    <genClasses ecoreClass="attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion"/>
-    <genClasses ecoreClass="attacker.ecore#//ImpactVulnerabilityFilterCriterion"/>
+    <genClasses ecoreClass="attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion/attackVectorMaximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion/attackComplexityMaximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion/privilegesMaximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ExploitabilityVulnerabilityFilterCriterion/userInteractionMaximum"/>
+    </genClasses>
+    <genClasses ecoreClass="attacker.ecore#//ImpactVulnerabilityFilterCriterion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ImpactVulnerabilityFilterCriterion/confidentialityImpactMinimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ImpactVulnerabilityFilterCriterion/integrityImpactMinimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//ImpactVulnerabilityFilterCriterion/availabilityImpactMinimum"/>
+    </genClasses>
     <genClasses ecoreClass="attacker.ecore#//AttackPath">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/path"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/criticalElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/credentialsInitiallyNecessary"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/vulnerabilitesUsed"/>
     </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
@@ -106,6 +119,14 @@
         <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AvailabilityImpact/Low"/>
         <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AvailabilityImpact/None"/>
       </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/AttackComplexity">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackComplexity/Low"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackComplexity/High"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/UserInteraction">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/UserInteraction/None"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/UserInteraction/Required"/>
+      </genEnums>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Attack"
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genOperations ecoreOperation="attacker.ecore#//attackSpecification/Attack/canExploit">
@@ -116,7 +137,9 @@
       </genClasses>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Vulnerability">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/attackVector"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/attackComplexity"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/privileges"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/userInteraction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/requiredCredentials"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/confidentialityImpact"/>
