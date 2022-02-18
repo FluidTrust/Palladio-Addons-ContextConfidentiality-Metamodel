@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_KbV8ENwMEeufu9ftlEJ81g" selectedViews="_LwwP0NwMEeufu9ftlEJ81g" version="14.5.0.202104161500">
+  <viewpoint:DAnalysis uid="_KbV8ENwMEeufu9ftlEJ81g" selectedViews="_LwwP0NwMEeufu9ftlEJ81g" version="14.5.1.202106111100">
     <semanticResources>model/context.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore</semanticResources>
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.ecore</semanticResources>
@@ -17,7 +17,7 @@
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_LwwP0NwMEeufu9ftlEJ81g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="8f52b12f-ea8f-47a8-bfa6-c6afb67e57e6">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-FINwMEeufu9ftlEJ81g" name="policy class diagram" repPath="#_NeC4ENwMEeufu9ftlEJ81g" changeId="3a3f90ff-798d-4022-90ec-750e42a590c6">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/context.ecore#//policy"/>
       </ownedRepresentationDescriptors>
@@ -4298,7 +4298,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQ7tkNwMEeufu9ftlEJ81g" name="FunctionReference" tooltipText="&#xA;WARNING : The default value literal 'STRING_EQUALS' must be a valid literal of the attribute's type" outgoingEdges="_OSksUNwMEeufu9ftlEJ81g" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OQ7tkNwMEeufu9ftlEJ81g" name="FunctionReference" tooltipText="" outgoingEdges="_OSksUNwMEeufu9ftlEJ81g" width="12" height="10">
       <target xmi:type="ecore:EClass" href="model/context.ecore#//policy/FunctionReference"/>
       <semanticElements xmi:type="ecore:EClass" href="model/context.ecore#//policy/FunctionReference"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -4308,7 +4308,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_QQVJcN_xEeudkf4m-pvL4g" name="function : Operations = STRING_EQUALS" tooltipText="&#xA;WARNING : The default value literal 'STRING_EQUALS' must be a valid literal of the attribute's type">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_QQVJcN_xEeudkf4m-pvL4g" name="function : Operations = STRING_EQUAL" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/FunctionReference/function"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/context.ecore#//policy/FunctionReference/function"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_QQW-oN_xEeudkf4m-pvL4g" labelAlignment="LEFT" description="_ORw0AdwMEeufu9ftlEJ81g">
