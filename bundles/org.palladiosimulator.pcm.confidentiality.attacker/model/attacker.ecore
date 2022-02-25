@@ -111,6 +111,8 @@
         upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilitesUsed" upperBound="-1"
         eType="#//attackSpecification/Vulnerability"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/OperationSignature"/>
   </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
@@ -179,7 +181,7 @@
           eType="#//attackSpecification/CWEID" eOpposite="#//attackSpecification/CWEID/children"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttackCategory" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement">
-      <eOperations name="equalAttackType" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eOperations name="equalAttackType" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
         <eParameters name="category" eType="#//attackSpecification/AttackCategory"/>
       </eOperations>
     </eClassifiers>
