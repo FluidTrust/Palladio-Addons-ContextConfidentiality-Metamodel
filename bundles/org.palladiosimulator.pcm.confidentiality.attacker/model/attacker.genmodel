@@ -88,6 +88,11 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/criticalElement"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/credentialsInitiallyNecessary"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/vulnerabilitesUsed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/method"/>
+    </genClasses>
+    <genClasses ecoreClass="attacker.ecore#//InitialCredentialFilterCriterion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//InitialCredentialFilterCriterion/prohibitedInitialCredentials"/>
     </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
@@ -225,16 +230,19 @@
     </nestedGenPackages>
   </genPackages>
   <genPackages prefix="KAMP4attackModificationmarks" ecorePackage="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#/">
-    <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AbstractKAMP4attackModificationRepository">
-      <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AbstractKAMP4attackModificationRepository/T"/>
+    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackModificationRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackModificationRepository/changePropagationSteps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackModificationRepository/seedModifications"/>
     </genClasses>
-    <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackModificationRepository"/>
     <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications/attackcomponent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//KAMP4attackSeedModifications/surfaceattackcomponent"/>
     </genClasses>
     <genClasses image="false" ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity">
       <genTypeParameters ecoreTypeParameter="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity/T"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity/toolderived"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity/affectedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//ModifyEntity/causingElements"/>
     </genClasses>
     <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//AttackerSelection"/>
     <genClasses ecoreClass="../../edu.kit.ipd.sdq.kamp4attack.model.modificationmarks/model/KAMP4attackModificationsmarks.ecore#//CredentialChange">
