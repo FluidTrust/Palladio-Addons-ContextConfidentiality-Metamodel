@@ -63,6 +63,7 @@
         <genParameters ecoreParameter="attacker.ecore#//FilterCriterion/isElementFiltered/surfaceAttacker"/>
         <genParameters ecoreParameter="attacker.ecore#//FilterCriterion/isElementFiltered/attackPath"/>
       </genOperations>
+      <genOperations ecoreOperation="attacker.ecore#//FilterCriterion/isFilteringEarly"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//VulnerabilityFilterCriterion">
       <genOperations ecoreOperation="attacker.ecore#//VulnerabilityFilterCriterion/isVulnerabilityInRange">

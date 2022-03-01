@@ -35,6 +35,16 @@ public class InitialCredentialFilterCriterionImpl extends InitialCredentialFilte
      * @generated NOT
      */
     @Override
+    public boolean isFilteringEarly() {
+        return false;
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
     public boolean isElementFiltered(SystemIntegration systemIntegration, SurfaceAttacker surfaceAttacker, AttackPath attackPath) {
         return containsAny(attackPath.getCredentialsInitiallyNecessary(), this.getProhibitedInitialCredentials());
     }

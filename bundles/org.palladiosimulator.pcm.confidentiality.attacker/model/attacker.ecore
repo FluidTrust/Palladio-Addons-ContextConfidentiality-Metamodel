@@ -70,6 +70,7 @@
       <eParameters name="surfaceAttacker" eType="#//SurfaceAttacker"/>
       <eParameters name="attackPath" eType="#//AttackPath"/>
     </eOperations>
+    <eOperations name="isFilteringEarly" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VulnerabilityFilterCriterion" abstract="true"
       eSuperTypes="#//FilterCriterion">
