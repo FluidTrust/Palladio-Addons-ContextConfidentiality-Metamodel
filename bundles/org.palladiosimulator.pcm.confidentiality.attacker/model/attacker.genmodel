@@ -89,8 +89,6 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/criticalElement"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/credentialsInitiallyNecessary"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/vulnerabilitesUsed"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//AttackPath/method"/>
     </genClasses>
     <genClasses ecoreClass="attacker.ecore#//InitialCredentialFilterCriterion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//InitialCredentialFilterCriterion/prohibitedInitialCredentials"/>

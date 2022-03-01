@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_GlD-QH4DEeyznsb_jlnyAg" name="attackerSpecification class diagram" repPath="#_Gk_s0H4DEeyznsb_jlnyAg" changeId="7718e323-ee4c-4a77-bac5-d15722f2bd8e">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_GlD-QH4DEeyznsb_jlnyAg" name="attackerSpecification class diagram" repPath="#_Gk_s0H4DEeyznsb_jlnyAg" changeId="db799fe0-81c5-4499-9529-9a9b3fe3dd49">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1997,14 +1997,6 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_b5jnEYpuEeyDdJDkz2i3mg" fontName="Noto Sans" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_b5jnEopuEeyDdJDkz2i3mg"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_N83rYJZDEeyv8fvqYkBTnQ" type="3010" element="_N8lXgZZDEeyv8fvqYkBTnQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_N83rYZZDEeyv8fvqYkBTnQ" fontName="Noto Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_N83rYpZDEeyv8fvqYkBTnQ"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_N86HoJZDEeyv8fvqYkBTnQ" type="3010" element="_N8mloJZDEeyv8fvqYkBTnQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_N86HoZZDEeyv8fvqYkBTnQ" fontName="Noto Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_N86HopZDEeyv8fvqYkBTnQ"/>
-            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_HC2ti34DEeyznsb_jlnyAg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_HC2tjH4DEeyznsb_jlnyAg"/>
           </children>
@@ -2692,22 +2684,6 @@
         <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/vulnerabilitesUsed"/>
         <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/vulnerabilitesUsed"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_b5eHg4puEeyDdJDkz2i3mg" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_N8lXgZZDEeyv8fvqYkBTnQ" name=" source : Entity" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/source"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/source"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_N8l-kJZDEeyv8fvqYkBTnQ" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_N8mloJZDEeyv8fvqYkBTnQ" name=" method : OperationSignature" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/method"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/method"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_N8mloZZDEeyv8fvqYkBTnQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
