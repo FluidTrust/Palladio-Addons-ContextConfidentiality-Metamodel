@@ -5,6 +5,7 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackPath;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.InitialCredentialFilterCriterion;
@@ -53,10 +54,26 @@ public class InitialCredentialFilterCriterionImpl extends InitialCredentialFilte
             EList<UsageSpecification> prohibitedInitialCredentials) {
         return credentialsInitiallyNecessary
                 .stream()
-                .map(Identifier::getId) //TODO maybe more content-wise equality check
-                .anyMatch(c -> prohibitedInitialCredentials
-                        .stream()
-                        .map(Identifier::getId) //TODO maybe more content-wise equality check
-                        .anyMatch(i -> i.equals(c)));
+                .anyMatch(c -> {
+                    for (final var cred : prohibitedInitialCredentials) {
+                        if (equals(c, cred)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+    }
+    
+    private boolean equals(UsageSpecification referenceCredential, UsageSpecification credential) {
+        if (referenceCredential.equals(credential)) {
+            return true;
+        }
+        
+        var attributesEquals = EcoreUtil.equals(referenceCredential.getAttribute(), 
+                credential.getAttribute());
+        var valueEquals = EcoreUtil.equals(referenceCredential.getAttributevalue(),
+                credential.getAttributevalue());
+
+        return attributesEquals && valueEquals;
     }
 } //InitialCredentialFilterCriterionImpl
