@@ -2,16 +2,7 @@
  */
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackPath;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.AttackerPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.FilterCriterion;
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.SurfaceAttacker;
-
-import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
-
-import org.palladiosimulator.pcm.core.entity.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
