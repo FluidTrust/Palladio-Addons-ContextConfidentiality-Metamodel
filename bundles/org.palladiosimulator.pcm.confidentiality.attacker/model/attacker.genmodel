@@ -50,6 +50,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//DatamodelAttacker/referenceName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//DatamodelAttacker/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//DatamodelAttacker/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//DatamodelAttacker/context"/>
     </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
@@ -81,6 +82,10 @@
         <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AvailabilityImpact/Low"/>
         <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AvailabilityImpact/None"/>
       </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/AttackComplexity">
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackComplexity/Low"/>
+        <genEnumLiterals ecoreEnumLiteral="attacker.ecore#//attackSpecification/AttackComplexity/High"/>
+      </genEnums>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Attack"
           labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
         <genOperations ecoreOperation="attacker.ecore#//attackSpecification/Attack/canExploit">
@@ -91,6 +96,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="attacker.ecore#//attackSpecification/Vulnerability">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/attackVector"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/attackComplexity"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute attacker.ecore#//attackSpecification/Vulnerability/privileges"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//attackSpecification/Vulnerability/requiredCredentials"/>
