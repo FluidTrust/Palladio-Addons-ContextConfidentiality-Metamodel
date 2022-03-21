@@ -249,7 +249,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SystemIntegration" abstract="true"
         eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eOperations name="getIdOfContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getIdOfContent" eType="ecore:EClass ../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier"/>
       <eOperations name="getCopyExceptElement" eType="#//pcmIntegration/SystemIntegration"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pcmelement" lowerBound="1"
           eType="#//pcmIntegration/PCMElement" containment="true"/>

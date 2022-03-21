@@ -6,6 +6,8 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.RoleSystemIntegration;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Role System Integration</b></em>'.
@@ -27,9 +29,9 @@ public class RoleSystemIntegrationImpl extends RoleSystemIntegrationImplGen impl
      * @generated NOT
      */
     @Override
-    public String getIdOfContent()
+    public Identifier getIdOfContent()
     {
-        return this.getRole() == null ? null : this.getRole().getId();
+        return this.getRole() == null ? null : this.getRole();
     }
     
     /**

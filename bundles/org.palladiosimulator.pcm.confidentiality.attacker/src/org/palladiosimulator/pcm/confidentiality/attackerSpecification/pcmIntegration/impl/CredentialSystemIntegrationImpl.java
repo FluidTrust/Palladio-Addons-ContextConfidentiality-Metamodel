@@ -6,6 +6,8 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.PcmIntegrationFactory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Credential System Integration</b></em>'.
@@ -27,9 +29,9 @@ public class CredentialSystemIntegrationImpl extends CredentialSystemIntegration
      * @generated NOT
      */
     @Override
-    public String getIdOfContent()
+    public Identifier getIdOfContent()
     {
-        return this.getCredential() == null ? null : this.getCredential().getId();
+        return this.getCredential() == null ? null : this.getCredential();
     }
 
     /**

@@ -25,7 +25,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//attackSpecification"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="f1375cf5-10a4-43f4-aa5e-709da9755b7d">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zy9FEOoQEeu2OdClVGutXQ" name="pcmIntegration class diagram" repPath="#_zy4zoOoQEeu2OdClVGutXQ" changeId="78c959c3-1ab5-4795-9c69-8bc39f64c89d">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
@@ -1609,7 +1609,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_NatpMINuEeyV0KXA5VPlYQ" name="getIdOfContent() : EString" tooltipText="getIdOfContent() : EString">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_NatpMINuEeyV0KXA5VPlYQ" name="getIdOfContent() : Identifier" tooltipText="getIdOfContent() : Identifier">
         <target xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
         <semanticElements xmi:type="ecore:EOperation" href="model/attacker.ecore#//pcmIntegration/SystemIntegration/getIdOfContent"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_NauQQINuEeyV0KXA5VPlYQ" labelAlignment="LEFT">

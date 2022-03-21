@@ -4,6 +4,8 @@ package org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmInteg
 
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>System Integration</b></em>'.
@@ -25,7 +27,7 @@ public abstract class SystemIntegrationImpl extends SystemIntegrationImplGen imp
 	 * @generated NOT
 	 */
 	@Override
-	public String getIdOfContent()
+	public Identifier getIdOfContent()
 	{
 		return null;
 	}
