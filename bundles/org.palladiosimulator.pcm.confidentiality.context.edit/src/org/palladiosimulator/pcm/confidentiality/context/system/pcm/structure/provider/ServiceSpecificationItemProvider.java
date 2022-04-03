@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ServiceRestriction;
+import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ServiceSpecification;
 import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.StructurePackage;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.repository.BasicComponent;
@@ -25,21 +25,21 @@ import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalcula
 // TODO: Auto-generated Javadoc
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.pcm.confidentiality.context.ServiceRestriction.assembly.ProvidedRestriction}
+ * {@link org.palladiosimulator.pcm.confidentiality.context.ServiceSpecification.assembly.ProvidedRestriction}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProviderGen {
+public class ServiceSpecificationItemProvider extends ServiceSpecificationItemProviderGen {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @param adapterFactory the adapter factory
-     * @generated 
+     * @generated
      */
-    public ServiceRestrictionItemProvider(AdapterFactory adapterFactory) {
+    public ServiceSpecificationItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -100,7 +100,7 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
  * end-user-doc -->
  *
  * @param object the object
- * @generated 
+ * @generated
  */
     @Override
     protected void addAssemblycontextPropertyDescriptor(Object object) {
@@ -108,9 +108,9 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
         decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, AssemblyContext.class) {
+                new ValueChoiceCalculatorBase<>(ServiceSpecification.class, AssemblyContext.class) {
                     @Override
-                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
+                    protected Collection<?> getValueChoiceTyped(ServiceSpecification object,
                             List<AssemblyContext> typedList) {
                         var signature = object.getSignature();
                         if (signature == null) {
@@ -156,7 +156,7 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
      * @param targetList the target list
      * @return the list
      */
-    private List<AssemblyContext> filterBasedOnTarget(ServiceRestriction restriction,
+    private List<AssemblyContext> filterBasedOnTarget(ServiceSpecification restriction,
             List<AssemblyContext> targetList) {
 
         //        if(restriction.eContainer() instanceof
@@ -174,9 +174,9 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
         super.addServicePropertyDescriptor(object);
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
         decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, ResourceDemandingSEFF.class) {
+                new ValueChoiceCalculatorBase<>(ServiceSpecification.class, ResourceDemandingSEFF.class) {
                     @Override
-                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
+                    protected Collection<?> getValueChoiceTyped(ServiceSpecification object,
                             List<ResourceDemandingSEFF> typedList) {
                         var context = object.getAssemblycontext();
 
@@ -241,9 +241,9 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
         super.addSignaturePropertyDescriptor(object);
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
-        decorator.setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ServiceRestriction.class, Signature.class) {
+        decorator.setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ServiceSpecification.class, Signature.class) {
             @Override
-            protected Collection<?> getValueChoiceTyped(ServiceRestriction object, List<Signature> typedList) {
+            protected Collection<?> getValueChoiceTyped(ServiceSpecification object, List<Signature> typedList) {
                 var context = object.getAssemblycontext();
                 if (context == null) {
                     return typedList;
@@ -271,12 +271,12 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
      *
      * @param object the object
      * @return the text
-     * @generated 
+     * @generated
      */
     @Override
     public String getText(Object object) {
-        if (object instanceof ServiceRestriction) {
-            final var methodSpecification = (ServiceRestriction) object;
+        if (object instanceof ServiceSpecification) {
+            final var methodSpecification = (ServiceSpecification) object;
             if (methodSpecification.getAssemblycontext() != null && methodSpecification.getSignature() != null) {
                 return methodSpecification.getAssemblycontext().getEntityName() + ": "
                         + methodSpecification.getSignature().getEntityName();
@@ -291,14 +291,14 @@ public class ServiceRestrictionItemProvider extends ServiceRestrictionItemProvid
      * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param notification the notification
-     * @generated 
+     * @generated
      */
     @Override
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
-        switch (notification.getFeatureID(ServiceRestriction.class)) {
-        case StructurePackage.SERVICE_RESTRICTION__ASSEMBLYCONTEXT:
-        case StructurePackage.SERVICE_RESTRICTION__SIGNATURE:
+        switch (notification.getFeatureID(ServiceSpecification.class)) {
+        case StructurePackage.SERVICE_SPECIFICATION__ASSEMBLYCONTEXT:
+        case StructurePackage.SERVICE_SPECIFICATION__SIGNATURE:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);
