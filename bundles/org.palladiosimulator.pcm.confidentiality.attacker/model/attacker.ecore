@@ -67,7 +67,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Vulnerability" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="attackVector" lowerBound="1"
-          eType="#//attackSpecification/AttackVector" defaultValueLiteral=""/>
+          eType="#//attackSpecification/AttackVector" defaultValueLiteral="Network"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="attackComplexity" lowerBound="1"
           eType="#//attackSpecification/AttackComplexity" defaultValueLiteral="Low"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="privileges" lowerBound="1"
@@ -120,8 +120,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
           eType="#//attackSpecification/CWEID" eOpposite="#//attackSpecification/CWEID/children"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AttackCategory" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement">
-      <eOperations name="equalAttackType" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+    <eClassifiers xsi:type="ecore:EClass" name="AttackCategory" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eOperations name="equalAttackType" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
         <eParameters name="category" eType="#//attackSpecification/AttackCategory"/>
       </eOperations>
     </eClassifiers>
