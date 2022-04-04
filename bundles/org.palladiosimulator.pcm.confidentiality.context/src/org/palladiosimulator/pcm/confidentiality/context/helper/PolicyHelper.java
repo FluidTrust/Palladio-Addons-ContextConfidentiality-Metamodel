@@ -45,21 +45,21 @@ public class PolicyHelper {
      * @param listXML
      *            empty list for {@link XMLAttribute} attributes
      */
-    public static void createRequestAttributes(Deque<? extends Entity> requestedEntity,
-            List<? extends UsageSpecification> requestorContext, List<UsageSpecification> listSubject,
-            List<UsageSpecification> listEnvironment, List<UsageSpecification> listResource,
-            List<UsageSpecification> listXML) {
-        for (UsageSpecification specification : requestorContext) {
-            var attribute = specification.getAttribute();
+    public static void createRequestAttributes(final Deque<? extends Entity> requestedEntity,
+            final List<? extends UsageSpecification> requestorContext, final List<UsageSpecification> listSubject,
+            final List<UsageSpecification> listEnvironment, final List<UsageSpecification> listResource,
+            final List<UsageSpecification> listXML) {
+        for (final UsageSpecification specification : requestorContext) {
+            final var attribute = specification.getAttribute();
             if (attribute instanceof EnvironmentSubject) {
-                var environment = (EnvironmentSubject) attribute;
+                final var environment = (EnvironmentSubject) attribute;
                 if (environment.isEnvironment()) {
                     listEnvironment.add(specification);
                 } else {
                     listSubject.add(specification);
                 }
             } else if (attribute instanceof SystemEntityAttribute) {
-                var systemEntity = (SystemEntityAttribute) attribute;
+                final var systemEntity = (SystemEntityAttribute) attribute;
 
                 if (EcoreUtil.equals(systemEntity.getModelEntity(), requestedEntity.getFirst())) {
                     listResource.add(specification);
@@ -74,25 +74,24 @@ public class PolicyHelper {
 
     }
 
-    public static void createRequestAttributes(Signature signature, Deque<? extends Entity> component,
-            List<? extends UsageSpecification> requestorContext, List<UsageSpecification> listSubject,
-            List<UsageSpecification> listEnvironment, List<UsageSpecification> listResource,
-            List<UsageSpecification> listAction, List<UsageSpecification> listXML) {
+    public static void createRequestAttributes(final Signature signature, final Deque<? extends Entity> component,
+            final List<? extends UsageSpecification> requestorContext, final List<UsageSpecification> listSubject,
+            final List<UsageSpecification> listEnvironment, final List<UsageSpecification> listResource,
+            final List<UsageSpecification> listAction, final List<UsageSpecification> listXML) {
         createRequestAttributes(component, requestorContext, listSubject, listEnvironment, listResource, listXML);
         listAction.add(createActionUsageSpecification(signature));
     }
 
-    private static UsageSpecification createResourceUsageSpecification(Deque<? extends Entity> component) {
-        var usage = SystemFactory.eINSTANCE.createUsageSpecification();
-        var attribute = SystemcontextFactory.eINSTANCE.createSimpleAttribute();
-        var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
+    private static UsageSpecification createResourceUsageSpecification(final Deque<? extends Entity> component) {
+        final var usage = SystemFactory.eINSTANCE.createUsageSpecification();
+        final var attribute = SystemcontextFactory.eINSTANCE.createSimpleAttribute();
+        final var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
 
         attribute.setId(XACMLConstants.RESOURCE_ID);
 
         value.setType(DataTypes.STRING);
-        var valueString = component.stream().map(Entity::getId)
-                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName()))
-                .strip();
+        final var valueString = component.stream().map(Entity::getId)
+                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName())).strip();
         value.getValues().add(valueString);
 
         attribute.getAttributevalue().add(value);
@@ -103,10 +102,10 @@ public class PolicyHelper {
 
     }
 
-    private static UsageSpecification createActionUsageSpecification(Signature signature) {
-        var usage = SystemFactory.eINSTANCE.createUsageSpecification();
-        var attribute = SystemcontextFactory.eINSTANCE.createSimpleAttribute();
-        var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
+    private static UsageSpecification createActionUsageSpecification(final Signature signature) {
+        final var usage = SystemFactory.eINSTANCE.createUsageSpecification();
+        final var attribute = SystemcontextFactory.eINSTANCE.createSimpleAttribute();
+        final var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
 
         attribute.setId(XACMLConstants.ACTION_ID);
 

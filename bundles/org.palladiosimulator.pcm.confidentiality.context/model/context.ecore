@@ -17,6 +17,8 @@
           eType="#//system/AttributeProvider" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="usagespecification" upperBound="-1"
           eType="#//system/UsageSpecification" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="misusagescenario" upperBound="-1"
+          eType="#//system/pcm/usage/MisusageScenario" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeProvider" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
@@ -86,11 +88,16 @@
       </eSubpackages>
       <eSubpackages name="usage" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/context/specification/pcm/usage/0.1/"
           nsPrefix="usage">
-        <eClassifiers xsi:type="ecore:EClass" name="PCMUsageSpecification" eSuperTypes="#//system/UsageSpecification">
+        <eClassifiers xsi:type="ecore:EClass" name="PCMUsageSpecification" eSuperTypes="#//system/UsageSpecification #//system/pcm/usage/UsageModelIntegration"/>
+        <eClassifiers xsi:type="ecore:EClass" name="UsageModelIntegration" abstract="true"
+            eSuperTypes="#//system/pcm/usage/ScenarioIntegration #//system/pcm/usage/EntryLevelIntegration"/>
+        <eClassifiers xsi:type="ecore:EClass" name="MisusageScenario" eSuperTypes="#//system/pcm/usage/ScenarioIntegration"/>
+        <eClassifiers xsi:type="ecore:EClass" name="ScenarioIntegration" abstract="true">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="EntryLevelIntegration" abstract="true">
           <eStructuralFeatures xsi:type="ecore:EReference" name="entrylevelsystemcall"
               eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="usagescenario" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="missageUse" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
         </eClassifiers>
       </eSubpackages>
     </eSubpackages>

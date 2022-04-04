@@ -27,6 +27,8 @@
             ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/attributeprovider"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/usagespecification"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/misusagescenario"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//system/AttributeProvider">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
@@ -98,12 +100,16 @@
         <nestedGenPackages prefix="Usage" basePackage="org.palladiosimulator.pcm.confidentiality.context.system.pcm"
             disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm/usage">
           <genClasses ecoreClass="context.ecore#//system/pcm/usage/PCMUsageSpecification"
-              labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+              labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/UsageModelIntegration"/>
+          <genClasses ecoreClass="context.ecore#//system/pcm/usage/MisusageScenario"/>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/ScenarioIntegration">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/entrylevelsystemcall"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/ScenarioIntegration/usagescenario"/>
+          </genClasses>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/EntryLevelIntegration">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/usagescenario"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/usage/PCMUsageSpecification/missageUse"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/EntryLevelIntegration/entrylevelsystemcall"/>
           </genClasses>
         </nestedGenPackages>
       </nestedGenPackages>
