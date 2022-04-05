@@ -60,11 +60,13 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
               eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//seff/ResourceDemandingSEFF"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="EntityMatch" eSuperTypes="#//policy/Match #//system/pcm/structure/HierarchicalContext">
+        <eClassifiers xsi:type="ecore:EClass" name="EntityMatch" eSuperTypes="#//policy/Match">
           <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
               eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//policy/Category"
               defaultValueLiteral="RESOURCE"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="hierachy" upperBound="-1"
+              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="GenericMatch" eSuperTypes="#//policy/Match">
           <eStructuralFeatures xsi:type="ecore:EReference" name="attributevalue" lowerBound="1"
@@ -74,13 +76,9 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//policy/Category"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="mustBePresent" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="MethodMatch" eSuperTypes="#//policy/Match #//system/pcm/structure/HierarchicalContext">
+        <eClassifiers xsi:type="ecore:EClass" name="MethodMatch" eSuperTypes="#//policy/Match">
           <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
               lowerBound="1" eType="#//system/pcm/structure/MethodSpecification" containment="true"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="HierarchicalContext" abstract="true">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="hierachy" upperBound="-1"
-              eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="XMLMatch">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="xmlString" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -493,7 +491,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//systemcontext/DataTypes"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" lowerBound="1"
-          upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+          upperBound="-1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DataTypes">
       <eLiterals name="String"/>
