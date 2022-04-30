@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ConnectionRestriction;
+import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.ConnectionSpecification;
 import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.StructurePackage;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.core.composition.Connector;
@@ -24,14 +24,14 @@ import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalcula
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.pcm.confidentiality.context.specification.assembly.ConnectionRestriction}
+ * {@link org.palladiosimulator.pcm.confidentiality.context.ConnectionSpecification.assembly.ConnectionRestriction}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItemProviderGen {
+public class ConnectionSpecificationItemProvider extends ConnectionSpecificationItemProviderGen {
 
-    public ConnectionRestrictionItemProvider(AdapterFactory adapterFactory) {
+    public ConnectionSpecificationItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -41,9 +41,9 @@ public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItem
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
         decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ConnectionRestriction.class, Connector.class) {
+                new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Connector.class) {
                     @Override
-                    protected Collection<?> getValueChoiceTyped(ConnectionRestriction object,
+                    protected Collection<?> getValueChoiceTyped(ConnectionSpecification object,
                             List<Connector> typedList) {
                         var signature = object.getSignature();
                         if (signature == null) {
@@ -86,9 +86,9 @@ public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItem
         var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
         decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ConnectionRestriction.class, Signature.class) {
+                new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Signature.class) {
                     @Override
-                    protected Collection<?> getValueChoiceTyped(ConnectionRestriction object,
+                    protected Collection<?> getValueChoiceTyped(ConnectionSpecification object,
                             List<Signature> typedList) {
                         var connector = object.getConnector();
                         if (connector == null) {
@@ -134,8 +134,8 @@ public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItem
     @Override
     public String getText(final Object object) {
 
-        if (object instanceof ConnectionRestriction) {
-            final var methodSpecification = (ConnectionRestriction) object;
+        if (object instanceof ConnectionSpecification) {
+            final var methodSpecification = (ConnectionSpecification) object;
             if (methodSpecification.getConnector() != null && methodSpecification.getSignature() != null) {
                 return methodSpecification.getConnector().getEntityName() + "->"
                         + methodSpecification.getSignature().getEntityName();
@@ -154,9 +154,9 @@ public class ConnectionRestrictionItemProvider extends ConnectionRestrictionItem
     @Override
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
-        switch (notification.getFeatureID(ConnectionRestriction.class)) {
-        case StructurePackage.CONNECTION_RESTRICTION__CONNECTOR:
-        case StructurePackage.CONNECTION_RESTRICTION__SIGNATURE:
+        switch (notification.getFeatureID(ConnectionSpecification.class)) {
+        case StructurePackage.CONNECTION_SPECIFICATION__CONNECTOR:
+        case StructurePackage.CONNECTION_SPECIFICATION__SIGNATURE:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);

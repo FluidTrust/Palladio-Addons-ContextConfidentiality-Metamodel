@@ -7,7 +7,7 @@
     modelPluginID="org.palladiosimulator.pcm.confidentiality.context" modelName="Context"
     rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     suppressEMFTypes="true" reflectiveDelegation="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
-    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm ../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex ../../de.uka.ipd.sdq.units/model/Units.genmodel#//units"
+    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units"
     importOrganizing="true">
   <foreignModel>context.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
@@ -27,6 +27,8 @@
             ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/attributeprovider"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/usagespecification"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference context.ecore#//system/SystemSpecificationContainer/misusagescenario"/>
       </genClasses>
       <genClasses ecoreClass="context.ecore#//system/AttributeProvider">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
@@ -49,7 +51,7 @@
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/assemblycontext"/>
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/linkingresource"/>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            <genFeatures children="true" createChild="true" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/PCMAttributeProvider/methodspecification"/>
           </genClasses>
           <genClasses image="false" ecoreClass="context.ecore#//system/pcm/structure/MethodSpecification">
@@ -58,21 +60,23 @@
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/hierachy"/>
           </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ConnectionRestriction">
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ConnectionSpecification">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ConnectionRestriction/connector"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ConnectionSpecification/connector"/>
           </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ServiceRestriction">
+          <genClasses ecoreClass="context.ecore#//system/pcm/structure/ServiceSpecification">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ServiceRestriction/assemblycontext"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ServiceSpecification/assemblycontext"/>
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ServiceRestriction/service"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/ServiceSpecification/service"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/EntityMatch"
               labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/EntityMatch/entity"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/EntityMatch/category"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/EntityMatch/hierachy"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/GenericMatch"
               labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
@@ -87,10 +91,6 @@
             <genFeatures children="true" createChild="true" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodMatch/methodspecification"/>
           </genClasses>
-          <genClasses ecoreClass="context.ecore#//system/pcm/structure/HierarchicalContext">
-            <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/HierarchicalContext/hierachy"/>
-          </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/XMLMatch">
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/structure/XMLMatch/xmlString"/>
           </genClasses>
@@ -98,12 +98,16 @@
         <nestedGenPackages prefix="Usage" basePackage="org.palladiosimulator.pcm.confidentiality.context.system.pcm"
             disposableProviderFactory="true" ecorePackage="context.ecore#//system/pcm/usage">
           <genClasses ecoreClass="context.ecore#//system/pcm/usage/PCMUsageSpecification"
-              labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName">
+              labelFeature="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm/core/entity/NamedElement/entityName"/>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/UsageModelIntegration"/>
+          <genClasses ecoreClass="context.ecore#//system/pcm/usage/MisusageScenario"/>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/ScenarioIntegration">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/entrylevelsystemcall"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/ScenarioIntegration/usagescenario"/>
+          </genClasses>
+          <genClasses image="false" ecoreClass="context.ecore#//system/pcm/usage/EntryLevelIntegration">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/PCMUsageSpecification/usagescenario"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute context.ecore#//system/pcm/usage/PCMUsageSpecification/missageUse"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/usage/EntryLevelIntegration/entrylevelsystemcall"/>
           </genClasses>
         </nestedGenPackages>
       </nestedGenPackages>
