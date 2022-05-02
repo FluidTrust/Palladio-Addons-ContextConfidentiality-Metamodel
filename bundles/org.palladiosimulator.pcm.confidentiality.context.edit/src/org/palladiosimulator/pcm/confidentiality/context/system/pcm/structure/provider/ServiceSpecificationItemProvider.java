@@ -2,9 +2,11 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -15,7 +17,9 @@ import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.St
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
+import org.palladiosimulator.pcm.repository.OperationInterface;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
+import org.palladiosimulator.pcm.repository.OperationSignature;
 import org.palladiosimulator.pcm.repository.Signature;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
@@ -125,8 +129,8 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                                     .getProvidedRoles_InterfaceProvidingEntity().stream()
                                     .filter(OperationProvidedRole.class::isInstance)
                                     .map(OperationProvidedRole.class::cast)
-                                    .flatMap(e -> e.getProvidedInterface__OperationProvidedRole()
-                                            .getSignatures__OperationInterface().stream())
+                                    .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                                    .flatMap(e -> e.getSignatures__OperationInterface().stream())
                                     .anyMatch(e -> EcoreUtil.equals(signature, e));
 
                         }).collect(Collectors.toList());
@@ -149,19 +153,25 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                 });
     }
 
-    /**
-     * Filter based on target.
-     *
-     * @param restriction the restriction
-     * @param targetList the target list
-     * @return the list
-     */
-    private List<AssemblyContext> filterBasedOnTarget(ServiceSpecification restriction,
-            List<AssemblyContext> targetList) {
+    private Stream<OperationInterface> getStreamWithParentInterfaces(OperationProvidedRole role) {
+        var rootInterface = role.getProvidedInterface__OperationProvidedRole();
 
-        //        if(restriction.eContainer() instanceof
+        var parentInterfaces = getParentInterface(new ArrayList<>(List.of(rootInterface)));
 
-        return targetList;
+        return parentInterfaces.stream();
+    }
+
+    private List<OperationInterface> getParentInterface(List<OperationInterface> parentInterfaces) {
+        var newInterfaces = parentInterfaces.stream().flatMap(e -> e.getParentInterfaces__Interface().stream())
+                .map(OperationInterface.class::cast).collect(Collectors.toList());
+        if(newInterfaces.isEmpty()) {
+            return List.of();
+        }
+        parentInterfaces.addAll(newInterfaces);
+        var parents = getParentInterface(newInterfaces);
+        parentInterfaces.addAll(parents);
+        return parentInterfaces;
+
     }
 
     /**
@@ -248,6 +258,17 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                 if (context == null) {
                     return typedList;
                 }
+                var seff = object.getService();
+                if (seff != null) {
+                    return seff.getBasicComponent_ServiceEffectSpecification()
+                            .getProvidedRoles_InterfaceProvidingEntity()
+                            .stream().filter(OperationProvidedRole.class::isInstance)
+                            .map(OperationProvidedRole.class::cast)
+                            .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                            .flatMap(e -> e.getSignatures__OperationInterface().stream())
+                            .filter(signature -> EcoreUtil.equals(signature, seff.getDescribedService__SEFF()))
+                            .collect(Collectors.toList());
+                }
                 return typedList.stream().filter(signature -> {
                     if (signature == null) {
                         return true;
@@ -255,8 +276,8 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                     return context.getEncapsulatedComponent__AssemblyContext()
                             .getProvidedRoles_InterfaceProvidingEntity().stream()
                             .filter(OperationProvidedRole.class::isInstance).map(OperationProvidedRole.class::cast)
-                            .flatMap(e -> e.getProvidedInterface__OperationProvidedRole()
-                                    .getSignatures__OperationInterface().stream())
+                            .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                            .flatMap(e -> e.getSignatures__OperationInterface().stream())
                             .anyMatch(e -> EcoreUtil.equals(signature, e));
 
                 }).collect(Collectors.toList());
@@ -264,6 +285,7 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
             }
         });
     }
+
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -281,6 +303,11 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                 return methodSpecification.getAssemblycontext().getEntityName() + ": "
                         + methodSpecification.getSignature().getEntityName();
             }
+
+        }
+        if (object instanceof OperationSignature) {
+            final var signature = (OperationSignature) object;
+            return signature.getInterface__OperationSignature().getEntityName() + signature.getEntityName();
         }
         return getString("_UI_ServiceRestriction_type");
     }
