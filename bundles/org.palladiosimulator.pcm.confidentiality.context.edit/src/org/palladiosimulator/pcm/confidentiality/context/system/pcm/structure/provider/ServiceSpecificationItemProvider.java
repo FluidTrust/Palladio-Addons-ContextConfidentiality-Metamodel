@@ -19,7 +19,6 @@ import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
 import org.palladiosimulator.pcm.repository.OperationInterface;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
-import org.palladiosimulator.pcm.repository.OperationSignature;
 import org.palladiosimulator.pcm.repository.Signature;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
@@ -165,11 +164,9 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
         var newInterfaces = parentInterfaces.stream().flatMap(e -> e.getParentInterfaces__Interface().stream())
                 .map(OperationInterface.class::cast).collect(Collectors.toList());
         if(newInterfaces.isEmpty()) {
-            return List.of();
+            return parentInterfaces;
         }
-        parentInterfaces.addAll(newInterfaces);
-        var parents = getParentInterface(newInterfaces);
-        parentInterfaces.addAll(parents);
+        parentInterfaces.addAll(getParentInterface(newInterfaces));
         return parentInterfaces;
 
     }
@@ -304,10 +301,6 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                         + methodSpecification.getSignature().getEntityName();
             }
 
-        }
-        if (object instanceof OperationSignature) {
-            final var signature = (OperationSignature) object;
-            return signature.getInterface__OperationSignature().getEntityName() + signature.getEntityName();
         }
         return getString("_UI_ServiceRestriction_type");
     }

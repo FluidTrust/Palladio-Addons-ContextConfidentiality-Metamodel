@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6w0kEKK1EeyuE-9kOgyPxg" name="attackerSpecification class diagram" repPath="#_6wzV8KK1EeyuE-9kOgyPxg" changeId="56e4557e-11a2-405f-9f5b-f3bc9d6f7734">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6w0kEKK1EeyuE-9kOgyPxg" name="attackerSpecification class diagram" repPath="#_6wzV8KK1EeyuE-9kOgyPxg" changeId="f757e410-20cb-45f5-84b0-b805c6f81350">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -2774,6 +2774,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_jbkQ8MktEey69Mdgx4nIsg" description="_jbjp4cktEey69Mdgx4nIsg" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_jbkQ8sktEey69Mdgx4nIsg" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_jbkQ8cktEey69Mdgx4nIsg" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
