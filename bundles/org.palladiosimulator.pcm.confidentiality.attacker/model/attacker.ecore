@@ -59,7 +59,7 @@
         eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SurfaceAttacker" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="criticalElement" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetedElement" lowerBound="1"
         eType="#//pcmIntegration/PCMElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filtercriteria" upperBound="-1"
         eType="#//FilterCriterion" containment="true"/>
@@ -108,7 +108,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttackPath">
     <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//pcmIntegration/SystemIntegration"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="criticalElement" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetedElement" lowerBound="1"
         eType="#//pcmIntegration/PCMElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="credentialsInitiallyNecessary"
         upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
@@ -186,7 +186,7 @@
           eType="#//attackSpecification/CWEID" eOpposite="#//attackSpecification/CWEID/children"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttackCategory" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eOperations name="equalAttackType" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eOperations name="equalAttackType" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
         <eParameters name="category" eType="#//attackSpecification/AttackCategory"/>
       </eOperations>
     </eClassifiers>

@@ -29,7 +29,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#//pcmIntegration"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6w0kEKK1EeyuE-9kOgyPxg" name="attackerSpecification class diagram" repPath="#_6wzV8KK1EeyuE-9kOgyPxg" changeId="f757e410-20cb-45f5-84b0-b805c6f81350">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6w0kEKK1EeyuE-9kOgyPxg" name="attackerSpecification class diagram" repPath="#_6wzV8KK1EeyuE-9kOgyPxg" changeId="3d4152dd-b440-42c9-85d3-fbe9da78c7cf">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/attacker.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -2530,9 +2530,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_jbOSsMktEey69Mdgx4nIsg" name=" criticalElement : PCMElement" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/criticalElement"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/criticalElement"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_jbOSsMktEey69Mdgx4nIsg" name=" targetedElement : PCMElement" tooltipText="">
+        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/targetedElement"/>
+        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//AttackPath/targetedElement"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_jbO5wcktEey69Mdgx4nIsg" labelAlignment="LEFT" description="_jbO5wMktEey69Mdgx4nIsg" color="114,159,207">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
@@ -2712,9 +2712,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_jbbHAMktEey69Mdgx4nIsg" name=" criticalElement : PCMElement" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//SurfaceAttacker/criticalElement"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//SurfaceAttacker/criticalElement"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_jbbHAMktEey69Mdgx4nIsg" name=" targetedElement : PCMElement" tooltipText="">
+        <target xmi:type="ecore:EReference" href="model/attacker.ecore#//SurfaceAttacker/targetedElement"/>
+        <semanticElements xmi:type="ecore:EReference" href="model/attacker.ecore#//SurfaceAttacker/targetedElement"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_jbbHAcktEey69Mdgx4nIsg" labelAlignment="LEFT" description="_jbO5wMktEey69Mdgx4nIsg" color="114,159,207">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
