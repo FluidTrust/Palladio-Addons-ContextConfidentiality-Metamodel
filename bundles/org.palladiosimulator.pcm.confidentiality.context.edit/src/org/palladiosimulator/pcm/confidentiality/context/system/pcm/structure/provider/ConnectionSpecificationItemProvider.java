@@ -115,8 +115,8 @@ public class ConnectionSpecificationItemProvider extends ConnectionSpecification
                             if (role == null) {
                                 return false;
                             }
-                            return role.getProvidedInterface__OperationProvidedRole()
-                                    .getSignatures__OperationInterface().stream()
+                            return ParentInterfaceHelper.getStreamWithParentInterfaces(role)
+                                    .flatMap(e -> e.getSignatures__OperationInterface().stream())
                                     .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
 
                         }).collect(Collectors.toList());

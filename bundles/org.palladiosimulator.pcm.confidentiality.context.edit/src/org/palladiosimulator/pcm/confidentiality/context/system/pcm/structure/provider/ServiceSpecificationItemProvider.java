@@ -2,11 +2,9 @@
  */
 package org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.provider;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -17,7 +15,6 @@ import org.palladiosimulator.pcm.confidentiality.context.system.pcm.structure.St
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
-import org.palladiosimulator.pcm.repository.OperationInterface;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
 import org.palladiosimulator.pcm.repository.Signature;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
@@ -45,58 +42,6 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
     public ServiceSpecificationItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
-
-    //    /**
-    //     * This adds a property descriptor for the Providedrole feature. <!-- begin-user-doc --> <!--
-    //     * end-user-doc -->
-    //     *
-    //     * @generated
-    //     */
-    //    @Override
-    //    protected void addProvidedrolePropertyDescriptor(Object object) {
-    //        super.addProvidedrolePropertyDescriptor(object);
-    //        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
-    //
-    //        decorator.setValueChoiceCalculator(
-    //                new ValueChoiceCalculatorBase<>(ServiceRestriction.class, ProvidedRole.class) {
-    //                    @Override
-    //                    protected Collection<?> getValueChoiceTyped(ServiceRestriction object,
-    //                            List<ProvidedRole> typedList) {
-    //                        var context = object.getAssemblycontext();
-    //                        if (context == null) {
-    //                            return typedList;
-    //                        }
-    //                        var listProvidedRoles = context.getEncapsulatedComponent__AssemblyContext()
-    //                                .getProvidedRoles_InterfaceProvidingEntity();
-    //                        typedList = typedList.stream().filter(role -> {
-    //                            if (role == null) {
-    //                                return true;
-    //                            }
-    //                            return listProvidedRoles.stream()
-    //                                    .anyMatch(roleCompare -> EcoreUtil.equals(role, roleCompare));
-    //
-    //                        }).collect(Collectors.toList());
-    //
-    //                        var signature = object.getSignature();
-    //                        if (signature == null) {
-    //                            return typedList;
-    //                        }
-    //                        return typedList.stream().filter(role -> {
-    //                            if (role == null) {
-    //                                return true;
-    //                            }
-    //                            if (role instanceof OperationProvidedRole) {
-    //                                var oRole = (OperationProvidedRole) role;
-    //                                return oRole.getProvidedInterface__OperationProvidedRole()
-    //                                        .getSignatures__OperationInterface().stream()
-    //                                        .anyMatch(tmpSignature -> EcoreUtil.equals(tmpSignature, signature));
-    //                            }
-    //                            return false;
-    //                        }).collect(Collectors.toList());
-    //
-    //                    }
-    //                });
-    //    }
 
     /**
  * This adds a property descriptor for the Assemblycontext feature. <!-- begin-user-doc --> <!--
@@ -128,7 +73,7 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                                     .getProvidedRoles_InterfaceProvidingEntity().stream()
                                     .filter(OperationProvidedRole.class::isInstance)
                                     .map(OperationProvidedRole.class::cast)
-                                    .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                                    .flatMap(ParentInterfaceHelper::getStreamWithParentInterfaces)
                                     .flatMap(e -> e.getSignatures__OperationInterface().stream())
                                     .anyMatch(e -> EcoreUtil.equals(signature, e));
 
@@ -150,25 +95,6 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                         }).collect(Collectors.toList());
                     }
                 });
-    }
-
-    private Stream<OperationInterface> getStreamWithParentInterfaces(OperationProvidedRole role) {
-        var rootInterface = role.getProvidedInterface__OperationProvidedRole();
-
-        var parentInterfaces = getParentInterface(new ArrayList<>(List.of(rootInterface)));
-
-        return parentInterfaces.stream();
-    }
-
-    private List<OperationInterface> getParentInterface(List<OperationInterface> parentInterfaces) {
-        var newInterfaces = parentInterfaces.stream().flatMap(e -> e.getParentInterfaces__Interface().stream())
-                .map(OperationInterface.class::cast).collect(Collectors.toList());
-        if(newInterfaces.isEmpty()) {
-            return parentInterfaces;
-        }
-        parentInterfaces.addAll(getParentInterface(newInterfaces));
-        return parentInterfaces;
-
     }
 
     /**
@@ -261,7 +187,7 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                             .getProvidedRoles_InterfaceProvidingEntity()
                             .stream().filter(OperationProvidedRole.class::isInstance)
                             .map(OperationProvidedRole.class::cast)
-                            .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                            .flatMap(ParentInterfaceHelper::getStreamWithParentInterfaces)
                             .flatMap(e -> e.getSignatures__OperationInterface().stream())
                             .filter(signature -> EcoreUtil.equals(signature, seff.getDescribedService__SEFF()))
                             .collect(Collectors.toList());
@@ -273,7 +199,7 @@ public class ServiceSpecificationItemProvider extends ServiceSpecificationItemPr
                     return context.getEncapsulatedComponent__AssemblyContext()
                             .getProvidedRoles_InterfaceProvidingEntity().stream()
                             .filter(OperationProvidedRole.class::isInstance).map(OperationProvidedRole.class::cast)
-                            .flatMap(ServiceSpecificationItemProvider.this::getStreamWithParentInterfaces)
+                            .flatMap(ParentInterfaceHelper::getStreamWithParentInterfaces)
                             .flatMap(e -> e.getSignatures__OperationInterface().stream())
                             .anyMatch(e -> EcoreUtil.equals(signature, e));
 
