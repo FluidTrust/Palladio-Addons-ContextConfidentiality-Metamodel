@@ -33,7 +33,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.palladiosimulator.pcm.confidentiality.context.dsl.ConfContextDSL"
 			fileExtensions = "confcontext"
-			referencedResource = "platform:/resource/Palladio-Addons-ContextConfidentiality-Metamodel/bundles/org.palladiosimulator.pcm.confidentiality.context/model/context.genmodel"
+			referencedResource = "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/model/context.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 
