@@ -12,7 +12,12 @@ Require-Bundle: org.palladiosimulator.pcm.confidentiality.context,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.emf.codegen.ecore;bundle-version="2.12.0",
+ org.eclipse.emf.common,
+ org.palladiosimulator.pcm.resources,
+ org.eclipse.uml2.codegen.ecore;bundle-version="2.2.0",
+ org.palladiosimulator.pcm
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.context.scoping,
  org.palladiosimulator.pcm.confidentiality.context.services,
