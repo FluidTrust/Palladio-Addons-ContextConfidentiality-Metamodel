@@ -9,8 +9,8 @@
         eType="#//SurfaceAttacker" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedLinkingResources"
-        upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedResourceElements"
+        upperBound="-1" eType="#//pcmIntegration/ResourceEnvironmentElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attacks" upperBound="-1"
         eType="#//attackSpecification/Attack"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exploitContextProviders"
@@ -18,9 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" upperBound="-1"
         eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedComponents"
-        upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compromisedResources" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+        upperBound="-1" eType="#//pcmIntegration/SystemComponent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackerSpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackers" eType="#//AttackerContainer"
@@ -235,16 +233,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" lowerBound="1"
           eType="#//attackSpecification/Vulnerability"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PCMElement" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure/MethodSpecification"
-          containment="true"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PCMElement" eSuperTypes="#//pcmIntegration/ResourceEnvironmentElement #//pcmIntegration/SystemElement #//pcmIntegration/RepositoryElement platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="RoleSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration">
       <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
           eType="#//attackSpecification/Role"/>
@@ -261,6 +250,23 @@
     <eClassifiers xsi:type="ecore:EClass" name="CredentialSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration">
       <eStructuralFeatures xsi:type="ecore:EReference" name="credential" lowerBound="1"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RepositoryElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemElement" eSuperTypes="#//pcmIntegration/SystemComponent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="methodspecification"
+          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure/MethodSpecification"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceEnvironmentElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemComponent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
