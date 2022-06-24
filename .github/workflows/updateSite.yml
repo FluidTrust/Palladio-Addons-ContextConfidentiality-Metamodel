@@ -20,3 +20,4 @@ jobs:
           remote-port: ${{ secrets.DEPLOYMENT_REMOTE_PORT }}
           remote-user: ${{ secrets.DEPLOYMENT_REMOTE_USER }}
           remote-target: ${{ secrets.DEPLOYMENT_REMOTE_TARGET }}
+          skip-branch-deploy: false
