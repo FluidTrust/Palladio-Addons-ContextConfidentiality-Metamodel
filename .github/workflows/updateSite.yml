@@ -2,7 +2,7 @@ name: Update Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [ Java11 ]
     paths-ignore:
       - '**.md'
   workflow_dispatch:
