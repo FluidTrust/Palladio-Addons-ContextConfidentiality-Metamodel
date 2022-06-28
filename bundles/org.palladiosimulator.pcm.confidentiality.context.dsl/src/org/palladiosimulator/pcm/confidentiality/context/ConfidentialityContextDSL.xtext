@@ -6,12 +6,24 @@ import "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/mod
 import "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system" as system
 import "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//systemcontext" as systemcontext
 import "platform:/resource/org.palladiosimulator.pcm/model/pcm.ecore#//repository" as repository
+import "platform:/resource/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity" as entity
+import "platform:/resource/org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure" as systemstructure
+
+generate confContextDSL "http://context.confidentiality.pcm.palladiosimulator.org/ConfContextDSL"
 
 // Model
 
+Model:
+	includes+=Include*
+	policyset+=PolicySet;
+	
+Include:
+	'import' importURI=STRING;
+
 PolicySet returns policy::PolicySet:
 	'PolicySet'
-	
+	id=EString
+	(entityName=EString)?
 	'{'
 		('combiningAlgorithm:' combiningAlgorithm=PolicyCombiningAlgorithm)?
 		('policysets:' '[' policyset+=PolicySet ( "," policyset+=PolicySet)* ']' )?
@@ -22,7 +34,8 @@ PolicySet returns policy::PolicySet:
 
 Policy returns policy::Policy:
 	'Policy'
-	
+	id=EString
+	(entityName=EString)?
 	'{'
 		('combiningAlgorithm:' combiningAlgorithm=RuleCombiningAlgorithm)?
 		('targets:' '[' target+=AllOf ( "," target+=AllOf)* ']' )?
@@ -33,7 +46,8 @@ Policy returns policy::Policy:
 
 Rule returns policy::Rule:
 	'Rule'
-	
+	id=EString
+	(entityName=EString)?
 	'{'
 		('permit:' permit=PermitType)?
 		('condition:' condition=Expression)?
@@ -49,11 +63,15 @@ AllOf returns policy::AllOf:
 
 
 Match returns policy::Match:
-	'Match'
+	EntityMatch;
 	
+EntityMatch returns systemstructure::EntityMatch:
+	'EntityMatch'
 	'{'
-		// TODO: find missing subclasses
-	'}';
+		'category:' category=Category
+		'entity:' entity=[entity::Entity|EString]
+	'}'
+;
 
 
 VariableDefinition returns policy::VariableDefinitions:
@@ -116,6 +134,24 @@ AttributeDesignator returns policy::AttributeDesignator:
 	'}'
 ;
 
+Attribute returns systemcontext::Attribute:
+	SystemEntityAttribute;
+	
+SystemEntityAttribute returns systemcontext::SystemEntityAttribute:
+	'SystemEntityAttribute'
+	'{'
+		'attributevalues:' '[' attributevalue+=AttributeValue ( "," attributevalue+=AttributeValue)* ']'
+		'modelEntity:' modelEntity=[entity::Entity|EString]
+	'}'
+;
+
+AttributeValue returns systemcontext::AttributeValue:
+	'AttributeValue'
+	'{'
+		'values:' '[' values+=EString ( "," values+=EString)* ']'
+		'type:' type=DataTypes
+	'}'
+;
 
 FunctionReference returns policy::FunctionReference:
 	'FunctionReference'
@@ -161,10 +197,9 @@ PrimitiveDataType returns repository::PrimitiveDataType:
 
 CollectionDataType returns repository::CollectionDataType:
 	'CollectionDataType'
-	
 	'{'
 		'entityName' entityName=EString
-		'innerType_CollectionDataType' innerType_CollectionDataType=[repository::DataType|EString]
+		'innerType_CollectionDataType' innerType_CollectionDataType=[repository::DataType|EString] // TODO: Link to another model
 	'}';
 
 
@@ -182,7 +217,7 @@ InnerDeclaration returns repository::InnerDeclaration:
 	'InnerDeclaration'
 	'{'
 		'entityName' entityName=EString
-		'datatype_InnerDeclaration' datatype_InnerDeclaration=[repository::DataType|EString]
+		'datatype_InnerDeclaration' datatype_InnerDeclaration=[repository::DataType|EString] // TODO: Link to another model
 	'}';
 
 
@@ -319,4 +354,24 @@ enum Operations returns policy::Operations:
 				| DATETIME_AT_LEAST_ONE_MEMBER_OF = 'DATETIME_AT_LEAST_ONE_MEMBER_OF' | DATETIME_UNION = 'DATETIME_UNION' 
 				| DATETIME_SUBSET = 'DATETIME_SUBSET' | DATETIME_SET_EQUALS = 'DATETIME_SET_EQUALS' | ANYURI_INTERSECTION = 'ANYURI_INTERSECTION' 
 				| ANYURI_AT_LEAST_ONE_MEMBER_OF = 'ANYURI_AT_LEAST_ONE_MEMBER_OF' | ANYURI_UNION = 'ANYURI_UNION' | ANYURI_SUBSET = 'ANYURI_SUBSET' 
-				| ANYURI_SET_EQUALS = 'ANYURI_SET_EQUALS' | HEXBINARY_INTERSECTION = 'HEXBINARY_INTERSECTION' | HEXBINARY_AT_LEAST_ONE_MEMBER_OF = 'HEXBINARY_AT_LEAST_ONE_MEMBER_OF' | HEXBINARY_UNION = 'HEXBINARY_UNION' | HEXBINARY_SUBSET = 'HEXBINARY_SUBSET' | HEXBINARY_SET_EQUALS = 'HEXBINARY_SET_EQUALS' | BASE64BINARY_INTERSECTION = 'BASE64BINARY_INTERSECTION' | BASE64BINARY_AT_LEAST_ONE_MEMBER_OF = 'BASE64BINARY_AT_LEAST_ONE_MEMBER_OF' | BASE64BINARY_UNION = 'BASE64BINARY_UNION' | BASE64BINARY_SUBSET = 'BASE64BINARY_SUBSET' | BASE64BINARY_SET_EQUALS = 'BASE64BINARY_SET_EQUALS' | DAYTIMEDURATION_INTERSECTION = 'DAYTIMEDURATION_INTERSECTION' | DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF = 'DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF' | DAYTIMEDURATION_UNION = 'DAYTIMEDURATION_UNION' | DAYTIMEDURATION_SUBSET = 'DAYTIMEDURATION_SUBSET' | DAYTIMEDURATION_SET_EQUALS = 'DAYTIMEDURATION_SET_EQUALS' | YEARMONTHDURATION_INTERSECTION = 'YEARMONTHDURATION_INTERSECTION' | YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF = 'YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF' | YEARMONTHDURATION_UNION = 'YEARMONTHDURATION_UNION' | YEARMONTHDURATION_SUBSET = 'YEARMONTHDURATION_SUBSET' | YEARMONTHDURATION_SET_EQUALS = 'YEARMONTHDURATION_SET_EQUALS' | X500NAME_INTERSECTION = 'X500NAME_INTERSECTION' | X500NAME_AT_LEAST_ONE_MEMBER_OF = 'X500NAME_AT_LEAST_ONE_MEMBER_OF' | X500NAME_UNION = 'X500NAME_UNION' | X500NAME_SUBSET = 'X500NAME_SUBSET' | X500NAME_SET_EQUALS = 'X500NAME_SET_EQUALS' | RFC822NAME_INTERSECTION = 'RFC822NAME_INTERSECTION' | RFC822NAME_AT_LEAST_ONE_MEMBER_OF = 'RFC822NAME_AT_LEAST_ONE_MEMBER_OF' | RFC822NAME_UNION = 'RFC822NAME_UNION' | RFC822NAME_SUBSET = 'RFC822NAME_SUBSET' | RFC822NAME_SET_EQUALS = 'RFC822NAME_SET_EQUALS' | IPADDRESS_INTERSECTION = 'IPADDRESS_INTERSECTION' | IPADDRESS_AT_LEAST_ONE_MEMBER_OF = 'IPADDRESS_AT_LEAST_ONE_MEMBER_OF' | IPADDRESS_UNION = 'IPADDRESS_UNION' | IPADDRESS_SUBSET = 'IPADDRESS_SUBSET' | IPADDRESS_SET_EQUALS = 'IPADDRESS_SET_EQUALS' | DNSNAME_INTERSECTION = 'DNSNAME_INTERSECTION' | DNSNAME_AT_LEAST_ONE_MEMBER_OF = 'DNSNAME_AT_LEAST_ONE_MEMBER_OF' | DNSNAME_UNION = 'DNSNAME_UNION' | DNSNAME_SUBSET = 'DNSNAME_SUBSET' | DNSNAME_SET_EQUALS = 'DNSNAME_SET_EQUALS';
+				| ANYURI_SET_EQUALS = 'ANYURI_SET_EQUALS' | HEXBINARY_INTERSECTION = 'HEXBINARY_INTERSECTION' 
+				| HEXBINARY_AT_LEAST_ONE_MEMBER_OF = 'HEXBINARY_AT_LEAST_ONE_MEMBER_OF' | HEXBINARY_UNION = 'HEXBINARY_UNION' 
+				| HEXBINARY_SUBSET = 'HEXBINARY_SUBSET' | HEXBINARY_SET_EQUALS = 'HEXBINARY_SET_EQUALS' 
+				| BASE64BINARY_INTERSECTION = 'BASE64BINARY_INTERSECTION' 
+				| BASE64BINARY_AT_LEAST_ONE_MEMBER_OF = 'BASE64BINARY_AT_LEAST_ONE_MEMBER_OF' | BASE64BINARY_UNION = 'BASE64BINARY_UNION' 
+				| BASE64BINARY_SUBSET = 'BASE64BINARY_SUBSET' | BASE64BINARY_SET_EQUALS = 'BASE64BINARY_SET_EQUALS' 
+				| DAYTIMEDURATION_INTERSECTION = 'DAYTIMEDURATION_INTERSECTION' 
+				| DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF = 'DAYTIMEDURATION_AT_LEAST_ONE_MEMBER_OF' 
+				| DAYTIMEDURATION_UNION = 'DAYTIMEDURATION_UNION' | DAYTIMEDURATION_SUBSET = 'DAYTIMEDURATION_SUBSET' 
+				| DAYTIMEDURATION_SET_EQUALS = 'DAYTIMEDURATION_SET_EQUALS' | YEARMONTHDURATION_INTERSECTION = 'YEARMONTHDURATION_INTERSECTION' 
+				| YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF = 'YEARMONTHDURATION_AT_LEAST_ONE_MEMBER_OF' 
+				| YEARMONTHDURATION_UNION = 'YEARMONTHDURATION_UNION' | YEARMONTHDURATION_SUBSET = 'YEARMONTHDURATION_SUBSET' 
+				| YEARMONTHDURATION_SET_EQUALS = 'YEARMONTHDURATION_SET_EQUALS' | X500NAME_INTERSECTION = 'X500NAME_INTERSECTION' 
+				| X500NAME_AT_LEAST_ONE_MEMBER_OF = 'X500NAME_AT_LEAST_ONE_MEMBER_OF' | X500NAME_UNION = 'X500NAME_UNION' 
+				| X500NAME_SUBSET = 'X500NAME_SUBSET' | X500NAME_SET_EQUALS = 'X500NAME_SET_EQUALS' 
+				| RFC822NAME_INTERSECTION = 'RFC822NAME_INTERSECTION' | RFC822NAME_AT_LEAST_ONE_MEMBER_OF = 'RFC822NAME_AT_LEAST_ONE_MEMBER_OF' 
+				| RFC822NAME_UNION = 'RFC822NAME_UNION' | RFC822NAME_SUBSET = 'RFC822NAME_SUBSET' | RFC822NAME_SET_EQUALS = 'RFC822NAME_SET_EQUALS' 
+				| IPADDRESS_INTERSECTION = 'IPADDRESS_INTERSECTION' | IPADDRESS_AT_LEAST_ONE_MEMBER_OF = 'IPADDRESS_AT_LEAST_ONE_MEMBER_OF' 
+				| IPADDRESS_UNION = 'IPADDRESS_UNION' | IPADDRESS_SUBSET = 'IPADDRESS_SUBSET' | IPADDRESS_SET_EQUALS = 'IPADDRESS_SET_EQUALS' 
+				| DNSNAME_INTERSECTION = 'DNSNAME_INTERSECTION' | DNSNAME_AT_LEAST_ONE_MEMBER_OF = 'DNSNAME_AT_LEAST_ONE_MEMBER_OF' 
+				| DNSNAME_UNION = 'DNSNAME_UNION' | DNSNAME_SUBSET = 'DNSNAME_SUBSET' | DNSNAME_SET_EQUALS = 'DNSNAME_SET_EQUALS';

@@ -17,7 +17,8 @@ Require-Bundle: org.palladiosimulator.pcm.confidentiality.context,
  org.eclipse.emf.common,
  org.palladiosimulator.pcm.resources,
  org.eclipse.uml2.codegen.ecore;bundle-version="2.2.0",
- org.palladiosimulator.pcm
+ org.palladiosimulator.pcm,
+ org.eclipse.emf.ecore
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.pcm.confidentiality.context.scoping,
  org.palladiosimulator.pcm.confidentiality.context.services,
@@ -27,5 +28,8 @@ Export-Package: org.palladiosimulator.pcm.confidentiality.context.scoping,
  org.palladiosimulator.pcm.confidentiality.context.parser.antlr.internal,
  org.palladiosimulator.pcm.confidentiality.context.generator,
  org.palladiosimulator.pcm.confidentiality.context,
- org.palladiosimulator.pcm.confidentiality.context.serializer
+ org.palladiosimulator.pcm.confidentiality.context.serializer,
+ org.palladiosimulator.pcm.confidentiality.context.confContextDSL.impl,
+ org.palladiosimulator.pcm.confidentiality.context.confContextDSL.util,
+ org.palladiosimulator.pcm.confidentiality.context.confContextDSL
 Import-Package: org.apache.log4j
