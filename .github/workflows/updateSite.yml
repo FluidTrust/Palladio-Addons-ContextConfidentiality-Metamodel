@@ -21,4 +21,4 @@ jobs:
           remote-user: ${{ secrets.DEPLOYMENT_REMOTE_USER }}
           remote-target: ${{ secrets.DEPLOYMENT_REMOTE_TARGET }}
           skip-branch-deploy: false
-          use-cache: false
+          no-caching: false
