@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: PalladioSimulator/Palladio-Build-ActionsPipeline@3d0e0fed20effcfc933322dca215b5dc1ab195fa
+      - uses: PalladioSimulator/Palladio-Build-ActionsPipeline@728a5d1ca9c75d9adf05f2b398f4ddc879944a32
         with:
           deploy-updatesite: 'releng/org.palladiosimulator.pcm.confidentiality.context.updatesite/target/repository'
           server-ssh-key: ${{ secrets.DEPLOYMENT_SERVER_SSH_KEY }}
