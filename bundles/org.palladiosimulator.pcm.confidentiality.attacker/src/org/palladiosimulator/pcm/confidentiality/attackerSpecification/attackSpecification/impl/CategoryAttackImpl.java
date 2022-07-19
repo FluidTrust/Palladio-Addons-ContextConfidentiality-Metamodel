@@ -3,6 +3,7 @@
 package org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.palladiosimulator.pcm.confidentiality.attacker.helper.AttackVectorHelper;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackCategory;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackSpecificationPackage;
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.AttackVector;
@@ -73,7 +74,7 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
             return false;
         }
 
-        if (!this.isIncluded(attackVector, vulnerability.getAttackVector())) {
+        if (!AttackVectorHelper.isIncluded(attackVector, vulnerability.getAttackVector())) {
             return false;
         }
         if (vulnerability.getPrivileges() != Privileges.NONE) {
@@ -83,15 +84,5 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
         return true;
     }
 
-    private boolean isIncluded(final AttackVector current, final AttackVector target) {
-        if (current.equals(target)) {
-            return true;
-        } else if (target == AttackVector.NETWORK) {
-            return current == AttackVector.LOCAL || current == AttackVector.ADJACENT_NETWORK;
-        } else if (target == AttackVector.ADJACENT_NETWORK) {
-            return current == AttackVector.LOCAL;
-        }
-        return false;
-    }
 
 } // CategoryAttackImpl
