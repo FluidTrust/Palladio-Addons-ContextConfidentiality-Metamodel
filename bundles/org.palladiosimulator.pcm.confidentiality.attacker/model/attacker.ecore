@@ -64,14 +64,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attacker" lowerBound="1"
         eType="#//Attacker"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FilterCriterion" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement">
-    <eOperations name="isElementFiltered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="systemIntegration" eType="#//pcmIntegration/SystemIntegration"/>
-      <eParameters name="surfaceAttacker" eType="#//SurfaceAttacker"/>
-      <eParameters name="attackPath" eType="#//AttackPath"/>
-    </eOperations>
-    <eOperations name="isFilteringEarly" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilterCriterion" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="VulnerabilityFilterCriterion" abstract="true"
       eSuperTypes="#//FilterCriterion">
     <eOperations name="isVulnerabilityInRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -102,16 +95,6 @@
         lowerBound="1" eType="#//attackSpecification/IntegrityImpact" defaultValueLiteral="None"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="availabilityImpactMinimum"
         lowerBound="1" eType="#//attackSpecification/AvailabilityImpact" defaultValueLiteral="None"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttackPath">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//pcmIntegration/SystemIntegration"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetedElement" lowerBound="1"
-        eType="#//pcmIntegration/PCMElement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="credentialsInitiallyNecessary"
-        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilitesUsed" upperBound="-1"
-        eType="#//attackSpecification/Vulnerability"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitialCredentialFilterCriterion" eSuperTypes="#//FilterCriterion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="prohibitedInitialCredentials"
@@ -225,6 +208,16 @@
     <eClassifiers xsi:type="ecore:EEnum" name="UserInteraction">
       <eLiterals name="None" literal="None"/>
       <eLiterals name="Required" value="1" literal="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Mitigation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" upperBound="-1"
+          eType="#//attackSpecification/Vulnerability"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//attackSpecification/MitigationTypes"
+          defaultValueLiteral="AccessProtection"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="MitigationTypes">
+      <eLiterals name="AccessProtection"/>
+      <eLiterals name="GlobalCommunication" value="1"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pcmIntegration" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attack/0.1/pcmIntagration/"
