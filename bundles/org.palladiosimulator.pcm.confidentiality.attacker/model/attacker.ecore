@@ -61,8 +61,6 @@
         eType="#//pcmIntegration/PCMElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filtercriteria" upperBound="-1"
         eType="#//FilterCriterion" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attacker" lowerBound="1"
-        eType="#//Attacker"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FilterCriterion" abstract="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="VulnerabilityFilterCriterion" abstract="true"
@@ -99,6 +97,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="InitialCredentialFilterCriterion" eSuperTypes="#//FilterCriterion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="prohibitedInitialCredentials"
         upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartElementFilterCriterion" eSuperTypes="#//FilterCriterion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startComponents" upperBound="-1"
+        eType="#//pcmIntegration/SystemComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startResources" upperBound="-1"
+        eType="#//pcmIntegration/ResourceEnvironmentElement" containment="true"/>
   </eClassifiers>
   <eSubpackages name="attackSpecification" nsURI="http://www.palladiosimulator.org/pcm/confidentiality/attacker/0.1/"
       nsPrefix="attack">
