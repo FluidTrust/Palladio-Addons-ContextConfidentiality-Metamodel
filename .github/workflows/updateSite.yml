@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: PalladioSimulator/Palladio-Build-ActionsPipeline@v2
+      - uses: PalladioSimulator/Palladio-Build-ActionsPipeline@v3
         with:
           deploy-updatesite: 'releng/org.palladiosimulator.pcm.confidentiality.context.updatesite/target/repository'
           java-version: 17
