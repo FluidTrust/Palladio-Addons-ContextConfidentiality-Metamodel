@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.net4j.util.collection.Pair;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.palladiosimulator.pcm.confidentiality.attacker.helper.CredentialEqualityHelper;
 import org.palladiosimulator.pcm.confidentiality.context.system.SystemFactory;
@@ -20,13 +20,13 @@ public class InitialCredentialFilterCriterionTest {
 
     @Test
     public void credentialAllContainedHelperTest() {
-        Assert.assertFalse(
+        Assertions.assertFalse(
                 CredentialEqualityHelper.containsAll(createAllProhibitedCredentials(), createAllCredentials()));
-        Assert.assertTrue(
+        Assertions.assertTrue(
                 CredentialEqualityHelper.containsAll(createAllCredentials(), createAllProhibitedCredentials()));
-        Assert.assertTrue(CredentialEqualityHelper.containsAll(createAllProhibitedCredentials(),
+        Assertions.assertTrue(CredentialEqualityHelper.containsAll(createAllProhibitedCredentials(),
                 createAllProhibitedCredentials()));
-        Assert.assertTrue(CredentialEqualityHelper.containsAll(createAllCredentials(), createAllCredentials()));
+        Assertions.assertTrue(CredentialEqualityHelper.containsAll(createAllCredentials(), createAllCredentials()));
     }
 
     private List<UsageSpecification> createAllProhibitedCredentials() {
