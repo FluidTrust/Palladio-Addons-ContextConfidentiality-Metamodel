@@ -79,7 +79,10 @@
     <genClasses ecoreClass="attacker.ecore#//InitialCredentialFilterCriterion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference attacker.ecore#//InitialCredentialFilterCriterion/prohibitedInitialCredentials"/>
     </genClasses>
-    <genClasses ecoreClass="attacker.ecore#//StartElementFilterCriterion"/>
+    <genClasses ecoreClass="attacker.ecore#//StartElementFilterCriterion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//StartElementFilterCriterion/startComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference attacker.ecore#//StartElementFilterCriterion/startResources"/>
+    </genClasses>
     <nestedGenPackages prefix="AttackSpecification" basePackage="org.palladiosimulator.pcm.confidentiality.attackerSpecification"
         disposableProviderFactory="true" ecorePackage="attacker.ecore#//attackSpecification">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="attacker.ecore#//attackSpecification/AttackVector">
