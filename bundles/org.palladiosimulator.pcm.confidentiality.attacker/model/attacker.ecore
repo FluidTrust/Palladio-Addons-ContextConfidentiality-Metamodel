@@ -200,7 +200,7 @@
       <eLiterals name="None" value="2"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CWEBasedVulnerability" abstract="true"
-        interface="true">
+        interface="true" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="cweID" lowerBound="1"
           upperBound="-1" eType="#//attackSpecification/CWEID"/>
     </eClassifiers>
@@ -248,7 +248,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="credential" lowerBound="1"
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RepositoryElement">
+    <eClassifiers xsi:type="ecore:EClass" name="RepositoryElement" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
     </eClassifiers>
@@ -257,11 +257,11 @@
           eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/pcm/structure/MethodSpecification"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceEnvironmentElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceEnvironmentElement" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcecontainer" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkingresource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SystemComponent">
+    <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
           eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
     </eClassifiers>
