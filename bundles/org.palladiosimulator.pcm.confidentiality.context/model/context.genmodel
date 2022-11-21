@@ -58,7 +58,7 @@
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/signature"/>
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/hierachy"/>
+                ecoreFeature="ecore:EReference context.ecore#//system/pcm/structure/MethodSpecification/hierarchy"/>
           </genClasses>
           <genClasses ecoreClass="context.ecore#//system/pcm/structure/ConnectionSpecification">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"

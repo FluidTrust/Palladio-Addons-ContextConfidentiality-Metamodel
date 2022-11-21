@@ -21,7 +21,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/context.ecore#//policy"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QamIwdwMEeufu9ftlEJ81g" name="structure class diagram" repPath="#_QakTkNwMEeufu9ftlEJ81g" changeId="4dea2829-692d-4205-9f00-d9f3e7a1001f">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QamIwdwMEeufu9ftlEJ81g" name="structure class diagram" repPath="#_QakTkNwMEeufu9ftlEJ81g" changeId="6a42ffb4-9bc4-460d-9472-ceb9306b2ab1">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model/context.ecore#//system/pcm/structure"/>
       </ownedRepresentationDescriptors>
@@ -5077,9 +5077,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_42sv0e4CEeu2d70wTterXQ" name=" hierachy : AssemblyContext" tooltipText="">
-        <target xmi:type="ecore:EReference" href="model/context.ecore#//system/pcm/structure/MethodSpecification/hierachy"/>
-        <semanticElements xmi:type="ecore:EReference" href="model/context.ecore#//system/pcm/structure/MethodSpecification/hierachy"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_42sv0e4CEeu2d70wTterXQ" name=" hierarchy : AssemblyContext" tooltipText="">
+        <target xmi:type="ecore:EReference" href="model/context.ecore#//system/pcm/structure/MethodSpecification/hierarchy"/>
+        <semanticElements xmi:type="ecore:EReference" href="model/context.ecore#//system/pcm/structure/MethodSpecification/hierarchy"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_42sv0u4CEeu2d70wTterXQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
