@@ -69,12 +69,9 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
     }
 
     @Override
-    public boolean canExploit(Vulnerability vulnerability, boolean authenticated, AttackVector attackVector) {
-        if (!this.checkID(vulnerability)) {
-            return false;
-        }
-
-        if (!AttackVectorHelper.isIncluded(attackVector, vulnerability.getAttackVector())) {
+    public boolean canExploit(final Vulnerability vulnerability, final boolean authenticated,
+            final AttackVector attackVector) {
+        if (!this.checkID(vulnerability) || !AttackVectorHelper.isIncluded(attackVector, vulnerability.getAttackVector())) {
             return false;
         }
         if (vulnerability.getPrivileges() != Privileges.NONE) {
@@ -83,6 +80,5 @@ public abstract class CategoryAttackImpl<T extends AttackCategory> extends Attac
 
         return true;
     }
-
 
 } // CategoryAttackImpl

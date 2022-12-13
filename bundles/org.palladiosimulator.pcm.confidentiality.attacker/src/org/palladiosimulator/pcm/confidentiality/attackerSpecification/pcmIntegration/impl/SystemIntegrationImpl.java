@@ -7,28 +7,26 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>System Integration</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>System
+ * Integration</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.SystemIntegrationImpl#getPcmelement <em>Pcmelement</em>}</li>
+ * <li>{@link org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.impl.SystemIntegrationImpl#getPcmelement
+ * <em>Pcmelement</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class SystemIntegrationImpl extends SystemIntegrationImplGen implements SystemIntegration
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Identifier getIdOfContent()
-	{
-		return null;
-	}
-} //SystemIntegrationImpl
+public abstract class SystemIntegrationImpl extends SystemIntegrationImplGen implements SystemIntegration {
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public Identifier getIdOfContent() {
+        return null;
+    }
+} // SystemIntegrationImpl

@@ -31,98 +31,104 @@ import tools.mdsd.library.emfeditutils.itempropertydescriptor.ValueChoiceCalcula
  */
 public class ConnectionSpecificationItemProvider extends ConnectionSpecificationItemProviderGen {
 
-    public ConnectionSpecificationItemProvider(AdapterFactory adapterFactory) {
+    public ConnectionSpecificationItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
     @Override
-    protected void addConnectorPropertyDescriptor(Object object) {
+    protected void addConnectorPropertyDescriptor(final Object object) {
         super.addConnectorPropertyDescriptor(object);
-        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+        final var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
-        decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Connector.class) {
-                    @Override
-                    protected Collection<?> getValueChoiceTyped(ConnectionSpecification object,
-                            List<Connector> typedList) {
-                        var signature = object.getSignature();
-                        if (signature == null) {
-                            return typedList;
+        decorator
+            .setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Connector.class) {
+                @Override
+                protected Collection<?> getValueChoiceTyped(final ConnectionSpecification object,
+                        final List<Connector> typedList) {
+                    final var signature = object.getSignature();
+                    if (signature == null) {
+                        return typedList;
+                    }
+                    final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
+                        @Override
+                        public OperationProvidedRole caseProvidedDelegationConnector(
+                                final ProvidedDelegationConnector object) {
+                            return object.getOuterProvidedRole_ProvidedDelegationConnector();
                         }
-                        final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
-                            @Override
-                            public OperationProvidedRole caseProvidedDelegationConnector(
-                                    ProvidedDelegationConnector object) {
-                                return object.getOuterProvidedRole_ProvidedDelegationConnector();
-                            }
 
-                            @Override
-                            public OperationProvidedRole caseAssemblyConnector(AssemblyConnector object) {
-                                return object.getProvidedRole_AssemblyConnector();
-                            }
+                        @Override
+                        public OperationProvidedRole caseAssemblyConnector(final AssemblyConnector object) {
+                            return object.getProvidedRole_AssemblyConnector();
+                        }
 
-                        };
-                        return typedList.stream().filter(connector -> {
+                    };
+                    return typedList.stream()
+                        .filter(connector -> {
                             if (connector == null) {
                                 return true;
                             }
-                            var role = switchConnector.doSwitch(connector);
+                            final var role = switchConnector.doSwitch(connector);
                             if (role == null) {
                                 return false;
                             }
                             return role.getProvidedInterface__OperationProvidedRole()
-                                    .getSignatures__OperationInterface().stream()
-                                    .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
+                                .getSignatures__OperationInterface()
+                                .stream()
+                                .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
 
-                        }).collect(Collectors.toList());
+                        })
+                        .collect(Collectors.toList());
 
-                    }
-                });
+                }
+            });
     }
 
     @Override
-    protected void addSignaturePropertyDescriptor(Object object) {
+    protected void addSignaturePropertyDescriptor(final Object object) {
         super.addSignaturePropertyDescriptor(object);
-        var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
+        final var decorator = ItemPropertyDescriptorUtils.decorateLastDescriptor(this.itemPropertyDescriptors);
 
-        decorator.setValueChoiceCalculator(
-                new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Signature.class) {
-                    @Override
-                    protected Collection<?> getValueChoiceTyped(ConnectionSpecification object,
-                            List<Signature> typedList) {
-                        var connector = object.getConnector();
-                        if (connector == null) {
-                            return typedList;
+        decorator
+            .setValueChoiceCalculator(new ValueChoiceCalculatorBase<>(ConnectionSpecification.class, Signature.class) {
+                @Override
+                protected Collection<?> getValueChoiceTyped(final ConnectionSpecification object,
+                        final List<Signature> typedList) {
+                    final var connector = object.getConnector();
+                    if (connector == null) {
+                        return typedList;
+                    }
+                    final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
+                        @Override
+                        public OperationProvidedRole caseProvidedDelegationConnector(
+                                final ProvidedDelegationConnector object) {
+                            return object.getOuterProvidedRole_ProvidedDelegationConnector();
                         }
-                        final var switchConnector = new CompositionSwitch<OperationProvidedRole>() {
-                            @Override
-                            public OperationProvidedRole caseProvidedDelegationConnector(
-                                    ProvidedDelegationConnector object) {
-                                return object.getOuterProvidedRole_ProvidedDelegationConnector();
-                            }
 
-                            @Override
-                            public OperationProvidedRole caseAssemblyConnector(AssemblyConnector object) {
-                                return object.getProvidedRole_AssemblyConnector();
-                            }
+                        @Override
+                        public OperationProvidedRole caseAssemblyConnector(final AssemblyConnector object) {
+                            return object.getProvidedRole_AssemblyConnector();
+                        }
 
-                        };
-                        return typedList.stream().filter(signature -> {
+                    };
+                    return typedList.stream()
+                        .filter(signature -> {
                             if (signature == null) {
                                 return true;
                             }
-                            var role = switchConnector.doSwitch(connector);
+                            final var role = switchConnector.doSwitch(connector);
                             if (role == null) {
                                 return false;
                             }
                             return ParentInterfaceHelper.getStreamWithParentInterfaces(role)
-                                    .flatMap(e -> e.getSignatures__OperationInterface().stream())
-                                    .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
+                                .flatMap(e -> e.getSignatures__OperationInterface()
+                                    .stream())
+                                .anyMatch(iSignature -> EcoreUtil.equals(iSignature, signature));
 
-                        }).collect(Collectors.toList());
+                        })
+                        .collect(Collectors.toList());
 
-                    }
-                });
+                }
+            });
     }
 
     /**
@@ -137,8 +143,10 @@ public class ConnectionSpecificationItemProvider extends ConnectionSpecification
         if (object instanceof ConnectionSpecification) {
             final var methodSpecification = (ConnectionSpecification) object;
             if (methodSpecification.getConnector() != null && methodSpecification.getSignature() != null) {
-                return methodSpecification.getConnector().getEntityName() + "->"
-                        + methodSpecification.getSignature().getEntityName();
+                return methodSpecification.getConnector()
+                    .getEntityName() + "->"
+                        + methodSpecification.getSignature()
+                            .getEntityName();
             }
         }
         return this.getString("_UI_MethodSpecification_type");
@@ -152,12 +160,12 @@ public class ConnectionSpecificationItemProvider extends ConnectionSpecification
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged(final Notification notification) {
+        this.updateChildren(notification);
         switch (notification.getFeatureID(ConnectionSpecification.class)) {
         case StructurePackage.CONNECTION_SPECIFICATION__CONNECTOR:
         case StructurePackage.CONNECTION_SPECIFICATION__SIGNATURE:
-            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);
     }

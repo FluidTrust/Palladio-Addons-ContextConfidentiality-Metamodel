@@ -17,21 +17,24 @@ import org.palladiosimulator.pcm.confidentiality.context.systemcontext.Systemcon
 
 public class InitialCredentialFilterCriterionTest {
 
-
     @Test
     public void credentialAllContainedHelperTest() {
-        Assertions.assertFalse(
-                CredentialEqualityHelper.containsAll(createAllProhibitedCredentials(), createAllCredentials()));
-        Assertions.assertTrue(
-                CredentialEqualityHelper.containsAll(createAllCredentials(), createAllProhibitedCredentials()));
-        Assertions.assertTrue(CredentialEqualityHelper.containsAll(createAllProhibitedCredentials(),
-                createAllProhibitedCredentials()));
-        Assertions.assertTrue(CredentialEqualityHelper.containsAll(createAllCredentials(), createAllCredentials()));
+        Assertions.assertFalse(CredentialEqualityHelper.containsAll(this.createAllProhibitedCredentials(),
+                this.createAllCredentials()));
+        Assertions.assertTrue(CredentialEqualityHelper.containsAll(this.createAllCredentials(),
+                this.createAllProhibitedCredentials()));
+        Assertions.assertTrue(CredentialEqualityHelper.containsAll(this.createAllProhibitedCredentials(),
+                this.createAllProhibitedCredentials()));
+        Assertions
+            .assertTrue(CredentialEqualityHelper.containsAll(this.createAllCredentials(), this.createAllCredentials()));
     }
 
     private List<UsageSpecification> createAllProhibitedCredentials() {
-        return createAllCredentials().stream().filter(c -> c.getEntityName().contains("root"))
-                .collect(Collectors.toList());
+        return this.createAllCredentials()
+            .stream()
+            .filter(c -> c.getEntityName()
+                .contains("root"))
+            .collect(Collectors.toList());
     }
 
     private List<UsageSpecification> createAllCredentials() {
@@ -41,7 +44,7 @@ public class InitialCredentialFilterCriterionTest {
             final var credential = SystemFactory.eINSTANCE.createUsageSpecification();
             final var value = i < 3 ? "user " + i : "root " + i;
             credential.setEntityName(value);
-            final var pair = createAttribute(value);
+            final var pair = this.createAttribute(value);
             credential.setAttribute(pair.getElement1());
             credential.setAttributevalue(pair.getElement2());
             allCredentials.add(credential);
@@ -55,12 +58,12 @@ public class InitialCredentialFilterCriterionTest {
         attribute.setEntityName("Role");
         attribute.setEnvironment(false);
         final var value = SystemcontextFactory.eINSTANCE.createAttributeValue();
-        value.getValues().add(valueStr);
+        value.getValues()
+            .add(valueStr);
         value.setType(DataTypes.STRING);
-        attribute.getAttributevalue().add(value);
+        attribute.getAttributevalue()
+            .add(value);
         return Pair.create(attribute, value);
     }
-
-
 
 }

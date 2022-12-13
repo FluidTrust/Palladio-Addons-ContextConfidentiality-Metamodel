@@ -9,7 +9,7 @@ import org.palladiosimulator.pcm.confidentiality.context.systemcontext.Systemcon
 
 public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
 
-    public AttributeValueItemProvider(AdapterFactory adapterFactory) {
+    public AttributeValueItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -20,17 +20,17 @@ public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
      * @generated
      */
     @Override
-    public String getText(Object object) {
+    public String getText(final Object object) {
         if (object instanceof AttributeValue) {
             final var attributeValue = (AttributeValue) object;
             if (attributeValue.getType() != null && attributeValue.getValues() != null) {
                 if (attributeValue.eContainer() instanceof Attribute) {
-                    var category = (Attribute) attributeValue.eContainer();
+                    final var category = (Attribute) attributeValue.eContainer();
                     return category.getEntityName() + ": " + attributeValue.getValues();
                 }
             }
         }
-        return getString("_UI_ProvidedRestriction_type");
+        return this.getString("_UI_ProvidedRestriction_type");
     }
 
     /**
@@ -41,12 +41,12 @@ public class AttributeValueItemProvider extends AttributeValueItemProviderGen {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged(final Notification notification) {
+        this.updateChildren(notification);
         switch (notification.getFeatureID(AttributeValue.class)) {
         case SystemcontextPackage.ATTRIBUTE_VALUE__TYPE:
         case SystemcontextPackage.ATTRIBUTE_VALUE__VALUES:
-            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         }
         super.notifyChanged(notification);
     }

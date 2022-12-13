@@ -90,12 +90,18 @@ public class PolicyHelper {
         attribute.setId(XACMLConstants.RESOURCE_ID);
 
         value.setType(DataTypes.STRING);
-        final var valueString = component.stream().map(Entity::getId)
-                .collect(Collectors.joining(" ", "", " " + component.getLast().getEntityName())).strip();
-        value.getValues().add(valueString);
+        final var valueString = component.stream()
+            .map(Entity::getId)
+            .collect(Collectors.joining(" ", "", " " + component.getLast()
+                .getEntityName()))
+            .strip();
+        value.getValues()
+            .add(valueString);
 
-        attribute.getAttributevalue().add(value);
-        usage.setEntityName(component.getLast().getEntityName());// for easier debugging
+        attribute.getAttributevalue()
+            .add(value);
+        usage.setEntityName(component.getLast()
+            .getEntityName());// for easier debugging
         usage.setAttribute(attribute);
         usage.setAttributevalue(value);
         return usage;
@@ -110,9 +116,11 @@ public class PolicyHelper {
         attribute.setId(XACMLConstants.ACTION_ID);
 
         value.setType(DataTypes.STRING);
-        value.getValues().add(signature.getId());
+        value.getValues()
+            .add(signature.getId());
 
-        attribute.getAttributevalue().add(value);
+        attribute.getAttributevalue()
+            .add(value);
 
         usage.setAttribute(attribute);
         usage.setAttributevalue(value);

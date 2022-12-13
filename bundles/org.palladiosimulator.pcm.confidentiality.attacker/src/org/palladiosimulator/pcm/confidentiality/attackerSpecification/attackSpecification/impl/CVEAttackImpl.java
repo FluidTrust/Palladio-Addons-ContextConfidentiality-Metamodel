@@ -18,7 +18,8 @@ public class CVEAttackImpl extends CVEAttackImplGen implements CVEAttack {
     protected boolean checkID(final Vulnerability vulnerability) {
         if (vulnerability instanceof CVEVulnerability) {
             final var id = ((CVEVulnerability) vulnerability).getCveID();
-            return getCategory().equalAttackType(id);
+            return this.getCategory()
+                .equalAttackType(id);
         }
         return false;
     }

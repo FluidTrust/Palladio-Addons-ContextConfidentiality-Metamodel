@@ -31,8 +31,8 @@ public class CVEIDImpl extends CVEIDImplGen implements CVEID {
         if (!(category instanceof CVEID)) {
             return false;
         }
-        if (Objects.equals(category.getEntityName(), getEntityName())
-                && Objects.equals(getCveID(), ((CVEID) category).getCveID())) {
+        if (Objects.equals(category.getEntityName(), this.getEntityName())
+                && Objects.equals(this.getCveID(), ((CVEID) category).getCveID())) {
             return true;
         }
         return false;

@@ -50,7 +50,8 @@ class CheckCWEIDTest {
     void testChildSame() {
         final var category = TestHelpers.createCWECategory(1, "test");
         final var categoryChild = TestHelpers.createCWECategory(2, "test2");
-        category.getChildren().add(categoryChild);
+        category.getChildren()
+            .add(categoryChild);
         assertTrue(category.equalAttackType(categoryChild));
     }
 
@@ -58,7 +59,8 @@ class CheckCWEIDTest {
     void testChildCopy() {
         final var category = TestHelpers.createCWECategory(1, "test");
         final var categoryChild = TestHelpers.createCWECategory(2, "test2");
-        category.getChildren().add(categoryChild);
+        category.getChildren()
+            .add(categoryChild);
 
         final var categoryChildCompare = TestHelpers.createCWECategory(2, "test2");
         assertTrue(category.equalAttackType(categoryChildCompare));
@@ -69,8 +71,10 @@ class CheckCWEIDTest {
         final var category = TestHelpers.createCWECategory(1, "test");
         final var categoryChild1 = TestHelpers.createCWECategory(2, "test2");
         final var categoryChild2 = TestHelpers.createCWECategory(3, "test3");
-        category.getChildren().add(categoryChild1);
-        category.getChildren().add(categoryChild2);
+        category.getChildren()
+            .add(categoryChild1);
+        category.getChildren()
+            .add(categoryChild2);
         assertTrue(category.equalAttackType(categoryChild1));
         assertTrue(category.equalAttackType(categoryChild2));
     }
@@ -80,8 +84,10 @@ class CheckCWEIDTest {
         final var category = TestHelpers.createCWECategory(1, "test");
         final var categoryChild = TestHelpers.createCWECategory(2, "test2");
         final var categoryChildChild = TestHelpers.createCWECategory(3, "test3");
-        category.getChildren().add(categoryChild);
-        categoryChild.getChildren().add(categoryChildChild);
+        category.getChildren()
+            .add(categoryChild);
+        categoryChild.getChildren()
+            .add(categoryChildChild);
         assertTrue(category.equalAttackType(categoryChild));
         assertTrue(category.equalAttackType(categoryChildChild));
     }
@@ -91,8 +97,10 @@ class CheckCWEIDTest {
         final var parent = TestHelpers.createCWECategory(1, "test");
         final var category = TestHelpers.createCWECategory(2, "test2");
         final var categoryChild = TestHelpers.createCWECategory(3, "test3");
-        parent.getChildren().add(category);
-        category.getChildren().add(categoryChild);
+        parent.getChildren()
+            .add(category);
+        category.getChildren()
+            .add(categoryChild);
         assertFalse(category.equalAttackType(parent));
         assertTrue(category.equalAttackType(categoryChild));
     }

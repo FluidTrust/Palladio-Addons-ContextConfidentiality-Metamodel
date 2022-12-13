@@ -19,7 +19,8 @@ public class CWEAttackImpl extends CWEAttackImplGen implements CWEAttack {
         if (vulnerability instanceof CWEBasedVulnerability) {
             final var ids = ((CWEBasedVulnerability) vulnerability).getCweID();
             for (final var id : ids) {
-                if (getCategory().equalAttackType(id)) {
+                if (this.getCategory()
+                    .equalAttackType(id)) {
                     return true;
                 }
             }

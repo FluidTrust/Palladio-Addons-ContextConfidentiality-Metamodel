@@ -7,25 +7,23 @@ import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegr
 import org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.SystemIntegration;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Default System Integration</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Default System
+ * Integration</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public class DefaultSystemIntegrationImpl extends DefaultSystemIntegrationImplGen implements DefaultSystemIntegration
-{
-	/**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+public class DefaultSystemIntegrationImpl extends DefaultSystemIntegrationImplGen implements DefaultSystemIntegration {
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     @Override
     public SystemIntegration getCopyExceptElement() {
         final var sysIntegration = PcmIntegrationFactory.eINSTANCE.createDefaultSystemIntegration();
-        
-        sysIntegration.setEntityName("copy of " + getEntityName());
+
+        sysIntegration.setEntityName("copy of " + this.getEntityName());
         return sysIntegration;
     }
 
-} //DefaultSystemIntegrationImpl
+} // DefaultSystemIntegrationImpl

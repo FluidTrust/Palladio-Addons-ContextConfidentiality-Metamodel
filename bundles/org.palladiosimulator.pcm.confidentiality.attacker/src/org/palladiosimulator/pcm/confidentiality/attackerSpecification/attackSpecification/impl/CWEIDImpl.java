@@ -35,10 +35,11 @@ public class CWEIDImpl extends CWEIDImplGen implements CWEID {
         if (!(category instanceof CWEID)) {
             return false;
         }
-        if (Objects.equals(category.getEntityName(), getEntityName()) && getCweID() == ((CWEID) category).getCweID()) {
+        if (Objects.equals(category.getEntityName(), this.getEntityName())
+                && this.getCweID() == ((CWEID) category).getCweID()) {
             return true;
         }
-        for (final var subcategory : getChildren()) {
+        for (final var subcategory : this.getChildren()) {
             if (subcategory.equalAttackType(category)) {
                 return true;
             }

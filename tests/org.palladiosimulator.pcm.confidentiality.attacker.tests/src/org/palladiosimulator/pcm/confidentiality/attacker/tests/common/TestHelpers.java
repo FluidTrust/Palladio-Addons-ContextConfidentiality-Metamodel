@@ -54,7 +54,8 @@ public class TestHelpers {
     public static CVEVulnerability createCVEVulnerability(final CWEID cweID, final CVEID cveID,
             final AttackVector vector, final Privileges privileges, final Policy accessPrivilege) {
         final var vulnerability = AttackSpecificationFactory.eINSTANCE.createCVEVulnerability();
-        vulnerability.getCweID().add(cweID);
+        vulnerability.getCweID()
+            .add(cweID);
         vulnerability.setCveID(cveID);
         vulnerability.setAttackVector(vector);
         vulnerability.setPrivileges(privileges);
@@ -88,7 +89,8 @@ public class TestHelpers {
     public static CWEVulnerability createCWEVulnerability(final CWEID cweID, final AttackVector vector,
             final Privileges privileges, final Policy accessPrivilege) {
         final var vulnerability = AttackSpecificationFactory.eINSTANCE.createCWEVulnerability();
-        vulnerability.getCweID().add(cweID);
+        vulnerability.getCweID()
+            .add(cweID);
         vulnerability.setAttackVector(vector);
         vulnerability.setPrivileges(privileges);
         vulnerability.setRequiredCredentials(accessPrivilege);
