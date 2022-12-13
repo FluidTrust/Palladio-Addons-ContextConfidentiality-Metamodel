@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.palladiosimulator.pcm.confidentiality.attackerSpecification.attackSpecification.presentation,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.pcmIntegration.presentation,
  org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation
