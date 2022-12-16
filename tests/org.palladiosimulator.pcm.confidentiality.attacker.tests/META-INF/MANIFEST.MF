@@ -5,6 +5,5 @@ Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.attacker.tests
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.attacker.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Require-Bundle: org.palladiosimulator.pcm.confidentiality.attacker;bundle-version="0.1.0",
- org.junit,
- org.junit.jupiter.api
+Require-Bundle: org.palladiosimulator.pcm.confidentiality.attacker;bundle-version="0.1.0"
+Import-Package: org.junit.jupiter.api;version="5.8.1"
