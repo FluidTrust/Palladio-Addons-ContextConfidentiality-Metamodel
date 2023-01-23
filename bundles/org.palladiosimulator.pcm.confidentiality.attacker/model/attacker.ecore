@@ -244,10 +244,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NonGlobalCommunication" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
     <eClassifiers xsi:type="ecore:EClass" name="DefaultSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration"/>
-    <eClassifiers xsi:type="ecore:EClass" name="CredentialSystemIntegration" eSuperTypes="#//pcmIntegration/SystemIntegration">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="credential" lowerBound="1"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm.confidentiality.context/model/context.ecore#//system/UsageSpecification"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RepositoryElement" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="basiccomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="compositecomponent" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>

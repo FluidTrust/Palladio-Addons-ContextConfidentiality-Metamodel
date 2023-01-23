@@ -209,10 +209,6 @@
       </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/NonGlobalCommunication"/>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/DefaultSystemIntegration"/>
-      <genClasses ecoreClass="attacker.ecore#//pcmIntegration/CredentialSystemIntegration">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/CredentialSystemIntegration/credential"/>
-      </genClasses>
       <genClasses ecoreClass="attacker.ecore#//pcmIntegration/RepositoryElement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference attacker.ecore#//pcmIntegration/RepositoryElement/basiccomponent"/>
