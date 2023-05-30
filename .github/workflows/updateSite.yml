@@ -19,6 +19,7 @@ jobs:
           use-display-output: true
           no-caching: true
           runner-label: ubuntu-latest
+          release-version: 5.2
       secrets:
           SERVER_SSH_KEY: ${{ secrets.DEPLOYMENT_SERVER_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.DEPLOYMENT_REMOTE_HOST }}
