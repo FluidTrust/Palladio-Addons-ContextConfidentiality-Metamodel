@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.pcm.confidentiality.attacker.editor;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.pcm.confidentiality.attacker.editor
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.pcm.confidentiality.attackerSpecification.presentation.AttackerEditorPlugin$Implementation
 Bundle-Vendor: %providerName
