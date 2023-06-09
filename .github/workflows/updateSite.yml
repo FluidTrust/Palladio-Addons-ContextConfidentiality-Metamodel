@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-      uses: PalladioSimulator/Palladio-Build-ActionsPipeline/.github/workflows/build.yml@v3.3
+      uses: PalladioSimulator/Palladio-Build-ActionsPipeline/.github/workflows/build.yml@v3.4
       with:
           deploy-updatesite: 'releng/org.palladiosimulator.pcm.confidentiality.context.updatesite/target/repository'
           java-version: 17
